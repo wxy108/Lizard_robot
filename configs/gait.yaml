@@ -1,0 +1,73 @@
+# =====================================================================
+# Lizard robot V1 — gait configuration
+#
+# Pick the control law with `controller:`
+#   sine     -> traveling-wave body + antisymmetric sine legs
+#               (our optimized straight-line gait; uses spine/legs blocks)
+#   hardware -> port of the real-robot MATLAB law (lizardCode_1DOF.m):
+#               cos body wave + duty-cycle diagonal-trot legs
+#               (uses the hardware block; sine blocks are ignored)
+# The two laws share `offset`, gait.settle_time/ramp_time and the joint
+# layout, but their tunables are kept in separate blocks.
+# =====================================================================
+
+controller: hardware          # sine | hardware
+
+gait:
+  # --- sine-mode temporal knobs (ignored in hardware mode) ---
+  frequency: 0.2          # [Hz]   FIXED
+  wave_speed: 1.0         # FIXED
+  # --- shared startup ---
+  settle_time: 1.0        # [s]
+  ramp_time: 1.5          # [s]
+
+# ---- SINE law tunables ----
+spine:
+  amplitude: 0.94         # [rad]               (tuned)
+  wavenumber: 0.83        # [waves along body]  (tuned)
+  turn_trim: 0.09         # [rad] const yaw bias to drive straight (tuned)
+  joints: [Front, Back, Tail]   # head -> tail; also defines girdles
+
+legs:
+  amplitude: 0.95         # [rad]               (tuned)
+  phase_offset: 0.67      # [cycles]            (tuned)
+  right: [FR, HR]         # side = +1
+  left:  [FL, HL]         # side = -1
+  girdle: {FR: Front, FL: Front, HR: Back, HL: Back}
+
+# ---- HARDWARE law tunables (real-robot port; STANDING C-wave body) ----
+# Body (standing wave): every spine joint shares ONE sinusoid ->
+#   q_i = offset_i + body_amp*body_shape_i*sin(2*pi*leg_freq*t + body_lock)
+#   body_shape Front opposite Back/Tail -> whole body curls into a C (same
+#   sign would make an S); flips side each half-cycle, phase-locked to the
+#   legs (bends while a diagonal is in contact). body_shape.Tail=0 freezes tail.
+# Legs (duty-cycle diagonal trot):
+#   q = offset + down_sign*leg_amp*duty_wave(phase, duty)
+#   phase += phi_leg if right, += phi_lat if hind
+#   -> FL:0, FR:phi_leg, HL:phi_lat, HR:phi_leg+phi_lat
+hardware:
+  body_amp: 0.8         # [rad] C-bend amplitude            (OPT, freq fixed)
+  body_lock: 2.234        # [rad] leg<->body phase            (OPT)
+  body_shape: {Front: 1.0, Back: -1.0, Tail: -1.0} # Front opposite Back/Tail = C-shape
+                                                   # (same sign would make an S!)
+  leg_amp: 0.564          # [rad] foot-down amplitude         (OPT)
+  leg_freq: 0.2           # [Hz]  FIXED (not optimized)
+  duty: 0.491             # contact (stance) fraction        (OPT)
+  phi_leg: 3.14159265     # [rad] left/right leg phase (pi = antiphase)
+  phi_lat: 3.14159265     # [rad] front/back leg phase (pi = antiphase)
+  down_sign: {FR: -1, FL: -1, HR: 1, HL: -1}   # sign that presses each foot DOWN
+
+# Per-joint initial angle [rad] (shared neutral pose)
+offset:
+  Front: 0.0
+  FR: -0.165
+  FL: -0.165
+  Back: 0.0
+  HR: 0.165
+  HL: -0.165
+  Tail: 0.0
+
+simulation:
+  model: models/lizard.xml
+  duration: 10.0
+  keyframe: stand

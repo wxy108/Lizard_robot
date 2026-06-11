@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+
+# Generated run data & optimizer studies (regenerable, can be large)
+outputs/data/
+outputs/*.db
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Keep: outputs/videos/ (demo videos) and docs/ (guide + textbook)

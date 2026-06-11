@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="V1TailAssemblyURDF">
+  <link
+    name="Mid">
+    <inertial>
+      <origin
+        xyz="0.0460664321948877 -0.000153726107252172 4.25496454778962E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0898677258396022" />
+      <inertia
+        ixx="2.03086411286745E-05"
+        ixy="3.47149942140296E-09"
+        ixz="1.10513544459199E-06"
+        iyy="4.51353371886665E-05"
+        iyz="-5.31854005738485E-10"
+        izz="4.07390455745176E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/Mid.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/Mid.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Front">
+    <inertial>
+      <origin
+        xyz="0 -0.024579454094926 0.0596822345726868"
+        rpy="0 0 0" />
+      <mass
+        value="0.0891758323548742" />
+      <inertia
+        ixx="0.000118427508252212"
+        ixy="2.15455319896122E-21"
+        ixz="1.08580629797162E-06"
+        iyy="0.000129128716586703"
+        iyz="2.70268583146018E-06"
+        izz="4.59223697225495E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/Front.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/Front.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Front"
+    type="revolute">
+    <origin
+      xyz="0.086893 -0.0002914 0.024312"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="Mid" />
+    <child
+      link="Front" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="FR">
+    <inertial>
+      <origin
+        xyz="3.7892967219233E-05 -0.0237784601938441 -0.0144928104073043"
+        rpy="0 0 0" />
+      <mass
+        value="0.0475903368188843" />
+      <inertia
+        ixx="9.42430458844127E-06"
+        ixy="-5.31854005733989E-10"
+        ixz="3.47149942138145E-09"
+        iyy="1.03388946188684E-05"
+        iyz="-1.37847767931261E-08"
+        izz="5.28294233491692E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR"
+    type="revolute">
+    <origin
+      xyz="-0.0355 -0.02265 0.08125"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="Front" />
+    <child
+      link="FR" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="FL">
+    <inertial>
+      <origin
+        xyz="3.7892967219344E-05 -0.0237784601938456 -0.0144928104073037"
+        rpy="0 0 0" />
+      <mass
+        value="0.0475903368188842" />
+      <inertia
+        ixx="9.42430458844128E-06"
+        ixy="-5.31854005733747E-10"
+        ixz="3.47149942138226E-09"
+        iyy="1.03388946188684E-05"
+        iyz="-1.37847767931279E-08"
+        izz="5.28294233491691E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/FL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL"
+    type="revolute">
+    <origin
+      xyz="0.0355 -0.02265 0.03595"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="Front" />
+    <child
+      link="FL" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Back">
+    <inertial>
+      <origin
+        xyz="0.000157176333242415 -0.0233926113972416 -0.0439662837067707"
+        rpy="0 0 0" />
+      <mass
+        value="0.108746459641792" />
+      <inertia
+        ixx="5.58514739211627E-05"
+        ixy="-5.31858593345704E-10"
+        ixz="1.08927779290716E-06"
+        iyy="6.91401276369423E-05"
+        iyz="9.69008246275684E-07"
+        izz="4.2177259260157E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/Back.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/Back.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Back"
+    type="revolute">
+    <origin
+      xyz="-0.018607 -4.1403E-05 0.023312"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="Mid" />
+    <child
+      link="Back" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="HR">
+    <inertial>
+      <origin
+        xyz="3.78929672191219E-05 -0.0237784601938449 -0.014492810407305"
+        rpy="0 0 0" />
+      <mass
+        value="0.0475903368188844" />
+      <inertia
+        ixx="9.42430458844128E-06"
+        ixy="-5.31854005734774E-10"
+        ixz="3.47149942137537E-09"
+        iyy="1.03388946188684E-05"
+        iyz="-1.37847767931266E-08"
+        izz="5.28294233491693E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/HR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/HR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="HR"
+    type="revolute">
+    <origin
+      xyz="-0.03525 -0.02265 -0.0362"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="Back" />
+    <child
+      link="HR" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="HL">
+    <inertial>
+      <origin
+        xyz="3.78929672188999E-05 -0.0237784601938448 -0.0144928104073048"
+        rpy="0 0 0" />
+      <mass
+        value="0.0475903368188843" />
+      <inertia
+        ixx="9.42430458844127E-06"
+        ixy="-5.31854005733707E-10"
+        ixz="3.4714994213821E-09"
+        iyy="1.03388946188684E-05"
+        iyz="-1.3784776793127E-08"
+        izz="5.28294233491692E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/HL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/HL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="HL"
+    type="revolute">
+    <origin
+      xyz="0.03575 -0.02265 -0.0815"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="Back" />
+    <child
+      link="HL" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Tail">
+    <inertial>
+      <origin
+        xyz="0.000147554435993458 -0.02533750156357 -0.047226392311691"
+        rpy="0 0 0" />
+      <mass
+        value="0.0985327693742" />
+      <inertia
+        ixx="6.14186433408383E-05"
+        ixy="-5.3185400573526E-10"
+        ixz="3.47149942143998E-09"
+        iyy="5.83956899102659E-05"
+        iyz="-4.33812731659233E-07"
+        izz="2.23292008173106E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/Tail.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://V1TailAssemblyURDF/meshes/Tail.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Tail"
+    type="revolute">
+    <origin
+      xyz="0.00025 0 -0.1055"
+      rpy="0 0 0" />
+    <parent
+      link="Back" />
+    <child
+      link="Tail" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

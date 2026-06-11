@@ -1,0 +1,168 @@
+<mujoco model="lizard_v1">
+  <!--
+    Lizard robot V1 (TailAssembly) MuJoCo model.
+    Converted from SolidWorks URDF export (V1TailAssemblyURDF).
+
+    Morphology:
+      - 3 spine yaw joints (lateral undulation): Front, Back, Tail
+      - 4 single-DOF legs (transverse-plane rotation about body longitudinal axis):
+        FR, FL on front girdle; HR, HL on rear girdle
+      - All joints driven by Dynamixel XL430-W250-T servos
+        (stall torque ~1.4 Nm @ 12 V, no-load speed ~6.1 rad/s)
+
+    Conventions:
+      - World +X = forward (head direction at spawn), +Z = up
+      - Spine joints: positive q = ? (yaw about world -Z at spawn)
+      - Leg foot-down ("stance") angles: FR=-1.92, FL=-1.92, HR=+1.92, HL=-1.92 rad
+        (HR axis is mirrored in the CAD export)
+      - Keyframe "stand" puts the robot statically stable on its four feet
+  -->
+  <compiler angle="radian" meshdir="meshes"/>
+  <option timestep="5e-4" integrator="implicitfast" cone="elliptic"/>
+
+  <visual>
+    <headlight ambient="0.4 0.4 0.4" diffuse="0.6 0.6 0.6"/>
+    <map znear="0.001"/>
+    <quality shadowsize="4096"/>
+    <global offwidth="1280" offheight="720"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.6 0.75 0.9" rgb2="0.9 0.95 1.0" width="256" height="256"/>
+    <texture name="grid" type="2d" builtin="checker" rgb1="0.30 0.32 0.36" rgb2="0.38 0.40 0.44"
+             width="512" height="512" mark="edge" markrgb="0.55 0.55 0.55"/>
+    <material name="grid" texture="grid" texrepeat="20 20" reflectance="0.05"/>
+    <material name="body_mat" rgba="0.792 0.820 0.933 1"/>
+    <material name="leg_mat" rgba="0.55 0.60 0.80 1"/>
+    <mesh name="Mid"   content_type="model/stl" file="Mid.STL"/>
+    <mesh name="Front" content_type="model/stl" file="Front.STL"/>
+    <mesh name="FR"    content_type="model/stl" file="FR.STL"/>
+    <mesh name="FL"    content_type="model/stl" file="FL.STL"/>
+    <mesh name="Back"  content_type="model/stl" file="Back.STL"/>
+    <mesh name="HR"    content_type="model/stl" file="HR.STL"/>
+    <mesh name="HL"    content_type="model/stl" file="HL.STL"/>
+    <mesh name="Tail"  content_type="model/stl" file="Tail.STL"/>
+  </asset>
+
+  <default>
+    <!-- XL430: geared servo -> reflected rotor inertia (armature) + light friction -->
+    <joint type="hinge" damping="0.005" armature="0.002" frictionloss="0.01"/>
+    <geom type="mesh" material="body_mat" friction="1.0 0.005 0.0001" condim="3"
+          solref="0.002 1" solimp="0.9 0.95 0.001"/>
+    <!-- Servo position control, force-clipped at XL430 stall torque -->
+    <position kp="5.0" kv="0.08" forcerange="-1.4 1.4"/>
+  </default>
+
+  <worldbody>
+    <light directional="true" pos="0.5 -0.5 1.5" dir="-0.3 0.3 -1" castshadow="true"/>
+    <geom name="floor" type="plane" size="5 5 0.05" material="grid" friction="1.0 0.005 0.0001"/>
+
+    <camera name="track_side" mode="trackcom" pos="0.05 -0.65 0.35" xyaxes="1 0 0 0 0.5 0.9"/>
+    <camera name="track_top"  mode="trackcom" pos="0 0 0.9" xyaxes="1 0 0 0 1 0"/>
+
+    <body name="Mid" pos="0 0 0.042">
+      <freejoint name="root"/>
+      <site name="imu" pos="0.046 0 0" size="0.004" rgba="1 0 0 0.5"/>
+      <inertial pos="0.0460664 -0.000153726 4.25496e-05" quat="0.486405 0.513301 0.513274 0.486294"
+                mass="0.0898677" diaginertia="4.51353e-05 4.07987e-05 2.0249e-05"/>
+      <geom name="Mid" mesh="Mid"/>
+
+      <body name="Front" pos="0.086893 -0.0002914 0.024312" quat="0.499998 0.5 0.500002 0.5">
+        <inertial pos="0 -0.0245795 0.0596822" quat="0.708234 0.00620906 -0.0167379 0.705752"
+                  mass="0.0891758" diaginertia="0.000129217 0.000118444 4.58185e-05"/>
+        <joint name="Front" axis="0 -1 0"/>
+        <geom name="Front" mesh="Front"/>
+
+        <body name="FR" pos="-0.0355 -0.02265 0.08125" quat="0.499998 0.5 0.500002 0.5">
+          <inertial pos="3.7893e-05 -0.0237785 -0.0144928" quat="0.706896 -0.00125997 0.000668069 0.707316"
+                    mass="0.0475903" diaginertia="1.03389e-05 9.42431e-06 5.2829e-06"/>
+          <joint name="FR" axis="0 -1 0"/>
+          <geom name="FR" mesh="FR" material="leg_mat"/>
+        </body>
+        <body name="FL" pos="0.0355 -0.02265 0.03595" quat="0.499998 -0.5 -0.500002 0.5">
+          <inertial pos="3.7893e-05 -0.0237785 -0.0144928" quat="0.706896 -0.00125997 0.000668069 0.707316"
+                    mass="0.0475903" diaginertia="1.03389e-05 9.42431e-06 5.2829e-06"/>
+          <joint name="FL" axis="0 -1 0"/>
+          <geom name="FL" mesh="FL" material="leg_mat"/>
+        </body>
+      </body>
+
+      <body name="Back" pos="-0.018607 -4.1403e-05 0.023312" quat="0.499998 0.5 0.500002 0.5">
+        <inertial pos="0.000157176 -0.0233926 -0.0439663" quat="0.70797 -0.0151373 -0.0404873 0.704918"
+                  mass="0.108746" diaginertia="6.9175e-05 5.59373e-05 4.20566e-05"/>
+        <joint name="Back" axis="0 -1 0"/>
+        <geom name="Back" mesh="Back"/>
+
+        <body name="HR" pos="-0.03525 -0.02265 -0.0362" quat="0.499998 0.5 0.500002 0.5">
+          <inertial pos="3.7893e-05 -0.0237785 -0.0144928" quat="0.706896 -0.00125997 0.000668069 0.707316"
+                    mass="0.0475903" diaginertia="1.03389e-05 9.42431e-06 5.2829e-06"/>
+          <joint name="HR" axis="0 1 0"/>
+          <geom name="HR" mesh="HR" material="leg_mat"/>
+        </body>
+        <body name="HL" pos="0.03575 -0.02265 -0.0815" quat="0.499998 -0.5 -0.500002 0.5">
+          <inertial pos="3.7893e-05 -0.0237785 -0.0144928" quat="0.706896 -0.00125997 0.000668069 0.707316"
+                    mass="0.0475903" diaginertia="1.03389e-05 9.42431e-06 5.2829e-06"/>
+          <joint name="HL" axis="0 -1 0"/>
+          <geom name="HL" mesh="HL" material="leg_mat"/>
+        </body>
+
+        <body name="Tail" pos="0.00025 0 -0.1055">
+          <inertial pos="0.000147554 -0.0253375 -0.0472264" quat="0.999982 -0.00601287 -4.48842e-05 -9.47637e-05"
+                    mass="0.0985328" diaginertia="6.14186e-05 5.84009e-05 2.2324e-05"/>
+          <joint name="Tail" axis="0 -1 0"/>
+          <geom name="Tail" mesh="Tail"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <!-- Spine -->
+    <position name="Front" joint="Front"/>
+    <position name="Back"  joint="Back"/>
+    <position name="Tail"  joint="Tail"/>
+    <!-- Legs -->
+    <position name="FR" joint="FR"/>
+    <position name="FL" joint="FL"/>
+    <position name="HR" joint="HR"/>
+    <position name="HL" joint="HL"/>
+  </actuator>
+
+  <sensor>
+    <framepos  name="body_pos"  objtype="body" objname="Mid"/>
+    <framequat name="body_quat" objtype="body" objname="Mid"/>
+    <velocimeter name="body_vel" site="imu"/>
+    <accelerometer name="imu_acc" site="imu"/>
+    <gyro name="imu_gyro" site="imu"/>
+    <jointpos name="q_Front" joint="Front"/>
+    <jointpos name="q_Back"  joint="Back"/>
+    <jointpos name="q_Tail"  joint="Tail"/>
+    <jointpos name="q_FR" joint="FR"/>
+    <jointpos name="q_FL" joint="FL"/>
+    <jointpos name="q_HR" joint="HR"/>
+    <jointpos name="q_HL" joint="HL"/>
+    <jointvel name="dq_Front" joint="Front"/>
+    <jointvel name="dq_Back"  joint="Back"/>
+    <jointvel name="dq_Tail"  joint="Tail"/>
+    <jointvel name="dq_FR" joint="FR"/>
+    <jointvel name="dq_FL" joint="FL"/>
+    <jointvel name="dq_HR" joint="HR"/>
+    <jointvel name="dq_HL" joint="HL"/>
+    <actuatorfrc name="tau_Front" actuator="Front"/>
+    <actuatorfrc name="tau_Back"  actuator="Back"/>
+    <actuatorfrc name="tau_Tail"  actuator="Tail"/>
+    <actuatorfrc name="tau_FR" actuator="FR"/>
+    <actuatorfrc name="tau_FL" actuator="FL"/>
+    <actuatorfrc name="tau_HR" actuator="HR"/>
+    <actuatorfrc name="tau_HL" actuator="HL"/>
+  </sensor>
+
+  <keyframe>
+    <!-- qpos joint order: Front FR FL Back HR HL Tail
+         ctrl order:       Front Back Tail FR FL HR HL
+         legs flat / parallel to body (matches configs offset) -->
+    <key name="stand"
+         qpos="0 0 0.04 1 0 0 0   0 -0.165 -0.165 0 0.165 -0.165 0"
+         ctrl="0 0 0   -0.165 -0.165 0.165 -0.165"/>
+  </keyframe>
+</mujoco>
