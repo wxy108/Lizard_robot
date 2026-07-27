@@ -80,10 +80,17 @@ class GaitController:
         self.spine_index = {j: i for i, j in enumerate(self.spine_joints)}
 
         lg = config["legs"]
-        self.right = set(lg["right"])
-        self.left = set(lg["left"])
+        right_joints = list(lg["right"])
+        left_joints = list(lg["left"])
+        self.right = set(right_joints)
+        self.left = set(left_joints)
+        if self.right & self.left:
+            raise ValueError("A leg joint cannot be listed as both right and left")
         self.girdle = dict(lg["girdle"])
-        self.leg_joints = list(self.right | self.left)
+        # Preserve YAML order instead of relying on nondeterministic set order.
+        self.leg_joints = right_joints + left_joints
+        if len(self.leg_joints) != len(set(self.leg_joints)):
+            raise ValueError("Duplicate leg joint in config")
         self.front_spine = self.spine_joints[0]            # girdle name = front
 
         self.offset = {j: float(config["offset"][j])
@@ -112,6 +119,8 @@ class GaitController:
         self.turn_trim = float(sp.get("turn_trim", 0.0))
         self.leg_amp = float(lg["amplitude"])
         self.phase_offset = float(lg["phase_offset"])
+        if self.freq <= 0:
+            raise ValueError("gait.frequency must be positive")
 
     def _spatial_phase(self, spine_joint):
         denom = (self.Ns - 1) if self.Ns > 1 else 1
@@ -146,6 +155,10 @@ class GaitController:
         self.hw_phi_leg = float(hw["phi_leg"])             # L/R [rad]
         self.hw_phi_lat = float(hw["phi_lat"])             # front/back [rad]
         self.hw_down_sign = {j: float(hw["down_sign"][j]) for j in self.leg_joints}
+        if self.hw_leg_freq <= 0:
+            raise ValueError("hardware.leg_freq must be positive")
+        if not 0 < self.hw_duty < 1:
+            raise ValueError("hardware.duty must satisfy 0 < duty < 1")
 
     def _hw_spine(self, joint, t, ramp):
         # standing wave: identical temporal sinusoid on every spine joint,
