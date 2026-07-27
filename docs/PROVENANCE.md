@@ -25,7 +25,29 @@ cleanup manifest state which changes were made during this audit.
 - Topology-gated mesh rebuild commit: `bddb2f7`
 - Video generator implementation commit:
   `ef27d2bfb82f2752ef341810aaf6300d9a094b0e`
+- Imported documented local source snapshot: `48952e6`
 - Publication target: `https://github.com/wxy108/Lizard_robot`
+
+### Clean GitHub publication
+
+The GitHub repository already used the project itself as its root, whereas the
+audited local RFT history used `Lizard_robot-main/` beneath a workspace root.
+To avoid publishing a nested project or unrelated-history merge, the final
+tracked project snapshot was overlaid byte-for-byte onto the existing GitHub
+history.
+
+- Publication branch: `agent/rft-video-guidance`
+- Existing GitHub base: `79a2b905a46a9d139c5fd6bd5ed85a6b9dd25d30`
+- Original compatibility commit: `6c848e90a0658fe8713f0dbca7876ed0465ac573`
+- Clean RFT integration commit: `ed5edc6`
+- Imported local source snapshot: `48952e6`
+
+The import compared SHA-256 for all 119 regular tracked project files and the
+pinned submodule pointer. All matched the documented local source before the
+publication commit. The former tracked `outputs/videos/*.mp4` files were
+removed from the publication branch because generated outputs are now ignored
+and reproducible under `outputs/`; their earlier Git history remains
+recoverable.
 
 ## Upstream RFT-SiM
 

@@ -4,19 +4,21 @@ Last verified: 2026-07-27
 
 ## Git anchors
 
-- RFT workspace baseline:
-  `02960805b35f1acc091b03b3ffefca278410f960`
-- Topology-gated mesh rebuild:
-  `bddb2f7`
-- Reproducible locomotion video matrix:
-  `ef27d2bfb82f2752ef341810aaf6300d9a094b0e`
+- Clean GitHub integration commit:
+  `ed5edc6`
 - Original rigid-floor compatibility fixes:
   `6c848e90a0658fe8713f0dbca7876ed0465ac573`
 - Upstream RFT-SiM dependency:
   `303283fae075cae4101ee3af102a36a4a5775998`
 
-Use `git log --oneline --decorate -10` at the workspace root for changes after
-these anchors.
+The nested local RFT workspace retains its own source-history anchors:
+baseline `0296080`, mesh rebuild `bddb2f7`, video implementation `ef27d2b`,
+and imported documented source snapshot `48952e6`. They are provenance anchors,
+not ancestors of the clean GitHub branch, because the local project originally
+lived one directory below a separately initialized workspace repository.
+
+Use `git log --oneline --decorate -10` at the repository root for publication
+history.
 
 ## Current baseline
 

@@ -282,3 +282,20 @@ relative paths, byte sizes, and SHA-256 values in tracked manifests.
 3. Define locomotion objectives before optimization.
 4. Investigate initial impact transients and lateral drift with experiments.
 5. Validate the reconstructed hardware duty law against hardware logs/source.
+
+## I. GitHub publication
+
+- Publication repository: `https://github.com/wxy108/Lizard_robot`
+- Branch: `agent/rft-video-guidance`
+- Existing GitHub baseline: `79a2b905`
+- Original-model compatibility commit: `6c848e9`
+- Clean project-root RFT integration commit: `ed5edc6`
+- Imported local documented snapshot: `48952e6`
+
+The publication keeps the GitHub repository's existing root layout. It does
+not introduce the local workspace's extra `Lizard_robot-main/` nesting or an
+unrelated-history merge. All 119 regular tracked project files and the RFT-SiM
+submodule pointer were verified against the local documented snapshot before
+commit. Historical generated MP4 files were removed from Git tracking but
+remain recoverable from earlier history; all future generated media belongs in
+ignored `outputs/`.
