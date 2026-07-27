@@ -59,6 +59,7 @@
 
     <camera name="track_side" mode="trackcom" pos="0.05 -0.65 0.35" xyaxes="1 0 0 0 0.5 0.9"/>
     <camera name="track_top"  mode="trackcom" pos="0 0 0.9" xyaxes="1 0 0 0 1 0"/>
+    <camera name="diag"       mode="trackcom" pos="0.4 -0.4 0.35" xyaxes="0.7 0.7 0 -0.3 0.3 0.9"/>
 
     <body name="Mid" pos="0 0 0.042">
       <freejoint name="root"/>

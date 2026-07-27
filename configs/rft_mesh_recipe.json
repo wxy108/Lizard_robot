@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "input_dir": "models/mesh_sources/fusion_external_envelope",
+  "sample_points": 12000,
+  "poisson_depth": 8,
+  "poisson_scale": 1.1,
+  "seed": 20260727,
+  "iterations": 20,
+  "feature_angle_deg": 180.0,
+  "max_remesh_deviation_mm": 0.5,
+  "target_edge_mm_by_body": {
+    "Mid": 6.0,
+    "Front": 7.5,
+    "FR": 7.5,
+    "FL": 5.5,
+    "Back": 7.5,
+    "HR": 3.75,
+    "HL": 7.5,
+    "Tail": 7.5
+  },
+  "body_overrides": {
+    "HR": {
+      "iterations": 10,
+      "feature_angle_deg": 120.0,
+      "max_remesh_deviation_mm": 0.35
+    }
+  },
+  "gates": {
+    "area_p95_p05": 40.0,
+    "sliver_fraction_lt_10deg": 0.03,
+    "centroid_nn_p95_p05": 10.0,
+    "candidate_to_reference_p95_mm": 0.75,
+    "candidate_to_reference_max_mm": 2.0
+  }
+}

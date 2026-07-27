@@ -23,7 +23,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import shutil
 import time
 from datetime import datetime
 from pathlib import Path
@@ -66,6 +65,10 @@ def main() -> None:
     cfg = apply_overrides(load_config(args.config), args.overrides)
     duration = args.duration if args.duration is not None else float(
         cfg["simulation"]["duration"])
+    if duration <= 0:
+        raise ValueError(f"Simulation duration must be positive, got {duration}")
+    if args.fps <= 0:
+        raise ValueError(f"Video FPS must be positive, got {args.fps}")
 
     model_path = ROOT / cfg["simulation"]["model"]
     model = mujoco.MjModel.from_xml_path(str(model_path))
@@ -142,15 +145,29 @@ def main() -> None:
         return
 
     wall = time.time() - t_wall
+    if renderer is not None:
+        renderer.close()
     for k in log:
         log[k] = log[k][:li]
 
     # ---------------- summary metrics ----------------
     p0, p1 = log["base_pos"][0], log["base_pos"][-1]
-    walk_t = duration - cfg["gait"]["settle_time"]
     disp = p1[:2] - p0[:2]
     distance = float(np.linalg.norm(disp))
+    settle_time = float(cfg["gait"]["settle_time"])
+    walk_start = int(np.searchsorted(log["time"], settle_time, side="left"))
+    if walk_start < len(log["time"]) - 1:
+        walk_disp = (
+            log["base_pos"][-1, :2] - log["base_pos"][walk_start, :2]
+        )
+        walk_distance = float(np.linalg.norm(walk_disp))
+        walk_t = float(log["time"][-1] - log["time"][walk_start])
+    else:
+        walk_distance = 0.0
+        walk_t = 0.0
+    mean_speed = walk_distance / walk_t if walk_t > 0 else 0.0
     rpy = log["base_rpy"]
+    yaw = np.unwrap(rpy[:, 2])
     mass = float(model.body_mass.sum())
     summary = {
         "duration_s": duration,
@@ -158,9 +175,11 @@ def main() -> None:
         "distance_xy_m": round(distance, 4),
         "displacement_x_m": round(float(disp[0]), 4),
         "displacement_y_m": round(float(disp[1]), 4),
-        "mean_speed_mm_s": round(1000 * distance / max(walk_t, 1e-9), 2),
-        "speed_body_lengths_s": round(distance / max(walk_t, 1e-9) / 0.45, 3),
-        "heading_drift_deg": round(float(np.degrees(rpy[-1, 2] - rpy[0, 2])), 2),
+        "walking_time_s": round(walk_t, 4),
+        "walking_distance_xy_m": round(walk_distance, 4),
+        "mean_speed_mm_s": round(1000 * mean_speed, 2),
+        "speed_body_lengths_s": round(mean_speed / 0.45, 3),
+        "heading_drift_deg": round(float(np.degrees(yaw[-1] - yaw[0])), 2),
         "roll_rms_deg": round(float(np.degrees(np.sqrt(np.mean(rpy[:, 0] ** 2)))), 2),
         "pitch_rms_deg": round(float(np.degrees(np.sqrt(np.mean(rpy[:, 1] ** 2)))), 2),
         "base_z_mean_m": round(float(np.mean(log["base_pos"][:, 2])), 4),
@@ -180,7 +199,12 @@ def main() -> None:
         print(f"video: {video_path}")
 
     if not args.no_save:
-        out = ROOT / "outputs" / "data" / datetime.now().strftime("run_%m_%d_%Y_%H%M%S")
+        out = (
+            ROOT
+            / "outputs"
+            / "data"
+            / datetime.now().strftime("run_%m_%d_%Y_%H%M%S_%f")
+        )
         out.mkdir(parents=True, exist_ok=True)
         np.savez_compressed(out / "results.npz", **log)
         with open(out / "summary.json", "w", encoding="utf-8") as f:

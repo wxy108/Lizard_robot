@@ -5,13 +5,15 @@ __pycache__/
 .venv/
 venv/
 
-# Generated run data & optimizer studies (regenerable, can be large)
-outputs/data/
-outputs/*.db
+# Generated run data, videos, and optimizer studies are reproducible and can
+# be large. Canonical regression summaries belong in docs/regressions/.
+outputs/
 
 # OS / editor cruft
+.idea/
 .DS_Store
 Thumbs.db
 *.swp
 
-# Keep: outputs/videos/ (demo videos) and docs/ (guide + textbook)
+# Runtime logs and local download markers
+MUJOCO_LOG.TXT
