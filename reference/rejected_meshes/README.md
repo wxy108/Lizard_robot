@@ -11,8 +11,10 @@ point `Lizard_Sand.xml` at this directory.
 
 - status: rejected historical output;
 - purpose: reproduce the former vertex-clustering failure video;
-- original workspace location:
+- original workspace location before consolidation:
   `Lizard_Robot_RFT/archive/active-root-legacy-2026-07-27/meshes_rft/Back.stl`;
+- current local archive location:
+  `Lizard_Robot_Archive/2026-07-27/Lizard_Robot_RFT/archive/active-root-legacy-2026-07-27/meshes_rft/Back.stl`;
 - copied byte-for-byte on 2026-07-27;
 - bytes: 94,884;
 - SHA-256:

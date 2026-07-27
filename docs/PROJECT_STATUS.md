@@ -26,6 +26,12 @@ The active granular simulation runs in the single Conda environment
 `lizard_rft`, which also runs the original rigid-floor MuJoCo model. The
 `isaaclab_50` environment is independent and untouched.
 
+The single active local Git root is `Lizard_Robot_MuJoCo`. The former outer
+RFT workspace and temporary publication checkout are retained only under
+`Lizard_Robot_Archive/2026-07-27/`. The canonical checkout and GitHub `main`
+were confirmed identical at `0186850`; see
+`docs/LOCAL_WORKSPACE_LAYOUT.md`.
+
 The current RFT integration is topology-gated and regression-tested:
 
 - reaction-force sign, orientation, force timing, stale smoothing, and

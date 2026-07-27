@@ -93,6 +93,11 @@ git clone --recurse-submodules https://github.com/wxy108/Lizard_robot.git
 cd Lizard_robot
 ```
 
+The outer clone-directory name is local only and is not displayed as a folder
+inside GitHub. On the original workstation, the single canonical Git root is
+`Lizard_Robot_MuJoCo`; former RFT and publication workspaces are archived.
+See `docs/LOCAL_WORKSPACE_LAYOUT.md`. Do not run from an archived copy.
+
 If the repository was cloned without submodules:
 
 ```bash

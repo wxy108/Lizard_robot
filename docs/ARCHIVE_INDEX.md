@@ -1,5 +1,16 @@
 # Archive index
 
+## Current local archive root
+
+The original workstation's former RFT outer workspace and temporary
+publication checkout were moved intact on 2026-07-27 to:
+
+`Lizard_Robot_Archive/2026-07-27/`.
+
+Only `Lizard_Robot_MuJoCo` remains active and synchronized with GitHub. Archive
+paths below describe the historical structure inside the relocated
+`Lizard_Robot_RFT/` directory.
+
 Inventory date: 2026-07-27
 
 The workspace archive is intentionally ignored by Git because it contains

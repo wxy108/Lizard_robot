@@ -3,6 +3,21 @@
 All notable project changes are recorded here. Git is the authoritative
 line-level record; this file explains intent and consequences.
 
+## 2026-07-27 — single canonical local workspace
+
+- Confirmed `Lizard_Robot_MuJoCo/main` and GitHub `main` were identical at
+  merge commit `0186850`.
+- Moved the former outer `Lizard_Robot_RFT` workspace and stale
+  `Lizard_Robot_GitHub_Publish` checkout into the dated local archive
+  `Lizard_Robot_Archive/2026-07-27/`; no historical data was deleted.
+- Repacked the canonical RFT-SiM submodule into its own Git object store and
+  removed its dependency on an object alternate inside the archived workspace.
+- Verified the submodule at pinned commit `303283f` with `git fsck --full`.
+- Added `docs/LOCAL_WORKSPACE_LAYOUT.md` to explain the Git root, local-only
+  ignored files, submodule presentation, archive, and synchronization checks.
+- Reran the three rejected-mesh demos after the move; all cases and artifacts
+  generated without reading the archive.
+
 ## 2026-07-27 — rejected-mesh/RFT-point diagnostic videos
 
 - Added `scripts/generate_failed_mesh_videos.py`.
