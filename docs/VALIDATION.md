@@ -32,7 +32,7 @@ Coverage:
 - derives the expected force-site count from live per-body triangle counts;
 - requires every sequential force-site name and visual group 5;
 - loads `Lizard_Sand.xml` and checks sand/floor separation;
-- runs all ten fast unit tests;
+- runs all eleven fast unit tests;
 - runs the original rigid-floor smoke test;
 - runs a short or full granular RFT integration.
 
@@ -42,9 +42,10 @@ The three physics-core tests verify:
 2. the applied reaction opposes downward intrusion and dissipates power;
 3. direct rotation matrices match the compatibility Euler path.
 
-The seven reporting tests verify scenario/view expansion, component ancestor
+The eight reporting tests verify scenario/view expansion, component ancestor
 mapping, rigid-contact aggregation, COM calculation, timeline drawing, contact
-event extraction, and analyzer metrics.
+event extraction, analyzer metrics, and the 3×3-plus-three-panel overview
+layout.
 
 ## Locomotion video-matrix smoke
 

@@ -299,3 +299,13 @@ submodule pointer were verified against the local documented snapshot before
 commit. Historical generated MP4 files were removed from Git tracking but
 remain recoverable from earlier history; all future generated media belongs in
 ignored `outputs/`.
+
+## J. Master video overview
+
+- Added `scripts/compose_video_matrix.py`.
+- Added automatic `videos/video_matrix_overview.mp4` generation.
+- Layout: three scenario rows × `Top | Side | 45° | Analysis`.
+- The first three columns contain the nine pure camera views; the last column
+  contains exactly three scenario-level COM/contact/penetration panels.
+- Composition consumes synchronized MP4 output and does not rerun physics.
+- Added an overview-frame regression test; current fast suite: 11/11.

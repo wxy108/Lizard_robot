@@ -55,6 +55,8 @@ The reporting workflow is now reproducible:
   are written with every run;
 - a separate analyzer verifies every manifest hash before deriving
   contact-event, duty-cycle, penetration, and COM-path metrics.
+- an automatically generated master MP4 combines the nine pure camera views
+  as a 3×3 grid and adds exactly three synchronized analysis panels.
 
 ## Verified measurements
 
@@ -83,7 +85,7 @@ tracked evidence under
 `docs/regressions/2026-07-27-video-matrix-smoke/`. Its 0.25 s duration covers
 only initial settling and must not be used for locomotion-performance claims.
 
-Fast automated tests: 10/10 passing.
+Fast automated tests: 11/11 passing.
 
 The earlier 12,097-site regression remains tracked under
 `docs/regressions/2026-07-27-rft-6s/` as a historical pre-mesh-rebuild

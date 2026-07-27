@@ -3,6 +3,15 @@
 All notable project changes are recorded here. Git is the authoritative
 line-level record; this file explains intent and consequences.
 
+## 2026-07-27 — 3×3 master overview with three analysis panels
+
+- Added `scripts/compose_video_matrix.py`.
+- The normal generator now emits nine individual view videos and one master
+  overview automatically.
+- The overview contains three scenario rows, three pure camera-view columns,
+  and exactly one synchronized analysis panel per row.
+- Added a frame-layout regression test, bringing the fast suite to 11/11.
+
 ## 2026-07-27 — reproducible locomotion video and analysis matrix
 
 ### Synchronized simulation and rendering

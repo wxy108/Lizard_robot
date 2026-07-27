@@ -6,6 +6,7 @@ from scripts.analyze_video_matrix import (
     component_metrics,
     trajectory_metrics,
 )
+from scripts.compose_video_matrix import compose_master_frame
 from scripts.generate_video_matrix import (
     binary_intervals,
     compose_dashboard,
@@ -78,6 +79,42 @@ class VideoMatrixTests(unittest.TestCase):
 
         self.assertEqual(result.shape, (240, 640, 3))
         self.assertGreater(int(np.count_nonzero(result[:, 320:])), 0)
+
+    def test_master_frame_is_three_views_plus_one_panel_per_row(self):
+        render_width = 160
+        render_height = 100
+        panel_width = 80
+        frames = {}
+        scenarios = (
+            "rigid_original",
+            "sand_simplified",
+            "sand_simplified_sites",
+        )
+        views = ("top", "side", "diag45")
+        for row, scenario in enumerate(scenarios):
+            for column, view in enumerate(views):
+                frame = np.full(
+                    (render_height, render_width + panel_width, 3),
+                    20 + row * 30 + column * 5,
+                    dtype=np.uint8,
+                )
+                frame[:, render_width:] = 180 + row * 20
+                frames[(scenario, view)] = frame
+
+        result = compose_master_frame(
+            frames,
+            render_width=render_width,
+            render_height=render_height,
+            panel_width=panel_width,
+            row_height=50,
+            header_height=24,
+        )
+
+        self.assertEqual(result.shape, (174, 280, 3))
+        # The final 40 px are one scenario-level analysis panel per row.
+        self.assertTrue(np.all(result[49, 260] == 180))
+        self.assertTrue(np.all(result[99, 260] == 200))
+        self.assertTrue(np.all(result[149, 260] == 220))
 
     def test_analysis_metrics_include_contact_and_penetration(self):
         time = np.arange(5, dtype=float) * 0.1
