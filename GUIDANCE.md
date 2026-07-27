@@ -30,7 +30,7 @@ outward normals are the intended physical sand-contact surface.
 
 ```powershell
 conda activate lizard_rft
-cd C:\Users\wxy22\Documents\Lizard_Robot_RFT\Lizard_robot-main
+cd C:\path\to\Lizard_robot
 
 python scripts/validate_project.py
 ```
@@ -95,7 +95,13 @@ It produces three visual scenarios:
 - `sand_simplified_sites`: the exact same sand replay with all RFT sites
   visible.
 
-This gives nine MP4 files. Every frame contains:
+This gives nine individual MP4 files plus
+`videos/video_matrix_overview.mp4`. The overview has three scenario rows and
+four columns: `Top | Side | 45° | Analysis`. Its first three columns are the
+nine pure camera views; its final column contains exactly one panel per
+scenario.
+
+Every individual frame contains:
 
 - robot center-of-mass trajectory and current COM marker;
 - COM displacement in millimetres;
@@ -109,6 +115,12 @@ Short rendering smoke:
 python scripts/generate_video_matrix.py `
   --duration 0.25 --fps 10 `
   --width 640 --height 480 --panel-width 420
+```
+
+Compose an overview for an older compatible run:
+
+```powershell
+python scripts/compose_video_matrix.py outputs\video_matrix\run_...
 ```
 
 Full details: `docs/VIDEO_MATRIX_GUIDE.md`.

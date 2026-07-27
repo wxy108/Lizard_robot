@@ -32,7 +32,7 @@ Coverage:
 - derives the expected force-site count from live per-body triangle counts;
 - requires every sequential force-site name and visual group 5;
 - loads `Lizard_Sand.xml` and checks sand/floor separation;
-- runs all ten fast unit tests;
+- runs all eleven fast unit tests;
 - runs the original rigid-floor smoke test;
 - runs a short or full granular RFT integration.
 
@@ -42,9 +42,10 @@ The three physics-core tests verify:
 2. the applied reaction opposes downward intrusion and dissipates power;
 3. direct rotation matrices match the compatibility Euler path.
 
-The seven reporting tests verify scenario/view expansion, component ancestor
+The eight reporting tests verify scenario/view expansion, component ancestor
 mapping, rigid-contact aggregation, COM calculation, timeline drawing, contact
-event extraction, and analyzer metrics.
+event extraction, analyzer metrics, and the 3×3-plus-three-panel overview
+layout.
 
 ## Locomotion video-matrix smoke
 
@@ -77,6 +78,18 @@ Tracked evidence:
 
 The 0.25 s run is intentionally a generator/reporting smoke test. It covers
 initial settling only and must not be interpreted as locomotion performance.
+
+## Production 6 s master overview
+
+Source commit: `ff1dda2f954dc27e7d01499f5200497ad30c91f7`.
+
+The production run generated nine individual videos and one combined overview.
+The master is 181 frames at 30 FPS (6.033 s), 1680×858, and uses three scenario
+rows × `Top | Side | 45° | Analysis`. The generator recorded `git.dirty=false`;
+the analyzer verified all manifest artifacts and completed metric extraction.
+
+Tracked evidence and exact hashes:
+`docs/regressions/2026-07-27-video-matrix-production-6s/`.
 
 ## Mesh root-cause audit
 

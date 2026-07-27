@@ -47,12 +47,14 @@ python scripts/generate_video_matrix.py `
 Acceptance:
 
 - process exits zero;
-- exactly nine MP4 files exist;
+- exactly nine individual MP4 files and one overview MP4 exist;
 - both NPZ files, all CSV files, diagrams, config, and manifest exist;
 - `git.dirty` is false for canonical evidence;
 - visible-site sand videos show the triangle sites;
 - hidden-site sand videos do not;
 - all eight contact rows fit in every video;
+- the overview contains three scenario rows, three pure-view columns, and
+  exactly one analysis panel per row;
 - side view shows the translucent sand surface/penetration;
 - COM trail and time cursor update.
 

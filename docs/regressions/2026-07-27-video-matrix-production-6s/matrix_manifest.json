@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-07-27T17:21:09.497359",
+  "command": [
+    "C:\\Users\\wxy22\\anaconda3\\envs\\lizard_rft\\python.exe",
+    "scripts\\generate_video_matrix.py",
+    "--duration",
+    "6",
+    "--fps",
+    "30",
+    "--output-dir",
+    "outputs\\video_matrix\\production_6s_main_ff1dda2"
+  ],
+  "git": {
+    "commit": "ff1dda2f954dc27e7d01499f5200497ad30c91f7",
+    "dirty": false
+  },
+  "configuration": {
+    "duration_s": 6.0,
+    "fps": 30,
+    "render_width": 960,
+    "render_height": 540,
+    "panel_width": 480,
+    "views": {
+      "top": "track_top",
+      "side": "track_side",
+      "diag45": "diag"
+    },
+    "rft_coefficient": 3.75,
+    "force_smoothing_alpha": 0.5,
+    "body_order": [
+      "Mid",
+      "Front",
+      "FR",
+      "FL",
+      "Back",
+      "HR",
+      "HL",
+      "Tail"
+    ],
+    "sand_contact_definition": "active_triangles > 0",
+    "rigid_contact_definition": "MuJoCo geom contact with floor"
+  },
+  "scenarios": {
+    "rigid_original": {
+      "steps": 12000,
+      "duration_s": 5.999999999999394,
+      "com_displacement_m": [
+        0.20429045383858496,
+        0.024214026646695978,
+        -0.007132091932676395
+      ],
+      "contact_duty_by_component": {
+        "Mid": 0.0,
+        "Front": 0.07458333333333333,
+        "FR": 0.26325,
+        "FL": 0.3468333333333333,
+        "Back": 0.0205,
+        "HR": 0.3353333333333333,
+        "HL": 0.25216666666666665,
+        "Tail": 0.09208333333333334
+      }
+    },
+    "sand_rft_shared_replay": {
+      "steps": 12000,
+      "duration_s": 5.999999999999394,
+      "com_displacement_m": [
+        0.22314111037912743,
+        -0.10436458442826291,
+        -0.01505455575386912
+      ],
+      "contact_duty_by_component": {
+        "Mid": 0.26716666666666666,
+        "Front": 0.3403333333333333,
+        "FR": 0.36633333333333334,
+        "FL": 0.5094166666666666,
+        "Back": 0.37375,
+        "HR": 0.5335,
+        "HL": 0.44016666666666665,
+        "Tail": 0.8281666666666667
+      },
+      "maximum_penetration_mm_by_component": {
+        "Mid": 2.3466630776974933,
+        "Front": 3.677386087678855,
+        "FR": 8.769505630103183,
+        "FL": 9.311069291572661,
+        "Back": 2.521435059141222,
+        "HR": 8.56721909963475,
+        "HL": 7.716534547962884,
+        "Tail": 2.977307845232924
+      }
+    }
+  },
+  "videos": [
+    "videos/rigid_original/top.mp4",
+    "videos/rigid_original/side.mp4",
+    "videos/rigid_original/diag45.mp4",
+    "videos/sand_simplified/top.mp4",
+    "videos/sand_simplified/side.mp4",
+    "videos/sand_simplified/diag45.mp4",
+    "videos/sand_simplified_sites/top.mp4",
+    "videos/sand_simplified_sites/side.mp4",
+    "videos/sand_simplified_sites/diag45.mp4"
+  ],
+  "overview_video": "videos/video_matrix_overview.mp4",
+  "overview_layout": {
+    "frames": 181,
+    "fps": 30,
+    "duration_s": 6.033333333333333,
+    "width": 1680,
+    "height": 858,
+    "layout": "3 scenario rows x (top | side | 45-degree | analysis)"
+  },
+  "artifacts": {
+    "analysis/contact_events.csv": {
+      "bytes": 243678,
+      "sha256": "07C3293B93C3CA4830BED908FC44864398A64B235B382CF4E35DC3D537AFEC8B"
+    },
+    "analysis/rigid_original.npz": {
+      "bytes": 574314,
+      "sha256": "4DBE37E554CBB6492514ABEE6C9F955796D1D3536E03F7937FA82EB434CF2BA5"
+    },
+    "analysis/rigid_original_com.csv": {
+      "bytes": 1025108,
+      "sha256": "0C58702867CCB82EE65187C29DD9F3F804242CF320893AC6087C36349FA044A9"
+    },
+    "analysis/rigid_original_contact_diagram.png": {
+      "bytes": 143489,
+      "sha256": "DD84CA56F09BBE08A1E13A3D3B8C3E4C53E342FB6EEE48507445980C0AE7308D"
+    },
+    "analysis/rigid_original_contact_timeline.csv": {
+      "bytes": 348040,
+      "sha256": "DD6601C8D6C70F3AA8BEE8612CB0D51E9E9D88B386E8EAD46049E8B715C3832F"
+    },
+    "analysis/sand_rft.npz": {
+      "bytes": 1015552,
+      "sha256": "0DB319BA302DDD0B5DBC5797FEE5E8F727DD73675854D5065C736AAEE0BA97A5"
+    },
+    "analysis/sand_rft_com.csv": {
+      "bytes": 1041448,
+      "sha256": "6B303ED52DEA8DC5203317C6385BFF8F76F495F3D10CDAA62B9FB590B92951EC"
+    },
+    "analysis/sand_rft_contact_diagram.png": {
+      "bytes": 103583,
+      "sha256": "4CD86AD3C6B22BBC19FC4DC3D153EBD9BA646C21F356C76623EFA0471CB0D176"
+    },
+    "analysis/sand_rft_contact_timeline.csv": {
+      "bytes": 348040,
+      "sha256": "5F454101579F0672BC4C32FD512B27B70D85918E81E4F094147EF28972B07B45"
+    },
+    "analysis/sand_rft_penetration.csv": {
+      "bytes": 1264435,
+      "sha256": "848A53CE908DECD9626998F1E3D5F0973C5FA46992E914F3F627B1EAA87935EC"
+    },
+    "resolved_gait_config.yaml": {
+      "bytes": 830,
+      "sha256": "100014AD456F3BBE817BCFC103694E3437C10C90D7A003D05BC41764C5A97DF7"
+    },
+    "videos/rigid_original/diag45.mp4": {
+      "bytes": 2092307,
+      "sha256": "1AB7D730587D32697CF73B65AE436D9B18938478FBA5ECF17F56A4F97B783BE6"
+    },
+    "videos/rigid_original/side.mp4": {
+      "bytes": 1656638,
+      "sha256": "D6616550325428B4BDC6DA999688FC6409F7C82F876B91F5E1E82FF2216C77F0"
+    },
+    "videos/rigid_original/top.mp4": {
+      "bytes": 1491787,
+      "sha256": "1887CE7CA9528D706486703D92FB13DDCC6396A9F8C30879A6CD6C974CAE79FD"
+    },
+    "videos/sand_simplified/diag45.mp4": {
+      "bytes": 1263098,
+      "sha256": "3360B64D55D762E6074C73FD6A5B055EB707BE64D3A591585E3F7BE7DADE0D6F"
+    },
+    "videos/sand_simplified/side.mp4": {
+      "bytes": 1085524,
+      "sha256": "7A50A4577841A432149EF2EE60AD0209996108452FA88CD55CE4EF9D9CA1434F"
+    },
+    "videos/sand_simplified/top.mp4": {
+      "bytes": 1501829,
+      "sha256": "8699C9F7A6A6DAF6258A77CE981F8655F73817DAA39A8B73314B65D924F36108"
+    },
+    "videos/sand_simplified_sites/diag45.mp4": {
+      "bytes": 2578303,
+      "sha256": "4EB68A311CD36F2A4FA704ABE779FCFCB7DDD74DB9BA04F5AB5DDB104CFD3B55"
+    },
+    "videos/sand_simplified_sites/side.mp4": {
+      "bytes": 2101944,
+      "sha256": "8FB2460DF85A9AFA80C2DCAE132597997178C4ECC65AF173162FC58AFF550252"
+    },
+    "videos/sand_simplified_sites/top.mp4": {
+      "bytes": 2210794,
+      "sha256": "BB78A827E29E05C84CBB42D6F3FE28CEDB8836E36E1B48A9D377AA06561A2FA3"
+    },
+    "videos/video_matrix_overview.mp4": {
+      "bytes": 4539623,
+      "sha256": "7341225A5E79EA6FB34A1CDF0D02F22F914C727D0A9D7DAC779EC61BBA6BDB90"
+    }
+  }
+}

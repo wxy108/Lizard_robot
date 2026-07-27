@@ -46,6 +46,7 @@ from lizard_sand import (  # noqa: E402
     make_force_buffers,
     setup as setup_sand,
 )
+from scripts.compose_video_matrix import compose_master_video  # noqa: E402
 
 
 VIEW_CAMERAS = {
@@ -941,6 +942,17 @@ def main() -> None:
             )
             video_paths.append(output_path)
 
+    overview_path = video_dir / "video_matrix_overview.mp4"
+    print("Composing 3x3 overview + 3 analysis panels", flush=True)
+    overview_layout = compose_master_video(
+        video_dir=video_dir,
+        output_path=overview_path,
+        render_width=args.width,
+        render_height=args.height,
+        panel_width=args.panel_width,
+        fps=args.fps,
+    )
+
     config = apply_overrides(load_config(args.config), args.overrides)
     with (output_dir / "resolved_gait_config.yaml").open(
         "w", encoding="utf-8"
@@ -980,6 +992,8 @@ def main() -> None:
         "videos": [
             path.relative_to(output_dir).as_posix() for path in video_paths
         ],
+        "overview_video": overview_path.relative_to(output_dir).as_posix(),
+        "overview_layout": overview_layout,
         "artifacts": artifacts,
     }
     manifest_path = output_dir / "matrix_manifest.json"

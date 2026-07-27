@@ -1,5 +1,18 @@
 # Decision log
 
+## D-013 — master video is 3×3 views plus three row panels
+
+Date: 2026-07-27
+
+The master video contains three scenario rows. Its first three columns are
+cropped pure Top, Side, and 45-degree camera frames. Its fourth column contains
+one analysis dashboard per scenario, taken from the synchronized side-view
+video. The compositor reads the nine generated MP4 files and never resimulates.
+
+Reason: retaining the dashboard inside every 3×3 cell would repeat nine small
+panels and make the robot views unreadable. One panel per row preserves all
+requested COM/contact/penetration information while keeping comparisons clear.
+
 ## D-012 — reporting compares identical physical replays
 
 Date: 2026-07-27

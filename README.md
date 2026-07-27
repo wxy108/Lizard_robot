@@ -7,23 +7,25 @@ IsaacLab is unrelated and remains untouched.
 
 ## New: reproducible 3 × 3 locomotion video matrix
 
-One command now creates nine synchronized locomotion videos:
+One command now creates nine synchronized locomotion videos plus one master
+overview:
 
-| Scenario | Top | Side | 45-degree |
-| --- | --- | --- | --- |
-| Original detailed model on rigid ground | MP4 | MP4 | MP4 |
-| Simplified model on RFT sand, sites hidden | MP4 | MP4 | MP4 |
-| Simplified model on RFT sand, sites visible | MP4 | MP4 | MP4 |
+| Scenario | Top | Side | 45-degree | Row analysis panel |
+| --- | --- | --- | --- | --- |
+| Original detailed model on rigid ground | MP4 | MP4 | MP4 | COM + contact |
+| Simplified model on RFT sand, sites hidden | MP4 | MP4 | MP4 | COM + contact + penetration |
+| Simplified model on RFT sand, sites visible | MP4 | MP4 | MP4 | COM + contact + penetration |
 
 Every video includes the mass-weighted center-of-mass trajectory, displacement,
 and an eight-component binary contact timeline. Sand videos also show maximum
 penetration and the active RFT-triangle count. The two sand presentations
 replay the same recorded states, so showing the sites cannot change the
-physics.
+physics. `videos/video_matrix_overview.mp4` places the nine pure camera views
+in a 3×3 grid and adds exactly three row-level analysis panels on the right.
 
 ```powershell
 conda activate lizard_rft
-cd C:\Users\wxy22\Documents\Lizard_Robot_RFT\Lizard_robot-main
+cd C:\path\to\Lizard_robot
 
 python scripts/generate_video_matrix.py --duration 6 --fps 30
 python scripts/analyze_video_matrix.py outputs\video_matrix\run_...
@@ -77,7 +79,7 @@ system installation is needed. The environment is reproducible from
   emergency catch floor.
 - The upstream routine returns body-on-sand force; the integration applies the
   equal-and-opposite reaction to the robot before `mj_step`.
-- Ten fast unit tests, rigid-floor smoke, granular smoke, topology gates, and
+- Eleven fast unit tests, rigid-floor smoke, granular smoke, topology gates, and
   the clean nine-video smoke run pass.
 
 This is a stable numerical baseline, not a claim of physical calibration. The

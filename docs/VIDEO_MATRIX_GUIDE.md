@@ -10,13 +10,14 @@ The matrix provides directly comparable evidence for:
 3. the exact same sand replay with all RFT triangle sites visible.
 
 Each scenario is rendered from top, side, and 45-degree cameras, giving nine
-videos.
+individual videos. The generator also creates one overview video with the nine
+pure camera views in a 3×3 grid and three additional row-level analysis panels.
 
 ## Generate
 
 ```powershell
 conda activate lizard_rft
-cd C:\Users\wxy22\Documents\Lizard_Robot_RFT\Lizard_robot-main
+cd C:\path\to\Lizard_robot
 python scripts/generate_video_matrix.py --duration 6 --fps 30
 ```
 
@@ -48,6 +49,20 @@ different physics, random seeds, or integration histories.
 | `top.mp4` | `track_top` | X–Y displacement and heading |
 | `side.mp4` | `track_side` | vertical motion and penetration |
 | `diag45.mp4` | `diag` | combined posture and displacement |
+
+## Master overview
+
+`videos/video_matrix_overview.mp4` uses this layout:
+
+| Scenario row | Column 1 | Column 2 | Column 3 | Column 4 |
+| --- | --- | --- | --- | --- |
+| Original rigid | Top | Side | 45-degree | COM/contact panel |
+| RFT sites hidden | Top | Side | 45-degree | COM/contact/penetration panel |
+| RFT sites visible | Top | Side | 45-degree | COM/contact/penetration panel |
+
+The compositor crops the existing per-view dashboards from the first three
+columns and keeps exactly one synchronized dashboard per scenario in the
+fourth column. It does not resimulate physics.
 
 ## Scenario matrix
 
@@ -114,7 +129,8 @@ outputs/video_matrix/run_.../
 ├── videos/
 │   ├── rigid_original/{top,side,diag45}.mp4
 │   ├── sand_simplified/{top,side,diag45}.mp4
-│   └── sand_simplified_sites/{top,side,diag45}.mp4
+│   ├── sand_simplified_sites/{top,side,diag45}.mp4
+│   └── video_matrix_overview.mp4
 └── analysis/
     ├── rigid_original.npz
     ├── sand_rft.npz
@@ -144,7 +160,7 @@ component_metrics.csv
 - duration, FPS, dimensions, cameras, body order;
 - contact definitions;
 - scenario summaries;
-- all nine relative video paths;
+- all nine individual relative video paths and the overview path/layout;
 - every generated artifact's byte size and SHA-256.
 
 Use a clean Git tree for canonical experiments.
