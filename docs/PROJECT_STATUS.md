@@ -57,6 +57,10 @@ The reporting workflow is now reproducible:
   contact-event, duty-cycle, penetration, and COM-path metrics.
 - an automatically generated master MP4 combines the nine pure camera views
   as a 3×3 grid and adds exactly three synchronized analysis panels.
+- the reviewed production master and all nine individual MP4 files are tracked
+  under `docs/media/video_matrix_production_6s/` for immediate remote viewing;
+- Windows and POSIX setup scripts deploy the pinned `lizard_rft` environment
+  and run validation from a fresh clone without local path assumptions.
 
 ## Verified measurements
 
@@ -91,6 +95,8 @@ The clean production run at commit `ff1dda2` generated nine 6 s individual
 videos plus the 3×3-with-three-panels master overview. Its manifest, derived
 metrics, diagrams, representative frame, and hashes are tracked under
 `docs/regressions/2026-07-27-video-matrix-production-6s/`.
+The directly viewable MP4 copies and animated preview are tracked under
+`docs/media/video_matrix_production_6s/`.
 
 The earlier 12,097-site regression remains tracked under
 `docs/regressions/2026-07-27-rft-6s/` as a historical pre-mesh-rebuild

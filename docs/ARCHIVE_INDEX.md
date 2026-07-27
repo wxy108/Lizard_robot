@@ -44,3 +44,8 @@ The current reporting smoke baseline is
 tables, diagrams, selected frames, and hashes. Its nine MP4 files and raw
 analysis arrays remain local at
 `outputs/video_matrix/release_smoke_ef27d2b/`.
+
+The reviewed 6 s production MP4 set is the sole media exception to the
+ignored-output policy. It is tracked under
+`docs/media/video_matrix_production_6s/` for immediate viewing after clone.
+Raw arrays and new experimental videos remain ignored under `outputs/`.

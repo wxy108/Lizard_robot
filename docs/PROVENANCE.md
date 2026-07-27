@@ -125,6 +125,19 @@ frames, and hashes under
 remain local under `outputs/video_matrix/release_smoke_ef27d2b/` according to
 decision D-006.
 
+### Curated production media
+
+The clean production output generated from source commit `ff1dda2` is copied
+without transcoding into `docs/media/video_matrix_production_6s/`: nine
+individual view MP4 files and one master overview MP4. Their byte hashes match
+the original ignored `outputs/video_matrix/production_6s_main_ff1dda2/`
+artifacts. A 720×368 animated GIF is a derived README preview; a representative
+full-resolution PNG is copied from the tracked regression evidence.
+
+The media directory's `README.md` records every byte size and SHA-256. Raw
+NPZ/CSV data remains represented by
+`docs/regressions/2026-07-27-video-matrix-production-6s/`.
+
 ## Granular coefficient
 
 The current coefficient is `RFTCOEFF=3.75`, inherited from the upstream

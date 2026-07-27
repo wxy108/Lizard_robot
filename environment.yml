@@ -7,14 +7,15 @@ dependencies:
   - python=3.11
   - pip
   - pip:
-      # Shared runtime for both Lizard_Robot_MuJoCo and Lizard_Robot_RFT.
+      # One runtime for both rigid-floor and granular-RFT workflows.
       - mujoco==3.9.0
       - numpy==1.26.4
-      - scipy
-      - pyyaml
+      - scipy==1.17.1
+      - pyyaml==6.0.3
       - open3d==0.19.0
       - pymeshlab==2025.7.post1
-      - opencv-python
-      - matplotlib
-      - imageio[ffmpeg]
-      - optuna>=4,<5
+      - opencv-python==4.11.0.86
+      - matplotlib==3.11.1
+      - imageio[ffmpeg]==2.37.4
+      - imageio-ffmpeg==0.6.0
+      - optuna==4.9.0
