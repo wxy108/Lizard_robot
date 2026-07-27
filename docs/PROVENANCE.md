@@ -185,6 +185,32 @@ The generated manifest contains repository-relative paths, full independent
 mesh audits, render parameters, artifact byte sizes, and SHA-256 values. No
 rejected/source-only mesh enters the RFT solver.
 
+### Historical invalid-RFT locomotion media
+
+The archived outer workspace contained
+`Lizard_robot-main/outputs/videos/legacy_sand.mp4`, the earlier full-robot
+locomotion recording with visibly uneven force sites. The recording process
+was interrupted before writing an MP4 `moov` atom:
+
+- source bytes: 1,499,129;
+- source SHA-256:
+  `627F98081BBD6B988F1DF30973C9845E314C604D46D2CCBDC8DB0DBF8B3E54F1`;
+- available `mdat` payload: 1,499,081 bytes;
+- complete H.264 NAL units: 111;
+- incomplete trailing data: 9,400 bytes.
+
+The matching 39-byte Annex-B SPS/PPS sequence was extracted from the archived
+same-batch `optimized.mp4` recording and preserved as
+`reference/rejected_media/legacy_sand_h264_sps_pps.bin`, SHA-256
+`71612059CF519E13130C1F1D717AAB90BAC3B63597380F456430AFFCB961F8F4`.
+
+`scripts/recover_legacy_rft_video.py` restores only those complete historical
+frames. The playable recovery is losslessly re-encoded from the decoded
+historical frames into a valid MP4 container. The labelled zoom and contact
+sheet are derived presentation copies. No MuJoCo state is resimulated, no
+missing frames are invented, and none of these files is a valid physics
+baseline.
+
 ## Granular coefficient
 
 The current coefficient is `RFTCOEFF=3.75`, inherited from the upstream

@@ -1,5 +1,20 @@
 # Decision log
 
+## D-014 — invalid historical locomotion is visual evidence only
+
+Date: 2026-07-27
+
+Preserve the interrupted historical `legacy_sand.mp4` recording, its matching
+H.264 SPS/PPS headers, a valid-container recovery, and an explicitly labelled
+zoomed presentation. Recovery may decode complete historical frames and
+discard an incomplete trailing frame. It must not rerun the rejected mesh,
+infer missing motion, or attach force/performance claims to the video.
+
+Reason: the recording uniquely shows the full moving robot with the former
+uneven RFT force-site pattern. It is valuable root-cause evidence, but the
+underlying non-watertight/self-intersecting mesh and unknown historical
+integration state make it invalid as a physics or locomotion baseline.
+
 ## D-013 — master video is 3×3 views plus three row panels
 
 Date: 2026-07-27
@@ -118,6 +133,9 @@ under `docs/media/`:
   preview, representative frame, and hashes;
 - `failed_mesh_diagnostics/`: three geometry-only rejected/source comparison
   MP4 files plus a preview, contact sheet, exact audit manifest, and hashes.
+- `legacy_incorrect_rft_locomotion/`: one recovered historical recording, one
+  labelled zoomed copy, a contact sheet, and exact recovery/hashes. It is
+  failure evidence only and carries no valid force or gait claim.
 
 Adding or replacing a set requires a clean source commit, verified generator
 manifest, tests, documentation, and an explicit decision. Rejected meshes are

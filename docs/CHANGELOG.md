@@ -3,6 +3,19 @@
 All notable project changes are recorded here. Git is the authoritative
 line-level record; this file explains intent and consequences.
 
+## 2026-07-27 — historical invalid-RFT locomotion recovery
+
+- Located the archived `legacy_sand.mp4` recording that shows the complete
+  lizard moving with the former visibly uneven force-site distribution.
+- Preserved the exact 1,499,129-byte interrupted source and its matching
+  39-byte H.264 SPS/PPS headers under `reference/rejected_media/`.
+- Added `scripts/recover_legacy_rft_video.py` to recover complete historical
+  frames, create an explicitly labelled dynamic zoom and contact sheet, and
+  record hashes and recovery structure in a manifest.
+- The tool performs no simulation and discards only the incomplete final
+  9,400-byte NAL fragment.
+- Added three recovery/parser tests; the fast suite is now 16/16.
+
 ## 2026-07-27 — single canonical local workspace
 
 - Confirmed `Lizard_Robot_MuJoCo/main` and GitHub `main` were identical at
