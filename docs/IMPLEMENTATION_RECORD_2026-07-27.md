@@ -297,8 +297,9 @@ not introduce the local workspace's extra `Lizard_robot-main/` nesting or an
 unrelated-history merge. All 119 regular tracked project files and the RFT-SiM
 submodule pointer were verified against the local documented snapshot before
 commit. Historical generated MP4 files were removed from Git tracking but
-remain recoverable from earlier history; all future generated media belongs in
-ignored `outputs/`.
+remain recoverable from earlier history. Raw future output belongs in ignored
+`outputs/`; the reviewed canonical production set is separately tracked under
+`docs/media/` according to decision D-006.
 
 ## J. Master video overview
 
@@ -309,3 +310,16 @@ ignored `outputs/`.
   contains exactly three scenario-level COM/contact/penetration panels.
 - Composition consumes synchronized MP4 output and does not rerun physics.
 - Added an overview-frame regression test; current fast suite: 11/11.
+
+## K. Portable fresh-system deployment and published media
+
+- Added Windows PowerShell and Linux/macOS/WSL setup scripts.
+- Removed local absolute paths from all primary startup commands.
+- Pinned every top-level Python dependency in `environment.yml`.
+- Documented Git/Conda prerequisites, submodule recovery, manual setup,
+  environment update, macOS `mjpython`, Linux EGL headless rendering, and
+  clean-room reproduction.
+- Published nine individual MP4 files, the master overview, an animated
+  preview, a representative frame, and a complete SHA-256 table under
+  `docs/media/video_matrix_production_6s/`.
+- Kept raw NPZ/CSV/experimental runs in ignored `outputs/`.

@@ -103,16 +103,24 @@ this repository rather than modifying the upstream checkout.
 Reason: a submodule records exact provenance without vendoring duplicate Git
 history or blurring upstream and local behavior.
 
-## D-006 — generated runs stay out of Git
+## D-006 — raw runs stay out of Git; one curated media release is tracked
 
 Date: 2026-07-27
 
-Keep videos, optimizer databases, and raw runs under `outputs/` but ignore
-them in Git. Track compact regression summaries/configurations and SHA-256
-hashes under `docs/regressions/`.
+Keep new videos, optimizer databases, NPZ arrays, CSV tables, and raw runs
+under ignored `outputs/`. Track compact regression summaries/configurations
+and SHA-256 hashes under `docs/regressions/`.
 
-Reason: large generated files obscure source changes. Hashes and exact configs
-preserve traceability without growing the repository.
+The deliberate exception is one current, reviewed production video set under
+`docs/media/video_matrix_production_6s/`. It contains ten directly viewable
+MP4 files plus a small animated preview, representative frame, and hashes.
+Replacing this set requires a clean source commit, verified generator manifest,
+tests, documentation, and an explicit replacement decision.
+
+Reason: raw experiments grow without bound and obscure source changes, but a
+new user must be able to see the canonical behavior immediately after cloning.
+One bounded ~20 MiB video release balances direct inspection with repository
+size and traceability.
 
 ## D-007 — RFT contact geometry is one external envelope
 

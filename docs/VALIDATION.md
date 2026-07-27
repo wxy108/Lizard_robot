@@ -15,6 +15,15 @@ Last run: 2026-07-27
 The environment is reproducible from `environment.yml`. `isaaclab_50` was not
 activated, modified, renamed, or used.
 
+Fresh-system entry points:
+
+- Windows: `scripts/setup.ps1`;
+- Linux/macOS/WSL: `scripts/setup.sh`;
+- manual: `conda env create --file environment.yml`.
+
+All top-level project dependencies are version-pinned. Setup scripts use only
+repository-relative paths and run the canonical validator after installation.
+
 ## Automated checks
 
 Commands:
@@ -90,6 +99,11 @@ the analyzer verified all manifest artifacts and completed metric extraction.
 
 Tracked evidence and exact hashes:
 `docs/regressions/2026-07-27-video-matrix-production-6s/`.
+
+The same ten production MP4 files are copied byte-for-byte to
+`docs/media/video_matrix_production_6s/` for direct remote viewing. Their
+individual hashes are recorded in that directory's `README.md`; the animated
+GIF is a derived lightweight preview.
 
 ## Mesh root-cause audit
 

@@ -1,144 +1,280 @@
 # Lizard Robot V1 — MuJoCo rigid floor + granular RFT
 
-This repository is the active lizard-robot simulation. One isolated Conda
-environment, `lizard_rft`, runs both the original rigid-floor MuJoCo model and
-the topology-gated triangle-level 3D resistive-force-theory (RFT) model.
-IsaacLab is unrelated and remains untouched.
+Reproducible lizard-robot locomotion with:
 
-## New: reproducible 3 × 3 locomotion video matrix
+- the original detailed CAD model on a rigid flat floor;
+- a topology-gated simplified model on granular media using triangle-level
+  3D resistive-force theory (RFT);
+- synchronized top, side, and 45-degree videos;
+- center-of-mass, penetration, active-triangle, and component-contact
+  diagnostics;
+- one Conda environment that deploys the complete project on a fresh system.
 
-One command now creates nine synchronized locomotion videos plus one master
-overview:
+MuJoCo is installed by `environment.yml`. No separate MuJoCo download or
+system-wide installation is required. IsaacLab is unrelated and is not used.
 
-| Scenario | Top | Side | 45-degree | Row analysis panel |
-| --- | --- | --- | --- | --- |
-| Original detailed model on rigid ground | MP4 | MP4 | MP4 | COM + contact |
-| Simplified model on RFT sand, sites hidden | MP4 | MP4 | MP4 | COM + contact + penetration |
-| Simplified model on RFT sand, sites visible | MP4 | MP4 | MP4 | COM + contact + penetration |
+## See the result first
 
-Every video includes the mass-weighted center-of-mass trajectory, displacement,
-and an eight-component binary contact timeline. Sand videos also show maximum
-penetration and the active RFT-triangle count. The two sand presentations
-replay the same recorded states, so showing the sites cannot change the
-physics. `videos/video_matrix_overview.mp4` places the nine pure camera views
-in a 3×3 grid and adds exactly three row-level analysis panels on the right.
+Click the animated preview to open the full 6 s / 30 FPS master MP4:
+
+[![3×3 locomotion overview](docs/media/video_matrix_production_6s/video_matrix_overview_preview.gif)](docs/media/video_matrix_production_6s/video_matrix_overview.mp4)
+
+The master layout is three scenario rows ×
+`Top | Side | 45° | Analysis`. Its first three columns are the nine pure camera
+views; the last column contains exactly one COM/contact/penetration panel per
+scenario.
+
+### Checked-in production videos
+
+| Scenario | Top | Side | 45-degree |
+| --- | --- | --- | --- |
+| Original CAD, rigid ground | [MP4](docs/media/video_matrix_production_6s/rigid_original/top.mp4) | [MP4](docs/media/video_matrix_production_6s/rigid_original/side.mp4) | [MP4](docs/media/video_matrix_production_6s/rigid_original/diag45.mp4) |
+| Simplified RFT, sites hidden | [MP4](docs/media/video_matrix_production_6s/sand_simplified/top.mp4) | [MP4](docs/media/video_matrix_production_6s/sand_simplified/side.mp4) | [MP4](docs/media/video_matrix_production_6s/sand_simplified/diag45.mp4) |
+| Simplified RFT, sites visible | [MP4](docs/media/video_matrix_production_6s/sand_simplified_sites/top.mp4) | [MP4](docs/media/video_matrix_production_6s/sand_simplified_sites/side.mp4) | [MP4](docs/media/video_matrix_production_6s/sand_simplified_sites/diag45.mp4) |
+
+- [Master 3×3 + three-panel MP4](docs/media/video_matrix_production_6s/video_matrix_overview.mp4)
+- [All checked-in videos and SHA-256 values](docs/media/video_matrix_production_6s/README.md)
+- [Production numerical results and manifest](docs/regressions/2026-07-27-video-matrix-production-6s/MANIFEST.md)
+
+## Deploy on a fresh computer
+
+### Prerequisites
+
+Install:
+
+1. [Git](https://git-scm.com/downloads);
+2. [Miniforge](https://github.com/conda-forge/miniforge), Anaconda, or another
+   working Conda distribution.
+
+Miniforge is the recommended lightweight option. On Windows, use a
+Miniforge/Anaconda PowerShell after installation. On Linux/macOS, initialize
+Conda for the current shell if `conda` is not found.
+
+### Windows PowerShell
 
 ```powershell
+git clone --recurse-submodules https://github.com/wxy108/Lizard_robot.git
+cd Lizard_robot
+powershell -ExecutionPolicy Bypass -File scripts\setup.ps1
 conda activate lizard_rft
-cd C:\path\to\Lizard_robot
-
-python scripts/generate_video_matrix.py --duration 6 --fps 30
-python scripts/analyze_video_matrix.py outputs\video_matrix\run_...
 ```
 
-Large videos and raw arrays remain under ignored `outputs/`. A compact,
-hash-verified smoke run is tracked under
-`docs/regressions/2026-07-27-video-matrix-smoke/`.
+### Linux, macOS, or WSL
 
-Read [GUIDANCE.md](GUIDANCE.md) first for the complete start, validation,
-video, output, analysis, mesh-rebuild, and handoff workflow.
+```bash
+git clone --recurse-submodules https://github.com/wxy108/Lizard_robot.git
+cd Lizard_robot
+bash scripts/setup.sh
+conda activate lizard_rft
+```
 
-## Quick start
+The setup scripts:
+
+1. initialize the pinned `third_party/RFT-SiM` submodule;
+2. create `lizard_rft` from `environment.yml`, or reuse it if it exists;
+3. verify MuJoCo, NumPy, Open3D, PyMeshLab, OpenCV, and video support;
+4. run the project validator.
+
+To synchronize an existing environment:
 
 ```powershell
+powershell -ExecutionPolicy Bypass -File scripts\setup.ps1 -Update
+```
+
+```bash
+bash scripts/setup.sh --update
+```
+
+### Manual Conda installation
+
+If scripts cannot be used:
+
+```bash
+git submodule update --init --recursive
+conda env create --file environment.yml
 conda activate lizard_rft
-cd C:\Users\wxy22\Documents\Lizard_Robot_RFT\Lizard_robot-main
-
-# Fast project validation
 python scripts/validate_project.py
+```
 
-# Original detailed model on rigid ground
+Expected validation:
+
+- 11/11 fast tests pass;
+- eight active RFT meshes pass topology/self-intersection gates;
+- 13,916 force sites match 13,916 active triangles;
+- rigid-floor and granular-RFT smoke runs complete;
+- sand is at z = 0 and the emergency floor is at z = -0.25 m.
+
+See [GUIDANCE.md](GUIDANCE.md) for headless Linux, macOS viewer commands,
+troubleshooting, output interpretation, and clean-room reproduction.
+
+## Run the simulations
+
+Activate the environment and enter the cloned repository before every command:
+
+```bash
+conda activate lizard_rft
+cd Lizard_robot
+```
+
+Original detailed model on rigid ground:
+
+```bash
 python run.py
+```
 
-# Latest simplified model with granular RFT
+Simplified model on RFT sand:
+
+```bash
 python lizard_sand.py --view --duration 10
+```
 
-# Show every RFT force point
+Show all 13,916 RFT triangle sites:
+
+```bash
 python lizard_sand.py --view --duration 10 --show-force-sites all
+```
 
-# Show only one component's points
+Show one component:
+
+```bash
 python lizard_sand.py --view --duration 10 --show-force-sites FR
+```
 
-# Headless run: saves results.npz, summary.json, and config.yaml
+Valid component names:
+
+```text
+Mid Front FR FL Back HR HL Tail
+```
+
+Headless RFT run:
+
+```bash
 python lizard_sand.py --duration 10
 ```
 
-MuJoCo is installed as a Python dependency inside `lizard_rft`; no separate
-system installation is needed. The environment is reproducible from
-`environment.yml`.
+This writes `results.npz`, `summary.json`, and the resolved config under an
+ignored timestamped `outputs/sand/` directory.
+
+On macOS, interactive MuJoCo passive-viewer commands may require `mjpython`
+instead of `python`. Headless commands continue to use normal Python.
+
+## Regenerate all videos
+
+Production command:
+
+```bash
+python scripts/generate_video_matrix.py --duration 6 --fps 30
+```
+
+The command simulates rigid ground once and RFT sand once, replays the same
+states from three cameras, and writes:
+
+- nine individual MP4 files;
+- `video_matrix_overview.mp4`;
+- raw rigid/RFT NPZ arrays;
+- COM, contact, penetration, and contact-event CSV files;
+- static contact diagrams;
+- the resolved gait config;
+- `matrix_manifest.json` with source commit, dirty state, sizes, and hashes.
+
+Analyze and verify a generated run:
+
+```bash
+python scripts/analyze_video_matrix.py outputs/video_matrix/run_...
+```
+
+Compose a master overview for an older compatible nine-video run:
+
+```bash
+python scripts/compose_video_matrix.py outputs/video_matrix/run_...
+```
+
+The generator refuses to overwrite an existing output directory.
+
+## Environment
+
+The canonical [environment.yml](environment.yml) pins:
+
+| Dependency | Version | Purpose |
+| --- | --- | --- |
+| Python | 3.11 | runtime |
+| MuJoCo | 3.9.0 | simulation and rendering |
+| NumPy | 1.26.4 | state and vectorized RFT arrays |
+| SciPy | 1.17.1 | rotations and spatial queries |
+| Open3D | 0.19.0 | active mesh loading/auditing |
+| PyMeshLab | 2025.7.post1 | deterministic mesh reconstruction |
+| OpenCV | 4.11.0.86 | dashboards and video composition |
+| imageio / imageio-ffmpeg | 2.37.4 / 0.6.0 | H.264 MP4 writing |
+| Matplotlib | 3.11.1 | analysis plots |
+| Optuna | 4.9.0 | optional gait studies |
+
+The `mujoco` Python wheel includes the MuJoCo native library. Do not install a
+second standalone MuJoCo copy for this project.
 
 ## Current validated baseline
 
 - Eight active RFT meshes are closed, single-component, consistently oriented,
-  and free of detected self-intersections.
+  positive-volume, and have zero detected self-intersections.
 - `Lizard_Sand.xml` contains 13,916 sequential force sites, exactly one per
-  active triangle.
-- Force sites are hidden in visual group 5 by default and can be displayed for
-  one component or all components.
-- The RFT surface is at z = 0; the rigid plane at z = -0.25 m is only an
-  emergency catch floor.
-- The upstream routine returns body-on-sand force; the integration applies the
-  equal-and-opposite reaction to the robot before `mj_step`.
-- Eleven fast unit tests, rigid-floor smoke, granular smoke, topology gates, and
-  the clean nine-video smoke run pass.
+  active mesh triangle.
+- Force sites are visual group 5, hidden by default, and can be shown for one
+  component or all components.
+- World axes are +X forward, +Y left, +Z up.
+- The RFT surface is z = 0; the rigid plane at z = -0.25 m is an emergency
+  catch floor.
+- The upstream RFT function returns body-on-sand force; the integration applies
+  the equal-and-opposite reaction to the robot before `mj_step`.
+- 11/11 tests, rigid smoke, RFT smoke, video generation, overview composition,
+  and production artifact verification pass.
 
-This is a stable numerical baseline, not a claim of physical calibration. The
-external-envelope interpretation still needs confirmation against the
-authoritative CAD, and `RFTCOEFF=3.75` must be calibrated for the real granular
-material.
+The model is a stable numerical baseline, not an experimentally calibrated
+force model. The Fusion external envelope still requires semantic comparison
+with authoritative CAD, and `RFTCOEFF=3.75` must be calibrated for the actual
+granular material.
 
-## Project map
+## Repository map
 
 ```text
 .
-|-- GUIDANCE.md                    # complete human/agent start and handoff
-|-- run.py                         # original rigid-floor runner
-|-- lizard_sand.py                 # granular RFT runner
-|-- sim_fxn_lib.py                 # vectorized 3D RFT calculations
-|-- Lizard_Sand.xml                # RFT scene and generated force sites
-|-- environment.yml                # canonical Conda environment
-|-- configs/                       # gait and mesh-recipe configuration
-|-- controllers/                   # deterministic CPG gait controller
-|-- asset/                         # active topology-gated RFT surfaces
-|-- models/                        # rigid model, source meshes, generated sites
-|-- scripts/                       # build, validation, video, and analysis tools
-|-- tests/                         # fast physics and reporting tests
-|-- docs/                          # decisions, provenance, guides, evidence
-|-- third_party/RFT-SiM/           # pinned upstream Git submodule
-`-- outputs/                       # generated local runs; intentionally ignored
+|-- README.md                         # overview and quick deployment
+|-- GUIDANCE.md                       # complete fresh-system handbook
+|-- environment.yml                  # canonical cross-system Conda spec
+|-- run.py                            # original rigid-floor runner
+|-- lizard_sand.py                    # granular RFT runner
+|-- sim_fxn_lib.py                    # vectorized 3D RFT calculations
+|-- Lizard_Sand.xml                   # RFT scene and force sites
+|-- asset/                            # active topology-gated RFT surfaces
+|-- models/                           # rigid model and mesh sources
+|-- configs/                          # gait and mesh recipe
+|-- controllers/                      # deterministic CPG controller
+|-- scripts/
+|   |-- setup.ps1                     # Windows deployment
+|   |-- setup.sh                      # Linux/macOS/WSL deployment
+|   |-- validate_project.py           # canonical validation
+|   |-- generate_video_matrix.py      # 9 videos + master
+|   |-- compose_video_matrix.py       # master compositor
+|   `-- analyze_video_matrix.py       # hash verification and metrics
+|-- tests/                            # physics and reporting tests
+|-- docs/
+|   |-- media/                        # checked-in, directly viewable outputs
+|   |-- regressions/                  # manifests and numerical evidence
+|   `-- ...                           # status, decisions, provenance, guides
+|-- third_party/RFT-SiM/              # pinned upstream submodule
+`-- outputs/                          # reproducible local raw runs; ignored
 ```
-
-## RFT mesh rebuild
-
-```powershell
-python scripts/build_rft_mesh_candidates.py
-
-# Promotion refuses failed, incomplete, recipe-mismatched, or hash-mismatched
-# builds. Replace run_... with the directory printed by the builder.
-python scripts/promote_rft_mesh_candidate.py outputs\mesh_candidates\run_...
-
-python scripts/validate_project.py --full
-```
-
-The builder reads the tracked Fusion external-envelope sources and
-`configs/rft_mesh_recipe.json`, writes only to ignored `outputs/`, and requires
-closed, single-component, consistently oriented, zero-self-intersection
-surfaces before promotion. The retired Open3D decimation scripts were removed
-because they merged overlapping CAD subassemblies and could replace active
-meshes without topology gates.
 
 ## Documentation
 
-Start with:
+Read in this order:
 
 1. [GUIDANCE.md](GUIDANCE.md)
-2. [Implementation record](docs/IMPLEMENTATION_RECORD_2026-07-27.md)
-3. [Video matrix guide](docs/VIDEO_MATRIX_GUIDE.md)
-4. [Results analysis guide](docs/RESULTS_ANALYSIS_GUIDE.md)
-5. [Test and validation guide](docs/TEST_AND_VALIDATION_GUIDE.md)
+2. [Video matrix guide](docs/VIDEO_MATRIX_GUIDE.md)
+3. [Results analysis guide](docs/RESULTS_ANALYSIS_GUIDE.md)
+4. [Test and validation guide](docs/TEST_AND_VALIDATION_GUIDE.md)
+5. [Implementation record](docs/IMPLEMENTATION_RECORD_2026-07-27.md)
 6. [Project status](docs/PROJECT_STATUS.md)
 7. [Decisions](docs/DECISIONS.md)
 8. [Provenance](docs/PROVENANCE.md)
 
-The original rigid-floor working copy is preserved separately at
-`C:\Users\wxy22\Documents\Lizard_Robot_MuJoCo`.
+For mesh changes, read the mesh-rebuild and CAD caveats in `GUIDANCE.md`
+before touching `asset/`.

@@ -1,5 +1,19 @@
 # 3×3 locomotion video matrix
 
+## View the checked-in production result
+
+No environment is needed to inspect the canonical output:
+
+- master:
+  `docs/media/video_matrix_production_6s/video_matrix_overview.mp4`;
+- animated preview:
+  `docs/media/video_matrix_production_6s/video_matrix_overview_preview.gif`;
+- all nine individual views:
+  `docs/media/video_matrix_production_6s/README.md`.
+
+These are reviewed release artifacts. New experimental runs continue to be
+written below ignored `outputs/video_matrix/`.
+
 ## Purpose
 
 The matrix provides directly comparable evidence for:

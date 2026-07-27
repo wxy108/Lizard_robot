@@ -3,6 +3,21 @@
 All notable project changes are recorded here. Git is the authoritative
 line-level record; this file explains intent and consequences.
 
+## 2026-07-27 — portable deployment and directly viewable outputs
+
+- Added `scripts/setup.ps1` for Windows and `scripts/setup.sh` for
+  Linux/macOS/WSL clean-system deployment.
+- Pinned all top-level Python packages in `environment.yml`.
+- Rewrote `README.md` and `GUIDANCE.md` from fresh clone through installation,
+  validation, viewing, simulation, generation, analysis, headless servers,
+  macOS, troubleshooting, mesh rebuild, and clean-room reproduction.
+- Added the canonical 10-video production set under
+  `docs/media/video_matrix_production_6s/`.
+- Added an animated 720×368 preview and direct links to every MP4 so results
+  are visible without first installing the environment.
+- Preserved raw/experimental outputs under ignored `outputs/`; only the
+  bounded reviewed production media set is tracked.
+
 ## 2026-07-27 — 3×3 master overview with three analysis panels
 
 - Added `scripts/compose_video_matrix.py`.

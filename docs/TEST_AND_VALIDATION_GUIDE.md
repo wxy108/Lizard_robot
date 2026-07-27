@@ -1,5 +1,26 @@
 # Test and validation guide
 
+## Level 0: fresh-system deployment
+
+Windows:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\setup.ps1
+```
+
+Linux/macOS/WSL:
+
+```bash
+bash scripts/setup.sh
+```
+
+Acceptance:
+
+- pinned submodule is initialized;
+- `lizard_rft` is created or reused;
+- all pinned top-level imports succeed;
+- Level 1 and Level 2 below pass.
+
 ## Level 1: unit tests
 
 ```powershell
