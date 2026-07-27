@@ -309,7 +309,7 @@ remain recoverable from earlier history. Raw future output belongs in ignored
 - The first three columns contain the nine pure camera views; the last column
   contains exactly three scenario-level COM/contact/penetration panels.
 - Composition consumes synchronized MP4 output and does not rerun physics.
-- Added an overview-frame regression test; current fast suite: 11/11.
+- Added an overview-frame regression test; the suite at that stage was 11/11.
 
 ## K. Portable fresh-system deployment and published media
 
@@ -323,3 +323,21 @@ remain recoverable from earlier history. Raw future output belongs in ignored
   preview, a representative frame, and a complete SHA-256 table under
   `docs/media/video_matrix_production_6s/`.
 - Kept raw NPZ/CSV/experimental runs in ignored `outputs/`.
+
+## L. Rejected-mesh diagnostic evidence
+
+- Added `scripts/generate_failed_mesh_videos.py`.
+- Selected only three representative failures: raw CAD Back assembly, legacy
+  vertex-clustered Back, and direct fixed-count Fusion FR.
+- Preserved the 94,884-byte legacy Back STL with its source path and SHA-256;
+  it is diagnostic evidence and cannot be an active asset.
+- Rendered rejected/source-only and accepted centroids in the same body frame
+  and camera, colored by normalized local nearest-centroid spacing.
+- Put exact independent topology/distribution audits on-screen and in a
+  machine-readable manifest.
+- Generated from clean commit `5c90d91`: three 97-frame, 24 FPS, 1280×720
+  MP4 files plus a preview and contact sheet.
+- Published the bounded, hash-documented set under
+  `docs/media/failed_mesh_diagnostics/`.
+- Added two tests; current fast suite: 13/13.
+- Did not run invalid meshes through locomotion/RFT physics.

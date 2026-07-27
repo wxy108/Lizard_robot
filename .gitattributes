@@ -3,6 +3,7 @@
 *.md text eol=lf
 *.yml text eol=lf
 *.yaml text eol=lf
+*.json text eol=lf
 *.xml text eol=lf
 *.m text eol=lf
 *.sh text eol=lf
@@ -12,6 +13,8 @@
 *.docx binary
 *.pdf binary
 *.mp4 binary
+*.gif binary
+*.png binary
 *.npz binary
 *.db binary
 

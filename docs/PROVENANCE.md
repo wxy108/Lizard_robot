@@ -138,6 +138,30 @@ The media directory's `README.md` records every byte size and SHA-256. Raw
 NPZ/CSV data remains represented by
 `docs/regressions/2026-07-27-video-matrix-production-6s/`.
 
+### Rejected-mesh diagnostic media
+
+`scripts/generate_failed_mesh_videos.py` is first-party, geometry-only
+diagnostic code. Its three production comparisons were generated from clean
+commit `5c90d9118fc2211f5989dc99f0b63c99ea4a522b` and copied without
+transcoding into `docs/media/failed_mesh_diagnostics/`.
+
+Inputs:
+
+- raw assembly Back: tracked `models/meshes/Back.STL`;
+- legacy vertex-clustered Back: tracked diagnostic copy
+  `reference/rejected_meshes/legacy_vertex_cluster/Back.STL`, copied
+  byte-for-byte from
+  `Lizard_Robot_RFT/archive/active-root-legacy-2026-07-27/meshes_rft/Back.stl`;
+- fixed-count Fusion FR source:
+  `models/mesh_sources/fusion_external_envelope/FR.STL`;
+- accepted comparisons: `asset/Back.STL` and `asset/FR.STL`.
+
+The legacy reference SHA-256 is
+`D94F85292A81E0ED183EA88D72D207D74AF44E366B93200C0F2FF7E2FF622460`.
+The generated manifest contains repository-relative paths, full independent
+mesh audits, render parameters, artifact byte sizes, and SHA-256 values. No
+rejected/source-only mesh enters the RFT solver.
+
 ## Granular coefficient
 
 The current coefficient is `RFTCOEFF=3.75`, inherited from the upstream

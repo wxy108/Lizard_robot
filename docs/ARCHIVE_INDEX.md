@@ -45,7 +45,16 @@ tables, diagrams, selected frames, and hashes. Its nine MP4 files and raw
 analysis arrays remain local at
 `outputs/video_matrix/release_smoke_ef27d2b/`.
 
-The reviewed 6 s production MP4 set is the sole media exception to the
-ignored-output policy. It is tracked under
-`docs/media/video_matrix_production_6s/` for immediate viewing after clone.
-Raw arrays and new experimental videos remain ignored under `outputs/`.
+Two reviewed, bounded media evidence sets are exceptions to the ignored-output
+policy:
+
+- `docs/media/video_matrix_production_6s/`: canonical locomotion views;
+- `docs/media/failed_mesh_diagnostics/`: three geometry-only rejected/source
+  comparisons.
+
+One 94,884-byte legacy Back STL was copied byte-for-byte from
+`active-root-legacy-2026-07-27/meshes_rft/Back.stl` to
+`reference/rejected_meshes/legacy_vertex_cluster/Back.STL` so the documented
+failure is reproducible after clone. The archive remains authoritative for the
+rest of the rejected set. Raw arrays and new experimental videos remain
+ignored under `outputs/`.

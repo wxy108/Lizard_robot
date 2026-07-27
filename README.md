@@ -36,6 +36,19 @@ scenario.
 - [All checked-in videos and SHA-256 values](docs/media/video_matrix_production_6s/README.md)
 - [Production numerical results and manifest](docs/regressions/2026-07-27-video-matrix-production-6s/MANIFEST.md)
 
+### Why the older meshes were rejected
+
+[![failed-mesh diagnostic preview](docs/media/failed_mesh_diagnostics/failed_mesh_diagnostics_preview.gif)](docs/media/failed_mesh_diagnostics/README.md)
+
+Three short geometry-only comparisons show the former raw CAD assembly,
+legacy vertex-clustering remesh, and direct fixed-count Fusion triangulation
+beside the accepted active surface. They make clustered/uneven RFT centroid
+sites, overlapping components, slivers, and self-intersections directly
+visible. These are diagnostic comparisons, not locomotion results.
+
+- [Open all three failed-mesh comparison videos](docs/media/failed_mesh_diagnostics/README.md)
+- [Read the metrics, causes, and reproduction guide](docs/FAILED_MESH_DIAGNOSTICS.md)
+
 ## Deploy on a fresh computer
 
 ### Prerequisites
@@ -98,7 +111,7 @@ python scripts/validate_project.py
 
 Expected validation:
 
-- 11/11 fast tests pass;
+- 13/13 fast tests pass;
 - eight active RFT meshes pass topology/self-intersection gates;
 - 13,916 force sites match 13,916 active triangles;
 - rigid-floor and granular-RFT smoke runs complete;
@@ -191,6 +204,16 @@ python scripts/compose_video_matrix.py outputs/video_matrix/run_...
 
 The generator refuses to overwrite an existing output directory.
 
+Generate the three rejected/source-only mesh comparisons:
+
+```bash
+python scripts/generate_failed_mesh_videos.py
+```
+
+This generator audits and visualizes geometry only. It never runs the rejected
+meshes through RFT physics. See
+[docs/FAILED_MESH_DIAGNOSTICS.md](docs/FAILED_MESH_DIAGNOSTICS.md).
+
 ## Environment
 
 The canonical [environment.yml](environment.yml) pins:
@@ -224,7 +247,7 @@ second standalone MuJoCo copy for this project.
   catch floor.
 - The upstream RFT function returns body-on-sand force; the integration applies
   the equal-and-opposite reaction to the robot before `mj_step`.
-- 11/11 tests, rigid smoke, RFT smoke, video generation, overview composition,
+- 13/13 tests, rigid smoke, RFT smoke, video generation, overview composition,
   and production artifact verification pass.
 
 The model is a stable numerical baseline, not an experimentally calibrated
@@ -252,9 +275,11 @@ granular material.
 |   |-- setup.sh                      # Linux/macOS/WSL deployment
 |   |-- validate_project.py           # canonical validation
 |   |-- generate_video_matrix.py      # 9 videos + master
+|   |-- generate_failed_mesh_videos.py # rejected/source mesh diagnostics
 |   |-- compose_video_matrix.py       # master compositor
 |   `-- analyze_video_matrix.py       # hash verification and metrics
 |-- tests/                            # physics and reporting tests
+|-- reference/rejected_meshes/        # diagnostic evidence; never active
 |-- docs/
 |   |-- media/                        # checked-in, directly viewable outputs
 |   |-- regressions/                  # manifests and numerical evidence
@@ -269,12 +294,13 @@ Read in this order:
 
 1. [GUIDANCE.md](GUIDANCE.md)
 2. [Video matrix guide](docs/VIDEO_MATRIX_GUIDE.md)
-3. [Results analysis guide](docs/RESULTS_ANALYSIS_GUIDE.md)
-4. [Test and validation guide](docs/TEST_AND_VALIDATION_GUIDE.md)
-5. [Implementation record](docs/IMPLEMENTATION_RECORD_2026-07-27.md)
-6. [Project status](docs/PROJECT_STATUS.md)
-7. [Decisions](docs/DECISIONS.md)
-8. [Provenance](docs/PROVENANCE.md)
+3. [Failed-mesh diagnostic guide](docs/FAILED_MESH_DIAGNOSTICS.md)
+4. [Results analysis guide](docs/RESULTS_ANALYSIS_GUIDE.md)
+5. [Test and validation guide](docs/TEST_AND_VALIDATION_GUIDE.md)
+6. [Implementation record](docs/IMPLEMENTATION_RECORD_2026-07-27.md)
+7. [Project status](docs/PROJECT_STATUS.md)
+8. [Decisions](docs/DECISIONS.md)
+9. [Provenance](docs/PROVENANCE.md)
 
 For mesh changes, read the mesh-rebuild and CAD caveats in `GUIDANCE.md`
 before touching `asset/`.

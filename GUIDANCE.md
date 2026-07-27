@@ -21,6 +21,7 @@ The repository also contains:
 - nine-view video generation and a 3×3-plus-three-panel master compositor;
 - raw-output analysis and artifact-hash verification;
 - checked-in production MP4 files for immediate inspection;
+- three geometry-only videos explaining why former RFT meshes were rejected;
 - compact regression manifests and numerical evidence.
 
 The canonical environment is `lizard_rft`. IsaacLab is outside project scope.
@@ -32,7 +33,8 @@ Open these files directly on GitHub:
 1. [animated master preview](docs/media/video_matrix_production_6s/video_matrix_overview_preview.gif);
 2. [full master MP4](docs/media/video_matrix_production_6s/video_matrix_overview.mp4);
 3. [all nine individual videos](docs/media/video_matrix_production_6s/README.md);
-4. [production metrics and hashes](docs/regressions/2026-07-27-video-matrix-production-6s/MANIFEST.md).
+4. [production metrics and hashes](docs/regressions/2026-07-27-video-matrix-production-6s/MANIFEST.md);
+5. [failed-mesh/RFT-point comparison videos](docs/media/failed_mesh_diagnostics/README.md).
 
 Master layout:
 
@@ -204,7 +206,7 @@ python scripts/validate_project.py
 
 Acceptance:
 
-- 11/11 unit tests;
+- 13/13 unit tests;
 - eight active STLs are one-component, watertight, manifold, consistently
   oriented, positive-volume, and free of detected self-intersections;
 - 13,916 force sites exactly match 13,916 active triangles;
@@ -404,6 +406,24 @@ The compositor reads the nine MP4s, crops the repeated dashboards from the
 3×3 view cells, and preserves one synchronized dashboard per scenario row. It
 does not rerun physics.
 
+### Generate historical failure comparisons
+
+```bash
+python scripts/generate_failed_mesh_videos.py
+```
+
+This creates three short side-by-side videos:
+
+1. raw Back CAD assembly versus the accepted Back mesh;
+2. legacy vertex-clustered Back versus the accepted Back mesh;
+3. direct 1,500-face Fusion FR source versus the accepted FR mesh.
+
+Each dot is a triangle centroid/RFT force site. Color reports local
+nearest-centroid spacing relative to that mesh's median, making clusters and
+holes visible. The rejected meshes are audited but never sent into locomotion
+or RFT force calculation. Full interpretation:
+`docs/FAILED_MESH_DIAGNOSTICS.md`.
+
 ## 11. Analyze and verify results
 
 ```bash
@@ -474,6 +494,13 @@ max_penetration = max(0, sand_z - minimum component site z)
 RFT sites are MuJoCo visual group 5. Hiding them does not disable their force
 application points.
 
+### Failed-mesh diagnostic colors
+
+The separate failed-mesh videos are geometry-only. Blue/purple sites are
+locally dense and orange/red sites are locally sparse. Both sides of each
+comparison share the same camera/body frame and show exact centroid positions;
+the colors do not modify the geometry.
+
 ## 13. Output and Git policy
 
 Two output classes are deliberate:
@@ -483,6 +510,11 @@ Two output classes are deliberate:
 `docs/media/video_matrix_production_6s/` contains the 10 canonical MP4 files,
 an animated preview, a representative frame, and hashes. These files let a
 new user see results immediately after cloning.
+
+`docs/media/failed_mesh_diagnostics/` is a second bounded evidence set with
+three short rejected/source-only geometry comparisons, a preview/contact
+sheet, the exact audit manifest, and hashes. It is explicitly not a physics
+baseline.
 
 ### Reproducible local raw output
 
@@ -495,7 +527,7 @@ Promote a new canonical video set only when:
 2. the production command is recorded;
 3. the analyzer verifies every manifest artifact;
 4. relevant tests pass;
-5. old curated media is replaced intentionally;
+5. the intended curated media category is replaced or extended explicitly;
 6. the new manifest, hashes, and reason are documented.
 
 ## 14. Rebuild and promote RFT meshes

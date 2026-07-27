@@ -43,6 +43,12 @@ python -m unittest discover -s tests -v
 - contact duty, penetration, and active-triangle metrics are correct;
 - COM displacement/path metrics are correct.
 
+### `tests/test_failed_mesh_videos.py`
+
+- the three selected rejected/accepted inputs exist inside the repository;
+- the rotating centroid projection returns finite coordinates inside the
+  requested frame.
+
 ## Level 2: full fast project check
 
 ```powershell
@@ -84,6 +90,21 @@ Verify and derive metrics:
 ```powershell
 python scripts/analyze_video_matrix.py outputs\video_matrix\run_...
 ```
+
+### Rejected-mesh diagnostic smoke
+
+```powershell
+python scripts\generate_failed_mesh_videos.py `
+  --duration 0.25 --fps 4 --width 960 --height 540
+```
+
+Acceptance:
+
+- three MP4 files, one contact sheet, one GIF, and one manifest exist;
+- every case audits both the rejected/source-only and accepted input;
+- manifest paths are repository-relative;
+- all artifact hashes match;
+- rejected meshes are not loaded into MuJoCo or the RFT solver.
 
 ## Level 4: behavior-changing regression
 

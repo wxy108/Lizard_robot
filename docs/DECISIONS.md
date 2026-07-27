@@ -103,7 +103,7 @@ this repository rather than modifying the upstream checkout.
 Reason: a submodule records exact provenance without vendoring duplicate Git
 history or blurring upstream and local behavior.
 
-## D-006 — raw runs stay out of Git; one curated media release is tracked
+## D-006 — raw runs stay out of Git; curated evidence releases are bounded
 
 Date: 2026-07-27
 
@@ -111,16 +111,22 @@ Keep new videos, optimizer databases, NPZ arrays, CSV tables, and raw runs
 under ignored `outputs/`. Track compact regression summaries/configurations
 and SHA-256 hashes under `docs/regressions/`.
 
-The deliberate exception is one current, reviewed production video set under
-`docs/media/video_matrix_production_6s/`. It contains ten directly viewable
-MP4 files plus a small animated preview, representative frame, and hashes.
-Replacing this set requires a clean source commit, verified generator manifest,
-tests, documentation, and an explicit replacement decision.
+The deliberate exceptions are explicitly reviewed, bounded evidence sets
+under `docs/media/`:
+
+- `video_matrix_production_6s/`: ten canonical locomotion MP4 files plus a
+  preview, representative frame, and hashes;
+- `failed_mesh_diagnostics/`: three geometry-only rejected/source comparison
+  MP4 files plus a preview, contact sheet, exact audit manifest, and hashes.
+
+Adding or replacing a set requires a clean source commit, verified generator
+manifest, tests, documentation, and an explicit decision. Rejected meshes are
+never promoted into physics merely to produce a video.
 
 Reason: raw experiments grow without bound and obscure source changes, but a
 new user must be able to see the canonical behavior immediately after cloning.
-One bounded ~20 MiB video release balances direct inspection with repository
-size and traceability.
+Small, purpose-specific releases balance direct inspection with repository
+size and traceability while raw experiments remain reproducible and ignored.
 
 ## D-007 — RFT contact geometry is one external envelope
 

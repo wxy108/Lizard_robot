@@ -45,8 +45,10 @@ Record material numerical changes in `docs/VALIDATION.md`; keep raw large
 outputs under `outputs/` and record their relative path plus SHA-256 hash. For
 reporting changes, also run the video smoke command in
 `docs/TEST_AND_VALIDATION_GUIDE.md` and verify the generated manifest.
-Only the explicitly reviewed canonical media set under `docs/media/` may be
-tracked as video; do not add arbitrary experimental MP4 files.
+Only explicitly reviewed, hash-documented media sets under `docs/media/` may
+be tracked as video; do not add arbitrary experimental MP4 files. Files under
+`reference/rejected_meshes/` are diagnostic evidence only and must never be
+used as active MuJoCo/RFT assets.
 
 ## Change tracking protocol
 

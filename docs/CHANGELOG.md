@@ -3,6 +3,24 @@
 All notable project changes are recorded here. Git is the authoritative
 line-level record; this file explains intent and consequences.
 
+## 2026-07-27 — rejected-mesh/RFT-point diagnostic videos
+
+- Added `scripts/generate_failed_mesh_videos.py`.
+- Added three geometry-only comparisons: raw CAD Back assembly, legacy
+  vertex-clustered Back, and direct fixed-count Fusion FR, each beside the
+  corresponding accepted active mesh.
+- Colored every triangle centroid/RFT site by local nearest-neighbor spacing
+  so clustered and sparse regions are visible during a synchronized rotation.
+- Included exact topology, self-intersection, area-distribution,
+  centroid-spacing, and sliver metrics in every frame and in `manifest.json`.
+- Preserved one 94,884-byte rejected Back mesh with an exact archive path and
+  SHA-256 so the legacy failure remains reproducible on another system.
+- Added two generator/path/projection tests; the fast suite is now 13/13.
+- Published three 4.042 s H.264 MP4 files, a GIF preview, a contact sheet, and
+  hashes under `docs/media/failed_mesh_diagnostics/`.
+- Kept the scientific boundary explicit: rejected meshes are visualized and
+  audited only; they are never used for locomotion or force claims.
+
 ## 2026-07-27 — portable deployment and directly viewable outputs
 
 - Added `scripts/setup.ps1` for Windows and `scripts/setup.sh` for
