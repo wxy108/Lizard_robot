@@ -49,6 +49,13 @@ python -m unittest discover -s tests -v
 - the rotating centroid projection returns finite coordinates inside the
   requested frame.
 
+### `tests/test_legacy_rft_video_recovery.py`
+
+- Annex-B SPS/PPS headers split correctly;
+- truncated MP4 `mdat` parsing keeps complete length-prefixed NAL units only;
+- the tracked source yields exactly 111 complete units and a 9,400-byte
+  incomplete tail.
+
 ## Level 2: full fast project check
 
 ```powershell
@@ -105,6 +112,22 @@ Acceptance:
 - manifest paths are repository-relative;
 - all artifact hashes match;
 - rejected meshes are not loaded into MuJoCo or the RFT solver.
+
+### Historical invalid-RFT video recovery
+
+```powershell
+python scripts\recover_legacy_rft_video.py
+```
+
+Acceptance:
+
+- recovery reports `git.dirty=false` for canonical evidence;
+- source and header SHA-256 values match the tracked references;
+- exactly 110 frames decode from both MP4 files at 30 FPS and 1280×720;
+- recovered and zoomed frame counts match;
+- the contact sheet contains six frames;
+- the zoom is explicitly labelled as invalid historical evidence;
+- `resimulation=false` is recorded in `manifest.json`.
 
 ## Level 4: behavior-changing regression
 

@@ -15,6 +15,10 @@ line-level record; this file explains intent and consequences.
 - The tool performs no simulation and discards only the incomplete final
   9,400-byte NAL fragment.
 - Added three recovery/parser tests; the fast suite is now 16/16.
+- Generated from clean commit `e238a80` and published a 110-frame full-frame
+  recovery, an explicitly labelled robot-following zoom, a six-frame contact
+  sheet, and an exact manifest under
+  `docs/media/legacy_incorrect_rft_locomotion/`.
 
 ## 2026-07-27 — single canonical local workspace
 

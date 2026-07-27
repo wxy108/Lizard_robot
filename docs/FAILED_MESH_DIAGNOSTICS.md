@@ -12,6 +12,28 @@ non-watertight meshes through the solver would create visually persuasive but
 invalid force results. The generator therefore performs a read-only audit and
 renders triangle-centroid point clouds beside the accepted mesh.
 
+## Two complementary evidence sets
+
+The project now preserves both forms of historical evidence:
+
+1. [three controlled geometry comparisons](media/failed_mesh_diagnostics/README.md)
+   isolate topology and point-spacing defects beside the accepted surface;
+2. [the recovered whole-robot locomotion recording](media/legacy_incorrect_rft_locomotion/README.md)
+   shows how the old uneven white force-site spheres looked on the moving
+   lizard.
+
+The second item is the former `legacy_sand.mp4`, not a newly simulated demo.
+Its recording ended before the MP4 index was written, so the project preserved
+the exact payload and recovered 110 complete frames. The
+[zoomed labelled MP4](media/legacy_incorrect_rft_locomotion/legacy_incorrect_rft_locomotion_zoomed.mp4)
+is the clearest view; the
+[full-frame recovery](media/legacy_incorrect_rft_locomotion/legacy_incorrect_rft_locomotion_recovered.mp4)
+keeps the original camera framing.
+
+Use that video only to observe point distribution. The rejected mesh and
+unknown historical integration state invalidate apparent penetration,
+contact, displacement, force, and gait behavior.
+
 ## How to read the videos
 
 - One dot = one triangle centroid = one RFT force site in the active pipeline.
@@ -133,6 +155,15 @@ The manifest records:
 
 The reviewed production copy is
 `docs/media/failed_mesh_diagnostics/`.
+
+Recover the historical full-robot recording separately:
+
+```bash
+python scripts/recover_legacy_rft_video.py
+```
+
+This command performs media recovery only; it never loads the rejected mesh
+into MuJoCo or the RFT solver.
 
 ## Scientific boundary
 

@@ -31,6 +31,10 @@ Also available:
 These are geometry diagnostics, not locomotion results. No rejected mesh was
 used in the RFT solver or presented as physically valid.
 
+For the earlier moving whole-robot recording with the old white sites visible,
+open the separate
+[historical invalid-RFT locomotion evidence](../legacy_incorrect_rft_locomotion/README.md).
+
 ## Production provenance
 
 - generator source commit:

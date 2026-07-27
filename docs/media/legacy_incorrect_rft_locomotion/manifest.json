@@ -1,0 +1,85 @@
+{
+  "artifacts": {
+    "legacy_incorrect_rft_locomotion_contact_sheet.png": {
+      "bytes": 474779,
+      "height": 720,
+      "path": "outputs/legacy_rft_locomotion/production_e238a80/legacy_incorrect_rft_locomotion_contact_sheet.png",
+      "sha256": "CCDC29FD6684422B0795ACA9F479D8C23AEFC124F86D2308831C6AD7BF6B2AEB",
+      "width": 1920
+    },
+    "legacy_incorrect_rft_locomotion_recovered.mp4": {
+      "bytes": 3193980,
+      "decoded_frame_count": 110,
+      "duration_seconds": 3.6666666666666665,
+      "fps": 30.0,
+      "frame_count": 110,
+      "height": 720,
+      "path": "outputs/legacy_rft_locomotion/production_e238a80/legacy_incorrect_rft_locomotion_recovered.mp4",
+      "sha256": "A2CE3648E185D14F02C07EBA9683F8DCAB300B800080B7CC6C3B827C1FDD8682",
+      "width": 1280
+    },
+    "legacy_incorrect_rft_locomotion_zoomed.mp4": {
+      "bytes": 2652376,
+      "decoded_frame_count": 110,
+      "duration_seconds": 3.6666666666666665,
+      "fps": 30.0,
+      "frame_count": 110,
+      "height": 720,
+      "path": "outputs/legacy_rft_locomotion/production_e238a80/legacy_incorrect_rft_locomotion_zoomed.mp4",
+      "sha256": "C380F225DF0B8C746782C45B64198B448E11100D5424070265982A9B45868E2F",
+      "width": 1280
+    }
+  },
+  "generated_utc": "2026-07-27T22:23:26.093489+00:00",
+  "git": {
+    "commit": "e238a80b0fa54d1021cd9ff29af42d15abb9000d",
+    "dirty": false
+  },
+  "h264_headers": {
+    "bytes": 39,
+    "path": "reference/rejected_media/legacy_sand_h264_sps_pps.bin",
+    "sha256": "71612059CF519E13130C1F1D717AAB90BAC3B63597380F456430AFFCB961F8F4"
+  },
+  "presentation": {
+    "output_size": [
+      1280,
+      720
+    ],
+    "resimulation": false,
+    "source_size": [
+      1280,
+      720
+    ],
+    "zoom_crop_size": [
+      736,
+      414
+    ],
+    "zoom_is_derived": true
+  },
+  "recovery": {
+    "atom_offset": 40,
+    "atom_truncated": true,
+    "available_payload_bytes": 1499081,
+    "complete_nal_units": 111,
+    "declared_atom_bytes": 4187285,
+    "declared_payload_bytes": 4187277,
+    "discarded_trailing_bytes": 9400,
+    "header_nal_types": [
+      7,
+      8
+    ],
+    "nal_type_counts": {
+      "1": 109,
+      "5": 1,
+      "6": 1
+    }
+  },
+  "schema_version": 1,
+  "scientific_status": "visual failure evidence only; invalid mesh/RFT configuration; not a locomotion or physics baseline",
+  "source": {
+    "bytes": 1499129,
+    "path": "reference/rejected_media/legacy_sand_truncated.mp4",
+    "sha256": "627F98081BBD6B988F1DF30973C9845E314C604D46D2CCBDC8DB0DBF8B3E54F1"
+  },
+  "title": "Historical invalid-RFT locomotion recovery"
+}

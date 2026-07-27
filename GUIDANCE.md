@@ -34,7 +34,8 @@ Open these files directly on GitHub:
 2. [full master MP4](docs/media/video_matrix_production_6s/video_matrix_overview.mp4);
 3. [all nine individual videos](docs/media/video_matrix_production_6s/README.md);
 4. [production metrics and hashes](docs/regressions/2026-07-27-video-matrix-production-6s/MANIFEST.md);
-5. [failed-mesh/RFT-point comparison videos](docs/media/failed_mesh_diagnostics/README.md).
+5. [failed-mesh/RFT-point comparison videos](docs/media/failed_mesh_diagnostics/README.md);
+6. [historical whole-robot invalid-RFT locomotion](docs/media/legacy_incorrect_rft_locomotion/README.md).
 
 Master layout:
 
@@ -211,7 +212,7 @@ python scripts/validate_project.py
 
 Acceptance:
 
-- 13/13 unit tests;
+- 16/16 unit tests;
 - eight active STLs are one-component, watertight, manifold, consistently
   oriented, positive-volume, and free of detected self-intersections;
 - 13,916 force sites exactly match 13,916 active triangles;
@@ -429,6 +430,28 @@ holes visible. The rejected meshes are audited but never sent into locomotion
 or RFT force calculation. Full interpretation:
 `docs/FAILED_MESH_DIAGNOSTICS.md`.
 
+### Recover the historical incorrect-RFT locomotion video
+
+```bash
+python scripts/recover_legacy_rft_video.py
+```
+
+The tracked source is the interrupted historical `legacy_sand.mp4`. The tool
+restores 110 complete original frames without running MuJoCo and writes:
+
+```text
+outputs/legacy_rft_locomotion/run_.../
+|-- legacy_incorrect_rft_locomotion_recovered.mp4
+|-- legacy_incorrect_rft_locomotion_zoomed.mp4
+|-- legacy_incorrect_rft_locomotion_contact_sheet.png
+`-- manifest.json
+```
+
+The zoomed copy follows and enlarges the robot so dense point clusters, sparse
+patches, and abrupt density changes are visible. It is explicitly labelled as
+historical invalid-model evidence. The reviewed copy is directly viewable at
+`docs/media/legacy_incorrect_rft_locomotion/`.
+
 ## 11. Analyze and verify results
 
 ```bash
@@ -506,6 +529,15 @@ locally dense and orange/red sites are locally sparse. Both sides of each
 comparison share the same camera/body frame and show exact centroid positions;
 the colors do not modify the geometry.
 
+### Historical invalid-RFT locomotion
+
+The recovered whole-robot video is different from the three geometry-only
+comparisons. It preserves the original moving scene and shows the old white
+force-site spheres directly on the robot. The valid-container recovery keeps
+the original camera framing; the derived zoom changes only presentation.
+Neither video is a valid source of force, penetration, contact, displacement,
+or gait metrics.
+
 ## 13. Output and Git policy
 
 Two output classes are deliberate:
@@ -520,6 +552,11 @@ new user see results immediately after cloning.
 three short rejected/source-only geometry comparisons, a preview/contact
 sheet, the exact audit manifest, and hashes. It is explicitly not a physics
 baseline.
+
+`docs/media/legacy_incorrect_rft_locomotion/` is a third bounded evidence set
+with the recovered historical whole-robot recording, an explicitly labelled
+zoomed copy, a contact sheet, and an exact recovery manifest. It is invalid
+historical visual evidence, not a physics baseline.
 
 ### Reproducible local raw output
 

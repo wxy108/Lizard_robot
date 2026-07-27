@@ -70,6 +70,8 @@ The reporting workflow is now reproducible:
 - three short rejected/source-only mesh videos make former clustered RFT
   points, overlapping components, slivers, and self-intersections directly
   comparable with the accepted meshes without running invalid physics.
+- the recovered historical whole-robot recording and labelled zoom show the
+  former uneven force sites during motion without rerunning the invalid mesh.
 
 ## Verified measurements
 
@@ -98,7 +100,7 @@ tracked evidence under
 `docs/regressions/2026-07-27-video-matrix-smoke/`. Its 0.25 s duration covers
 only initial settling and must not be used for locomotion-performance claims.
 
-Fast automated tests: 13/13 passing.
+Fast automated tests: 16/16 passing.
 
 The clean production run at commit `ff1dda2` generated nine 6 s individual
 videos plus the 3×3-with-three-panels master overview. Its manifest, derived
@@ -112,6 +114,13 @@ The clean rejected-mesh diagnostic run at commit `5c90d91` produced three
 centroid-spacing P95/P05 39.12 versus 4.32 and 8,456 versus zero
 self-intersections. Exact input paths, audit metrics, sizes, and hashes are in
 `docs/media/failed_mesh_diagnostics/manifest.json`.
+
+The historical `legacy_sand.mp4` source was recovered from 111 complete H.264
+NAL units at clean implementation commit `e238a80`. Both reviewed MP4 files
+decode exactly 110 frames at 30 FPS and 1280×720. The zoomed copy clearly
+shows clusters and gaps over the moving whole robot; the manifest records
+`resimulation=false`. Exact source/header/artifact hashes are under
+`docs/media/legacy_incorrect_rft_locomotion/`.
 
 The earlier 12,097-site regression remains tracked under
 `docs/regressions/2026-07-27-rft-6s/` as a historical pre-mesh-rebuild

@@ -49,6 +49,18 @@ visible. These are diagnostic comparisons, not locomotion results.
 - [Open all three failed-mesh comparison videos](docs/media/failed_mesh_diagnostics/README.md)
 - [Read the metrics, causes, and reproduction guide](docs/FAILED_MESH_DIAGNOSTICS.md)
 
+### Historical incorrect RFT locomotion
+
+[![historical invalid-RFT locomotion](docs/media/legacy_incorrect_rft_locomotion/legacy_incorrect_rft_locomotion_contact_sheet.png)](docs/media/legacy_incorrect_rft_locomotion/legacy_incorrect_rft_locomotion_zoomed.mp4)
+
+The recovered historical video shows the complete moving lizard with the old
+force sites visible over the robot. Dense clusters, sparse patches, and abrupt
+density changes are clearest in the
+[zoomed labelled MP4](docs/media/legacy_incorrect_rft_locomotion/legacy_incorrect_rft_locomotion_zoomed.mp4).
+The [original full-frame recovery](docs/media/legacy_incorrect_rft_locomotion/legacy_incorrect_rft_locomotion_recovered.mp4)
+is also preserved. This is invalid-model visual evidence, not a physics or
+locomotion baseline.
+
 ## Deploy on a fresh computer
 
 ### Prerequisites
@@ -111,7 +123,7 @@ python scripts/validate_project.py
 
 Expected validation:
 
-- 13/13 fast tests pass;
+- 16/16 fast tests pass;
 - eight active RFT meshes pass topology/self-intersection gates;
 - 13,916 force sites match 13,916 active triangles;
 - rigid-floor and granular-RFT smoke runs complete;
@@ -214,6 +226,16 @@ This generator audits and visualizes geometry only. It never runs the rejected
 meshes through RFT physics. See
 [docs/FAILED_MESH_DIAGNOSTICS.md](docs/FAILED_MESH_DIAGNOSTICS.md).
 
+Recover the tracked historical invalid-RFT locomotion recording:
+
+```bash
+python scripts/recover_legacy_rft_video.py
+```
+
+This reads only the preserved truncated video payload and produces a playable
+recovery, labelled zoom, contact sheet, and hash manifest. It does not run a
+simulation.
+
 ## Environment
 
 The canonical [environment.yml](environment.yml) pins:
@@ -247,7 +269,7 @@ second standalone MuJoCo copy for this project.
   catch floor.
 - The upstream RFT function returns body-on-sand force; the integration applies
   the equal-and-opposite reaction to the robot before `mj_step`.
-- 13/13 tests, rigid smoke, RFT smoke, video generation, overview composition,
+- 16/16 tests, rigid smoke, RFT smoke, video generation, overview composition,
   and production artifact verification pass.
 
 The model is a stable numerical baseline, not an experimentally calibrated
@@ -276,10 +298,12 @@ granular material.
 |   |-- validate_project.py           # canonical validation
 |   |-- generate_video_matrix.py      # 9 videos + master
 |   |-- generate_failed_mesh_videos.py # rejected/source mesh diagnostics
+|   |-- recover_legacy_rft_video.py   # historical invalid-video recovery
 |   |-- compose_video_matrix.py       # master compositor
 |   `-- analyze_video_matrix.py       # hash verification and metrics
 |-- tests/                            # physics and reporting tests
 |-- reference/rejected_meshes/        # diagnostic evidence; never active
+|-- reference/rejected_media/         # preserved interrupted video source
 |-- docs/
 |   |-- media/                        # checked-in, directly viewable outputs
 |   |-- regressions/                  # manifests and numerical evidence

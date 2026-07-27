@@ -41,7 +41,7 @@ Coverage:
 - derives the expected force-site count from live per-body triangle counts;
 - requires every sequential force-site name and visual group 5;
 - loads `Lizard_Sand.xml` and checks sand/floor separation;
-- runs all thirteen fast unit tests;
+- runs all sixteen fast unit tests;
 - runs the original rigid-floor smoke test;
 - runs a short or full granular RFT integration.
 
@@ -59,6 +59,10 @@ layout.
 The two rejected-mesh video tests verify that all selected inputs are portable
 repository paths and that synchronized centroid projection produces finite,
 in-frame coordinates.
+
+The three historical-video recovery tests verify Annex-B header parsing,
+truncated `mdat` handling, exact complete-NAL retention, and the tracked
+source's expected 111-unit/9,400-byte-tail structure.
 
 ## Locomotion video-matrix smoke
 
@@ -151,6 +155,59 @@ The videos were visually inspected through the contact sheet and animated
 preview. They are geometry diagnostics only; no rejected mesh was simulated.
 Tracked production copy:
 `docs/media/failed_mesh_diagnostics/`.
+
+## Historical invalid-RFT locomotion recovery
+
+Source implementation commit:
+`e238a80b0fa54d1021cd9ff29af42d15abb9000d`; generator recorded
+`git.dirty=false`.
+
+Command:
+
+```powershell
+python scripts\recover_legacy_rft_video.py `
+  --output-dir outputs\legacy_rft_locomotion\production_e238a80
+```
+
+Observed:
+
+- original archived source: 1,499,129 bytes, SHA-256
+  `627F98081BBD6B988F1DF30973C9845E314C604D46D2CCBDC8DB0DBF8B3E54F1`;
+- matching tracked SPS/PPS: 39 bytes, SHA-256
+  `71612059CF519E13130C1F1D717AAB90BAC3B63597380F456430AFFCB961F8F4`;
+- 111 complete H.264 NAL units retained and one 9,400-byte incomplete tail
+  discarded;
+- both MP4 files decode exactly 110 frames at 30 FPS, 3.667 seconds,
+  1280×720, H.264/yuv420p;
+- recovered MP4: 3,193,980 bytes, SHA-256
+  `A2CE3648E185D14F02C07EBA9683F8DCAB300B800080B7CC6C3B827C1FDD8682`;
+- zoomed MP4: 2,652,376 bytes, SHA-256
+  `C380F225DF0B8C746782C45B64198B448E11100D5424070265982A9B45868E2F`;
+- contact sheet: 474,779 bytes, SHA-256
+  `CCDC29FD6684422B0795ACA9F479D8C23AEFC124F86D2308831C6AD7BF6B2AEB`;
+- recovered and zoomed frame counts match;
+- the six selected frames were visually inspected and clearly show clustered
+  and sparse force-site regions over the moving whole robot;
+- manifest records `resimulation=false`.
+
+The zoom changes only camera presentation and adds an invalid-evidence label.
+No MuJoCo/RFT state was regenerated. Tracked reviewed copy:
+`docs/media/legacy_incorrect_rft_locomotion/`.
+
+Post-change reporting compatibility smoke:
+
+```powershell
+python scripts\generate_video_matrix.py `
+  --duration 0.25 --fps 10 --width 640 --height 480 --panel-width 420 `
+  --output-dir outputs\video_matrix\legacy_media_reporting_smoke_e238a80
+python scripts\analyze_video_matrix.py `
+  outputs\video_matrix\legacy_media_reporting_smoke_e238a80
+```
+
+It generated all nine views plus the master overview; the analyzer verified
+the manifest artifacts and completed metric extraction. This local smoke was
+run while the curated-media documentation was being assembled, so it is
+compatibility validation rather than a clean canonical evidence release.
 
 ## Mesh root-cause audit
 

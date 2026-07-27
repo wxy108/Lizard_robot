@@ -360,3 +360,24 @@ remain recoverable from earlier history. Raw future output belongs in ignored
   cases and five artifacts from clean commit `0186850`, proving that the
   tracked legacy Back STL is sufficient and the archive is not a runtime
   dependency.
+
+## N. Historical incorrect-RFT locomotion recovery
+
+- Located the archived `outputs/videos/legacy_sand.mp4` that shows the moving
+  whole lizard with the former uneven force-site distribution.
+- Determined that the recording was interrupted before its MP4 `moov` atom
+  was written; the image payload remained recoverable.
+- Preserved the exact 1,499,129-byte source and matching 39-byte SPS/PPS
+  headers under `reference/rejected_media/`.
+- Added `scripts/recover_legacy_rft_video.py` and three parser/recovery tests.
+- Recovered 111 complete H.264 NAL units, discarded one incomplete 9,400-byte
+  tail, and decoded 110 frames.
+- Generated from clean commit `e238a80`: a 3.667 s full-frame MP4, a labelled
+  robot-following zoom, a six-frame contact sheet, and a complete manifest.
+- Verified both videos at 110 frames, 30 FPS, 1280×720 and visually confirmed
+  clustered and sparse point regions across the moving robot.
+- Published the bounded reviewed set under
+  `docs/media/legacy_incorrect_rft_locomotion/`.
+- Recorded `resimulation=false`; no invalid mesh was run, no missing motion
+  was synthesized, and the result is not a physics or locomotion baseline.
+- Current fast suite: 16/16.
