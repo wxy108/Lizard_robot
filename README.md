@@ -301,6 +301,7 @@ Read in this order:
 7. [Project status](docs/PROJECT_STATUS.md)
 8. [Decisions](docs/DECISIONS.md)
 9. [Provenance](docs/PROVENANCE.md)
+10. [Canonical local/GitHub layout](docs/LOCAL_WORKSPACE_LAYOUT.md)
 
 For mesh changes, read the mesh-rebuild and CAD caveats in `GUIDANCE.md`
 before touching `asset/`.

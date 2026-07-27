@@ -2,6 +2,27 @@
 
 ## Local projects
 
+### Canonical-workspace consolidation
+
+On 2026-07-27, the original workstation was reduced to one active Git root:
+`Lizard_Robot_MuJoCo`, connected to
+`https://github.com/wxy108/Lizard_robot.git`.
+
+The former outer integration repository and temporary publication checkout
+were moved intact to:
+
+`Lizard_Robot_Archive/2026-07-27/{Lizard_Robot_RFT,Lizard_Robot_GitHub_Publish}`.
+
+The former outer repository had no remote and HEAD `c5fee1a368bb`; the
+temporary publication checkout was at stale HEAD `9ef92cddc3f4`. They are
+provenance only.
+
+The canonical RFT-SiM submodule object database previously referenced the
+outer workspace through a local Git alternate. Reachable objects were repacked
+locally, the alternate was removed, `git fsck --full` passed, and submodule
+HEAD remained `303283fae075cae4101ee3af102a36a4a5775998`. Fresh GitHub clones
+were never dependent on this workstation-only alternate.
+
 ### Original rigid-floor MuJoCo project
 
 - Path: `C:\Users\wxy22\Documents\Lizard_Robot_MuJoCo`
@@ -71,8 +92,9 @@ branch, commit, and clean tracked state. The redundant inner clone was removed.
   direct RFT remeshing inputs.
 - `models/mesh_sources/fusion_external_envelope/*.STL` are byte-for-byte
   copies of the manually unified Fusion meshes formerly stored under
-  `Lizard_Robot_RFT/archive/reference-simplified-model/`. They are tracked,
-  read-only reconstruction inputs in the original body coordinate frames.
+  `Lizard_Robot_Archive/2026-07-27/Lizard_Robot_RFT/archive/reference-simplified-model/`.
+  They are tracked, read-only reconstruction inputs in the original body
+  coordinate frames.
 - `asset/*.STL` are active, topology-gated RFT surfaces reconstructed from the
   Fusion external envelope.
 - `models/lizard_sites.xml` and the force sites inside `Lizard_Sand.xml` are
@@ -102,8 +124,9 @@ Primary tool references:
   `https://pymeshlab.readthedocs.io/en/latest/filter_list.html`
 
 Historical mesh variants and pre-cleanup artifacts are preserved outside the
-active repository under `Lizard_Robot_RFT/archive/`. Their post-move file
-counts and sizes are recorded in `docs/ARCHIVE_INDEX.md`.
+active repository under
+`Lizard_Robot_Archive/2026-07-27/Lizard_Robot_RFT/archive/`. Their post-move
+file counts and sizes are recorded in `docs/ARCHIVE_INDEX.md`.
 
 ## Video and analysis artifacts
 
@@ -151,7 +174,7 @@ Inputs:
 - legacy vertex-clustered Back: tracked diagnostic copy
   `reference/rejected_meshes/legacy_vertex_cluster/Back.STL`, copied
   byte-for-byte from
-  `Lizard_Robot_RFT/archive/active-root-legacy-2026-07-27/meshes_rft/Back.stl`;
+  `Lizard_Robot_Archive/2026-07-27/Lizard_Robot_RFT/archive/active-root-legacy-2026-07-27/meshes_rft/Back.stl`;
 - fixed-count Fusion FR source:
   `models/mesh_sources/fusion_external_envelope/FR.STL`;
 - accepted comparisons: `asset/Back.STL` and `asset/FR.STL`.

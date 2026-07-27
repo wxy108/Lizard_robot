@@ -22,6 +22,9 @@ tests, and reproducible raw output take priority.
 - Use only the `lizard_rft` Conda environment for this project.
 - Do not install into, edit, rename, remove, or activate `isaaclab_50`.
 - IsaacLab is not a dependency and is outside project scope.
+- Treat the Git root with remote `https://github.com/wxy108/Lizard_robot.git`
+  as the only active workspace. Read `docs/LOCAL_WORKSPACE_LAYOUT.md` before
+  using another similarly named local directory.
 - Do not treat `archive/` or `outputs/` as active source.
 - Do not edit `third_party/RFT-SiM` in place. Pin a new upstream commit or
   document a deliberate fork.

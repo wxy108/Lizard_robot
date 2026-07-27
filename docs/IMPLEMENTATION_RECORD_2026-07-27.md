@@ -341,3 +341,22 @@ remain recoverable from earlier history. Raw future output belongs in ignored
   `docs/media/failed_mesh_diagnostics/`.
 - Added two tests; current fast suite: 13/13.
 - Did not run invalid meshes through locomotion/RFT physics.
+
+## M. Canonical local workspace consolidation
+
+- Designated `Lizard_Robot_MuJoCo` as the only active local Git root.
+- Verified it was clean and identical to GitHub `main` at `0186850`.
+- Moved the 894,219,200-byte former outer RFT workspace and the
+  47,832,103-byte stale publication checkout to
+  `Lizard_Robot_Archive/2026-07-27/`.
+- Preserved both old Git repositories and all archive/output files; nothing
+  was deleted.
+- Detected that the canonical RFT-SiM submodule used a local object alternate
+  pointing at the former outer workspace.
+- Repacked 232 reachable objects into a 21.7 MiB canonical submodule pack,
+  removed the alternate, ran `git fsck --full`, and confirmed HEAD remained
+  `303283f`.
+- Reran the rejected-mesh generator after relocation. It produced all three
+  cases and five artifacts from clean commit `0186850`, proving that the
+  tracked legacy Back STL is sufficient and the archive is not a runtime
+  dependency.
