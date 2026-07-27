@@ -87,6 +87,11 @@ only initial settling and must not be used for locomotion-performance claims.
 
 Fast automated tests: 11/11 passing.
 
+The clean production run at commit `ff1dda2` generated nine 6 s individual
+videos plus the 3×3-with-three-panels master overview. Its manifest, derived
+metrics, diagrams, representative frame, and hashes are tracked under
+`docs/regressions/2026-07-27-video-matrix-production-6s/`.
+
 The earlier 12,097-site regression remains tracked under
 `docs/regressions/2026-07-27-rft-6s/` as a historical pre-mesh-rebuild
 baseline; its numerical values are not the current acceptance target.

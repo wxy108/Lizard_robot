@@ -11,6 +11,9 @@ line-level record; this file explains intent and consequences.
 - The overview contains three scenario rows, three pure camera-view columns,
   and exactly one synchronized analysis panel per row.
 - Added a frame-layout regression test, bringing the fast suite to 11/11.
+- Generated and hash-verified the clean production 6 s matrix and overview;
+  compact evidence is tracked under
+  `docs/regressions/2026-07-27-video-matrix-production-6s/`.
 
 ## 2026-07-27 — reproducible locomotion video and analysis matrix
 

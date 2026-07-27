@@ -79,6 +79,18 @@ Tracked evidence:
 The 0.25 s run is intentionally a generator/reporting smoke test. It covers
 initial settling only and must not be interpreted as locomotion performance.
 
+## Production 6 s master overview
+
+Source commit: `ff1dda2f954dc27e7d01499f5200497ad30c91f7`.
+
+The production run generated nine individual videos and one combined overview.
+The master is 181 frames at 30 FPS (6.033 s), 1680×858, and uses three scenario
+rows × `Top | Side | 45° | Analysis`. The generator recorded `git.dirty=false`;
+the analyzer verified all manifest artifacts and completed metric extraction.
+
+Tracked evidence and exact hashes:
+`docs/regressions/2026-07-27-video-matrix-production-6s/`.
+
 ## Mesh root-cause audit
 
 Original assembly-export STLs:
