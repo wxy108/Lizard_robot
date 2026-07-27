@@ -61,6 +61,9 @@ The reporting workflow is now reproducible:
   under `docs/media/video_matrix_production_6s/` for immediate remote viewing;
 - Windows and POSIX setup scripts deploy the pinned `lizard_rft` environment
   and run validation from a fresh clone without local path assumptions.
+- three short rejected/source-only mesh videos make former clustered RFT
+  points, overlapping components, slivers, and self-intersections directly
+  comparable with the accepted meshes without running invalid physics.
 
 ## Verified measurements
 
@@ -89,7 +92,7 @@ tracked evidence under
 `docs/regressions/2026-07-27-video-matrix-smoke/`. Its 0.25 s duration covers
 only initial settling and must not be used for locomotion-performance claims.
 
-Fast automated tests: 11/11 passing.
+Fast automated tests: 13/13 passing.
 
 The clean production run at commit `ff1dda2` generated nine 6 s individual
 videos plus the 3×3-with-three-panels master overview. Its manifest, derived
@@ -97,6 +100,12 @@ metrics, diagrams, representative frame, and hashes are tracked under
 `docs/regressions/2026-07-27-video-matrix-production-6s/`.
 The directly viewable MP4 copies and animated preview are tracked under
 `docs/media/video_matrix_production_6s/`.
+
+The clean rejected-mesh diagnostic run at commit `5c90d91` produced three
+4.042 s, 24 FPS, 1280×720 videos. The raw CAD Back comparison records
+centroid-spacing P95/P05 39.12 versus 4.32 and 8,456 versus zero
+self-intersections. Exact input paths, audit metrics, sizes, and hashes are in
+`docs/media/failed_mesh_diagnostics/manifest.json`.
 
 The earlier 12,097-site regression remains tracked under
 `docs/regressions/2026-07-27-rft-6s/` as a historical pre-mesh-rebuild

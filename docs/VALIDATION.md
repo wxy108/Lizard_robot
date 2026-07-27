@@ -41,7 +41,7 @@ Coverage:
 - derives the expected force-site count from live per-body triangle counts;
 - requires every sequential force-site name and visual group 5;
 - loads `Lizard_Sand.xml` and checks sand/floor separation;
-- runs all eleven fast unit tests;
+- runs all thirteen fast unit tests;
 - runs the original rigid-floor smoke test;
 - runs a short or full granular RFT integration.
 
@@ -55,6 +55,10 @@ The eight reporting tests verify scenario/view expansion, component ancestor
 mapping, rigid-contact aggregation, COM calculation, timeline drawing, contact
 event extraction, analyzer metrics, and the 3×3-plus-three-panel overview
 layout.
+
+The two rejected-mesh video tests verify that all selected inputs are portable
+repository paths and that synchronized centroid projection produces finite,
+in-frame coordinates.
 
 ## Locomotion video-matrix smoke
 
@@ -104,6 +108,49 @@ The same ten production MP4 files are copied byte-for-byte to
 `docs/media/video_matrix_production_6s/` for direct remote viewing. Their
 individual hashes are recorded in that directory's `README.md`; the animated
 GIF is a derived lightweight preview.
+
+## Rejected-mesh diagnostic production
+
+Source commit:
+`5c90d9118fc2211f5989dc99f0b63c99ea4a522b`; generator recorded
+`git.dirty=false`.
+
+Command:
+
+```powershell
+python scripts\generate_failed_mesh_videos.py `
+  --duration 4 --fps 24 --width 1280 --height 720 `
+  --output-dir outputs\failed_mesh_videos\production_4s_5c90d91
+```
+
+Observed:
+
+- three MP4 files;
+- 97 frames per file at 24 FPS, 4.042 encoded seconds, 1280×720;
+- H.264/yuv420p encoding;
+- all first and midpoint frames decoded at the expected shape;
+- exact source paths, full audits, artifact sizes, and hashes recorded;
+- all five generated media artifacts match the ignored output byte-for-byte;
+- the tracked JSON manifest is content-identical apart from enforced LF line
+  endings.
+
+Representative audit deltas:
+
+| Case | Metric | Rejected/source-only | Accepted |
+| --- | --- | ---: | ---: |
+| raw CAD Back | components | 13 | 1 |
+| raw CAD Back | self-X pairs | 8,456 | 0 |
+| raw CAD Back | centroid-spacing P95/P05 | 39.12 | 4.32 |
+| legacy clustered Back | self-X pairs | 1,055 | 0 |
+| legacy clustered Back | centroid-spacing P95/P05 | 9.68 | 4.32 |
+| fixed-count Fusion FR | self-X pairs | 6 | 0 |
+| fixed-count Fusion FR | area P95/P05 | 112.78 | 33.28 |
+| fixed-count Fusion FR | sliver fraction | 12.33% | 0.62% |
+
+The videos were visually inspected through the contact sheet and animated
+preview. They are geometry diagnostics only; no rejected mesh was simulated.
+Tracked production copy:
+`docs/media/failed_mesh_diagnostics/`.
 
 ## Mesh root-cause audit
 
