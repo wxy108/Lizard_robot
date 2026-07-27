@@ -1,0 +1,57 @@
+controller: hardware
+gait:
+  frequency: 0.2
+  wave_speed: 1.0
+  settle_time: 0.1
+  ramp_time: 0.1
+spine:
+  amplitude: 0.94
+  wavenumber: 0.83
+  turn_trim: 0.09
+  joints:
+  - Front
+  - Back
+  - Tail
+legs:
+  amplitude: 0.95
+  phase_offset: 0.67
+  right:
+  - FR
+  - HR
+  left:
+  - FL
+  - HL
+  girdle:
+    FR: Front
+    FL: Front
+    HR: Back
+    HL: Back
+hardware:
+  body_amp: 0.8
+  body_lock: 2.234
+  body_shape:
+    Front: 1.0
+    Back: -1.0
+    Tail: -1.0
+  leg_amp: 0.564
+  leg_freq: 0.2
+  duty: 0.491
+  phi_leg: 3.14159265
+  phi_lat: 3.14159265
+  down_sign:
+    FR: -1
+    FL: -1
+    HR: 1
+    HL: -1
+offset:
+  Front: 0.0
+  FR: -0.165
+  FL: -0.165
+  Back: 0.0
+  HR: 0.165
+  HL: -0.165
+  Tail: 0.0
+simulation:
+  model: models/lizard.xml
+  duration: 10.0
+  keyframe: stand

@@ -1,0 +1,26 @@
+{
+  "duration_s": 5.999999999999394,
+  "displacement_x_m": 0.24233176782801183,
+  "displacement_y_m": -0.08077498284237236,
+  "sand_surface_z_m": 0.0,
+  "rft_coefficient": 3.75,
+  "force_smoothing_alpha": 0.5,
+  "rft_active_step_fraction": 0.9900833333333333,
+  "peak_total_rft_force_N": 80.02745788388347,
+  "peak_site_rft_force_N": 13.974343397943267,
+  "minimum_rft_power_W": -36.162076590037366,
+  "maximum_rft_power_W": 0.0,
+  "positive_rft_power_step_fraction": 0.0,
+  "mean_sinkage_mm": [
+    1.4902838046046933,
+    1.968423480941908,
+    1.8913112450570053,
+    1.1841591766242061
+  ],
+  "max_sinkage_mm": [
+    6.615438999148796,
+    6.57547184123651,
+    6.50404910396115,
+    5.3547243435404095
+  ]
+}

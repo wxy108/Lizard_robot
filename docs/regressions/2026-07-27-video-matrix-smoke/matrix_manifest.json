@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-07-27T16:49:47.320857",
+  "command": [
+    "C:\\Users\\wxy22\\anaconda3\\envs\\lizard_rft\\python.exe",
+    "scripts/generate_video_matrix.py",
+    "--duration",
+    "0.25",
+    "--fps",
+    "10",
+    "--width",
+    "640",
+    "--height",
+    "480",
+    "--panel-width",
+    "420",
+    "--output-dir",
+    "outputs\\video_matrix\\release_smoke_ef27d2b"
+  ],
+  "git": {
+    "commit": "ef27d2bfb82f2752ef341810aaf6300d9a094b0e",
+    "dirty": false
+  },
+  "configuration": {
+    "duration_s": 0.25,
+    "fps": 10,
+    "render_width": 640,
+    "render_height": 480,
+    "panel_width": 420,
+    "views": {
+      "top": "track_top",
+      "side": "track_side",
+      "diag45": "diag"
+    },
+    "rft_coefficient": 3.75,
+    "force_smoothing_alpha": 0.5,
+    "body_order": [
+      "Mid",
+      "Front",
+      "FR",
+      "FL",
+      "Back",
+      "HR",
+      "HL",
+      "Tail"
+    ],
+    "sand_contact_definition": "active_triangles > 0",
+    "rigid_contact_definition": "MuJoCo geom contact with floor"
+  },
+  "scenarios": {
+    "rigid_original": {
+      "steps": 500,
+      "duration_s": 0.25000000000000017,
+      "com_displacement_m": [
+        -0.013882839246510213,
+        0.02880226063177423,
+        -0.016002406068221307
+      ],
+      "contact_duty_by_component": {
+        "Mid": 0.0,
+        "Front": 0.262,
+        "FR": 0.0,
+        "FL": 0.03,
+        "Back": 0.006,
+        "HR": 0.004,
+        "HL": 0.0,
+        "Tail": 0.34
+      }
+    },
+    "sand_rft_shared_replay": {
+      "steps": 500,
+      "duration_s": 0.25000000000000017,
+      "com_displacement_m": [
+        0.00040266181342372146,
+        0.017582599305123018,
+        -0.01996339365766396
+      ],
+      "contact_duty_by_component": {
+        "Mid": 0.49,
+        "Front": 0.694,
+        "FR": 0.006,
+        "FL": 0.28,
+        "Back": 0.6,
+        "HR": 0.326,
+        "HL": 0.0,
+        "Tail": 0.694
+      },
+      "maximum_penetration_mm_by_component": {
+        "Mid": 2.3466630776974933,
+        "Front": 3.677386087678855,
+        "FR": 0.17275755527627543,
+        "FL": 4.429931252798627,
+        "Back": 2.521435059141222,
+        "HR": 3.1408943872329766,
+        "HL": 0.0,
+        "Tail": 2.977307845232924
+      }
+    }
+  },
+  "videos": [
+    "videos/rigid_original/top.mp4",
+    "videos/rigid_original/side.mp4",
+    "videos/rigid_original/diag45.mp4",
+    "videos/sand_simplified/top.mp4",
+    "videos/sand_simplified/side.mp4",
+    "videos/sand_simplified/diag45.mp4",
+    "videos/sand_simplified_sites/top.mp4",
+    "videos/sand_simplified_sites/side.mp4",
+    "videos/sand_simplified_sites/diag45.mp4"
+  ],
+  "artifacts": {
+    "analysis/contact_events.csv": {
+      "bytes": 5708,
+      "sha256": "43001EC7ABDD42F8ABBDC8C55417157DCF35040FD922DF46DCEC60724311DA04"
+    },
+    "analysis/rigid_original.npz": {
+      "bytes": 24309,
+      "sha256": "A53BAB2B492C54B57A473967152730BDEADD63174F8216B101F449D0D6BB2B1F"
+    },
+    "analysis/rigid_original_com.csv": {
+      "bytes": 43558,
+      "sha256": "0F448BA09F904E460BA9CC37AD025A20BC2C19DB89BBFB6EFC5AB621D41C2777"
+    },
+    "analysis/rigid_original_contact_diagram.png": {
+      "bytes": 76533,
+      "sha256": "F0B63C2E42E5C8649CA6F3FCC93F59080287FA9BA0F6B51720EB0D65E6146F9E"
+    },
+    "analysis/rigid_original_contact_timeline.csv": {
+      "bytes": 14540,
+      "sha256": "B84399387C0E610FC72DA0744699E530B353D91245841497C6E17B8E2726B6BA"
+    },
+    "analysis/sand_rft.npz": {
+      "bytes": 42753,
+      "sha256": "903165F7CE40281340352375BFA091783E8420E0A36C9C39BD69FFEEE87087AD"
+    },
+    "analysis/sand_rft_com.csv": {
+      "bytes": 43145,
+      "sha256": "D9EA802F4032332D7083CB33949C88F642AA89BB20C0B8FF3DBF618B2A9802C4"
+    },
+    "analysis/sand_rft_contact_diagram.png": {
+      "bytes": 80454,
+      "sha256": "3267EC1861549616A645FE89D3852E6A43E0B93E51AF86B540E2430FCBC2BE73"
+    },
+    "analysis/sand_rft_contact_timeline.csv": {
+      "bytes": 14540,
+      "sha256": "D27BE1BE753FDFD2D31F5282ACE0629F6CE38E6D5DBF8472B0C6F26C4CCCDE37"
+    },
+    "analysis/sand_rft_penetration.csv": {
+      "bytes": 52453,
+      "sha256": "82CAD0692BC49758424C489410A7F209783CB2BE47E019ECF0664A7968C664CF"
+    },
+    "resolved_gait_config.yaml": {
+      "bytes": 830,
+      "sha256": "100014AD456F3BBE817BCFC103694E3437C10C90D7A003D05BC41764C5A97DF7"
+    },
+    "videos/rigid_original/diag45.mp4": {
+      "bytes": 106989,
+      "sha256": "1DEB6A41186A84CF81E9254D26F11A3A05C67B0B89F3EFFA05C6C87DB79462C3"
+    },
+    "videos/rigid_original/side.mp4": {
+      "bytes": 73987,
+      "sha256": "20FE4F2D790A4CE439912A1F0267C548A09869D4201343E0F2CF85FC28FB4442"
+    },
+    "videos/rigid_original/top.mp4": {
+      "bytes": 62472,
+      "sha256": "67F391E96794B7DDFE974018D3994D9ADB914243714911BDA640C7CC5818BDF7"
+    },
+    "videos/sand_simplified/diag45.mp4": {
+      "bytes": 76923,
+      "sha256": "0E138014336326D3159E97FB2879380DF5969CD57ADD17690CE470923B811031"
+    },
+    "videos/sand_simplified/side.mp4": {
+      "bytes": 60336,
+      "sha256": "153EAA10B9ABCE576B5AFDA0D0D8668F936F12765DBCB9B78EDE9B99117BB388"
+    },
+    "videos/sand_simplified/top.mp4": {
+      "bytes": 87731,
+      "sha256": "20E053B75835EB7C85C21E1CB244643E6826744559C33FBFCFF147F49763CACF"
+    },
+    "videos/sand_simplified_sites/diag45.mp4": {
+      "bytes": 104170,
+      "sha256": "9B8090A84796C176E11ECC7C77101CA06E99F3F80D0EFC8047DF528455E57D04"
+    },
+    "videos/sand_simplified_sites/side.mp4": {
+      "bytes": 82985,
+      "sha256": "8036F9DA199104E69E819934075F34BED6A469997771B70E0BD0C3393E6E9FC1"
+    },
+    "videos/sand_simplified_sites/top.mp4": {
+      "bytes": 99650,
+      "sha256": "A448BCF6519F78ABB4C770D9C53DFE35F264C5EF5DED05D8C37468881C052273"
+    }
+  }
+}
