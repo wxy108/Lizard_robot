@@ -12,6 +12,14 @@ Git clones and ZIP downloads include the complete reference. Setup and
 validation no longer download upstream. Physics and environment pins are
 unchanged. See `docs/DEPLOYMENT_FIX_2026-10-08.md` and decision D-015.
 
+Fresh anonymous HTTPS clone and ZIP downloads at implementation commit
+`dcfdf597` both completed full Windows setup in the existing `lizard_rft`
+environment: 16 tests, eight mesh gates, force-site/model checks, and original
+rigid/RFT 0.2 s smoke runs passed. All 331 ZIP files matched source Git blobs.
+Temporary verification files were cleared to the Recycle Bin; the compact
+report preserves outcomes and hashes. This did not recreate an environment
+or revalidate the historical full 6 s numerical baseline.
+
 ## Git anchors
 
 - Clean GitHub integration commit:

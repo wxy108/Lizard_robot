@@ -67,7 +67,8 @@ locomotion baseline.
 
 Install:
 
-1. [Git](https://git-scm.com/downloads);
+1. [Git](https://git-scm.com/downloads) for cloning/updating (not required for
+   ZIP installation);
 2. [Miniforge](https://github.com/conda-forge/miniforge), Anaconda, or another
    working Conda distribution.
 

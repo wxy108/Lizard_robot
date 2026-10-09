@@ -18,6 +18,11 @@ line-level record; this file explains intent and consequences.
 - GitHub-only clone/ZIP validation and temporary-file cleanup are recorded in
   `docs/DEPLOYMENT_FIX_2026-10-08.md`. Simulation code, assets and environment
   version pins are unchanged.
+- Both independent GitHub downloads passed full Windows setup, all 16 tests,
+  eight mesh gates and rigid/RFT short runs in the existing environment. All
+  331 ZIP files matched source blobs. Temporary files were cleared to the
+  Recycle Bin after permanent deletion was rejected by tool policy; the
+  compact verification record and original metadata archive were retained.
 
 ## 2026-07-27 — historical invalid-RFT locomotion recovery
 

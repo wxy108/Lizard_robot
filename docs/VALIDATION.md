@@ -1,6 +1,41 @@
 # Validation record
 
-Last run: 2026-07-27
+Latest deployment validation: 2026-10-08. The full 6 s numerical baseline
+below remains the historical 2026-07-27 run.
+
+## GitHub-only download repair validation — 2026-10-08
+
+Implementation commit: `dcfdf597bd09ed09e5721149e0b6224d2e2b460b`.
+Source was obtained directly from GitHub using an anonymous ordinary HTTPS
+clone and a codeload ZIP. No source or assets were copied from the canonical
+workstation checkout and the clone had no local object alternates.
+
+All 331 ZIP files matched the cloned commit's Git blobs. Both source copies
+contained the complete 159-file upstream snapshot and matched its SHA-256
+manifest (18,144,059 bytes). Changed and missing snapshot files were correctly
+rejected, then the ZIP snapshot was restored and reverified.
+
+The fresh clone completed `scripts/setup.ps1`: environment reuse, import
+checks, snapshot integrity, all 16 unit tests, all eight mesh quality gates,
+13,916 force sites in group 5, sand/floor separation, original rigid-floor
+0.2 s smoke and RFT 0.2 s smoke. RFT peak total/site force was
+86.629 / 0.600 N, power ranged from -37.023 to 0 W, and positive-power active
+steps were 0%. These short runs validate deployment and initial integration;
+they do not establish locomotion quality or calibrated physical accuracy.
+
+The ZIP copy also passed the complete default `scripts/setup.ps1` without Git
+metadata, including all 16 tests, mesh/model checks and both short model runs.
+Its preliminary `-SkipValidation` check passed as well. Both downloads used
+the existing `lizard_rft` environment (Python
+3.11.15, MuJoCo 3.9.0, NumPy 1.26.4, Open3D 0.19.0). It did not recreate or
+update an environment. POSIX setup passed syntax checking, not platform
+runtime validation.
+
+One initial concurrently launched setup failed in Conda activation with a
+temporary-file sharing error; the sequential clone retry passed. No project
+source change was made for that transient failure. Exact commands, download
+and log hashes, ZIP results and cleanup are in
+`DEPLOYMENT_FIX_2026-10-08.md`.
 
 ## Environment
 
