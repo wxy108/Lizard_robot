@@ -152,6 +152,7 @@ def main() -> None:
     print(f"NumPy {np.__version__}")
     print(f"Open3D {open3d.__version__}")
 
+    run([sys.executable, "scripts/verify_rft_snapshot.py"])
     triangle_counts = check_active_meshes()
     check_model(triangle_counts)
     run([sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"])

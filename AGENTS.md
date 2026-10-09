@@ -26,8 +26,11 @@ tests, and reproducible raw output take priority.
   as the only active workspace. Read `docs/LOCAL_WORKSPACE_LAYOUT.md` before
   using another similarly named local directory.
 - Do not treat `archive/` or `outputs/` as active source.
-- Do not edit `third_party/RFT-SiM` in place. Pin a new upstream commit or
-  document a deliberate fork.
+- `third_party/RFT-SiM` is an immutable, vendored upstream snapshot, not a
+  submodule. Do not edit it in place. To replace it, document the source,
+  commit and license, regenerate `third_party/RFT-SiM.snapshot.json`, and run
+  `python scripts/verify_rft_snapshot.py`. Keep local integration changes at
+  the project root. See decision D-015.
 
 ## Canonical validation
 
@@ -52,6 +55,10 @@ Only explicitly reviewed, hash-documented media sets under `docs/media/` may
 be tracked as video; do not add arbitrary experimental MP4 files. Files under
 `reference/rejected_meshes/` are diagnostic evidence only and must never be
 used as active MuJoCo/RFT assets.
+
+The two original example MP4 files in the fixed upstream snapshot are a
+documented provenance exception (D-015). Preserve their original bytes; they
+are upstream examples, not current lizard validation output.
 
 ## Change tracking protocol
 

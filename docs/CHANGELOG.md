@@ -3,6 +3,22 @@
 All notable project changes are recorded here. Git is the authoritative
 line-level record; this file explains intent and consequences.
 
+## 2026-10-08 — restore self-contained GitHub downloads and setup
+
+- Diagnosed the public-download failure: `third_party/RFT-SiM` was a gitlink
+  pointing to an upstream URL that now returns `Repository not found`.
+- Exported all 159 original files at pinned commit `303283f` as an immutable
+  regular directory, preserving the MIT License and all upstream blob bytes.
+- Recorded upstream commit/tree/blob IDs, sizes and SHA-256 in a snapshot
+  manifest, and prevented checkout line-ending conversion in that directory.
+- Replaced mandatory submodule initialization in both setup scripts with
+  bundled snapshot checks; ZIP installation no longer requires Git.
+- Added standard-library snapshot verification to setup and project validation.
+- Updated clone/ZIP instructions, provenance, current status and decision log.
+- GitHub-only clone/ZIP validation and temporary-file cleanup are recorded in
+  `docs/DEPLOYMENT_FIX_2026-10-08.md`. Simulation code, assets and environment
+  version pins are unchanged.
+
 ## 2026-07-27 — historical invalid-RFT locomotion recovery
 
 - Located the archived `legacy_sand.mp4` recording that shows the complete

@@ -1,5 +1,34 @@
 # Decision log
 
+## D-015 — bundle the immutable RFT-SiM reference for public deployment
+
+Date: 2026-10-08. Supersedes the submodule distribution choice in D-005.
+
+Replace the `third_party/RFT-SiM` gitlink with the complete original tree at
+`303283fae075cae4101ee3af102a36a4a5775998`. Preserve every upstream blob,
+including the MIT License in its README, assets and two original example
+MP4 files. The MP4 files are a bounded provenance exception to D-006; they
+are not new experimental output or current lizard validation media.
+
+Record commit, tree, original blob IDs, sizes and SHA-256 in
+`third_party/RFT-SiM.snapshot.json`. Disable line-ending conversion for the
+snapshot and verify its hashes during setup and canonical validation. Keep
+first-party RFT integration outside the immutable snapshot.
+
+Reason: the upstream URL currently returns `Repository not found`; ordinary
+ZIP downloads never contained the old submodule contents, and recursive
+clones/setup fail when the upstream is inaccessible. A locally preserved,
+clean copy matches the pinned commit and passes Git object validation. The
+upstream README grants MIT redistribution with the copyright/license notice
+retained. Bundling this fixed tree makes public clones and ZIP downloads
+self-contained without adding upstream Git history. No physics, mesh,
+controller, environment pins or force conventions change.
+
+Scope of evidence: the original crab examples are preserved, not newly
+validated in `lizard_rft`. The verification record distinguishes fresh
+GitHub source deployment in the existing environment from a new-environment
+installation. See `docs/DEPLOYMENT_FIX_2026-10-08.md`.
+
 ## D-014 — invalid historical locomotion is visual evidence only
 
 Date: 2026-07-27
@@ -110,6 +139,9 @@ triangle positions, normals, and force directions.
 ## D-005 — upstream RFT-SiM is a pinned dependency
 
 Date: 2026-07-27
+
+Historical decision: the submodule distribution was superseded by D-015 on
+2026-10-08. The upstream version and first-party integration boundary remain.
 
 Keep upstream RFT-SiM as a Git submodule under `third_party/`, pinned to
 `303283fae075cae4101ee3af102a36a4a5775998`. Keep local integration code in

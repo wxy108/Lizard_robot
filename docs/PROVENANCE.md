@@ -77,6 +77,20 @@ recoverable.
 - Pinned commit: `303283fae075cae4101ee3af102a36a4a5775998`
 - Local path: `third_party/RFT-SiM`
 
+Since 2026-10-08 this path is a regular, immutable vendored snapshot rather
+than a Git submodule. All 159 files are exported from the exact original
+commit, with original byte sizes, Git blob IDs and SHA-256 recorded in
+`third_party/RFT-SiM.snapshot.json`. The copyright and full MIT License in
+the original README are preserved. `.gitattributes` prevents line-ending
+conversion in this directory.
+
+The upstream URL currently returns `Repository not found`; we cannot
+determine whether it was deleted, renamed or made private. The locally
+preserved pinned repository passed `git fsck --full` before export. Its Git
+metadata is retained outside the active checkout under the dated local
+archive. No modified upstream source or newer upstream version was inferred.
+See decision D-015 and `docs/DEPLOYMENT_FIX_2026-10-08.md`.
+
 The local vectorized implementation in `sim_fxn_lib.py` follows the upstream
 body-on-sand force convention. The integration applies the negative reaction
 force to the robot; see decision D-003.

@@ -1,0 +1,3 @@
+flipper -> 12.6 cm/s
+
+cshape -> 16.4 cm/s

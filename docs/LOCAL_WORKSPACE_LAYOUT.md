@@ -47,9 +47,11 @@ the GitHub web view:
 - `.git/` is local Git metadata;
 - `outputs/` contains ignored generated data;
 - `__pycache__/` contains ignored Python caches;
-- `third_party/RFT-SiM/` is expanded locally, while GitHub shows the pinned
-  submodule pointer at commit
-  `303283fae075cae4101ee3af102a36a4a5775998`.
+
+Since 2026-10-08, `third_party/RFT-SiM/` is a regular tracked folder on both
+GitHub and disk. All 159 files from upstream commit
+`303283fae075cae4101ee3af102a36a4a5775998` are bundled and hash-verified.
+It no longer appears as an external submodule link. See decision D-015.
 
 These differences do not represent missing tracked project files.
 

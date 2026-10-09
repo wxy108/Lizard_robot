@@ -78,7 +78,7 @@ Conda for the current shell if `conda` is not found.
 ### Windows PowerShell
 
 ```powershell
-git clone --recurse-submodules https://github.com/wxy108/Lizard_robot.git
+git clone https://github.com/wxy108/Lizard_robot.git
 cd Lizard_robot
 powershell -ExecutionPolicy Bypass -File scripts\setup.ps1
 conda activate lizard_rft
@@ -87,7 +87,7 @@ conda activate lizard_rft
 ### Linux, macOS, or WSL
 
 ```bash
-git clone --recurse-submodules https://github.com/wxy108/Lizard_robot.git
+git clone https://github.com/wxy108/Lizard_robot.git
 cd Lizard_robot
 bash scripts/setup.sh
 conda activate lizard_rft
@@ -95,9 +95,9 @@ conda activate lizard_rft
 
 The setup scripts:
 
-1. initialize the pinned `third_party/RFT-SiM` submodule;
+1. use the bundled `third_party/RFT-SiM` reference snapshot;
 2. create `lizard_rft` from `environment.yml`, or reuse it if it exists;
-3. verify MuJoCo, NumPy, Open3D, PyMeshLab, OpenCV, and video support;
+3. verify imports and the SHA-256 of every bundled upstream file;
 4. run the project validator.
 
 To synchronize an existing environment:
@@ -115,7 +115,6 @@ bash scripts/setup.sh --update
 If scripts cannot be used:
 
 ```bash
-git submodule update --init --recursive
 conda env create --file environment.yml
 conda activate lizard_rft
 python scripts/validate_project.py
@@ -131,6 +130,14 @@ Expected validation:
 
 See [GUIDANCE.md](GUIDANCE.md) for headless Linux, macOS viewer commands,
 troubleshooting, output interpretation, and clean-room reproduction.
+
+GitHub **Code → Download ZIP** also works: extract the ZIP, enter its project
+folder and run the same setup script. Git is only required for cloning or
+updating; setup and validation do not require Git. The 159-file RFT-SiM
+reference is included directly, with its original MIT License and exact
+upstream commit. No access to `Crab-Lab-CWRU/RFT-SiM` is needed. See the
+[download/deployment repair record](docs/DEPLOYMENT_FIX_2026-10-08.md) and
+[upstream provenance](third_party/README.md).
 
 ## Run the simulations
 
@@ -308,7 +315,7 @@ granular material.
 |   |-- media/                        # checked-in, directly viewable outputs
 |   |-- regressions/                  # manifests and numerical evidence
 |   `-- ...                           # status, decisions, provenance, guides
-|-- third_party/RFT-SiM/              # pinned upstream submodule
+|-- third_party/RFT-SiM/              # bundled immutable upstream snapshot
 `-- outputs/                          # reproducible local raw runs; ignored
 ```
 

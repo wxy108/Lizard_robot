@@ -54,7 +54,7 @@ only a presentation difference.
 Required:
 
 - 64-bit Windows, Linux, macOS, or WSL;
-- Git;
+- Git for cloning/updating, or a GitHub ZIP download;
 - a working Conda distribution;
 - enough network access to clone GitHub repositories and download Python
   wheels;
@@ -90,7 +90,7 @@ If `conda` is not found:
 Preferred:
 
 ```bash
-git clone --recurse-submodules https://github.com/wxy108/Lizard_robot.git
+git clone https://github.com/wxy108/Lizard_robot.git
 cd Lizard_robot
 ```
 
@@ -99,20 +99,32 @@ inside GitHub. On the original workstation, the single canonical Git root is
 `Lizard_Robot_MuJoCo`; former RFT and publication workspaces are archived.
 See `docs/LOCAL_WORKSPACE_LAYOUT.md`. Do not run from an archived copy.
 
-If the repository was cloned without submodules:
+Alternatively use GitHub **Code → Download ZIP**, extract it and enter the
+extracted project folder. Setup and validation work without local Git metadata.
 
-```bash
-git submodule update --init --recursive
-```
-
-Expected upstream submodule:
+Bundled upstream reference:
 
 ```text
 third_party/RFT-SiM
 commit 303283fae075cae4101ee3af102a36a4a5775998
 ```
 
-The local integration does not modify the upstream checkout.
+This is a regular tracked directory containing all 159 original upstream
+files, including assets and the MIT License. It is not a submodule and needs
+no separate download. `third_party/RFT-SiM.snapshot.json` records the commit,
+original Git blob IDs, sizes and SHA-256 values. Verify it with:
+
+```bash
+python scripts/verify_rft_snapshot.py
+```
+
+The local integration uses root-level `sim_fxn_lib.py`; the bundled reference
+is immutable. See `third_party/README.md` and decision D-015.
+
+For an old clone, run `git pull --ff-only`. Git may retain an old nested
+`third_party/RFT-SiM/.git` locally when replacing the former gitlink. That
+metadata is no longer required or used by setup. Preserve any local changes
+before updating; a fresh clone or ZIP avoids old submodule metadata entirely.
 
 ## 4. One-command deployment
 
@@ -151,10 +163,10 @@ bash scripts/setup.sh --skip-validation
 
 Both setup scripts:
 
-1. initialize the pinned Git submodule;
+1. confirm that the bundled upstream snapshot is present;
 2. create `lizard_rft` from `environment.yml` if missing;
 3. optionally update an existing environment;
-4. verify the major imports and versions;
+4. verify the major imports, versions and upstream file hashes;
 5. run `scripts/validate_project.py`.
 
 They do not install, activate, update, rename, or remove any IsaacLab
@@ -165,7 +177,6 @@ environment.
 Use this when automation scripts cannot be executed:
 
 ```bash
-git submodule update --init --recursive
 conda env create --file environment.yml
 conda activate lizard_rft
 python scripts/validate_project.py
@@ -212,6 +223,7 @@ python scripts/validate_project.py
 
 Acceptance:
 
+- all 159 bundled upstream files match their recorded sizes and SHA-256;
 - 16/16 unit tests;
 - eight active STLs are one-component, watertight, manifold, consistently
   oriented, positive-volume, and free of detected self-intersections;
@@ -614,7 +626,7 @@ hash-mismatched builds.
 On a computer that has never run this project:
 
 ```bash
-git clone --recurse-submodules https://github.com/wxy108/Lizard_robot.git
+git clone https://github.com/wxy108/Lizard_robot.git
 cd Lizard_robot
 conda env create --file environment.yml
 conda activate lizard_rft
@@ -660,15 +672,20 @@ Or synchronize it:
 conda env update --name lizard_rft --file environment.yml --prune
 ```
 
-### Git submodule initialization fails
+### Old instructions fail at `Crab-Lab-CWRU/RFT-SiM`
 
-Confirm a complete Git installation and network access to GitHub. Manual
-fallback:
+As checked on 2026-10-08, the upstream URL returns `Repository not found`.
+That response cannot distinguish a private repository from a deleted or
+renamed repository. Old revisions of this project used a submodule and could
+not deploy without upstream access.
 
-```bash
-git clone https://github.com/Crab-Lab-CWRU/RFT-SiM.git third_party/RFT-SiM
-git -C third_party/RFT-SiM checkout 303283fae075cae4101ee3af102a36a4a5775998
-```
+Download current `main` (ordinary clone or ZIP), then run the normal setup.
+The upstream files are now bundled. Do not repeat the old submodule commands
+or try to clone the unavailable upstream separately.
+
+If `verify_rft_snapshot.py` reports missing or changed files, use a fresh
+download. The checker also works on ZIP extraction without Git. See
+`docs/DEPLOYMENT_FIX_2026-10-08.md` for provenance and GitHub-only verification.
 
 ### MuJoCo import fails
 

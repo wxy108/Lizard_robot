@@ -23,3 +23,6 @@
 *.log whitespace=-trailing-space,-blank-at-eof
 *.urdf whitespace=-trailing-space,-blank-at-eof
 *.m whitespace=-trailing-space,-blank-at-eof
+
+# Immutable upstream snapshot: retain original blob bytes on every platform.
+third_party/RFT-SiM/** -text whitespace=-trailing-space,-blank-at-eof

@@ -1,6 +1,16 @@
 # Project status
 
-Last verified: 2026-07-27
+Last updated: 2026-10-08. Numerical baseline measurements below are from
+2026-07-27; the deployment repair has its own verification record.
+
+## Public download and deployment
+
+The upstream RFT-SiM URL became inaccessible (`Repository not found`). The
+former submodule was replaced with all 159 original files at the same pinned
+commit, preserving the MIT License and recording per-file hashes. Ordinary
+Git clones and ZIP downloads include the complete reference. Setup and
+validation no longer download upstream. Physics and environment pins are
+unchanged. See `docs/DEPLOYMENT_FIX_2026-10-08.md` and decision D-015.
 
 ## Git anchors
 
@@ -8,7 +18,7 @@ Last verified: 2026-07-27
   `ed5edc6`
 - Original rigid-floor compatibility fixes:
   `6c848e90a0658fe8713f0dbca7876ed0465ac573`
-- Upstream RFT-SiM dependency:
+- Bundled upstream RFT-SiM reference:
   `303283fae075cae4101ee3af102a36a4a5775998`
 
 The nested local RFT workspace retains its own source-history anchors:

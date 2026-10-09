@@ -18,24 +18,16 @@ for argument in "$@"; do
     esac
 done
 
-command -v git >/dev/null 2>&1 || {
-    echo "Git is required. Install Git and rerun this script." >&2
-    exit 1
-}
 command -v conda >/dev/null 2>&1 || {
     echo "Conda is required. Install Miniforge, initialize your shell, and rerun." >&2
     exit 1
 }
 
-SUBMODULE_PATH="${PROJECT_ROOT}/third_party/RFT-SiM"
-EXPECTED_SUBMODULE_COMMIT="303283fae075cae4101ee3af102a36a4a5775998"
-if [[ -e "${SUBMODULE_PATH}/.git" ]] \
-    && [[ "$(git -C "${SUBMODULE_PATH}" rev-parse HEAD)" == "${EXPECTED_SUBMODULE_COMMIT}" ]]; then
-    echo "[1/4] Pinned RFT-SiM submodule is already initialized."
-else
-    echo "[1/4] Initializing the pinned RFT-SiM submodule..."
-    git submodule update --init --recursive
+if [[ ! -f third_party/RFT-SiM.snapshot.json || ! -f third_party/RFT-SiM/README.md ]]; then
+    echo "Bundled RFT-SiM snapshot is missing. Download a fresh clone or ZIP of Lizard_robot." >&2
+    exit 1
 fi
+echo "[1/4] Using the bundled RFT-SiM snapshot (no upstream download)."
 
 ENVIRONMENT_NAME="lizard_rft"
 if conda env list | awk '{print $1}' | grep -Fxq "${ENVIRONMENT_NAME}"; then
@@ -54,6 +46,7 @@ fi
 echo "[3/4] Checking pinned runtime imports..."
 conda run --no-capture-output --name "${ENVIRONMENT_NAME}" \
     python -c "import mujoco, numpy, open3d, pymeshlab, cv2, imageio; print('MuJoCo', mujoco.__version__); print('NumPy', numpy.__version__); print('Open3D', open3d.__version__)"
+conda run --no-capture-output --name "${ENVIRONMENT_NAME}" python scripts/verify_rft_snapshot.py
 
 if [[ "$(uname -s)" == "Linux" && -z "${DISPLAY:-}" ]]; then
     export MUJOCO_GL="${MUJOCO_GL:-egl}"
