@@ -559,6 +559,9 @@ def render_catalog(args):
 
 
 def publish(args):
+    publication_source = git_state()
+    if publication_source["dirty"]:
+        raise ValueError("Commit publication code before creating tracked media")
     raw = args.publish.resolve(); verify(raw)
     index = json.loads((raw/"comparison_index.json").read_text())
     if index["source"]["dirty"]:
@@ -574,7 +577,7 @@ def publish(args):
             copied[f"{robot}/{path.name}"] = {"source_sha256":sha256(path),"sha256":sha256(target/path.name)}
         write_json(target/"manifest.json",{"artifacts":artifact_manifest(target)})
     write_json(output/"comparison_index.json",index)
-    write_json(output/"publication.json",{"source":git_state(),"raw":str(raw),"copies":copied})
+    write_json(output/"publication.json",{"source":publication_source,"raw":str(raw),"copies":copied})
     lines = ["# Rigid above / sand below, plus enlarged contact-proxy remesh reviews","",
         "All movies reuse saved physics. Geometry source is the selected contact proxy, not the whole robot CAD. "
         "No missing failure motion is fabricated; early-stop scene rows become labelled no-data cards.","",
@@ -582,8 +585,8 @@ def publish(args):
         "Rigid overlap and RFT centroid penetration are different explicitly labelled quantities. "
         "Contact display conservatively ORs each time-pixel bin; full raw telemetry remains unchanged.",""]
     for robot,record in index["robots"].items():
-        lines += [f"## {NAMES[robot]}","",f"[Play rigid/sand comparison]({robot}/motion_comparison.mp4) | "
-            f"[Rotate mesh/point comparison]({robot}/remesh_comparison.mp4)","",
+        lines += [f"## {NAMES[robot]}","",f"[Rigid/sand MP4 - download/open]({robot}/motion_comparison.mp4) | "
+            f"[Rotating mesh/point MP4 - download/open]({robot}/remesh_comparison.mp4)","",
             f"![Contact proxy mesh/point overview]({robot}/remesh_comparison.png)","",
             "Individual proxy enlargements:",""]
         lines += [f"- [{s['id']}: {s['body']}]({robot}/proxy_{s['id']}.png)" for s in record["geometry"]["surfaces"]]
@@ -598,6 +601,9 @@ def publish(args):
         "Absolute median spacing and actual counts are reported separately. Same camera/scale is used within each comparison. "
         "Sample arrows show outward normals, not force vectors. Source proxies can already be valid; remeshing is not proof "
         "of calibrated physics or improved walking. Whole-model images are pose-only ghost/location context; native geometry is unchanged.","",
+        "Matched means controller and timestep, not identical native/RFT contact discretization. For example T1 uses original "
+        "corner spheres on rigid ground and the explicitly selected sole-box RFT proxy. Read each saved geometry_status in comparison.json. "
+        "GitHub MP4 file pages may show only Download/View raw; downloaded MP4s and inline chat embeds are the intended playback routes.","",
         "Raw generator: `scripts/generate_robot_comparisons.py --batch outputs/robot_catalog/clean_6s_36659ca "
         "--fast-run outputs/ground_rft/g1_clean_6s_5078fdc --output-dir outputs/robot_comparisons/NEW_RUN`. "
         "Use `conda run -n lizard_rft python` before that script. See `docs/ROBOT_COMPARISONS_2026-10-28.md` for "

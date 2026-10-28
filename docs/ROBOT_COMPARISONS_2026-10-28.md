@@ -84,3 +84,37 @@ ratio changes 2.63 -> 4.17 (still within the existing gate). No blanket
 Apollo left/right after counts differ (542/550), so show separate review rows
 instead of pretending symmetry. Every actual component still gets its own
 enlargement. CSV/JSON and scoped Git attributes preserve LF bytes for manifests.
+
+C4: clean render source `230cda2` generated all seven robots and the G1 fast
+variant in `outputs/robot_comparisons/production/`. Eight motion pairs are
+1280x944, 121 frames/20 FPS (6.05 s encoded, 6 s requested recorded interval).
+Seven geometry movies are 1600x960, 65 frames/16 FPS (4.0625 s encoded).
+Independent `--verify` passed: 15 movies, 1,423 decoded frames, 19 component
+zooms, 16 source state files checked, none unavailable, all hashes valid.
+All source runs/bundles were also re-verified after generation. URI models
+received four pose-only replays; their trajectory hashes exactly match input.
+
+C5: canonical fast validator passed on clean `230cda2`: 81/81 tests, immutable
+159-file upstream snapshot, eight active legacy mesh gates, 13,916 sites,
+original rigid and RFT 0.2 s smoke. Prescribed legacy video smoke (0.25 s,
+10 FPS, 640x480 + 420 panel) produced nine videos plus overview and passed
+the analyzer's artifact verification. Its new short baseline simulation is
+validation only, not a replacement for any robot comparison trajectory.
+Logs: `outputs/robot_comparisons/validation/`; legacy smoke data:
+`outputs/robot_comparisons/legacy_video_smoke/`.
+
+C6: reviewed every robot's mesh/centroid overview, representative per-component
+enlargements, every motion row's first/middle/last frames and stopped-row
+transitions. T1 has 12 -> 768 triangles per sole; the wheel models include
+both wheel cylinders (96 -> 330) and caster boxes (12 -> 88). Shared geometry
+movie rows avoid repetition, but all 19 named surfaces have independent PNGs.
+Pose context is deliberately grey/translucent with gold quadrature locations;
+URI context adds a display-only backdrop, never a collision/support geom.
+
+C7: final publication helper captures clean Git state before creating tracked
+outputs (otherwise the new media would incorrectly mark its own source dirty).
+This postprocessing-only metadata/link-label correction does not relabel the
+`230cda2` renders. GitHub links are labelled download/open, not falsely sold
+as embedded players. Matched native/RFT comparisons do not imply identical
+contact discretization, notably T1 corner spheres versus sole box. Full
+metrics, limits and sampled-deviation results remain in per-robot JSON/CSV.
