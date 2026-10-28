@@ -36,3 +36,7 @@ docs/regressions/2026-10-28-ground-rft/*.log text eol=lf
 docs/regressions/2026-10-28-robot-catalog/*.log text eol=lf
 docs/media/robot_catalog/LICENSE-*.txt text eol=lf whitespace=-trailing-space,-blank-at-eof
 docs/media/robot_catalog/NOTICE.playground text eol=lf
+docs/media/robot_comparisons/**/LICENSE-*.txt text eol=lf whitespace=-trailing-space,-blank-at-eof
+docs/media/robot_comparisons/**/NOTICE.playground text eol=lf
+docs/media/robot_comparisons/**/*.csv text eol=lf
+docs/regressions/2026-10-28-robot-comparisons/*.log text eol=lf

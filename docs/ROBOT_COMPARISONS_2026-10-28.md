@@ -7,7 +7,9 @@ sand below), plus independent before/after remesh and RFT-centroid views,
 including enlarged contact proxies. Start at `5219db9` on
 `agent/ground-rft-pipeline`. Preserve all recorded trajectories, native model
 geometry/dynamics, controllers, force code, environment and original lizard.
-No physics simulation, policy tuning, remesh rebuild or package installation.
+Comparison generation executes no physics, policy tuning, remesh rebuild or
+package installation. Mandatory legacy validation below separately runs its
+existing short smoke simulations; these do not replace comparison trajectories.
 Use only `lizard_rft`; IsaacLab remains outside scope.
 
 ## Deliverable and acceptance
@@ -57,3 +59,28 @@ before/after metrics: reuse them rather than rerunning remeshing. Motion rows
 reuse native MP4/state records; Waffle Pi may need visual-only replay to remove
 opaque collision overlays. Whole-model context is a display-only native pose.
 Append actual changes, checks, output locations and remaining limits below.
+
+C1: added `scripts/generate_robot_comparisons.py`: streaming synchronized
+motion composition, OR-binned component contact, COM/depth panels, neutral
+post-stop scenes; exact saved proxy geometry, shared-scale orthographic mesh/
+centroid/normal render, pose-only native ghost context, per-surface PNG/CSV,
+verified visual-only URDF replay, bounded publication and independent readback.
+Only new reporting code; existing native runner/provider/kernel untouched.
+
+C2: added 12 known-answer tests in `tests/test_robot_comparisons.py`: triangle
+quadrature, invalid/coincident geometry, absolute-vs-relative 3D spacing,
+orthonormal cameras/common bounds, exact first/final saved-frame mapping,
+no frozen stop tails, conservative contact bins, rigid-above-sand layout,
+complete geometry sheet and absence of stepping/remesh calls. Initial 12/12
+passed. Development outputs: `outputs/robot_comparisons/dev_3models_v1/`
+(Go1/Apollo/Waffle), `dev_context_v2/` (larger, readable URDF location context).
+Reviewed geometry sheets, motion first/middle/last and Apollo's no-data
+transition. All intermediate outputs retained, not published.
+
+C3: source proxies already have valid topology. For example Go1's source
+336 triangles become 312; spacing ratio improves 2.34 -> 1.68 while area
+ratio changes 2.63 -> 4.17 (still within the existing gate). No blanket
+"all metrics improve" claim, finer-is-better claim or parameter change.
+Apollo left/right after counts differ (542/550), so show separate review rows
+instead of pretending symmetry. Every actual component still gets its own
+enlargement. CSV/JSON and scoped Git attributes preserve LF bytes for manifests.
