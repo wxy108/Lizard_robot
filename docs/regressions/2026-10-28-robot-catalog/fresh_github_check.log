@@ -1,0 +1,39 @@
+Fresh GitHub sparse checkout; no pre-existing robot assets; reuse lizard_rft only.
+ad7c87f2bdd9c55eced4dd2625461e7dc7d93011
+Python: C:\Users\wxy22\anaconda3\envs\lizard_rft\python.exe; environment: C:\Users\wxy22\anaconda3\envs\lizard_rft
+mujoco: 3.9.0
+numpy: 1.26.4
+open3d: 0.19.0
+pymeshlab: 2025.7.post1
+onnxruntime: 1.31.1
+xacro: 2.1.1
+MuJoCo native import/compile: passed
+Verified 14 files: playground
+Verified 30 files: menagerie
+Catalog installation: C:\Users\wxy22\AppData\Local\Temp\LizardCatalogGitHubCheck-61d3c586dec347fabf204859e5e7b374\outputs\robot_catalog\install_20261028_132644_405295; selected bytes 13309414
+Starting t1: C:\Users\wxy22\AppData\Local\Temp\LizardCatalogGitHubCheck-61d3c586dec347fabf204859e5e7b374\configs\robots\playground_t1.yaml
+import
+prepare
+bind
+binding_pose_checks
+rigid_upstream: passed_screen (completed), dx=1.143 m, depth=0.00 mm
+rigid_upstream
+rigid_matched: passed_screen (completed), dx=1.150 m, depth=0.00 mm
+rigid_matched
+sand: passed_screen (completed), dx=1.162 m, depth=15.68 mm
+sand
+Pipeline passed_screen: C:\Users\wxy22\AppData\Local\Temp\LizardCatalogGitHubCheck-61d3c586dec347fabf204859e5e7b374\outputs\fresh_t1\t1
+Catalog run evidence: C:\Users\wxy22\AppData\Local\Temp\LizardCatalogGitHubCheck-61d3c586dec347fabf204859e5e7b374\outputs\fresh_t1
+Starting package: C:\Users\wxy22\AppData\Local\Temp\LizardCatalogGitHubCheck-61d3c586dec347fabf204859e5e7b374\outputs\robot_catalog\imports\08fd7086542e7e83f58453fdf93ae0808e396b483d1dae0fbc5fd126c0eda1bf\recipe.json
+import
+prepare
+bind
+binding_pose_checks
+rigid_upstream: passed_screen (completed), dx=1.796 m, depth=0.00 mm
+rigid_upstream
+rigid_matched: passed_screen (completed), dx=1.786 m, depth=0.00 mm
+rigid_matched
+sand: passed_screen (completed), dx=1.861 m, depth=30.31 mm
+sand
+Pipeline passed_screen: C:\Users\wxy22\AppData\Local\Temp\LizardCatalogGitHubCheck-61d3c586dec347fabf204859e5e7b374\outputs\fresh_g1_package\package
+Catalog run evidence: C:\Users\wxy22\AppData\Local\Temp\LizardCatalogGitHubCheck-61d3c586dec347fabf204859e5e7b374\outputs\fresh_g1_package

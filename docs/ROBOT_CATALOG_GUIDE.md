@@ -27,6 +27,12 @@ headless Linux host select an available renderer, e.g. `MUJOCO_GL=egl` or
 `osmesa`; rendering still requires the corresponding system driver/library.
 Local validation is Windows; this is not a claim of tests on every OS.
 
+An actual fresh GitHub sparse clone (no existing robot assets) was checked:
+T1 auto-download plus all three six-second scenarios passed; imported G1 ran
+without original G1 assets. All saved state/force/control arrays matched the
+earlier runs exactly. That check reused `lizard_rft`; a fresh OS/environment
+was not tested. See `fresh_github_check.json/.log` in the compact evidence.
+
 ## One command per supported robot
 
 ```sh

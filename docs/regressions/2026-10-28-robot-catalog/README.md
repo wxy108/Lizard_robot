@@ -19,3 +19,16 @@ All 14 rigid scenarios pass; 3/7 sand screens pass. Failed transfers remain evid
 `review.json` includes original summaries, source/settings, hashes, binding gates, contacts, speed biases and baseline array comparisons. `package_review.json` checks actual relocated six-second G1 simulation; `format_comparison.json` separates bitwise fingerprints from force probes. `*_render.json` records visual-only replay (zero physics steps). Logs are LF-normalized copies; original/copy hashes are in `publication.json`.
 
 Raw: `outputs/robot_catalog/clean_6s_36659ca/`; keep these local. Reproduce using the catalog guide and reviewer/curator scripts, not workstation-specific absolute evidence paths. Component contact, COM and penetration diagrams are included here; [reviewed videos](../../media/robot_catalog/README.md). Short screens and failures are not material calibration or universal locomotion guarantees.
+
+## Fresh GitHub deployment
+
+Actual clean GitHub clone at `ad7c87f`, with no prior robot assets: T1 downloaded
+44 pinned files (13,309,414 bytes) and completed all three six-second cases.
+G1 ran from a single package without original G1/Go1 assets. Every saved array
+in all six cases matched the original T1/G1 runs exactly; all videos decoded.
+`fresh_github_check.json` and its LF stdout log preserve source, metrics,
+hashes and comparisons. The test reused the existing `lizard_rft` environment
+on Windows; it is not a new-OS/environment validation. Automatic cleanup of
+the temporary clone was blocked before execution; it remains at the exact
+path in `fresh_github_cleanup.json` for manual cleanup. Verification code:
+`scripts/verify_fresh_deployment.py`; see ledger E9 for scope and cleanup.

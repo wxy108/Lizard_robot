@@ -188,3 +188,22 @@ Windows runtime tested; other platforms receive reproducible pinned setup,
 not a false cross-platform validation claim. D-021 curates six videos with
 licenses, diagnostics, manifests and clean source indexes. New structure and
 every file's role are documented above and in `ROBOT_CATALOG_GUIDE.md`.
+
+### E9 — actual GitHub cold-source deployment check
+
+After pushing `ad7c87f`, created a fresh shallow/sparse clone from the actual
+GitHub URL in a new temporary directory (runtime folders only; no local source
+copy or robot assets). Reused `lizard_rft`, not a newly created OS/environment.
+One `run t1 --duration 6 --video` downloaded/verified 14 Playground + 30
+Menagerie files, 13,309,414 bytes, then passed all three scenarios. An imported
+G1 package also passed all three scenarios with no original G1/Go1 assets in
+that clone. All seven arrays in every T1/G1 scenario exactly match their
+original clean runs; all six videos decoded. Verified source commit and clean
+Git state. `scripts/verify_fresh_deployment.py` preserves compact summaries,
+hashes, array comparisons and LF stdout in `fresh_github_check.json/.log`.
+Automatic cleanup was attempted after evidence preservation but execution
+policy rejected the command before it ran. The temporary clone/downloads/raw
+re-test outputs therefore remain; exact path/status is in
+`fresh_github_cleanup.json`. Canonical sources, environment, prior raw results
+and six published videos remain intact. This is fresh GitHub source/asset deployment on Windows,
+not independent testing of a fresh Conda environment or another OS.
