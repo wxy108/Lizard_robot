@@ -277,3 +277,13 @@ the three-pose checks. Output:
 `outputs/ground_rft/verified_bundle_reuse_20261028/`. These are post-validation
 CLI diagnostics, not additional clean-source physics runs. Their stage files
 and hashes are included in the compact evidence record.
+
+### S10 / publication packaging check
+
+Final staging exposed Windows CRLF-to-LF normalization for generated JSON/logs.
+Raw run manifests correctly describe their original bytes, but a tracked
+release manifest must hash the **checked-out canonical bytes**, not Windows
+pre-staging JSON. Normalized only the two new curated evidence directories'
+text to LF, rebuilt their release manifests, and verified each staged Git
+blob against the advertised SHA-256/size. Raw run data, videos and runtime
+source are unchanged. This packaging fix is separate from physics validation.
