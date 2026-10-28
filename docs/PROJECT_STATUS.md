@@ -5,6 +5,11 @@ Last updated: 2026-10-28. Historical numerical anchors below are from
 
 ## Robot-independent RFT stage one
 
+Active continuation: broader robot/format catalog and one-command deployment;
+plan and per-step ledger: `ROBOT_CATALOG_EXPANSION_2026-10-28.md`. Preserve all
+previous clean runtime evidence below; new targets are not counted passed
+until their actual pipeline stage results are recorded.
+
 2026-10-28 direction: extend to an audited file-to-ground-locomotion pipeline
 and real open-source walking controllers. Panda is retained as interface
 smoke only, not relevant locomotion-generalization evidence. Work/acceptance:

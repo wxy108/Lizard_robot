@@ -1,5 +1,16 @@
 # Decision log
 
+## D-020 — declarative catalog adapters and portable robot packages
+
+Date: 2026-10-28. Extend generic import without changing the lizard baseline.
+Catalog entries pin source/recipe/controller contracts and distinguish runtime
+evidence levels. URDF floating-root, named geoms, wheel servos and support
+additions are explicit opt-in native-spec adapters with effective readback,
+not silent importer defaults. Standalone URDF import retains its old semantics.
+Portable packages include provenance, licenses, model/controller/bundle hashes
+and version constraints; reject unsafe archives or incomplete dependencies.
+Prior robot failures remain controls. See `ROBOT_CATALOG_EXPANSION_2026-10-28.md`.
+
 ## D-019 — bounded ground-pipeline success and failure media
 
 Date: 2026-10-28. Extend D-006 with `docs/media/ground_rft_pipeline/`:

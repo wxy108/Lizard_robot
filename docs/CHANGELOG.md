@@ -3,6 +3,12 @@
 All notable project changes are recorded here. Git is the authoritative
 line-level record; this file explains intent and consequences.
 
+## 2026-10-28 — robot/format catalog expansion
+
+- Recorded broader morphology/format targets, controller/source contracts,
+  deployment improvements, acceptance levels and finite experiment budgets
+  before implementation. Legacy physics/models/environment remain frozen.
+
 ## 2026-10-28 — ground-locomotion pipeline scope
 
 - Recorded the staged input-to-simulation contract, candidate/bundle gates,
