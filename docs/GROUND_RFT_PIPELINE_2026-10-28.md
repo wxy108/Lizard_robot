@@ -287,3 +287,10 @@ pre-staging JSON. Normalized only the two new curated evidence directories'
 text to LF, rebuilt their release manifests, and verified each staged Git
 blob against the advertised SHA-256/size. Raw run data, videos and runtime
 source are unchanged. This packaging fix is separate from physics validation.
+
+Pinned these new regression logs to LF in `.gitattributes` as well. A bounded
+`git -c core.autocrlf=true checkout-index` of both curated artifact sets into
+`outputs/ground_rft/package_checkout_check_20261028/` passed every size/hash
+check. This tests Windows Git line-ending filtering, not a new environment
+installation or an independent Linux/macOS run. Output marker:
+`WINDOWS_FILTERED_CHECKOUT_HASHES_PASSED`.

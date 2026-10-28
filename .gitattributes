@@ -32,3 +32,4 @@ docs/media/general_rft_stage1/LICENSE-*.txt text eol=lf
 docs/media/ground_rft_pipeline/LICENSE-*.txt text eol=lf
 controllers/NOTICE.playground text eol=lf
 requirements-locomotion.txt text eol=lf
+docs/regressions/2026-10-28-ground-rft/*.log text eol=lf
