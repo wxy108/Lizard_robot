@@ -1,5 +1,20 @@
 # Decision log
 
+## D-022 — per-robot synchronized motion and enlarged proxy/remesh evidence
+
+Date: 2026-10-28. Extend D-021 with the user's requested paired presentation:
+at most eight rigid-over-sand videos (seven models plus G1 fast variant),
+seven geometry videos/posters and per-surface zoom images. Reuse verified
+recorded states and exact saved source/prepared geometry. All comparisons use
+common per-row geometry scales/views; spacing colors are explicitly relative
+to each mesh's own 3D median. Report absolute counts/median spacing separately.
+Original source proxies are not labelled failed CAD, and the rest of a robot
+is not portrayed as remeshed. Geometry qualification and sand gait acceptance
+remain different evidence levels. Early-stop rows become neutral no-data
+cards while the other recorded row continues. No missing motion is invented.
+Raw evidence stays unchanged; any native replay is display-only with separate
+provenance. See `ROBOT_COMPARISONS_2026-10-28.md` for scope and acceptance.
+
 ## D-021 — bounded catalog success/failure media and visual-only replay
 
 Date: 2026-10-28. Publish at most six new MP4s: T1 matched rigid/sand,

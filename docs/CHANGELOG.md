@@ -3,6 +3,13 @@
 All notable project changes are recorded here. Git is the authoritative
 line-level record; this file explains intent and consequences.
 
+## 2026-10-28 — per-robot motion/remesh/proxy comparison presentation
+
+- Recorded the requested rigid-above-sand videos and enlarged contact-proxy,
+  original/remeshed triangulation and centroid distribution evidence before
+  implementation. Reuse recorded physics and qualified surfaces; do not alter
+  models/controllers/materials or erase transfer failures (D-022).
+
 ## 2026-10-28 — robot/format catalog expansion
 
 - Recorded broader morphology/format targets, controller/source contracts,
