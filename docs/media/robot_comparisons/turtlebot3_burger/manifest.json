@@ -1,0 +1,60 @@
+{
+  "artifacts": {
+    "comparison.json": {
+      "bytes": 31451,
+      "sha256": "cd42d65c22749de7174a33c9df663f4da9680eb259d9d50d1ceb2a7a6e1c56cc"
+    },
+    "geometry.json": {
+      "bytes": 10307,
+      "sha256": "7eb20da69ed267f14633ba76cf036487975df6cbe5232e977b402a0862bc98ce"
+    },
+    "LICENSE-turtlebot3.txt": {
+      "bytes": 11361,
+      "sha256": "f9946796a8a5bd5981565142fa42e3b0cc36aef6f80e86beaf5905b3c0fef1b5"
+    },
+    "motion_comparison.mp4": {
+      "bytes": 265513,
+      "sha256": "f5dd34dbf35a8d5f5c48e7ce221fc4242cb2ef51f32ff06a2295cc8bd91bbcd5"
+    },
+    "motion_comparison.png": {
+      "bytes": 314511,
+      "sha256": "5bccb26ab1dc9f9fd2979ea563b030c347e2232451929846d164f4940250591f"
+    },
+    "motion_contact_sheet.png": {
+      "bytes": 330705,
+      "sha256": "0a03b9ed1df16e5e972667e5770ac66ee367dc64a01bc6223eaf79ed935d995b"
+    },
+    "NOTICE.playground": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "proxy_left_wheel.png": {
+      "bytes": 552155,
+      "sha256": "f4421c4b6c940071da90d52c059bfae0c8ac4adf75c4454a166b16e0c61dfa85"
+    },
+    "proxy_locations.png": {
+      "bytes": 168409,
+      "sha256": "c602e250cfb334bb50c11a2d92fc8496097619dc06d5cc30765d0267a841f34a"
+    },
+    "proxy_metrics.csv": {
+      "bytes": 775,
+      "sha256": "e408fb422511a829441d11cbd1e6649a60ae511511716975cc921a823ec9ae30"
+    },
+    "proxy_rear_caster.png": {
+      "bytes": 449826,
+      "sha256": "50b739d2a3bccc4be1a1e8f3970c1cd19e9f5ab19eda8d50d42405048e832b2a"
+    },
+    "proxy_right_wheel.png": {
+      "bytes": 553703,
+      "sha256": "9466bfa6df42277e55b239ecf5bcf1c6e968c431b7ec515320ae614b10514ed2"
+    },
+    "remesh_comparison.mp4": {
+      "bytes": 810723,
+      "sha256": "f7a57ac7a65c943313bf782bfa524806bc035294a982cb5d11d329ce2889b958"
+    },
+    "remesh_comparison.png": {
+      "bytes": 516121,
+      "sha256": "152df6c969138b19a432b7d109e261ae286923d5fcaa7ca86cf5eebf52203dd7"
+    }
+  }
+}

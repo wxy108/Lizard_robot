@@ -234,7 +234,8 @@ python scripts/validate_project.py
 Acceptance:
 
 - all 159 bundled upstream files match their recorded sizes and SHA-256;
-- 49/49 unit tests (16 original + 13 binding/provider + 20 ground-pipeline);
+- 81 unit tests (16 original + 13 binding/provider + 20 ground-pipeline +
+  20 catalog-format + 12 comparison-reporting; optional Xacro tests skip if missing);
 - eight active STLs are one-component, watertight, manifold, consistently
   oriented, positive-volume, and free of detected self-intersections;
 - 13,916 force sites exactly match 13,916 active triangles;

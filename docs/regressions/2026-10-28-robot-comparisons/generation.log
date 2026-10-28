@@ -1,0 +1,8 @@
+COMPARISON go1: verify -> geometry/proxy zooms -> paired motion
+COMPARISON g1: verify -> geometry/proxy zooms -> paired motion
+COMPARISON berkeley: verify -> geometry/proxy zooms -> paired motion
+COMPARISON t1: verify -> geometry/proxy zooms -> paired motion
+COMPARISON apollo: verify -> geometry/proxy zooms -> paired motion
+COMPARISON turtlebot3_burger: verify -> geometry/proxy zooms -> paired motion
+COMPARISON turtlebot3_waffle_pi: verify -> geometry/proxy zooms -> paired motion
+COMPLETE: X:\Projects\Lizard_Robot_MuJoCo\outputs\robot_comparisons\production

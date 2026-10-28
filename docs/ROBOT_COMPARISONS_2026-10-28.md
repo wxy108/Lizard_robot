@@ -118,3 +118,12 @@ This postprocessing-only metadata/link-label correction does not relabel the
 as embedded players. Matched native/RFT comparisons do not imply identical
 contact discretization, notably T1 corner spheres versus sole box. Full
 metrics, limits and sampled-deviation results remain in per-robot JSON/CSV.
+
+C8: bounded publication at `docs/media/robot_comparisons/` is 32,517,364 bytes
+before any later documentation additions (under 64 MB). Readback verifies all
+15 movies/1,423 frames, 19 zooms and 16 available input state files. New
+`docs/regressions/2026-10-28-robot-comparisons/` holds verification, clean source
+index, normalized logs and validation evidence. Earlier raw files, accepted
+meshes, physics/gaits, numerical packages, original media and `main` remain
+unchanged. This completes presentation, not new sand-gait adoption. After
+the stopped-row transition, no moving scene is stretched, frozen or fabricated.

@@ -1,5 +1,9 @@
 # Lizard Robot V1 — MuJoCo rigid floor + granular RFT
 
+New visual comparisons: [rigid above / sand below, mesh/point reviews and 19
+enlarged contact proxies](docs/media/robot_comparisons/README.md), with
+[verified source/test evidence](docs/regressions/2026-10-28-robot-comparisons/README.md).
+
 Newest: [multi-robot catalog and one-command pipeline](docs/ROBOT_CATALOG_GUIDE.md)
 for seven ground robots, MJCF/URDF/Xacro/native files and portable robot
 packages. Successful screens and failed sand transfers are recorded separately.

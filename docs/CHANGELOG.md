@@ -9,6 +9,16 @@ line-level record; this file explains intent and consequences.
   original/remeshed triangulation and centroid distribution evidence before
   implementation. Reuse recorded physics and qualified surfaces; do not alter
   models/controllers/materials or erase transfer failures (D-022).
+- Added the standalone saved-evidence generator, 12 reporting tests, eight
+  synchronized rigid/sand movies, seven mesh/centroid/normal review movies,
+  whole-model location context and 19 per-component enlargements with CSVs.
+- Clean `230cda2` render validated 15 movies/1,423 frames and immutable state/
+  bundle inputs. All 81 tests, canonical fast check and prescribed legacy
+  nine-view/overview video smoke/analyzer passed. Native model/controller/RFT
+  code and environment remain unchanged; failures become no-data scenes.
+- Published the reviewed D-022 gallery with notices and compact reproducible
+  evidence. Source proxies are not mislabelled as rejected CAD; point-density
+  and area-quality tradeoffs remain visible without new tuning.
 
 ## 2026-10-28 — robot/format catalog expansion
 

@@ -1,0 +1,214 @@
+{
+  "rigid_original": {
+    "trajectory": {
+      "duration_s": 0.25000000000000017,
+      "com_displacement_m": [
+        -0.013882839246510213,
+        0.02880226063177423,
+        -0.016002406068221307
+      ],
+      "com_path_length_m": 0.051468976228730916,
+      "mean_com_speed_m_s": 0.2062884818786809
+    },
+    "components": [
+      {
+        "component": "Mid",
+        "contact_duty": 0.0,
+        "contact_events": 0,
+        "first_contact_s": null,
+        "last_release_s": null,
+        "mean_event_duration_s": 0.0,
+        "max_event_duration_s": 0.0,
+        "scenario": "rigid_original"
+      },
+      {
+        "component": "Front",
+        "contact_duty": 0.262,
+        "contact_events": 19,
+        "first_contact_s": 0.06200000000000005,
+        "last_release_s": 0.18950000000000014,
+        "mean_event_duration_s": 0.0034473684210526347,
+        "max_event_duration_s": 0.04450000000000004,
+        "scenario": "rigid_original"
+      },
+      {
+        "component": "FR",
+        "contact_duty": 0.0,
+        "contact_events": 0,
+        "first_contact_s": null,
+        "last_release_s": null,
+        "mean_event_duration_s": 0.0,
+        "max_event_duration_s": 0.0,
+        "scenario": "rigid_original"
+      },
+      {
+        "component": "FL",
+        "contact_duty": 0.03,
+        "contact_events": 6,
+        "first_contact_s": 0.18000000000000013,
+        "last_release_s": 0.23050000000000018,
+        "mean_event_duration_s": 0.0012500000000000011,
+        "max_event_duration_s": 0.0025000000000000022,
+        "scenario": "rigid_original"
+      },
+      {
+        "component": "Back",
+        "contact_duty": 0.006,
+        "contact_events": 2,
+        "first_contact_s": 0.23050000000000018,
+        "last_release_s": 0.2475000000000002,
+        "mean_event_duration_s": 0.0007500000000000007,
+        "max_event_duration_s": 0.0010000000000000009,
+        "scenario": "rigid_original"
+      },
+      {
+        "component": "HR",
+        "contact_duty": 0.004,
+        "contact_events": 2,
+        "first_contact_s": 0.18900000000000014,
+        "last_release_s": 0.22850000000000018,
+        "mean_event_duration_s": 0.0005000000000000004,
+        "max_event_duration_s": 0.0005000000000000004,
+        "scenario": "rigid_original"
+      },
+      {
+        "component": "HL",
+        "contact_duty": 0.0,
+        "contact_events": 0,
+        "first_contact_s": null,
+        "last_release_s": null,
+        "mean_event_duration_s": 0.0,
+        "max_event_duration_s": 0.0,
+        "scenario": "rigid_original"
+      },
+      {
+        "component": "Tail",
+        "contact_duty": 0.34,
+        "contact_events": 26,
+        "first_contact_s": 0.059500000000000046,
+        "last_release_s": 0.2470000000000002,
+        "mean_event_duration_s": 0.0032692307692307717,
+        "max_event_duration_s": 0.060000000000000046,
+        "scenario": "rigid_original"
+      }
+    ]
+  },
+  "sand_rft": {
+    "trajectory": {
+      "duration_s": 0.25000000000000017,
+      "com_displacement_m": [
+        0.00040266181342372146,
+        0.017582599305123018,
+        -0.01996339365766396
+      ],
+      "com_path_length_m": 0.040801178426716656,
+      "mean_com_speed_m_s": 0.1635317772613893
+    },
+    "components": [
+      {
+        "component": "Mid",
+        "contact_duty": 0.49,
+        "contact_events": 11,
+        "first_contact_s": 0.06350000000000004,
+        "last_release_s": 0.25050000000000017,
+        "mean_event_duration_s": 0.011136363636363642,
+        "max_event_duration_s": 0.07250000000000004,
+        "maximum_penetration_mm": 2.3466630776974933,
+        "mean_active_triangles_when_contacting": 61.648979591836735,
+        "maximum_active_triangles": 238,
+        "scenario": "sand_rft"
+      },
+      {
+        "component": "Front",
+        "contact_duty": 0.694,
+        "contact_events": 8,
+        "first_contact_s": 0.06300000000000004,
+        "last_release_s": 0.25050000000000017,
+        "mean_event_duration_s": 0.021687500000000012,
+        "max_event_duration_s": 0.13250000000000006,
+        "maximum_penetration_mm": 3.677386087678855,
+        "mean_active_triangles_when_contacting": 77.51008645533142,
+        "maximum_active_triangles": 244,
+        "scenario": "sand_rft"
+      },
+      {
+        "component": "FR",
+        "contact_duty": 0.006,
+        "contact_events": 1,
+        "first_contact_s": 0.06850000000000005,
+        "last_release_s": 0.07000000000000005,
+        "mean_event_duration_s": 0.0015000000000000013,
+        "max_event_duration_s": 0.0015000000000000013,
+        "maximum_penetration_mm": 0.17275755527627543,
+        "mean_active_triangles_when_contacting": 5.333333333333333,
+        "maximum_active_triangles": 7,
+        "scenario": "sand_rft"
+      },
+      {
+        "component": "FL",
+        "contact_duty": 0.28,
+        "contact_events": 2,
+        "first_contact_s": 0.06800000000000005,
+        "last_release_s": 0.25050000000000017,
+        "mean_event_duration_s": 0.03500000000000002,
+        "max_event_duration_s": 0.06800000000000003,
+        "maximum_penetration_mm": 4.429931252798627,
+        "mean_active_triangles_when_contacting": 59.27857142857143,
+        "maximum_active_triangles": 101,
+        "scenario": "sand_rft"
+      },
+      {
+        "component": "Back",
+        "contact_duty": 0.6,
+        "contact_events": 13,
+        "first_contact_s": 0.06200000000000005,
+        "last_release_s": 0.25050000000000017,
+        "mean_event_duration_s": 0.011538461538461544,
+        "max_event_duration_s": 0.09200000000000005,
+        "maximum_penetration_mm": 2.521435059141222,
+        "mean_active_triangles_when_contacting": 47.513333333333335,
+        "maximum_active_triangles": 182,
+        "scenario": "sand_rft"
+      },
+      {
+        "component": "HR",
+        "contact_duty": 0.326,
+        "contact_events": 1,
+        "first_contact_s": 0.16900000000000012,
+        "last_release_s": 0.25050000000000017,
+        "mean_event_duration_s": 0.08150000000000004,
+        "max_event_duration_s": 0.08150000000000004,
+        "maximum_penetration_mm": 3.1408943872329766,
+        "mean_active_triangles_when_contacting": 73.08588957055214,
+        "maximum_active_triangles": 127,
+        "scenario": "sand_rft"
+      },
+      {
+        "component": "HL",
+        "contact_duty": 0.0,
+        "contact_events": 0,
+        "first_contact_s": null,
+        "last_release_s": null,
+        "mean_event_duration_s": 0.0,
+        "max_event_duration_s": 0.0,
+        "maximum_penetration_mm": 0.0,
+        "mean_active_triangles_when_contacting": 0.0,
+        "maximum_active_triangles": 0,
+        "scenario": "sand_rft"
+      },
+      {
+        "component": "Tail",
+        "contact_duty": 0.694,
+        "contact_events": 9,
+        "first_contact_s": 0.060000000000000046,
+        "last_release_s": 0.25050000000000017,
+        "mean_event_duration_s": 0.01927777777777779,
+        "max_event_duration_s": 0.13050000000000006,
+        "maximum_penetration_mm": 2.977307845232924,
+        "mean_active_triangles_when_contacting": 44.12103746397695,
+        "maximum_active_triangles": 144,
+        "scenario": "sand_rft"
+      }
+    ]
+  }
+}

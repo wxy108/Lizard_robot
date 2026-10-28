@@ -1,0 +1,25 @@
+Simulating rigid ground: 500 steps
+sand surface z = 0.0000 m
+safety floor z = -0.2500 m
+  Mid: 1816 force sites, 1816 triangles
+  Front: 2278 force sites, 2278 triangles
+  FR: 1126 force sites, 1126 triangles
+  FL: 1360 force sites, 1360 triangles
+  Back: 2132 force sites, 2132 triangles
+  HR: 2638 force sites, 2638 triangles
+  HL: 1186 force sites, 1186 triangles
+  Tail: 1380 force sites, 1380 triangles
+Simulating RFT sand: 500 steps
+Rendering rigid_original/top
+Rendering rigid_original/side
+Rendering rigid_original/diag45
+Rendering sand_simplified/top
+Rendering sand_simplified/side
+Rendering sand_simplified/diag45
+Rendering sand_simplified_sites/top
+Rendering sand_simplified_sites/side
+Rendering sand_simplified_sites/diag45
+Composing 3x3 overview + 3 analysis panels
+
+Video matrix: X:\Projects\Lizard_Robot_MuJoCo\outputs\robot_comparisons\legacy_video_smoke
+Manifest: X:\Projects\Lizard_Robot_MuJoCo\outputs\robot_comparisons\legacy_video_smoke\matrix_manifest.json

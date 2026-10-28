@@ -1,0 +1,60 @@
+{
+  "artifacts": {
+    "comparison.json": {
+      "bytes": 23695,
+      "sha256": "5a67f79d9061c9d2f448be2a2003e03de7335a6980809bd628188d97b62d8c4e"
+    },
+    "geometry.json": {
+      "bytes": 6991,
+      "sha256": "c6e1614758656177fce2c87d4adb2179e2460afba7f8e440f567d0b2f654dc34"
+    },
+    "LICENSE-menagerie.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "LICENSE-playground.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "motion_comparison.mp4": {
+      "bytes": 592349,
+      "sha256": "e0ccf58e57dd7072db29d2a9bcb69e5fa45b0a01dc6ec76e165b6156aadef2e8"
+    },
+    "motion_comparison.png": {
+      "bytes": 472160,
+      "sha256": "59efe5bf6f893ed1f0d73a4cc657882e65ae24152e21374c1404949adc3c8827"
+    },
+    "motion_contact_sheet.png": {
+      "bytes": 461896,
+      "sha256": "9ad45bccfd72cfb45ad09cae1e9e04905cac02e810cd0304a7b5be7162c29e5c"
+    },
+    "NOTICE.playground": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "proxy_left_sole.png": {
+      "bytes": 440704,
+      "sha256": "da530102dd66286f368065c192cf17f7f0ec9ad72d8ac7dd0545fc7d316421ce"
+    },
+    "proxy_locations.png": {
+      "bytes": 90111,
+      "sha256": "71489b0aa09b553c40274af50e63a532c47c62ac894d586d2e53ade17210fe74"
+    },
+    "proxy_metrics.csv": {
+      "bytes": 542,
+      "sha256": "2a02c7178f3958f210a096d0e69330b26ea3082793b0cd9ad1304a7c981a8c45"
+    },
+    "proxy_right_sole.png": {
+      "bytes": 441970,
+      "sha256": "5a99436bf8e85b5ca549226b169e56d69ccf7713968ffd0fcc384f73002788c8"
+    },
+    "remesh_comparison.mp4": {
+      "bytes": 844721,
+      "sha256": "a54ea53302b768c3db216bbc47ba0f75045f51358964be84782628ee2bb309a0"
+    },
+    "remesh_comparison.png": {
+      "bytes": 440704,
+      "sha256": "da530102dd66286f368065c192cf17f7f0ec9ad72d8ac7dd0545fc7d316421ce"
+    }
+  }
+}

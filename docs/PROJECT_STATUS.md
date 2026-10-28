@@ -5,6 +5,15 @@ Last updated: 2026-10-28. Historical numerical anchors below are from
 
 ## Robot-independent RFT stage one
 
+Latest presentation: seven per-robot rigid-above-sand motion comparisons plus
+G1 fast negative control, seven rotating proxy mesh/point reviews, and 19
+independent contact-proxy enlargement PNGs. All 15 movies/1,423 frames verify;
+81 tests, canonical fast validation and legacy video smoke/analyzer pass.
+No comparison physics or remesh was rerun. Entry: `media/robot_comparisons/`;
+ledger: `ROBOT_COMPARISONS_2026-10-28.md`; evidence:
+`regressions/2026-10-28-robot-comparisons/`. Earlier scientific results below
+remain unchanged.
+
 Completed bounded catalog expansion: seven actual ground robots, 14 passing
 six-second rigid scenarios, Go1/G1/T1 passing sand screens. Berkeley/Apollo
 stopped at 3.4975/2.325 s; both TurtleBot3 variants failed sand progress (~3 mm).

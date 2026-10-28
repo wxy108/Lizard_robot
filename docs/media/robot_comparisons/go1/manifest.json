@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "comparison.json": {
+      "bytes": 30167,
+      "sha256": "da6305eb558be22c30cbb640e9c61613ec8a75dfd3b591fbbe135fc1e8bb7e82"
+    },
+    "geometry.json": {
+      "bytes": 13600,
+      "sha256": "382d08c6b7f5dff83e92c8d2ee2eb75d1e4c7ff98f10e1df8cf5880aa540f887"
+    },
+    "LICENSE-menagerie.txt": {
+      "bytes": 1559,
+      "sha256": "2b794acf1e250f5545ae5a47d81e5685ea5488ce077d1087ed8be5f81e9ba5c0"
+    },
+    "LICENSE-playground.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "motion_comparison.mp4": {
+      "bytes": 749180,
+      "sha256": "3edb1745be63c8cb48e8d47845c93cf4571e5972b31c397cae46f93c3bba85f4"
+    },
+    "motion_comparison.png": {
+      "bytes": 462430,
+      "sha256": "24203188870e3928d1d042ec872acc8c04786d1336bc20c5d2fbf64e15406795"
+    },
+    "motion_contact_sheet.png": {
+      "bytes": 489350,
+      "sha256": "db1b627631c8fde912e0ae3a71cc4febfc161a45521e59b3a1ffabf292b4b06e"
+    },
+    "NOTICE.playground": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "proxy_FL_foot.png": {
+      "bytes": 581065,
+      "sha256": "d1902f19d84a4c7fb00641d9be327d9bb3970e8f139dda01cd0a7ac2ebb30924"
+    },
+    "proxy_FR_foot.png": {
+      "bytes": 584331,
+      "sha256": "ad27f9c710722a70f36818be65e56013e716eeccc013ce83e9e89853a7a1c552"
+    },
+    "proxy_locations.png": {
+      "bytes": 61904,
+      "sha256": "d963ad462eda8e99fd2173f1c324e9c656bb656ddac31ed41a25f9ba147d4c69"
+    },
+    "proxy_metrics.csv": {
+      "bytes": 928,
+      "sha256": "60342fc782521e53c9b9283b343ba215a57f0aaba109b3bfa07e1292169cd7c5"
+    },
+    "proxy_RL_foot.png": {
+      "bytes": 581601,
+      "sha256": "2d29a0c28c4fdd119090bb1b6361dcca553f06107b84b349cd98cc0179cbc847"
+    },
+    "proxy_RR_foot.png": {
+      "bytes": 584875,
+      "sha256": "27edbc2a3a8edd3dcb277f6c934077d8084c403e891a32112ed438b66401f766"
+    },
+    "remesh_comparison.mp4": {
+      "bytes": 1599277,
+      "sha256": "290582781f621a7d053ee775479fca9d81ab6cfb7f8aa4a9e6b0f8ad897ba5c0"
+    },
+    "remesh_comparison.png": {
+      "bytes": 584331,
+      "sha256": "ad27f9c710722a70f36818be65e56013e716eeccc013ce83e9e89853a7a1c552"
+    }
+  }
+}

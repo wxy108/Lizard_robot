@@ -1,0 +1,655 @@
+{
+  "geometry": {
+    "video": {
+      "frames_decoded": 65,
+      "fps": 16.0,
+      "encoded_duration_s": 4.0625,
+      "sha256": "308e2fb36edd470d7290112220f42a9d7290fe9225a6d785377ea4ab16410b4f"
+    },
+    "surfaces": [
+      {
+        "id": "left_sole",
+        "body": "ll_faa",
+        "group": "left_foot",
+        "arrays": "left_sole/surface.npz",
+        "source": {
+          "geom": "l_foot1",
+          "compiled_body_frame": true
+        },
+        "before": {
+          "vertices": 8,
+          "triangles": 12,
+          "bbox_extent_m": [
+            0.054999999999999986,
+            0.03960116318627091,
+            0.159653043081181
+          ],
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "duplicate_faces": 0,
+          "degenerate_faces": 0,
+          "vertex_manifold": true,
+          "self_intersection_pairs": 0,
+          "components": 1,
+          "component_signed_volumes_m3": [
+            0.00010559999999999998
+          ],
+          "area_m2": 0.022759999999999992,
+          "area_p95_p05": 13.333333333333336,
+          "centroid_spacing_p95_p05": 3.073683598582899,
+          "edge_aspect_max": 13.370780746754388
+        },
+        "after": {
+          "vertices": 191,
+          "triangles": 378,
+          "bbox_extent_m": [
+            0.054999999999999986,
+            0.03960116318627091,
+            0.159653043081181
+          ],
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "duplicate_faces": 0,
+          "degenerate_faces": 0,
+          "vertex_manifold": true,
+          "self_intersection_pairs": 0,
+          "components": 1,
+          "component_signed_volumes_m3": [
+            0.00010559999999999992
+          ],
+          "area_m2": 0.022759999999999992,
+          "area_p95_p05": 2.647518034669473,
+          "centroid_spacing_p95_p05": 1.5875872499814778,
+          "edge_aspect_max": 3.571145876580176
+        },
+        "sampled_deviation": {
+          "candidate_to_reference": {
+            "p95_m": 2.0704401393345508e-08,
+            "max_sampled_m": 2.0238863385202421e-07
+          },
+          "reference_to_candidate": {
+            "p95_m": 1.961509954462316e-09,
+            "max_sampled_m": 3.8399412538581146e-09
+          }
+        },
+        "method": "isotropic",
+        "recipe": {
+          "method": "isotropic",
+          "target_edge_m": 0.012,
+          "max_deviation_m": 0.0005,
+          "iterations": 5
+        },
+        "construction_deviation_margin": 0.5,
+        "effective_limits": {
+          "area_p95_p05": 15,
+          "centroid_spacing_p95_p05": 10,
+          "edge_aspect_max": 12,
+          "max_triangles": 20000
+        },
+        "metrics": {
+          "before": {
+            "triangles_and_centroids": 12,
+            "area_m2": 0.022759999999999992,
+            "area_p95_p05": 13.333333333333336,
+            "median_spacing_mm": 18.764623926716745,
+            "spacing_p95_p05": 3.0736835985829
+          },
+          "after": {
+            "triangles_and_centroids": 378,
+            "area_m2": 0.022759999999999992,
+            "area_p95_p05": 2.647518034669473,
+            "median_spacing_mm": 5.665830803232593,
+            "spacing_p95_p05": 1.5875872499814818
+          }
+        },
+        "family": "[6, [0.08, 0.0275, 0.006], 12, 378]",
+        "snapshot_hashes": {
+          "source_ply": "b95b11acda8b38241c780a604aed8ec7b69a80a8f3bd390c23d371df63433984",
+          "prepared_ply": "6e7e72b0ed167079e642c10fcb7f2f13ae874bd96c6bc94608eda5761f121b6f",
+          "surface_npz": "8138d585d9e2cec7364e8ae193818aa97d2e635f2238ca7f2f5293f92ead65ff"
+        }
+      },
+      {
+        "id": "right_sole",
+        "body": "lr_faa",
+        "group": "right_foot",
+        "arrays": "right_sole/surface.npz",
+        "source": {
+          "geom": "r_foot1",
+          "compiled_body_frame": true
+        },
+        "before": {
+          "vertices": 8,
+          "triangles": 12,
+          "bbox_extent_m": [
+            0.054999999999999986,
+            0.03960116318627091,
+            0.159653043081181
+          ],
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "duplicate_faces": 0,
+          "degenerate_faces": 0,
+          "vertex_manifold": true,
+          "self_intersection_pairs": 0,
+          "components": 1,
+          "component_signed_volumes_m3": [
+            0.00010559999999999998
+          ],
+          "area_m2": 0.022759999999999992,
+          "area_p95_p05": 13.333333333333336,
+          "centroid_spacing_p95_p05": 3.073683598582899,
+          "edge_aspect_max": 13.370780746754388
+        },
+        "after": {
+          "vertices": 191,
+          "triangles": 378,
+          "bbox_extent_m": [
+            0.054999999999999986,
+            0.03960116318627091,
+            0.159653043081181
+          ],
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "duplicate_faces": 0,
+          "degenerate_faces": 0,
+          "vertex_manifold": true,
+          "self_intersection_pairs": 0,
+          "components": 1,
+          "component_signed_volumes_m3": [
+            0.00010559999999999992
+          ],
+          "area_m2": 0.022759999999999992,
+          "area_p95_p05": 2.647518034669473,
+          "centroid_spacing_p95_p05": 1.5875872499814778,
+          "edge_aspect_max": 3.571145876580176
+        },
+        "sampled_deviation": {
+          "candidate_to_reference": {
+            "p95_m": 2.0704401393345508e-08,
+            "max_sampled_m": 2.0238863385202421e-07
+          },
+          "reference_to_candidate": {
+            "p95_m": 1.961509954462316e-09,
+            "max_sampled_m": 3.8399412538581146e-09
+          }
+        },
+        "method": "isotropic",
+        "recipe": {
+          "method": "isotropic",
+          "target_edge_m": 0.012,
+          "max_deviation_m": 0.0005,
+          "iterations": 5
+        },
+        "construction_deviation_margin": 0.5,
+        "effective_limits": {
+          "area_p95_p05": 15,
+          "centroid_spacing_p95_p05": 10,
+          "edge_aspect_max": 12,
+          "max_triangles": 20000
+        },
+        "metrics": {
+          "before": {
+            "triangles_and_centroids": 12,
+            "area_m2": 0.022759999999999992,
+            "area_p95_p05": 13.333333333333336,
+            "median_spacing_mm": 18.764623926716745,
+            "spacing_p95_p05": 3.0736835985828983
+          },
+          "after": {
+            "triangles_and_centroids": 378,
+            "area_m2": 0.022759999999999992,
+            "area_p95_p05": 2.647518034669473,
+            "median_spacing_mm": 5.665830803232595,
+            "spacing_p95_p05": 1.5875872499814774
+          }
+        },
+        "family": "[6, [0.08, 0.0275, 0.006], 12, 378]",
+        "snapshot_hashes": {
+          "source_ply": "b95b11acda8b38241c780a604aed8ec7b69a80a8f3bd390c23d371df63433984",
+          "prepared_ply": "6e7e72b0ed167079e642c10fcb7f2f13ae874bd96c6bc94608eda5761f121b6f",
+          "surface_npz": "8138d585d9e2cec7364e8ae193818aa97d2e635f2238ca7f2f5293f92ead65ff"
+        }
+      }
+    ],
+    "color_rule": "clip(log2(3D nearest-centroid spacing / own-mesh median), -1, +1)",
+    "whole_robot_remeshed": false,
+    "physics_steps_executed": 0,
+    "remesh_operations_executed": 0,
+    "views": "same initial world orientation, shared before/after bounds, oblique plus underside where one family",
+    "normals": "sampled outward unit geometric normals; visualization arrows, not forces"
+  },
+  "motion": {
+    "video": {
+      "frames_decoded": 121,
+      "fps": 20.0,
+      "encoded_duration_s": 6.05,
+      "sha256": "fc46a3bd0649feb55d81e149ac20298333bc0645dbd3c7f905f646774c1cbf45"
+    },
+    "rows": [
+      {
+        "directory": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_catalog\\clean_6s_36659ca\\berkeley\\rigid_matched",
+        "summary": {
+          "source": {
+            "commit": "36659ca04dca0e4d842f94dcc2532161258740be",
+            "dirty": false
+          },
+          "status": "passed_screen",
+          "termination": "completed",
+          "requested_duration_s": 6.0,
+          "recorded_duration_s": 6.0,
+          "physics_timestep_s": 0.0005,
+          "control_dt_s": 0.02,
+          "policy_updates": 300,
+          "first_policy_update_pre_step_time_s": 0.0195,
+          "mode": "rigid",
+          "integrator": 0,
+          "effective_controller": {
+            "type": "profile_onnx",
+            "family": "berkeley",
+            "profile": "berkeley",
+            "default_keyframe": "home",
+            "control_dt": 0.02,
+            "command": [
+              0.2,
+              0,
+              0
+            ],
+            "policy": "../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/bh_policy.onnx"
+          },
+          "support_conversion": {
+            "removed_explicit_pairs": []
+          },
+          "effective_ground_masks_during_simulation": {
+            "floor": [
+              1,
+              0
+            ]
+          },
+          "policy_sha256": "ab83d4a2853c581a0d761e45e61b586f529f9bc1504d190037369f47e4e69892",
+          "model_mass_kg": 16.056765100000003,
+          "model_adapter": null,
+          "acceptance_failures": [],
+          "minimum_required_forward_progress_m": 0.1,
+          "geometry_status": "upstream sole-box proxies only, excluding non-ground ankle cylinders; no full-CAD certification",
+          "triangle_count": 756,
+          "rft_convention": "body_frame_v1",
+          "coefficient": 3.75,
+          "alpha": 0.5,
+          "acceptance": {
+            "minimum_upright_cosine": 0.6,
+            "minimum_root_height_m": 0.25,
+            "max_centroid_penetration_m": 0.1,
+            "minimum_forward_displacement_m": 0.1
+          },
+          "com_displacement_m": [
+            0.9322123475998155,
+            0.0939014513189991,
+            0.02413066211607834
+          ],
+          "min_root_height_m": 0.5080006084642323,
+          "min_upright_cosine": 0.9971711301473135,
+          "max_centroid_penetration_m": 0.0,
+          "max_total_rft_force_N": 0.0,
+          "max_rigid_support_force_N": 386.0371806802957,
+          "rigid_support_contact_steps": 11997,
+          "rigid_contact_pairs": [
+            [
+              "floor",
+              "l_foot1"
+            ],
+            [
+              "floor",
+              "r_foot1"
+            ]
+          ],
+          "rft_active_steps": 0,
+          "max_smoothed_rft_power_W": 0.0,
+          "positive_smoothed_power_steps": 0,
+          "trace_columns": [
+            "time_s",
+            "com_x",
+            "com_y",
+            "com_z",
+            "root_z",
+            "upright_cosine",
+            "penetration_m",
+            "rft_fx",
+            "rft_fy",
+            "rft_fz",
+            "rigid_fx",
+            "rigid_fy",
+            "rigid_fz",
+            "rft_power_W",
+            "rigid_contact_count",
+            "rigid_min_distance_m"
+          ],
+          "state_alignment": "All rows are pre-step, force/control at same qpos/qvel/time; final state stored separately",
+          "boundary": "Bounded engineering screen, not material calibration or guaranteed policy transfer",
+          "video_frames": 121
+        },
+        "video_sha256": "4f93bc5a5380d6e76be213ecaed26c4b8612801d8a451f71c322a510fc07e6cf",
+        "trajectory_sha256": "833dfa6f4fde6df143770d13ee28e0336a21026ff163c6bafa1d77a7c6f03642",
+        "real_frames": 121,
+        "visual_replay": null,
+        "frame_physical_times_s": [
+          0.0,
+          0.05000000000000004,
+          0.10000000000000007,
+          0.1500000000000001,
+          0.20000000000000015,
+          0.25000000000000017,
+          0.3000000000000002,
+          0.35000000000000026,
+          0.4000000000000003,
+          0.45000000000000034,
+          0.5000000000000003,
+          0.5499999999999948,
+          0.5999999999999893,
+          0.6499999999999838,
+          0.6999999999999783,
+          0.7499999999999728,
+          0.7999999999999673,
+          0.8499999999999618,
+          0.8999999999999563,
+          0.9499999999999508,
+          0.9999999999999453,
+          1.0499999999999399,
+          1.0999999999999344,
+          1.1499999999999289,
+          1.1999999999999234,
+          1.2499999999999178,
+          1.2999999999999123,
+          1.3499999999999068,
+          1.3999999999999013,
+          1.4499999999998958,
+          1.4999999999998903,
+          1.5499999999998848,
+          1.5999999999998793,
+          1.6499999999998738,
+          1.6999999999998683,
+          1.7499999999998628,
+          1.7999999999998573,
+          1.8499999999998518,
+          1.8999999999998463,
+          1.9499999999998407,
+          1.9999999999998352,
+          2.049999999999852,
+          2.0999999999998686,
+          2.1499999999998853,
+          2.199999999999902,
+          2.2499999999999187,
+          2.2999999999999354,
+          2.349999999999952,
+          2.399999999999969,
+          2.4499999999999855,
+          2.500000000000002,
+          2.550000000000019,
+          2.6000000000000356,
+          2.6500000000000523,
+          2.700000000000069,
+          2.7500000000000857,
+          2.8000000000001024,
+          2.850000000000119,
+          2.900000000000136,
+          2.9500000000001525,
+          3.000000000000169,
+          3.0495000000001857,
+          3.0995000000002024,
+          3.149500000000219,
+          3.199500000000236,
+          3.2495000000002525,
+          3.299500000000269,
+          3.349500000000286,
+          3.3995000000003026,
+          3.4495000000003193,
+          3.499500000000336,
+          3.5495000000003527,
+          3.5995000000003694,
+          3.649500000000386,
+          3.699500000000403,
+          3.7495000000004195,
+          3.799500000000436,
+          3.849500000000453,
+          3.8995000000004696,
+          3.9495000000004863,
+          3.999500000000503,
+          4.049500000000475,
+          4.099500000000448,
+          4.14950000000042,
+          4.199500000000392,
+          4.249500000000364,
+          4.299500000000337,
+          4.349500000000309,
+          4.399500000000281,
+          4.449500000000254,
+          4.499500000000226,
+          4.549500000000198,
+          4.5995000000001705,
+          4.649500000000143,
+          4.699500000000115,
+          4.749500000000087,
+          4.79950000000006,
+          4.849500000000032,
+          4.899500000000004,
+          4.9494999999999765,
+          4.999499999999949,
+          5.049499999999921,
+          5.099499999999893,
+          5.149499999999866,
+          5.199499999999838,
+          5.24949999999981,
+          5.2994999999997825,
+          5.349499999999755,
+          5.399499999999727,
+          5.449499999999699,
+          5.499499999999672,
+          5.549499999999644,
+          5.599499999999616,
+          5.6494999999995885,
+          5.699499999999561,
+          5.749499999999533,
+          5.799499999999505,
+          5.849499999999478,
+          5.89949999999945,
+          5.949499999999422,
+          5.9994999999993945
+        ]
+      },
+      {
+        "directory": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_catalog\\clean_6s_36659ca\\berkeley\\sand",
+        "summary": {
+          "source": {
+            "commit": "36659ca04dca0e4d842f94dcc2532161258740be",
+            "dirty": false
+          },
+          "status": "failed_screen",
+          "termination": "outside_declared_locomotion_envelope_for_100ms",
+          "requested_duration_s": 6.0,
+          "recorded_duration_s": 3.4975,
+          "physics_timestep_s": 0.0005,
+          "control_dt_s": 0.02,
+          "policy_updates": 174,
+          "first_policy_update_pre_step_time_s": 0.0195,
+          "mode": "sand",
+          "integrator": 0,
+          "effective_controller": {
+            "type": "profile_onnx",
+            "family": "berkeley",
+            "profile": "berkeley",
+            "default_keyframe": "home",
+            "control_dt": 0.02,
+            "command": [
+              0.2,
+              0,
+              0
+            ],
+            "policy": "../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/bh_policy.onnx"
+          },
+          "support_conversion": {
+            "removed_explicit_pairs": []
+          },
+          "effective_ground_masks_during_simulation": {
+            "floor": [
+              0,
+              0
+            ]
+          },
+          "policy_sha256": "ab83d4a2853c581a0d761e45e61b586f529f9bc1504d190037369f47e4e69892",
+          "model_mass_kg": 16.056765100000003,
+          "model_adapter": null,
+          "acceptance_failures": [
+            "outside_declared_locomotion_envelope_for_100ms"
+          ],
+          "minimum_required_forward_progress_m": 0.1,
+          "geometry_status": "upstream sole-box proxies only, excluding non-ground ankle cylinders; no full-CAD certification",
+          "triangle_count": 756,
+          "rft_convention": "body_frame_v1",
+          "coefficient": 3.75,
+          "alpha": 0.5,
+          "acceptance": {
+            "minimum_upright_cosine": 0.6,
+            "minimum_root_height_m": 0.25,
+            "max_centroid_penetration_m": 0.1,
+            "minimum_forward_displacement_m": 0.1
+          },
+          "com_displacement_m": [
+            0.824411026508595,
+            0.3772515403891703,
+            -0.34360089041098124
+          ],
+          "min_root_height_m": 0.1058201497503488,
+          "min_upright_cosine": 0.1720626609029181,
+          "max_centroid_penetration_m": 0.04997316757173867,
+          "max_total_rft_force_N": 435.80358268719004,
+          "max_rigid_support_force_N": 0.0,
+          "rigid_support_contact_steps": 0,
+          "rigid_contact_pairs": [],
+          "rft_active_steps": 6994,
+          "max_smoothed_rft_power_W": 0.0,
+          "positive_smoothed_power_steps": 0,
+          "trace_columns": [
+            "time_s",
+            "com_x",
+            "com_y",
+            "com_z",
+            "root_z",
+            "upright_cosine",
+            "penetration_m",
+            "rft_fx",
+            "rft_fy",
+            "rft_fz",
+            "rigid_fx",
+            "rigid_fy",
+            "rigid_fz",
+            "rft_power_W",
+            "rigid_contact_count",
+            "rigid_min_distance_m"
+          ],
+          "state_alignment": "All rows are pre-step, force/control at same qpos/qvel/time; final state stored separately",
+          "boundary": "Bounded engineering screen, not material calibration or guaranteed policy transfer",
+          "video_frames": 71
+        },
+        "video_sha256": "950ecc086035a2ffb38e7a21553592d5e5e8fdf5018a965a99ec4679bfda69eb",
+        "trajectory_sha256": "b01dc15746dc9b2de689176bbd1ef8cd5acf31a326b5cbe170958c5a48d5c897",
+        "real_frames": 71,
+        "visual_replay": null,
+        "frame_physical_times_s": [
+          0.0,
+          0.05000000000000004,
+          0.10000000000000007,
+          0.1500000000000001,
+          0.20000000000000015,
+          0.25000000000000017,
+          0.2995000000000002,
+          0.34950000000000025,
+          0.3995000000000003,
+          0.44950000000000034,
+          0.4995000000000004,
+          0.5494999999999949,
+          0.5994999999999894,
+          0.6494999999999839,
+          0.6994999999999784,
+          0.7494999999999729,
+          0.7994999999999673,
+          0.8494999999999618,
+          0.8989999999999564,
+          0.9489999999999509,
+          0.9989999999999454,
+          1.04899999999994,
+          1.0989999999999345,
+          1.148999999999929,
+          1.1989999999999235,
+          1.248999999999918,
+          1.2989999999999124,
+          1.348999999999907,
+          1.3989999999999014,
+          1.448999999999896,
+          1.4984999999998905,
+          1.548499999999885,
+          1.5984999999998795,
+          1.648499999999874,
+          1.6984999999998684,
+          1.748499999999863,
+          1.7984999999998574,
+          1.848499999999852,
+          1.8984999999998464,
+          1.948499999999841,
+          1.9984999999998354,
+          2.0479999999998513,
+          2.097999999999868,
+          2.1479999999998847,
+          2.1979999999999014,
+          2.247999999999918,
+          2.2979999999999348,
+          2.3479999999999515,
+          2.397999999999968,
+          2.447999999999985,
+          2.4980000000000016,
+          2.5480000000000183,
+          2.598000000000035,
+          2.6475000000000515,
+          2.697500000000068,
+          2.747500000000085,
+          2.7975000000001016,
+          2.8475000000001183,
+          2.897500000000135,
+          2.9475000000001517,
+          2.9975000000001684,
+          3.047500000000185,
+          3.0975000000002018,
+          3.1475000000002185,
+          3.197500000000235,
+          3.2470000000002517,
+          3.2970000000002684,
+          3.347000000000285,
+          3.397000000000302,
+          3.4470000000003185,
+          3.497000000000335
+        ]
+      }
+    ],
+    "after_stop": "neutral no-data scene; no last-frame duplication",
+    "transitions": {
+      "71": 3.55
+    },
+    "physics_steps_executed": 0,
+    "contact_display": "conservative OR per time pixel; raw telemetry unchanged",
+    "depth_definitions": {
+      "rigid": "max(0,-native support contact.dist)",
+      "sand": "max triangle-centroid penetration"
+    }
+  },
+  "recipe": "X:\\Projects\\Lizard_Robot_MuJoCo\\configs\\robots\\playground_berkeley.yaml",
+  "config_sha256": "d30ed1ece7d771b4dd62ccfeeae8568a7924c9a0b4d71e587e6fa3008b340acc",
+  "simulation_source": {
+    "commit": "36659ca04dca0e4d842f94dcc2532161258740be",
+    "dirty": false
+  },
+  "bundle_manifest_sha256": "55ea97ce95038198cc9cd0e19cf4b9a74243913ae5049c77c347db10cd3acd50",
+  "bundle_directory": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_catalog\\cache\\769d2d56abd2c315794031a689de57d5bb46990d617c6500c0817d607243a8fa"
+}

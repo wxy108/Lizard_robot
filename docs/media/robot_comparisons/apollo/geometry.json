@@ -1,0 +1,224 @@
+{
+  "video": {
+    "frames_decoded": 65,
+    "fps": 16.0,
+    "encoded_duration_s": 4.0625,
+    "sha256": "932cf13e69b80e391aebac05e1d8d92985cd4ea0b643577f6a32650cb65efc63"
+  },
+  "surfaces": [
+    {
+      "id": "left_sole",
+      "body": "l_foot_link",
+      "group": "left_foot",
+      "arrays": "left_sole/surface.npz",
+      "source": {
+        "geom": "collision_l_sole",
+        "compiled_body_frame": true
+      },
+      "before": {
+        "vertices": 8,
+        "triangles": 12,
+        "bbox_extent_m": [
+          0.20444733237522267,
+          0.09539896844149513,
+          0.08313292910264802
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "duplicate_faces": 0,
+        "degenerate_faces": 0,
+        "vertex_manifold": true,
+        "self_intersection_pairs": 0,
+        "components": 1,
+        "component_signed_volumes_m3": [
+          0.00030600000000000023
+        ],
+        "area_m2": 0.04426000000000003,
+        "area_p95_p05": 11.111111111111112,
+        "centroid_spacing_p95_p05": 3.165746021682683,
+        "edge_aspect_max": 11.156020353309549
+      },
+      "after": {
+        "vertices": 273,
+        "triangles": 542,
+        "bbox_extent_m": [
+          0.20444733237522267,
+          0.09539896844149513,
+          0.08313292910264802
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "duplicate_faces": 0,
+        "degenerate_faces": 0,
+        "vertex_manifold": true,
+        "self_intersection_pairs": 0,
+        "components": 1,
+        "component_signed_volumes_m3": [
+          0.00030600000000000034
+        ],
+        "area_m2": 0.04426000000000002,
+        "area_p95_p05": 2.4907135882257605,
+        "centroid_spacing_p95_p05": 1.7531724896760719,
+        "edge_aspect_max": 3.493269619440387
+      },
+      "sampled_deviation": {
+        "candidate_to_reference": {
+          "p95_m": 3.0558542363223724e-08,
+          "max_sampled_m": 3.6925501945006545e-07
+        },
+        "reference_to_candidate": {
+          "p95_m": 3.2590791398945475e-09,
+          "max_sampled_m": 1.513220126980741e-08
+        }
+      },
+      "method": "isotropic",
+      "recipe": {
+        "method": "isotropic",
+        "target_edge_m": 0.014,
+        "max_deviation_m": 0.0005,
+        "iterations": 5
+      },
+      "construction_deviation_margin": 0.5,
+      "effective_limits": {
+        "area_p95_p05": 15,
+        "centroid_spacing_p95_p05": 10,
+        "edge_aspect_max": 12,
+        "max_triangles": 20000
+      },
+      "metrics": {
+        "before": {
+          "triangles_and_centroids": 12,
+          "area_m2": 0.04426000000000003,
+          "area_p95_p05": 11.111111111111112,
+          "median_spacing_mm": 28.961660480327744,
+          "spacing_p95_p05": 3.1657460216826836
+        },
+        "after": {
+          "triangles_and_centroids": 542,
+          "area_m2": 0.04426000000000002,
+          "area_p95_p05": 2.4907135882257605,
+          "median_spacing_mm": 6.638954780198595,
+          "spacing_p95_p05": 1.7531724896760734
+        }
+      },
+      "family": "[6, [0.1, 0.0425, 0.009], 12, 542]",
+      "snapshot_hashes": {
+        "source_ply": "d8ccbf78b587ed887307979f4973800064d083c55e798a188700a724158bfe9d",
+        "prepared_ply": "8421cc7394b7465204ac087e9aeb2996af1e9b56509ceb10e8748756fa24e4fb",
+        "surface_npz": "eadddfc47d83e9b590e1b9b9e672bd482b20492f112db15e0f447642bafaee91"
+      }
+    },
+    {
+      "id": "right_sole",
+      "body": "r_foot_link",
+      "group": "right_foot",
+      "arrays": "right_sole/surface.npz",
+      "source": {
+        "geom": "collision_r_sole",
+        "compiled_body_frame": true
+      },
+      "before": {
+        "vertices": 8,
+        "triangles": 12,
+        "bbox_extent_m": [
+          0.20444733237522267,
+          0.09539896844149513,
+          0.08313292910264802
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "duplicate_faces": 0,
+        "degenerate_faces": 0,
+        "vertex_manifold": true,
+        "self_intersection_pairs": 0,
+        "components": 1,
+        "component_signed_volumes_m3": [
+          0.00030600000000000034
+        ],
+        "area_m2": 0.04426000000000004,
+        "area_p95_p05": 11.111111111111114,
+        "centroid_spacing_p95_p05": 3.1657460216826827,
+        "edge_aspect_max": 11.156020353309549
+      },
+      "after": {
+        "vertices": 277,
+        "triangles": 550,
+        "bbox_extent_m": [
+          0.20444733237522267,
+          0.09539896844149513,
+          0.08313292910264802
+        ],
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "duplicate_faces": 0,
+        "degenerate_faces": 0,
+        "vertex_manifold": true,
+        "self_intersection_pairs": 0,
+        "components": 1,
+        "component_signed_volumes_m3": [
+          0.00030600000000000034
+        ],
+        "area_m2": 0.04426000000000003,
+        "area_p95_p05": 2.4992934161838747,
+        "centroid_spacing_p95_p05": 1.7311420149502086,
+        "edge_aspect_max": 2.4352009889740924
+      },
+      "sampled_deviation": {
+        "candidate_to_reference": {
+          "p95_m": 3.036031053227357e-08,
+          "max_sampled_m": 4.27013191028891e-07
+        },
+        "reference_to_candidate": {
+          "p95_m": 1.5017486187929308e-08,
+          "max_sampled_m": 1.5024342658875867e-08
+        }
+      },
+      "method": "isotropic",
+      "recipe": {
+        "method": "isotropic",
+        "target_edge_m": 0.014,
+        "max_deviation_m": 0.0005,
+        "iterations": 5
+      },
+      "construction_deviation_margin": 0.5,
+      "effective_limits": {
+        "area_p95_p05": 15,
+        "centroid_spacing_p95_p05": 10,
+        "edge_aspect_max": 12,
+        "max_triangles": 20000
+      },
+      "metrics": {
+        "before": {
+          "triangles_and_centroids": 12,
+          "area_m2": 0.04426000000000004,
+          "area_p95_p05": 11.111111111111114,
+          "median_spacing_mm": 28.961660480327744,
+          "spacing_p95_p05": 3.1657460216826836
+        },
+        "after": {
+          "triangles_and_centroids": 550,
+          "area_m2": 0.04426000000000003,
+          "area_p95_p05": 2.4992934161838747,
+          "median_spacing_mm": 6.759842995779353,
+          "spacing_p95_p05": 1.7311420149502093
+        }
+      },
+      "family": "[6, [0.1, 0.0425, 0.009], 12, 550]",
+      "snapshot_hashes": {
+        "source_ply": "b233a4b9b34a0c2a1e64f1605559731d33aa18b6845296310c74183d4ad21769",
+        "prepared_ply": "936d186052d753aa84bd8d5b95a76cfe8737c728247b4543d4034cbe3867a3b5",
+        "surface_npz": "894b15029b29ac90eb5f13b7d40495953120fde72a86d73c9cd3e03aa86b3b6c"
+      }
+    }
+  ],
+  "color_rule": "clip(log2(3D nearest-centroid spacing / own-mesh median), -1, +1)",
+  "whole_robot_remeshed": false,
+  "physics_steps_executed": 0,
+  "remesh_operations_executed": 0,
+  "views": "same initial world orientation, shared before/after bounds, oblique plus underside where one family",
+  "normals": "sampled outward unit geometric normals; visualization arrows, not forces"
+}

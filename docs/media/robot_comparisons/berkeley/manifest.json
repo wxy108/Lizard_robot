@@ -1,0 +1,64 @@
+{
+  "artifacts": {
+    "comparison.json": {
+      "bytes": 22086,
+      "sha256": "cead0acc8aeb04418472cf7a28dd7f0c868f8ff2c3efd26d083477ff2781d831"
+    },
+    "geometry.json": {
+      "bytes": 7190,
+      "sha256": "55060ae2693226f965510bf78ea25b42ef3b084f62666a9b873787932113a754"
+    },
+    "LICENSE-menagerie.txt": {
+      "bytes": 1492,
+      "sha256": "a5a4e7c801bc9673459872f5a86886ac29eee4ba93bb1e907f2e49d4198a1dd0"
+    },
+    "LICENSE-playground.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "motion_comparison.mp4": {
+      "bytes": 558953,
+      "sha256": "fc46a3bd0649feb55d81e149ac20298333bc0645dbd3c7f905f646774c1cbf45"
+    },
+    "motion_comparison.png": {
+      "bytes": 458365,
+      "sha256": "6bf5c7d099639af72e0dc1522125db57159559a695adbee05252b3698ed856aa"
+    },
+    "motion_contact_sheet.png": {
+      "bytes": 441326,
+      "sha256": "f0fcc9334b0f1925b6eee31713a0c14e46aa3259d7de0de17b113f61af3ad204"
+    },
+    "NOTICE.playground": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "proxy_left_sole.png": {
+      "bytes": 408817,
+      "sha256": "eb73ea0b6b2c8dcbfe969c997753d3e73e11c92c9498aa43f48fb6bcbff6a69a"
+    },
+    "proxy_locations.png": {
+      "bytes": 96868,
+      "sha256": "c20a5a4e3a5e74d544d412ffc7963ae87bac70acce46d787cb864b021bc4d019"
+    },
+    "proxy_metrics.csv": {
+      "bytes": 513,
+      "sha256": "5540a6cba8689a5d3fdcb5618781c74cc7c48465bcb1a4e05104b7986e9efda3"
+    },
+    "proxy_right_sole.png": {
+      "bytes": 409877,
+      "sha256": "c26c729f3b998bbd300fc33ddab561aa7b9051e3490c8d9b1d250233cfdf24a8"
+    },
+    "remesh_comparison.mp4": {
+      "bytes": 663036,
+      "sha256": "308e2fb36edd470d7290112220f42a9d7290fe9225a6d785377ea4ab16410b4f"
+    },
+    "remesh_comparison.png": {
+      "bytes": 408817,
+      "sha256": "eb73ea0b6b2c8dcbfe969c997753d3e73e11c92c9498aa43f48fb6bcbff6a69a"
+    },
+    "stop_transition_71.png": {
+      "bytes": 387056,
+      "sha256": "c22d8d9fc500e6eff356d9c51d1cf9e854b0e5ed80c51366ba920e88955ac7eb"
+    }
+  }
+}

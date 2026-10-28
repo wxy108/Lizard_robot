@@ -1,0 +1,24 @@
+{
+  "artifacts": {
+    "comparison.json": {
+      "bytes": 13784,
+      "sha256": "e480c166e359834b5071d44949dac3a1ffaa595a3cac6d201b9de9e9cb60ff42"
+    },
+    "motion_comparison.mp4": {
+      "bytes": 728377,
+      "sha256": "c9fc1f5c266f46877366d43d3462736e3b85059a153bcf3ec50a9de196f362f3"
+    },
+    "motion_comparison.png": {
+      "bytes": 444235,
+      "sha256": "e17108ecb4353cfe6070eca2df9235dad0196accba2ba1a2007cf7ec267aa948"
+    },
+    "motion_contact_sheet.png": {
+      "bytes": 438887,
+      "sha256": "67821f706cb30120b92aa97bd4c8a2c099c975d8578ed1970d28e74cb494f6cc"
+    },
+    "stop_transition_76.png": {
+      "bytes": 387225,
+      "sha256": "b01ef762eefee6dd62bd5ad6214dc05d5e4a7b0cbba6e83cb84e00c31bf58347"
+    }
+  }
+}

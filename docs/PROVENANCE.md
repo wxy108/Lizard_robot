@@ -1,5 +1,20 @@
 # Source and data provenance
 
+## Per-robot motion / contact-proxy comparisons — 2026-10-28
+
+Render source `230cda2`, publication helper `d3db057`. The D-022 gallery at
+`docs/media/robot_comparisons/` reuses clean `36659ca` seven-robot recordings
+and the `5078fdc` G1 fast failure; source commits are not relabelled. Exact
+saved `source.ply`, `surface.npz`, snapshots and qualification metrics are
+read from hash-verified bundles. Pose-only URI/model rendering and compressed
+video composition are presentation derivatives, not new physics/remeshing.
+Original model/policy licenses accompany each robot. Whole native geometry,
+inertia, collision settings, control and force code remain unchanged.
+New movie hashes, per-surface stats and recorded physical timestamps are in
+the gallery's index/manifests; compact logs/source/readback evidence lives in
+`docs/regressions/2026-10-28-robot-comparisons/`. See the dated ledger for
+shared-scale views, relative spacing colors, stop cards and evidence limits.
+
 ## Multi-robot catalog and formats — 2026-10-28
 
 Source/runtime `36659ca`, final adapter/render/package checks `97b3570`.

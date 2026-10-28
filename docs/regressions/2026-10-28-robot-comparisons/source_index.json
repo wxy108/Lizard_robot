@@ -1,0 +1,105 @@
+{
+  "render_source": {
+    "commit": "230cda231fbb479250d193f6a3ba292e28719d62",
+    "dirty": false
+  },
+  "render_generator_sha256": "fe9a137434055a4c942bda6fb3522f925429509e303bce8060f151bbceeffced",
+  "publication_source": {
+    "commit": "d3db057086bd9a961e23a397575f4278b86d764c",
+    "dirty": false
+  },
+  "current_reporting_files": {
+    "scripts/generate_robot_comparisons.py": "2a5edcaab9d360eade511b13679b37f036d81e913b06e97c6f9ce4c77ebca1c0",
+    "tests/test_robot_comparisons.py": "7f47c3840a4f0c4ec1a31024750ea388d4ce4e9d1cd1fb49339e85ec3b48cd36"
+  },
+  "unchanged_core_and_environment": {
+    "rft/kernel.py": {
+      "sha256": "deb65e41f652a70dd95d960fd40f274e9c86a88bd2a070e2cfb2816a4ad3ffde",
+      "matches_task_start_5219db9": true
+    },
+    "rft/provider.py": {
+      "sha256": "018e50ef040277b3b05e0509d3f2f9400e57f04e67de3b23f691e201214af02d",
+      "matches_task_start_5219db9": true
+    },
+    "rft/ground.py": {
+      "sha256": "37f3586d19abe70eeaacd9381df6b4c7f8ee83ec4af45cac0c6e8bbde19ddd3f",
+      "matches_task_start_5219db9": true
+    },
+    "rft/binding.py": {
+      "sha256": "a5c49e4aeac2e785704e9b885c2bcec6b241ac69618219b2d595a154658094fa",
+      "matches_task_start_5219db9": true
+    },
+    "rft/pipeline.py": {
+      "sha256": "f6b56234c97f16c31c4c7be69cac381abeac0411083b0da15c1480dfb33230ef",
+      "matches_task_start_5219db9": true
+    },
+    "rft/geometry.py": {
+      "sha256": "9c0564e26fc18395f31dac1334c8beaf19ab2aca82619871ec237be520d03258",
+      "matches_task_start_5219db9": true
+    },
+    "controllers/playground_onnx.py": {
+      "sha256": "c8f6aaf617ffd35b5ccb1d1547cfacb6d78d94aa9671803953edf28172fbbae3",
+      "matches_task_start_5219db9": true
+    },
+    "controllers/catalog_controllers.py": {
+      "sha256": "c58ebbc63931f25fee994199a87e7c88a260fc98b05dc254e5c352ab53c04692",
+      "matches_task_start_5219db9": true
+    },
+    "environment.yml": {
+      "sha256": "c40a4c29e97a76e73fca6de4e88ae40506cdd8fe4fd5a2cfb6c9a62596266f25",
+      "matches_task_start_5219db9": true
+    },
+    "requirements-locomotion.txt": {
+      "sha256": "ce895ab994622b580b827f9b756219796315a6b56ccf3540d88c3518d378270d",
+      "matches_task_start_5219db9": true
+    },
+    "run.py": {
+      "sha256": "211ffc530f458f24e432febd4601f7655e200bf805cb8bc8f55dfd92d18f001d",
+      "matches_task_start_5219db9": true
+    },
+    "lizard_sand.py": {
+      "sha256": "9bed2344a1271057257b2b6c1e34dcb78b77d9d15f1ea4446450f25b04af6c9f",
+      "matches_task_start_5219db9": true
+    }
+  },
+  "derived_LF_copies": {
+    "canonical_fast.log": {
+      "source": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_comparisons\\validation\\canonical_fast.log",
+      "source_sha256": "1e5625d484a84d404313bdf59362abe4fae5fcfe04680f7999a364b289754804",
+      "LF_copy_sha256": "b97c33c596ec36b0978951cc6207027c6607af9204e06be71bdace20a389ee51"
+    },
+    "generation.log": {
+      "source": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_comparisons\\validation\\generation.log",
+      "source_sha256": "4b26c034c53f914027c9a74b132206e618ff2a3ebe305d904c7b412f7d407723",
+      "LF_copy_sha256": "897c53a4e08652c537f7312e1ce5f555e5efa1cc9dbb5ac2e9d34d6501233999"
+    },
+    "legacy_video_analysis.log": {
+      "source": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_comparisons\\validation\\legacy_video_analysis.log",
+      "source_sha256": "6082f7f036c51e15236cd8f6a3b0710aa8301b87cfe3c544721ddb2de338f8d6",
+      "LF_copy_sha256": "98f2c44f717021da5f782ac5a8a4b0e1d87315e4791fb38def84f79ecedf8287"
+    },
+    "legacy_video_smoke.log": {
+      "source": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_comparisons\\validation\\legacy_video_smoke.log",
+      "source_sha256": "10e37827ac55f6e75586489543632f7dbfaf2d56c6e9aa5a782a5008d44ed87a",
+      "LF_copy_sha256": "188ed18f6e41786341e32a938ec7e69b20c12bd52e7d2232818c20584bd9a9f2"
+    },
+    "verification.log": {
+      "source": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_comparisons\\validation\\verification.log",
+      "source_sha256": "d666c79ded52f6c8e67126844c3abda2fddb21effdc4c6625bfb00119d2d6166",
+      "LF_copy_sha256": "e3245b29d1d074279866d38a2cf29540460ccef54eabf5a727720be1cca185e3"
+    },
+    "legacy_video_smoke_manifest.json": {
+      "source": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_comparisons\\legacy_video_smoke\\matrix_manifest.json",
+      "source_sha256": "4c030e8e7f6c59636a77736e7b2bd690c56ea085d619d50c3ce9746982225e28",
+      "LF_copy_sha256": "accfc12b109b905c0e82b09db6066ac97a4a3a7b27f0111c3d425b916198ae9f"
+    },
+    "legacy_video_smoke_metrics.json": {
+      "source": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_comparisons\\legacy_video_smoke\\analysis\\derived_metrics.json",
+      "source_sha256": "1a8beabd8455170790d84b433f8749d1d4118b559a5c89d2b29de5d40a8f91cf",
+      "LF_copy_sha256": "a7518d651c9014e10f4c8b0263993855acbb881c89673f992e4a50e2a382e2f9"
+    }
+  },
+  "physics_steps_in_comparison_generator": 0,
+  "remesh_operations_in_comparison_generator": 0,
+  "legacy_short_validation_simulations_separate": true
+}

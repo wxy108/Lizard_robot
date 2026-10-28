@@ -1,0 +1,20 @@
+rigid_original: dCOM=(-0.0139, +0.0288, -0.0160) m, path=0.0515 m
+  Mid   duty=0.000 events=0
+  Front duty=0.262 events=19
+  FR    duty=0.000 events=0
+  FL    duty=0.030 events=6
+  Back  duty=0.006 events=2
+  HR    duty=0.004 events=2
+  HL    duty=0.000 events=0
+  Tail  duty=0.340 events=26
+sand_rft: dCOM=(+0.0004, +0.0176, -0.0200) m, path=0.0408 m
+  Mid   duty=0.490 events=11
+  Front duty=0.694 events=8
+  FR    duty=0.006 events=1
+  FL    duty=0.280 events=2
+  Back  duty=0.600 events=13
+  HR    duty=0.326 events=1
+  HL    duty=0.000 events=0
+  Tail  duty=0.694 events=9
+Derived JSON: X:\Projects\Lizard_Robot_MuJoCo\outputs\robot_comparisons\legacy_video_smoke\analysis\derived_metrics.json
+Component CSV: X:\Projects\Lizard_Robot_MuJoCo\outputs\robot_comparisons\legacy_video_smoke\analysis\component_metrics.csv

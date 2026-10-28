@@ -1,0 +1,60 @@
+{
+  "artifacts": {
+    "comparison.json": {
+      "bytes": 23244,
+      "sha256": "884266af9a7d1a4bff28e043c58ed338ca5c287c7c54921549defe6888686a9e"
+    },
+    "geometry.json": {
+      "bytes": 6977,
+      "sha256": "1e385e188297cbb4c77650195a1f65ff460024e8eeb1b800155cbee66b17b3ae"
+    },
+    "LICENSE-menagerie.txt": {
+      "bytes": 1537,
+      "sha256": "98335465f43a20b5850e4651db6e74c4aa1e9fc8e8813d38f345178045c0da50"
+    },
+    "LICENSE-playground.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "motion_comparison.mp4": {
+      "bytes": 699160,
+      "sha256": "1c65f33eebc2f70d55157316164d4c95bf6d9b39e56572ad745c84f33fb795b2"
+    },
+    "motion_comparison.png": {
+      "bytes": 441629,
+      "sha256": "e5e587ac3e1957fd2870dc27bbc8013c25e128bc621b71c282c69349eac3432c"
+    },
+    "motion_contact_sheet.png": {
+      "bytes": 438509,
+      "sha256": "e3ce7c3c99ffc018059884855eb82b42beea78c65ca60ed97a14a627ed00ec05"
+    },
+    "NOTICE.playground": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "proxy_left_foot.png": {
+      "bytes": 416276,
+      "sha256": "5df1536319fd371a075cce0c060da3c64a8ebd37b04261bf2aff11be0f1c0465"
+    },
+    "proxy_locations.png": {
+      "bytes": 99565,
+      "sha256": "b1a83839b2eb6b9b7e9af5252c72558a9f18973331dea09bee8c01599f465c08"
+    },
+    "proxy_metrics.csv": {
+      "bytes": 520,
+      "sha256": "9053f7b3c2e0233427f8fa37f30b4778bf8070c1b838a71993c412487d586bda"
+    },
+    "proxy_right_foot.png": {
+      "bytes": 417450,
+      "sha256": "1942abe498d2516c1ea42e9801a058c9f206f84949988c88389f0c8acef27b47"
+    },
+    "remesh_comparison.mp4": {
+      "bytes": 700130,
+      "sha256": "7a4a232e6af4c7c4a56c50e0f9a5c15964dbd3063c64fa7138449c95d75fc9bc"
+    },
+    "remesh_comparison.png": {
+      "bytes": 416276,
+      "sha256": "5df1536319fd371a075cce0c060da3c64a8ebd37b04261bf2aff11be0f1c0465"
+    }
+  }
+}

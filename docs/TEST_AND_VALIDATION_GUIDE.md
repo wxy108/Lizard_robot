@@ -50,9 +50,27 @@ Twenty tests add known area/volume, topology/winding/multiple/intersection/
 duplicate rejection, units, remesh budgets, verified bundle/model identity,
 ownership, fixed-child/mocap support, explicit contact pairs and retained
 self-pairs, native force sign, virtual assets and controller contracts.
-Current full suite: **49 tests**. Standalone official-policy parity and native
+This ground-pipeline stage contributed to the original 49 tests. Standalone official-policy parity and native
 three-scenario six-second screens are in `GROUND_RFT_GUIDE.md`; they require
 optional pinned assets/inference packages and are not unit-test downloads.
+
+### Catalog formats and comparison reporting
+
+`tests/test_catalog_formats.py` adds 20 format/package/import/safety checks;
+`tests/test_robot_comparisons.py` adds 12 mesh-quadrature/spacing/camera,
+frame/timeline/layout and no-step/no-remesh reporting checks. Current suite:
+**81 tests** with optional Xacro installed; missing optional Xacro causes its
+explicitly marked tests to skip. No robot-asset download occurs in unit tests.
+
+New per-robot media readback:
+
+```powershell
+python scripts/generate_robot_comparisons.py --verify docs/media/robot_comparisons
+```
+
+It verifies all published hashes, every movie frame, every component zoom,
+stop semantics and available source state hashes. Current D-022 release:
+seven robots, 15 movies, 1,423 frames and 19 independent component enlargements.
 
 ### `tests/test_video_matrix.py`
 

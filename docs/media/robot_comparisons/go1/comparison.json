@@ -1,0 +1,913 @@
+{
+  "geometry": {
+    "video": {
+      "frames_decoded": 65,
+      "fps": 16.0,
+      "encoded_duration_s": 4.0625,
+      "sha256": "290582781f621a7d053ee775479fca9d81ab6cfb7f8aa4a9e6b0f8ad897ba5c0"
+    },
+    "surfaces": [
+      {
+        "id": "FR_foot",
+        "body": "FR_calf",
+        "group": "front_right",
+        "arrays": "FR_foot/surface.npz",
+        "source": {
+          "geom": "FR",
+          "compiled_body_frame": true
+        },
+        "before": {
+          "vertices": 170,
+          "triangles": 336,
+          "bbox_extent_m": [
+            0.046,
+            0.046,
+            0.045999999999999985
+          ],
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "duplicate_faces": 0,
+          "degenerate_faces": 0,
+          "vertex_manifold": true,
+          "self_intersection_pairs": 0,
+          "components": 1,
+          "component_signed_volumes_m3": [
+            4.846716307812992e-05
+          ],
+          "area_m2": 0.006482518680988534,
+          "area_p95_p05": 2.633951187450044,
+          "centroid_spacing_p95_p05": 2.3418391455807597,
+          "edge_aspect_max": 4.135482735077558
+        },
+        "after": {
+          "vertices": 158,
+          "triangles": 312,
+          "bbox_extent_m": [
+            0.04521629400464857,
+            0.046,
+            0.045999999999999985
+          ],
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "duplicate_faces": 0,
+          "degenerate_faces": 0,
+          "vertex_manifold": true,
+          "self_intersection_pairs": 0,
+          "components": 1,
+          "component_signed_volumes_m3": [
+            4.7489187590651155e-05
+          ],
+          "area_m2": 0.006387422503236626,
+          "area_p95_p05": 4.1695516510379225,
+          "centroid_spacing_p95_p05": 1.6769199366395169,
+          "edge_aspect_max": 2.711925776288293
+        },
+        "sampled_deviation": {
+          "candidate_to_reference": {
+            "p95_m": 0.0003250129710067995,
+            "max_sampled_m": 0.00047312540118582547
+          },
+          "reference_to_candidate": {
+            "p95_m": 0.0005219693121034652,
+            "max_sampled_m": 0.000669069355353713
+          }
+        },
+        "method": "isotropic",
+        "recipe": {
+          "method": "isotropic",
+          "target_edge_m": 0.008,
+          "max_deviation_m": 0.001,
+          "iterations": 5
+        },
+        "construction_deviation_margin": 0.5,
+        "effective_limits": {
+          "area_p95_p05": 15,
+          "centroid_spacing_p95_p05": 10,
+          "edge_aspect_max": 12,
+          "max_triangles": 20000
+        },
+        "metrics": {
+          "before": {
+            "triangles_and_centroids": 336,
+            "area_m2": 0.006482518680988534,
+            "area_p95_p05": 2.633951187450044,
+            "median_spacing_mm": 3.4007607460561133,
+            "spacing_p95_p05": 2.3418391455807672
+          },
+          "after": {
+            "triangles_and_centroids": 312,
+            "area_m2": 0.006387422503236626,
+            "area_p95_p05": 4.1695516510379225,
+            "median_spacing_mm": 3.2036232889064538,
+            "spacing_p95_p05": 1.6769199366395255
+          }
+        },
+        "family": "[2, [0.023, 0.0, 0.0], 336, 312]",
+        "snapshot_hashes": {
+          "source_ply": "d45823f6816e24f463b7c5e54e76ec8252ddaa62028dd79ef460309ac1bce416",
+          "prepared_ply": "ab6dc30e55ad838cec90703a34b026b46f984648f49541b8e3ff4fa501e35d3e",
+          "surface_npz": "617ac8f6ba43ccb568a3294b8b63b8a3526df6453accbc8fdabccb5b893800b3"
+        }
+      },
+      {
+        "id": "FL_foot",
+        "body": "FL_calf",
+        "group": "front_left",
+        "arrays": "FL_foot/surface.npz",
+        "source": {
+          "geom": "FL",
+          "compiled_body_frame": true
+        },
+        "before": {
+          "vertices": 170,
+          "triangles": 336,
+          "bbox_extent_m": [
+            0.046,
+            0.046,
+            0.045999999999999985
+          ],
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "duplicate_faces": 0,
+          "degenerate_faces": 0,
+          "vertex_manifold": true,
+          "self_intersection_pairs": 0,
+          "components": 1,
+          "component_signed_volumes_m3": [
+            4.846716307812992e-05
+          ],
+          "area_m2": 0.006482518680988534,
+          "area_p95_p05": 2.633951187450044,
+          "centroid_spacing_p95_p05": 2.3418391455807597,
+          "edge_aspect_max": 4.135482735077558
+        },
+        "after": {
+          "vertices": 158,
+          "triangles": 312,
+          "bbox_extent_m": [
+            0.04521629400464857,
+            0.046,
+            0.045999999999999985
+          ],
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "duplicate_faces": 0,
+          "degenerate_faces": 0,
+          "vertex_manifold": true,
+          "self_intersection_pairs": 0,
+          "components": 1,
+          "component_signed_volumes_m3": [
+            4.7489187590651155e-05
+          ],
+          "area_m2": 0.006387422503236626,
+          "area_p95_p05": 4.1695516510379225,
+          "centroid_spacing_p95_p05": 1.6769199366395169,
+          "edge_aspect_max": 2.711925776288293
+        },
+        "sampled_deviation": {
+          "candidate_to_reference": {
+            "p95_m": 0.0003250129710067995,
+            "max_sampled_m": 0.00047312540118582547
+          },
+          "reference_to_candidate": {
+            "p95_m": 0.0005219693121034652,
+            "max_sampled_m": 0.000669069355353713
+          }
+        },
+        "method": "isotropic",
+        "recipe": {
+          "method": "isotropic",
+          "target_edge_m": 0.008,
+          "max_deviation_m": 0.001,
+          "iterations": 5
+        },
+        "construction_deviation_margin": 0.5,
+        "effective_limits": {
+          "area_p95_p05": 15,
+          "centroid_spacing_p95_p05": 10,
+          "edge_aspect_max": 12,
+          "max_triangles": 20000
+        },
+        "metrics": {
+          "before": {
+            "triangles_and_centroids": 336,
+            "area_m2": 0.006482518680988534,
+            "area_p95_p05": 2.633951187450044,
+            "median_spacing_mm": 3.4007607460561102,
+            "spacing_p95_p05": 2.341839145580761
+          },
+          "after": {
+            "triangles_and_centroids": 312,
+            "area_m2": 0.006387422503236626,
+            "area_p95_p05": 4.1695516510379225,
+            "median_spacing_mm": 3.2036232889064538,
+            "spacing_p95_p05": 1.6769199366395269
+          }
+        },
+        "family": "[2, [0.023, 0.0, 0.0], 336, 312]",
+        "snapshot_hashes": {
+          "source_ply": "d45823f6816e24f463b7c5e54e76ec8252ddaa62028dd79ef460309ac1bce416",
+          "prepared_ply": "ab6dc30e55ad838cec90703a34b026b46f984648f49541b8e3ff4fa501e35d3e",
+          "surface_npz": "617ac8f6ba43ccb568a3294b8b63b8a3526df6453accbc8fdabccb5b893800b3"
+        }
+      },
+      {
+        "id": "RR_foot",
+        "body": "RR_calf",
+        "group": "rear_right",
+        "arrays": "RR_foot/surface.npz",
+        "source": {
+          "geom": "RR",
+          "compiled_body_frame": true
+        },
+        "before": {
+          "vertices": 170,
+          "triangles": 336,
+          "bbox_extent_m": [
+            0.046,
+            0.046,
+            0.045999999999999985
+          ],
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "duplicate_faces": 0,
+          "degenerate_faces": 0,
+          "vertex_manifold": true,
+          "self_intersection_pairs": 0,
+          "components": 1,
+          "component_signed_volumes_m3": [
+            4.846716307812992e-05
+          ],
+          "area_m2": 0.006482518680988534,
+          "area_p95_p05": 2.633951187450044,
+          "centroid_spacing_p95_p05": 2.3418391455807597,
+          "edge_aspect_max": 4.135482735077558
+        },
+        "after": {
+          "vertices": 158,
+          "triangles": 312,
+          "bbox_extent_m": [
+            0.04521629400464857,
+            0.046,
+            0.045999999999999985
+          ],
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "duplicate_faces": 0,
+          "degenerate_faces": 0,
+          "vertex_manifold": true,
+          "self_intersection_pairs": 0,
+          "components": 1,
+          "component_signed_volumes_m3": [
+            4.7489187590651155e-05
+          ],
+          "area_m2": 0.006387422503236626,
+          "area_p95_p05": 4.1695516510379225,
+          "centroid_spacing_p95_p05": 1.6769199366395169,
+          "edge_aspect_max": 2.711925776288293
+        },
+        "sampled_deviation": {
+          "candidate_to_reference": {
+            "p95_m": 0.0003250129710067995,
+            "max_sampled_m": 0.00047312540118582547
+          },
+          "reference_to_candidate": {
+            "p95_m": 0.0005219693121034652,
+            "max_sampled_m": 0.000669069355353713
+          }
+        },
+        "method": "isotropic",
+        "recipe": {
+          "method": "isotropic",
+          "target_edge_m": 0.008,
+          "max_deviation_m": 0.001,
+          "iterations": 5
+        },
+        "construction_deviation_margin": 0.5,
+        "effective_limits": {
+          "area_p95_p05": 15,
+          "centroid_spacing_p95_p05": 10,
+          "edge_aspect_max": 12,
+          "max_triangles": 20000
+        },
+        "metrics": {
+          "before": {
+            "triangles_and_centroids": 336,
+            "area_m2": 0.006482518680988534,
+            "area_p95_p05": 2.633951187450044,
+            "median_spacing_mm": 3.4007607460561133,
+            "spacing_p95_p05": 2.3418391455807672
+          },
+          "after": {
+            "triangles_and_centroids": 312,
+            "area_m2": 0.006387422503236626,
+            "area_p95_p05": 4.1695516510379225,
+            "median_spacing_mm": 3.2036232889064538,
+            "spacing_p95_p05": 1.6769199366395255
+          }
+        },
+        "family": "[2, [0.023, 0.0, 0.0], 336, 312]",
+        "snapshot_hashes": {
+          "source_ply": "d45823f6816e24f463b7c5e54e76ec8252ddaa62028dd79ef460309ac1bce416",
+          "prepared_ply": "ab6dc30e55ad838cec90703a34b026b46f984648f49541b8e3ff4fa501e35d3e",
+          "surface_npz": "617ac8f6ba43ccb568a3294b8b63b8a3526df6453accbc8fdabccb5b893800b3"
+        }
+      },
+      {
+        "id": "RL_foot",
+        "body": "RL_calf",
+        "group": "rear_left",
+        "arrays": "RL_foot/surface.npz",
+        "source": {
+          "geom": "RL",
+          "compiled_body_frame": true
+        },
+        "before": {
+          "vertices": 170,
+          "triangles": 336,
+          "bbox_extent_m": [
+            0.046,
+            0.046,
+            0.045999999999999985
+          ],
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "duplicate_faces": 0,
+          "degenerate_faces": 0,
+          "vertex_manifold": true,
+          "self_intersection_pairs": 0,
+          "components": 1,
+          "component_signed_volumes_m3": [
+            4.846716307812992e-05
+          ],
+          "area_m2": 0.006482518680988534,
+          "area_p95_p05": 2.633951187450044,
+          "centroid_spacing_p95_p05": 2.3418391455807597,
+          "edge_aspect_max": 4.135482735077558
+        },
+        "after": {
+          "vertices": 158,
+          "triangles": 312,
+          "bbox_extent_m": [
+            0.04521629400464857,
+            0.046,
+            0.045999999999999985
+          ],
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "duplicate_faces": 0,
+          "degenerate_faces": 0,
+          "vertex_manifold": true,
+          "self_intersection_pairs": 0,
+          "components": 1,
+          "component_signed_volumes_m3": [
+            4.7489187590651155e-05
+          ],
+          "area_m2": 0.006387422503236626,
+          "area_p95_p05": 4.1695516510379225,
+          "centroid_spacing_p95_p05": 1.6769199366395169,
+          "edge_aspect_max": 2.711925776288293
+        },
+        "sampled_deviation": {
+          "candidate_to_reference": {
+            "p95_m": 0.0003250129710067995,
+            "max_sampled_m": 0.00047312540118582547
+          },
+          "reference_to_candidate": {
+            "p95_m": 0.0005219693121034652,
+            "max_sampled_m": 0.000669069355353713
+          }
+        },
+        "method": "isotropic",
+        "recipe": {
+          "method": "isotropic",
+          "target_edge_m": 0.008,
+          "max_deviation_m": 0.001,
+          "iterations": 5
+        },
+        "construction_deviation_margin": 0.5,
+        "effective_limits": {
+          "area_p95_p05": 15,
+          "centroid_spacing_p95_p05": 10,
+          "edge_aspect_max": 12,
+          "max_triangles": 20000
+        },
+        "metrics": {
+          "before": {
+            "triangles_and_centroids": 336,
+            "area_m2": 0.006482518680988534,
+            "area_p95_p05": 2.633951187450044,
+            "median_spacing_mm": 3.4007607460561102,
+            "spacing_p95_p05": 2.341839145580761
+          },
+          "after": {
+            "triangles_and_centroids": 312,
+            "area_m2": 0.006387422503236626,
+            "area_p95_p05": 4.1695516510379225,
+            "median_spacing_mm": 3.2036232889064538,
+            "spacing_p95_p05": 1.6769199366395269
+          }
+        },
+        "family": "[2, [0.023, 0.0, 0.0], 336, 312]",
+        "snapshot_hashes": {
+          "source_ply": "d45823f6816e24f463b7c5e54e76ec8252ddaa62028dd79ef460309ac1bce416",
+          "prepared_ply": "ab6dc30e55ad838cec90703a34b026b46f984648f49541b8e3ff4fa501e35d3e",
+          "surface_npz": "617ac8f6ba43ccb568a3294b8b63b8a3526df6453accbc8fdabccb5b893800b3"
+        }
+      }
+    ],
+    "color_rule": "clip(log2(3D nearest-centroid spacing / own-mesh median), -1, +1)",
+    "whole_robot_remeshed": false,
+    "physics_steps_executed": 0,
+    "remesh_operations_executed": 0,
+    "views": "same initial world orientation, shared before/after bounds, oblique plus underside where one family",
+    "normals": "sampled outward unit geometric normals; visualization arrows, not forces"
+  },
+  "motion": {
+    "video": {
+      "frames_decoded": 121,
+      "fps": 20.0,
+      "encoded_duration_s": 6.05,
+      "sha256": "3edb1745be63c8cb48e8d47845c93cf4571e5972b31c397cae46f93c3bba85f4"
+    },
+    "rows": [
+      {
+        "directory": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_catalog\\clean_6s_36659ca\\go1\\rigid_matched",
+        "summary": {
+          "source": {
+            "commit": "36659ca04dca0e4d842f94dcc2532161258740be",
+            "dirty": false
+          },
+          "status": "passed_screen",
+          "termination": "completed",
+          "requested_duration_s": 6.0,
+          "recorded_duration_s": 6.0,
+          "physics_timestep_s": 0.0005,
+          "control_dt_s": 0.02,
+          "policy_updates": 300,
+          "first_policy_update_pre_step_time_s": 0.0195,
+          "mode": "rigid",
+          "integrator": 0,
+          "effective_controller": {
+            "type": "playground_onnx",
+            "family": "go1",
+            "policy": "../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/go1_policy.onnx",
+            "control_dt": 0.02,
+            "command": [
+              0.4,
+              0.0,
+              0.0
+            ]
+          },
+          "support_conversion": {
+            "removed_explicit_pairs": []
+          },
+          "effective_ground_masks_during_simulation": {
+            "floor": [
+              1,
+              0
+            ]
+          },
+          "policy_sha256": "386cde6a1eac679e2f2a313ade2b395d9f26905b151ee3b019c2c4163d49b6f2",
+          "model_mass_kg": 12.743448,
+          "model_adapter": null,
+          "acceptance_failures": [],
+          "minimum_required_forward_progress_m": 0.2,
+          "geometry_status": "upstream foot collision proxies only; not whole-robot exterior or calibrated sand",
+          "triangle_count": 1248,
+          "rft_convention": "body_frame_v1",
+          "coefficient": 3.75,
+          "alpha": 0.5,
+          "acceptance": {
+            "minimum_upright_cosine": 0.6,
+            "minimum_root_height_m": 0.12,
+            "max_centroid_penetration_m": 0.1,
+            "minimum_forward_displacement_m": 0.2
+          },
+          "com_displacement_m": [
+            2.1421363472779884,
+            0.16117207243397685,
+            0.019570116469280807
+          ],
+          "min_root_height_m": 0.278,
+          "min_upright_cosine": 0.9994245634631742,
+          "max_centroid_penetration_m": 0.0,
+          "max_total_rft_force_N": 0.0,
+          "max_rigid_support_force_N": 8521.068686641438,
+          "rigid_support_contact_steps": 11878,
+          "rigid_contact_pairs": [
+            [
+              "floor",
+              "FL"
+            ],
+            [
+              "floor",
+              "FR"
+            ],
+            [
+              "floor",
+              "RL"
+            ],
+            [
+              "floor",
+              "RR"
+            ]
+          ],
+          "rft_active_steps": 0,
+          "max_smoothed_rft_power_W": 0.0,
+          "positive_smoothed_power_steps": 0,
+          "trace_columns": [
+            "time_s",
+            "com_x",
+            "com_y",
+            "com_z",
+            "root_z",
+            "upright_cosine",
+            "penetration_m",
+            "rft_fx",
+            "rft_fy",
+            "rft_fz",
+            "rigid_fx",
+            "rigid_fy",
+            "rigid_fz",
+            "rft_power_W",
+            "rigid_contact_count",
+            "rigid_min_distance_m"
+          ],
+          "state_alignment": "All rows are pre-step, force/control at same qpos/qvel/time; final state stored separately",
+          "boundary": "Bounded engineering screen, not material calibration or guaranteed policy transfer",
+          "video_frames": 121
+        },
+        "video_sha256": "ee10292582fd2c1e7b7dcc8f01737672280c61c842ab2888b2fb1e7e49188483",
+        "trajectory_sha256": "a68354dfaafdfd5bfe186b5c14815e0ae5727a96b4315a7aa923596fb32d08a8",
+        "real_frames": 121,
+        "visual_replay": null,
+        "frame_physical_times_s": [
+          0.0,
+          0.05000000000000004,
+          0.10000000000000007,
+          0.1500000000000001,
+          0.20000000000000015,
+          0.25000000000000017,
+          0.3000000000000002,
+          0.35000000000000026,
+          0.4000000000000003,
+          0.45000000000000034,
+          0.5000000000000003,
+          0.5499999999999948,
+          0.5999999999999893,
+          0.6499999999999838,
+          0.6999999999999783,
+          0.7499999999999728,
+          0.7999999999999673,
+          0.8499999999999618,
+          0.8999999999999563,
+          0.9499999999999508,
+          0.9999999999999453,
+          1.0499999999999399,
+          1.0999999999999344,
+          1.1499999999999289,
+          1.1999999999999234,
+          1.2499999999999178,
+          1.2999999999999123,
+          1.3499999999999068,
+          1.3999999999999013,
+          1.4499999999998958,
+          1.4999999999998903,
+          1.5499999999998848,
+          1.5999999999998793,
+          1.6499999999998738,
+          1.6999999999998683,
+          1.7499999999998628,
+          1.7999999999998573,
+          1.8499999999998518,
+          1.8999999999998463,
+          1.9499999999998407,
+          1.9999999999998352,
+          2.049999999999852,
+          2.0999999999998686,
+          2.1499999999998853,
+          2.199999999999902,
+          2.2499999999999187,
+          2.2999999999999354,
+          2.349999999999952,
+          2.399999999999969,
+          2.4499999999999855,
+          2.500000000000002,
+          2.550000000000019,
+          2.6000000000000356,
+          2.6500000000000523,
+          2.700000000000069,
+          2.7500000000000857,
+          2.8000000000001024,
+          2.850000000000119,
+          2.900000000000136,
+          2.9500000000001525,
+          3.000000000000169,
+          3.0495000000001857,
+          3.0995000000002024,
+          3.149500000000219,
+          3.199500000000236,
+          3.2495000000002525,
+          3.299500000000269,
+          3.349500000000286,
+          3.3995000000003026,
+          3.4495000000003193,
+          3.499500000000336,
+          3.5495000000003527,
+          3.5995000000003694,
+          3.649500000000386,
+          3.699500000000403,
+          3.7495000000004195,
+          3.799500000000436,
+          3.849500000000453,
+          3.8995000000004696,
+          3.9495000000004863,
+          3.999500000000503,
+          4.049500000000475,
+          4.099500000000448,
+          4.14950000000042,
+          4.199500000000392,
+          4.249500000000364,
+          4.299500000000337,
+          4.349500000000309,
+          4.399500000000281,
+          4.449500000000254,
+          4.499500000000226,
+          4.549500000000198,
+          4.5995000000001705,
+          4.649500000000143,
+          4.699500000000115,
+          4.749500000000087,
+          4.79950000000006,
+          4.849500000000032,
+          4.899500000000004,
+          4.9494999999999765,
+          4.999499999999949,
+          5.049499999999921,
+          5.099499999999893,
+          5.149499999999866,
+          5.199499999999838,
+          5.24949999999981,
+          5.2994999999997825,
+          5.349499999999755,
+          5.399499999999727,
+          5.449499999999699,
+          5.499499999999672,
+          5.549499999999644,
+          5.599499999999616,
+          5.6494999999995885,
+          5.699499999999561,
+          5.749499999999533,
+          5.799499999999505,
+          5.849499999999478,
+          5.89949999999945,
+          5.949499999999422,
+          5.9994999999993945
+        ]
+      },
+      {
+        "directory": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_catalog\\clean_6s_36659ca\\go1\\sand",
+        "summary": {
+          "source": {
+            "commit": "36659ca04dca0e4d842f94dcc2532161258740be",
+            "dirty": false
+          },
+          "status": "passed_screen",
+          "termination": "completed",
+          "requested_duration_s": 6.0,
+          "recorded_duration_s": 6.0,
+          "physics_timestep_s": 0.0005,
+          "control_dt_s": 0.02,
+          "policy_updates": 300,
+          "first_policy_update_pre_step_time_s": 0.0195,
+          "mode": "sand",
+          "integrator": 0,
+          "effective_controller": {
+            "type": "playground_onnx",
+            "family": "go1",
+            "policy": "../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/go1_policy.onnx",
+            "control_dt": 0.02,
+            "command": [
+              0.4,
+              0.0,
+              0.0
+            ]
+          },
+          "support_conversion": {
+            "removed_explicit_pairs": []
+          },
+          "effective_ground_masks_during_simulation": {
+            "floor": [
+              0,
+              0
+            ]
+          },
+          "policy_sha256": "386cde6a1eac679e2f2a313ade2b395d9f26905b151ee3b019c2c4163d49b6f2",
+          "model_mass_kg": 12.743448,
+          "model_adapter": null,
+          "acceptance_failures": [],
+          "minimum_required_forward_progress_m": 0.2,
+          "geometry_status": "upstream foot collision proxies only; not whole-robot exterior or calibrated sand",
+          "triangle_count": 1248,
+          "rft_convention": "body_frame_v1",
+          "coefficient": 3.75,
+          "alpha": 0.5,
+          "acceptance": {
+            "minimum_upright_cosine": 0.6,
+            "minimum_root_height_m": 0.12,
+            "max_centroid_penetration_m": 0.1,
+            "minimum_forward_displacement_m": 0.2
+          },
+          "com_displacement_m": [
+            2.104189641280186,
+            0.3222390989264367,
+            -0.0051922871868175235
+          ],
+          "min_root_height_m": 0.2699806367025633,
+          "min_upright_cosine": 0.9995527729784334,
+          "max_centroid_penetration_m": 0.031001892687273325,
+          "max_total_rft_force_N": 237.46003210971503,
+          "max_rigid_support_force_N": 0.0,
+          "rigid_support_contact_steps": 0,
+          "rigid_contact_pairs": [],
+          "rft_active_steps": 11999,
+          "max_smoothed_rft_power_W": 0.0,
+          "positive_smoothed_power_steps": 0,
+          "trace_columns": [
+            "time_s",
+            "com_x",
+            "com_y",
+            "com_z",
+            "root_z",
+            "upright_cosine",
+            "penetration_m",
+            "rft_fx",
+            "rft_fy",
+            "rft_fz",
+            "rigid_fx",
+            "rigid_fy",
+            "rigid_fz",
+            "rft_power_W",
+            "rigid_contact_count",
+            "rigid_min_distance_m"
+          ],
+          "state_alignment": "All rows are pre-step, force/control at same qpos/qvel/time; final state stored separately",
+          "boundary": "Bounded engineering screen, not material calibration or guaranteed policy transfer",
+          "video_frames": 121
+        },
+        "video_sha256": "56c56055522dc6b84de00349711affcff5b107b1c2ed48e40dcd28182c1ce8f4",
+        "trajectory_sha256": "79ffd2a6366abb630897a41823134a776f615b530a9e2c5d66fc094ea0292de4",
+        "real_frames": 121,
+        "visual_replay": null,
+        "frame_physical_times_s": [
+          0.0,
+          0.05000000000000004,
+          0.10000000000000007,
+          0.1500000000000001,
+          0.20000000000000015,
+          0.25000000000000017,
+          0.3000000000000002,
+          0.35000000000000026,
+          0.4000000000000003,
+          0.45000000000000034,
+          0.5000000000000003,
+          0.5499999999999948,
+          0.5999999999999893,
+          0.6499999999999838,
+          0.6999999999999783,
+          0.7499999999999728,
+          0.7999999999999673,
+          0.8499999999999618,
+          0.8999999999999563,
+          0.9499999999999508,
+          0.9999999999999453,
+          1.0499999999999399,
+          1.0999999999999344,
+          1.1499999999999289,
+          1.1999999999999234,
+          1.2499999999999178,
+          1.2999999999999123,
+          1.3499999999999068,
+          1.3999999999999013,
+          1.4499999999998958,
+          1.4999999999998903,
+          1.5499999999998848,
+          1.5999999999998793,
+          1.6499999999998738,
+          1.6999999999998683,
+          1.7499999999998628,
+          1.7999999999998573,
+          1.8499999999998518,
+          1.8999999999998463,
+          1.9499999999998407,
+          1.9999999999998352,
+          2.049999999999852,
+          2.0999999999998686,
+          2.1499999999998853,
+          2.199999999999902,
+          2.2499999999999187,
+          2.2999999999999354,
+          2.349999999999952,
+          2.399999999999969,
+          2.4499999999999855,
+          2.500000000000002,
+          2.550000000000019,
+          2.6000000000000356,
+          2.6500000000000523,
+          2.700000000000069,
+          2.7500000000000857,
+          2.8000000000001024,
+          2.850000000000119,
+          2.900000000000136,
+          2.9500000000001525,
+          3.000000000000169,
+          3.0495000000001857,
+          3.0995000000002024,
+          3.149500000000219,
+          3.199500000000236,
+          3.2495000000002525,
+          3.299500000000269,
+          3.349500000000286,
+          3.3995000000003026,
+          3.4495000000003193,
+          3.499500000000336,
+          3.5495000000003527,
+          3.5995000000003694,
+          3.649500000000386,
+          3.699500000000403,
+          3.7495000000004195,
+          3.799500000000436,
+          3.849500000000453,
+          3.8995000000004696,
+          3.9495000000004863,
+          3.999500000000503,
+          4.049500000000475,
+          4.099500000000448,
+          4.14950000000042,
+          4.199500000000392,
+          4.249500000000364,
+          4.299500000000337,
+          4.349500000000309,
+          4.399500000000281,
+          4.449500000000254,
+          4.499500000000226,
+          4.549500000000198,
+          4.5995000000001705,
+          4.649500000000143,
+          4.699500000000115,
+          4.749500000000087,
+          4.79950000000006,
+          4.849500000000032,
+          4.899500000000004,
+          4.9494999999999765,
+          4.999499999999949,
+          5.049499999999921,
+          5.099499999999893,
+          5.149499999999866,
+          5.199499999999838,
+          5.24949999999981,
+          5.2994999999997825,
+          5.349499999999755,
+          5.399499999999727,
+          5.449499999999699,
+          5.499499999999672,
+          5.549499999999644,
+          5.599499999999616,
+          5.6494999999995885,
+          5.699499999999561,
+          5.749499999999533,
+          5.799499999999505,
+          5.849499999999478,
+          5.89949999999945,
+          5.949499999999422,
+          5.9994999999993945
+        ]
+      }
+    ],
+    "after_stop": "neutral no-data scene; no last-frame duplication",
+    "transitions": {},
+    "physics_steps_executed": 0,
+    "contact_display": "conservative OR per time pixel; raw telemetry unchanged",
+    "depth_definitions": {
+      "rigid": "max(0,-native support contact.dist)",
+      "sand": "max triangle-centroid penetration"
+    }
+  },
+  "recipe": "X:\\Projects\\Lizard_Robot_MuJoCo\\configs\\robots\\playground_go1.yaml",
+  "config_sha256": "1152f925895bb73bba11b3f6e4de9c26f975a1e8966178f6b6fb9f9768a64470",
+  "simulation_source": {
+    "commit": "36659ca04dca0e4d842f94dcc2532161258740be",
+    "dirty": false
+  },
+  "bundle_manifest_sha256": "962047ab29b3a1de172dee246029e1d25b65f6f0b5d1141eab389b178799a3cf",
+  "bundle_directory": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_catalog\\cache\\e3023ebfb5dd675c9e74fd3aed743083207d9a54514208fa49c3dc5e9fb6b85d"
+}

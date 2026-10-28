@@ -1,6 +1,11 @@
 # Multi-robot RFT catalog: install, run, inspect and move
 
 This is the expanded entry point on branch `agent/ground-rft-pipeline`.
+
+For direct per-robot comparisons, open [the paired motion and proxy gallery](media/robot_comparisons/README.md):
+rigid above, sand below, plus original/remeshed mesh/centroid movies and 19
+separate component enlargements. Full provenance/validation:
+[comparison evidence](regressions/2026-10-28-robot-comparisons/README.md).
 Original lizard and the earlier Go1/G1 evidence remain unchanged. A catalog
 entry means an explicit reviewed recipe exists, **not** that its sand gait
 passes. Results and failures: [implementation ledger](ROBOT_CATALOG_EXPANSION_2026-10-28.md).

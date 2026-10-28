@@ -1,0 +1,44 @@
+{
+  "artifacts": {
+    "canonical_fast.log": {
+      "bytes": 14935,
+      "sha256": "b97c33c596ec36b0978951cc6207027c6607af9204e06be71bdace20a389ee51"
+    },
+    "generation.log": {
+      "bytes": 564,
+      "sha256": "897c53a4e08652c537f7312e1ce5f555e5efa1cc9dbb5ac2e9d34d6501233999"
+    },
+    "legacy_video_analysis.log": {
+      "bytes": 822,
+      "sha256": "98f2c44f717021da5f782ac5a8a4b0e1d87315e4791fb38def84f79ecedf8287"
+    },
+    "legacy_video_smoke.log": {
+      "bytes": 979,
+      "sha256": "188ed18f6e41786341e32a938ec7e69b20c12bd52e7d2232818c20584bd9a9f2"
+    },
+    "legacy_video_smoke_manifest.json": {
+      "bytes": 6162,
+      "sha256": "accfc12b109b905c0e82b09db6066ac97a4a3a7b27f0111c3d425b916198ae9f"
+    },
+    "legacy_video_smoke_metrics.json": {
+      "bytes": 7179,
+      "sha256": "a7518d651c9014e10f4c8b0263993855acbb881c89673f992e4a50e2a382e2f9"
+    },
+    "README.md": {
+      "bytes": 4558,
+      "sha256": "fe7cb41158de8c636d78b403ca0a1c3907c9ad0c552141dd8a3566fc33d96adc"
+    },
+    "source_index.json": {
+      "bytes": 5081,
+      "sha256": "880910190effccad4ec9b0f9aec1e9660ff12a5ba6e7a8747f42dfb33bd9848d"
+    },
+    "verification.json": {
+      "bytes": 188,
+      "sha256": "f55833d9ca3c7ef0c0b7a14976e39b7c4618fa577220a3d8c5c7f11daf7bb12e"
+    },
+    "verification.log": {
+      "bytes": 172,
+      "sha256": "e3245b29d1d074279866d38a2cf29540460ccef54eabf5a727720be1cca185e3"
+    }
+  }
+}
