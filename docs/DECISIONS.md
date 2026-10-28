@@ -1,5 +1,22 @@
 # Decision log
 
+## D-017 — publish two bounded generic integration demo videos
+
+Date: 2026-10-27. Extends the bounded-media policy in D-006.
+
+Track exactly two short Go1/Panda integration MP4s, their preview sheets and
+upstream notices under `docs/media/general_rft_stage1/`. They were generated
+from clean source `3be21df`, verified by artifact hashes/frame decoding and
+visually inspected. Copy without transcoding; preserve all raw NPZ/state
+data and original manifests under ignored `outputs/general_rft/`.
+
+Reason: readers need to inspect actual cross-robot binding/force integration
+before downloading optional model assets. Label these as selected-proxy,
+hold/sine, two-second integration screens, not optimized locomotion, approved
+hardware envelopes or material calibration. Retain the original lizard
+production and legacy-invalid media unchanged. Exact hashes and sources are
+in the media README and the dated regression evidence.
+
 ## D-016 — versioned generic bindings coexist with the frozen lizard
 
 Date: 2026-10-27.
@@ -200,6 +217,9 @@ under `docs/media/`:
 - `legacy_incorrect_rft_locomotion/`: one recovered historical recording, one
   labelled zoomed copy, a contact sheet, and exact recovery/hashes. It is
   failure evidence only and carries no valid force or gait claim.
+- `general_rft_stage1/`: two explicitly labelled, hash-verified cross-robot
+  integration demos with previews and upstream notices (D-017); not a physics
+  calibration or new gait-performance baseline.
 
 Adding or replacing a set requires a clean source commit, verified generator
 manifest, tests, documentation, and an explicit decision. Rejected meshes are

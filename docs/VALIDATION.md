@@ -1,7 +1,43 @@
 # Validation record
 
-Latest deployment validation: 2026-10-08. The full 6 s numerical baseline
-below remains the historical 2026-07-27 run.
+Latest engineering validation: 2026-10-27. The original 6 s numerical baseline
+below was reproduced without changing legacy source/model/gait. Historical
+raw-data anchors remain the 2026-07-27 records.
+
+## General RFT stage one — 2026-10-27
+
+Clean implementation source: `3be21dfc68218528b5d936868b91ff2fa33e2e1f`.
+All 29 tests passed (16 existing + 13 generic), canonical
+`scripts/validate_project.py --full` passed, and the 0.25 s reporting smoke
+generated nine individual videos plus the overview and passed the analyzer.
+The full legacy RFT again reported 217.7 mm forward, -120.8 mm lateral,
+86.629 / 0.600 N peak total/site force, 98.9% active steps and zero positive
+active-power steps. The legacy runtime/model/mesh/gait files are unchanged.
+
+Same-state legacy compatibility passed 17 representative states across a 6 s
+legacy trajectory with identical smoothing history. Maximum raw/smoothed
+triangle-force differences were 5.5511e-17 / 2.7756e-17 N; generalized-force
+component difference was 8.8818e-16, with no active-mask differences. Clean-
+source replay of the frozen oracle also passed. The explicit body-frame
+convention changes some triangle forces by up to 0.18260 N and generalized
+components by 4.35717; this was recorded separately, not adopted in the old
+lizard entry point.
+
+A paired floor-disabled six-second control had identical qpos arrays for all
+12,000 steps. The sand run had no supporting ground contacts; its lowest RFT
+centroid was -9.311 mm versus the -250 mm safety plane. The original rigid
+model's intended z=0 floor had maximum soft-contact penetration 0.575 mm.
+
+Pinned Menagerie Go1 and Panda demos both completed two seconds / 4,000 steps
+with active RFT, finite states and inspected 41-frame/20-FPS videos. Selected
+surfaces and hold/sine controllers are integration screens, not validated
+granular locomotion. URDF import/force tests use known-answer fixtures; the
+real downloaded robot examples are MJCF. Optional registry tools added four
+packages while every pre-existing environment package version stayed fixed.
+
+Exact commands, source/config hashes, outputs, failure/correction notes and
+scope: `RFT_GENERALIZATION_WORKLOG_2026-10-27.md`,
+`GENERAL_RFT_GUIDE.md`, and `regressions/2026-10-27-general-rft/`.
 
 ## GitHub-only download repair validation — 2026-10-08
 

@@ -1,0 +1,14 @@
+{
+  "environment": "lizard_rft",
+  "before_inventory": "outputs/general_rft/robot_install_20261027_182907_772686/environment_inventory.json",
+  "changed_preexisting_packages": {},
+  "added_packages": {
+    "robot_descriptions": "3.3.0",
+    "GitPython": "3.2.1",
+    "gitdb": "4.0.12",
+    "smmap": "5.0.3"
+  },
+  "pip_check": "No broken requirements found",
+  "numerical_environment_file_unchanged": true,
+  "isaaclab_modified": false
+}

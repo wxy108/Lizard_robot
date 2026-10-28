@@ -1,5 +1,12 @@
 # General RFT implementation ledger — 2026-10-27
 
+Current outcome: stage-one implementation, 29 tests, same-state regression,
+full original lizard regression, video/reporting smoke, two real-model demos
+and the lower-floor diagnosis are complete. Implementation source is `3be21df`;
+the final evidence commit changes documentation/media only. Numerical legacy
+files remain the `ccc6946` control. Open research/adoption limits are listed
+at the end; the initial queue below is historical, not current pending work.
+
 ## Identity and scope
 
 - Canonical root: `Lizard_Robot_MuJoCo`.
@@ -176,7 +183,7 @@ explicitly 15 mm above the selected initial minimum centroid. These are
 bounded integration screens with upstream collision proxies, not new walking
 policies, whole-robot contact-envelope approvals or material calibration.
 
-## Pending steps
+## Initial queue (historical; all stage-one outcomes recorded above/below)
 
 1. Implement reusable surface bindings, provider, explicit conventions and
    focused frame/provider tests.
@@ -189,3 +196,73 @@ policies, whole-robot contact-envelope approvals or material calibration.
 5. Run canonical/full validation and reporting smoke, record results and
    commit focused source/evidence changes. Do not publish new media as a
    canonical release without documenting its status.
+
+## S7 — clean-source final acceptance (completed)
+
+Implementation commit: `3be21dfc68218528b5d936868b91ff2fa33e2e1f`.
+All of the following ran sequentially from that clean source:
+
+1. `validate_general_rft.py --replay-run` against the frozen seventeen-state
+   oracle: passed with the same machine-roundoff-level maximum errors.
+2. `validate_project.py --full`: all 29 tests, upstream snapshot, eight active
+   mesh gates, 13,916 sites, original rigid smoke and original 6 s RFT passed.
+   Legacy displacement/force/power/sinkage values matched the recorded baseline.
+3. `generate_video_matrix.py --duration 0.25 --fps 10 --width 640 --height 480
+   --panel-width 420`: nine MP4 views plus overview, clean git flag.
+4. `analyze_video_matrix.py`: all declared artifact sizes/hashes passed and
+   derived metrics/CSV were produced.
+5. Go1 and Panda demos were regenerated at clean source into
+   `outputs/general_rft/{go1_clean_3be21df,panda_clean_3be21df}/`; counts and
+   finite-state outcomes matched S6. Both manifests and first/middle/final
+   frame decoding passed. Preview sheets were visually inspected.
+
+Full console output: `outputs/general_rft/final_verification_3be21df.log`,
+copied as compact `docs/regressions/2026-10-27-general-rft/final_verification.log`.
+The 0.25 s reporting smoke is mechanics validation, not a gait-performance
+result. No full production video set was regenerated or overwritten.
+
+The new kernel's parsed AST matches the frozen force function exactly after
+renaming the function; import of `rft.kernel` loads neither MuJoCo nor Open3D.
+The worst legacy triangle-force roundoff was at fixture 12, global triangle
+4378, component FR, z component. Corrected-convention maximum change was
+fixture 13, triangle 4451, FR, z. Exact details are in `difference_details.json`.
+
+Environment inventory comparison found zero changed pre-existing packages.
+Only the four optional registry packages listed in S4 were added. `pip check`
+passed. Numerical pins and the original `environment.yml` hash are unchanged.
+
+## S8 — evidence and handoff (completed)
+
+Purpose: let another person/agent reproduce each step and distinguish source,
+configuration, fixtures, measured differences and media from interpretation.
+
+- Architecture: `docs/RFT_GENERALIZATION_PLAN.md`.
+- Module responsibilities and portable commands: `docs/GENERAL_RFT_GUIDE.md`.
+- Compact results, raw-run paths, source/config SHA-256, per-artifact hashes,
+  force differences, ground plot and same-pose rendering comparison:
+  `docs/regressions/2026-10-27-general-rft/`.
+- Exactly two reviewed clean-source MP4 demos plus previews/notices:
+  `docs/media/general_rft_stage1/`, exception documented by D-017.
+- Raw trajectories, force arrays, derived outputs and initial failures remain
+  under ignored `outputs/general_rft/`; pinned original model assets remain
+  ignored under `third_party/robot_assets/`. Nothing was silently discarded.
+- Original RFT source, original model/gait, all accepted STLs, controller and
+  environment file were compared with `ccc6946` and remain unchanged.
+
+Commit sequence: `afa8236` records the agreed plan/freeze before code;
+`3be21df` contains the tested binding/provider and tooling; the subsequent
+focused documentation/media commit records this completed evidence. No
+baseline-replacing merge is implied by preparing the implementation branch.
+
+## Remaining adoption/research work (not claimed complete)
+
+1. Authoritative contact-envelope/CAD review and material calibration remain
+   necessary for new hardware; collision proxies are an explicit approximation.
+2. Corrected body-frame forces are not adopted for legacy lizard locomotion.
+   A future adoption must assess and record behavior changes independently.
+3. Real external URDF/gait screening beyond the known-answer fixtures,
+   automatic actuator/root synthesis, stock registry auto-cloning, persistent
+   prepared-surface caching and arbitrary terrain/deformable support remain
+   future work. The two downloaded real examples are MJCF.
+4. Hold/sine examples are ready-to-run integration screens, not a universal
+   walking-policy library or long-horizon stability proof.

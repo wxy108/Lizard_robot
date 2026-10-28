@@ -5,6 +5,19 @@ line-level record; this file explains intent and consequences.
 
 ## 2026-10-27 — staged robot-independent RFT binding/provider
 
+- Final clean implementation `3be21df` passed 29 tests, the full unchanged
+  six-second lizard validator, frozen same-state replay, nine-view/overview
+  reporting smoke and artifact analysis. Full data and differences are in
+  `docs/regressions/2026-10-27-general-rft/`.
+- The lower-floor audit found zero support in the sand run; disabling the
+  -250 mm safety floor left all 12,000 states identical. Original rigid-floor
+  soft penetration was about 0.575 mm; no safety-floor/model change was made.
+- Added two reviewed, clean-source Go1/Panda integration demo MP4s, previews
+  and upstream notices under `docs/media/general_rft_stage1/` (D-017).
+- Preserved the initial Windows direct-import failure, its successful normal
+  Conda launch alternative and a corrected compiled-mesh test-fixture error
+  in the worklog. No security settings or numerical package versions changed.
+
 - Saved the approved architecture, acceptance criteria and per-step worklog
   before implementation; froze lizard commit `ccc6946` and file hashes.
 - Added explicit surface/body bindings, immutable local triangle arrays,

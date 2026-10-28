@@ -1,0 +1,33 @@
+{
+  "git": {
+    "commit": "3be21dfc68218528b5d936868b91ff2fa33e2e1f",
+    "dirty": false
+  },
+  "configuration": {
+    "duration_s": 0.25,
+    "fps": 10,
+    "render_width": 640,
+    "render_height": 480,
+    "panel_width": 420,
+    "views": {
+      "top": "track_top",
+      "side": "track_side",
+      "diag45": "diag"
+    },
+    "rft_coefficient": 3.75,
+    "force_smoothing_alpha": 0.5,
+    "body_order": [
+      "Mid",
+      "Front",
+      "FR",
+      "FL",
+      "Back",
+      "HR",
+      "HL",
+      "Tail"
+    ],
+    "sand_contact_definition": "active_triangles > 0",
+    "rigid_contact_definition": "MuJoCo geom contact with floor"
+  },
+  "video_count": 10
+}

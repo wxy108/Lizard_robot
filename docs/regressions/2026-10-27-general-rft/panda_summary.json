@@ -1,0 +1,43 @@
+{
+  "source": {
+    "commit": "3be21dfc68218528b5d936868b91ff2fa33e2e1f",
+    "dirty": false
+  },
+  "config": "configs/robots/menagerie_panda.yaml",
+  "config_sha256": "d5ce207a2ad28149fb03a141010328aeaab53e87b57710ae4274881b8b1eff04",
+  "model": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\franka_emika_panda\\panda.xml",
+  "model_sha256": "96ad67da03710f17f798c9478fd9e9efdf24a3bf8359f05e456dd9fb158ea273",
+  "duration_s": 2,
+  "timestep_s": 0.0005,
+  "integrator": "implicitfast",
+  "controller": {
+    "type": "sine",
+    "actuators": [
+      "actuator2"
+    ],
+    "amplitude": 0.05,
+    "frequency": 0.5
+  },
+  "convention": "body_frame_v1",
+  "sand_height_m": 0.6396896984956143,
+  "initial_min_centroid_z_m": 0.6246896984956143,
+  "geometry_status": "selected link7 compiled mesh only; no overlapping convex-decomposition union claim",
+  "surface_count": 1,
+  "triangle_count": 200,
+  "bindings": [
+    {
+      "surface": "link7/geom_58",
+      "body": "link7",
+      "triangles": 200,
+      "source": "compiled_geom:58",
+      "group": "link7"
+    }
+  ],
+  "active_steps": 2778,
+  "maximum_penetration_m": 0.018955350418162986,
+  "peak_total_rft_force_N": 350.0142177959975,
+  "state_finite": true,
+  "robot_nsite": 0,
+  "video_frames": 41,
+  "warning": "Integration screening, not validated granular locomotion or calibrated material"
+}

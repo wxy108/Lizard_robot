@@ -1,7 +1,30 @@
 # Project status
 
-Last updated: 2026-10-08. Numerical baseline measurements below are from
-2026-07-27; the deployment repair has its own verification record.
+Last updated: 2026-10-27. Historical numerical anchors below are from
+2026-07-27; the unchanged six-second baseline was reproduced on 2026-10-27.
+
+## Robot-independent RFT stage one
+
+Implemented on `agent/general-rft-stage1`, source `3be21df`: generic named-body
+surface bindings, explicit units/transforms, compiled mesh/primitive inputs,
+site-free provider, private generalized-force buffers and independent control.
+The original lizard source/models/accepted STLs/gait remain the `ccc6946`
+control. Legacy and corrected body-frame conventions are explicit and separate.
+
+29/29 tests, the full canonical validator, same-state fixture replay and
+nine-view-plus-overview reporting smoke passed. Two pinned real Menagerie
+models (Go1 and Panda) ran and rendered with active RFT. These use selected
+collision proxies and hold/sine commands; no new walking policy or physical
+calibration is claimed. See `GENERAL_RFT_GUIDE.md` and the dated worklog.
+
+The suspected lower floor was checked: it exists at -250 mm but had no
+supporting contacts in the six-second sand run. Disabling it left all 12,000
+qpos states identical. The current published video model/configuration is
+unchanged; no safety-floor or video replacement was needed for this diagnosis.
+
+The next engineering adoption step is to review an actual new robot's exposed
+contact envelope and controller, then extend bounded real-URDF/model validation.
+The corrected convention has not replaced the legacy lizard baseline.
 
 ## Public download and deployment
 
@@ -118,7 +141,7 @@ tracked evidence under
 `docs/regressions/2026-07-27-video-matrix-smoke/`. Its 0.25 s duration covers
 only initial settling and must not be used for locomotion-performance claims.
 
-Fast automated tests: 16/16 passing.
+Fast automated tests: 29/29 passing (16 original + 13 generic binding/provider).
 
 The clean production run at commit `ff1dda2` generated nine 6 s individual
 videos plus the 3×3-with-three-panels master overview. Its manifest, derived

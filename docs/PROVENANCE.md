@@ -1,5 +1,31 @@
 # Source and data provenance
 
+## Generic RFT stage one — 2026-10-27
+
+Preserved source/control: `ccc694677461012d488cb5ad7d7e9db945b74a80`.
+Generic implementation: `3be21dfc68218528b5d936868b91ff2fa33e2e1f`.
+The NumPy-only `rft/kernel.py` is an AST-identical copy of the frozen triangle
+force function with only its function name changed; its original MIT notice
+is retained in `rft/NOTICE`. Frame/depth corrections live in explicitly
+versioned provider modes, leaving legacy files unedited.
+
+Optional robot sources are Google DeepMind MuJoCo Menagerie at commit
+`f3b6013629c7b94f8ee93fd977b161fa8350f9bc`, selected `unitree_go1`
+(BSD-3-Clause) and `franka_emika_panda` (Apache-2.0). The bounded installer
+downloads 91 original blobs / 48,615,728 bytes without source edits; licenses
+and per-file hashes are retained in the local asset download manifest. Lock:
+`configs/robot_library_lock.json`. Assets are ignored and reproducible, not
+silently omitted submodules. The optional registry/dependency versions are
+separate in `requirements-robots.txt`; existing numerical packages stayed fixed.
+
+Clean-source two-second demo MP4s and previews are copied without transcoding
+to `docs/media/general_rft_stage1/` (D-017), with original model notices.
+They use selected proxies and hold/sine controllers, not calibrated walking
+policies. Full matched-state/floor-control evidence, source/config hashes,
+clean final replay and exact raw paths are under
+`docs/regressions/2026-10-27-general-rft/`. See the dated worklog for purposes,
+failures/corrections, generated outputs, interpretation and remaining limits.
+
 ## Local projects
 
 ### Canonical-workspace consolidation

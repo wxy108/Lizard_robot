@@ -1,0 +1,59 @@
+{
+  "source": {
+    "commit": "3be21dfc68218528b5d936868b91ff2fa33e2e1f",
+    "dirty": false
+  },
+  "config": "configs/robots/menagerie_go1.yaml",
+  "config_sha256": "f3300648e30a8e812ae944846f3e2f5324390b9e846e2fb2e1de2ca60bd0fa15",
+  "model": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\go1.xml",
+  "model_sha256": "d5a7466784c8e72fd174cc7fa5a92754a1a0a6d458a1dec79e7ca0abc9525c4a",
+  "duration_s": 2,
+  "timestep_s": 0.0005,
+  "integrator": "implicitfast",
+  "controller": {
+    "type": "hold_keyframe"
+  },
+  "convention": "body_frame_v1",
+  "sand_height_m": 0,
+  "initial_min_centroid_z_m": -0.01708746078332113,
+  "geometry_status": "upstream foot spheres only; collision proxies, not audited full robot envelope",
+  "surface_count": 4,
+  "triangle_count": 896,
+  "bindings": [
+    {
+      "surface": "FR_foot",
+      "body": "FR_calf",
+      "triangles": 224,
+      "source": "compiled_geom:FR",
+      "group": "front_right"
+    },
+    {
+      "surface": "FL_foot",
+      "body": "FL_calf",
+      "triangles": 224,
+      "source": "compiled_geom:FL",
+      "group": "front_left"
+    },
+    {
+      "surface": "RR_foot",
+      "body": "RR_calf",
+      "triangles": 224,
+      "source": "compiled_geom:RR",
+      "group": "rear_right"
+    },
+    {
+      "surface": "RL_foot",
+      "body": "RL_calf",
+      "triangles": 224,
+      "source": "compiled_geom:RL",
+      "group": "rear_left"
+    }
+  ],
+  "active_steps": 3999,
+  "maximum_penetration_m": 0.026675909720293073,
+  "peak_total_rft_force_N": 222.1969299723378,
+  "state_finite": true,
+  "robot_nsite": 6,
+  "video_frames": 41,
+  "warning": "Integration screening, not validated granular locomotion or calibrated material"
+}

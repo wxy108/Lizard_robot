@@ -1,0 +1,32 @@
+{
+  "source_commit": "3be21dfc68218528b5d936868b91ff2fa33e2e1f",
+  "files": {
+    "rft/binding.py": "b4c4c643b1d26dcf24aad1a1351a457b78bdce1b697c493a85dde6c8e2a05a8b",
+    "rft/provider.py": "018e50ef040277b3b05e0509d3f2f9400e57f04e67de3b23f691e201214af02d",
+    "rft/kernel.py": "deb65e41f652a70dd95d960fd40f274e9c86a88bd2a070e2cfb2816a4ad3ffde",
+    "controllers/generic_controller.py": "c84abe936e390356c8476ddc8edaf22605a6d3beaf12fffc037ba35790f20428",
+    "scripts/validate_general_rft.py": "05ab1d4e0a815518018d2b482e6b2c1eafcdd227bad63bed538ae825e7e8fd7f",
+    "scripts/run_generic_robot.py": "551df39a721360b51d0e129cff17418c3d292e01ae2a5e1832b0b10613089cf2",
+    "scripts/install_robot_examples.py": "bc3697f0216d486fe2a798b70fa10cb01c2f6a2c76b6f3667d0fb35504886f01",
+    "scripts/review_general_rft_outputs.py": "460158d9a5f1cef331124e9fdd7afae7cee1493df45cb71eb012c9361993c182",
+    "configs/robots/lizard_rft.yaml": "3b624d19d4d66aaf5fa3173c2b2f9ab40bb06f50e714dfedecb94792c1bbda59",
+    "configs/robots/menagerie_go1.yaml": "f3300648e30a8e812ae944846f3e2f5324390b9e846e2fb2e1de2ca60bd0fa15",
+    "configs/robots/menagerie_panda.yaml": "d5ce207a2ad28149fb03a141010328aeaab53e87b57710ae4274881b8b1eff04",
+    "configs/robot_library_lock.json": "be0b4317e0c0fd935bef256845d546fb88525ac0c269aeaa46a503dc6883875c",
+    "tests/test_generic_rft.py": "4d5133f14b64240b65666da9cdba85d438e5ada0d639410ade9ca78d182d929e",
+    "lizard_sand.py": "9bed2344a1271057257b2b6c1e34dcb78b77d9d15f1ea4446450f25b04af6c9f",
+    "sim_fxn_lib.py": "903ef7ab8763719053e1691b46d7b22d751c40c2a99dbd13483724d83ff52c90",
+    "Lizard_Sand.xml": "63bd0c702f2e1c43c4c9f52710d1d80dbffe4675a887cc01cb999a1b5f1b399d",
+    "models/lizard.xml": "642e600528d448b9a367aba30ef18806eaccc6ac11263af8736524b4fb29b8ec",
+    "configs/gait.yaml": "25054ac1513077c5407c13286ba49e1fc83a4bcaf2137798b3994bf79fb81958",
+    "environment.yml": "c40a4c29e97a76e73fca6de4e88ae40506cdd8fe4fd5a2cfb6c9a62596266f25",
+    "scripts/generate_video_matrix.py": "f359160aaebd457d8835d7879c85a08fbc501a247fcd2b02bbe6738076e083c7"
+  },
+  "raw_runs": [
+    "stage1_full_6s_20261027",
+    "final_source_replay_3be21df",
+    "reporting_smoke_3be21df",
+    "go1_clean_3be21df",
+    "panda_clean_3be21df"
+  ]
+}

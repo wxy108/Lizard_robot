@@ -76,6 +76,10 @@ upstream collision model can be an approximation of the hardware exterior.
 Two seconds establishes a bounded loading/force/stepping/rendering screen,
 not long-horizon stability or experimental accuracy.
 
+The reviewed clean-source MP4s and previews are directly available under
+[`docs/media/general_rft_stage1/`](media/general_rft_stage1/README.md), so
+readers can inspect the actual output before installing optional assets.
+
 Every run prints its fresh `outputs/general_rft/<run>/` directory containing
 `trajectory.npz`, `summary.json`, `manifest.json`, and, with `--video`,
 `robot_rft.mp4`. New output directories are never overwritten. Review with:
@@ -120,6 +124,12 @@ name or a geom on the wrong body fails immediately. Explicit
 `select_collision_geoms` supports selected named bodies / geom groups for
 discovery screens, but does not certify union/exposure or remove overlaps.
 Do not select visual and collision copies of the same surface together.
+
+The tested configs use robot-only MJCF, not an upstream scene with a rigid
+ground plane. The provider intentionally preserves all original rigid-contact
+settings; arbitrary scene/terrain conversion and automatic ground filtering
+are not implemented in stage one. Review any added scene ground explicitly
+before treating that robot as an RFT-only sand experiment.
 
 The model uses SI conventions. Proxy `units` must explicitly be `m` or `mm`;
 their transform is applied before centroid/normal/area calculation. Compiled

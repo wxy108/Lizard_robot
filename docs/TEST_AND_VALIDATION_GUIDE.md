@@ -16,7 +16,7 @@ bash scripts/setup.sh
 
 Acceptance:
 
-- pinned submodule is initialized;
+- all 159 bundled upstream snapshot files match recorded hashes;
 - `lizard_rft` is created or reused;
 - all pinned top-level imports succeed;
 - Level 1 and Level 2 below pass.
@@ -32,6 +32,17 @@ python -m unittest discover -s tests -v
 - no force above sand;
 - upward/dissipative reaction during downward intrusion;
 - direct MuJoCo rotation matrix matches the legacy Euler compatibility path.
+
+### `tests/test_generic_rft.py`
+
+Thirteen known-answer checks cover named ownership/multiple surfaces without
+sites, invalid/immutable geometry, body-origin point velocity versus Jacobian,
+relative sand-plane translation, intrusion reaction, untouched external force
+and control, smoothing release/reset, triangle/wrench equivalence, primitive
+closed winding, original-source versus compiled mesh transform/scale,
+proxy units/pose, fixed-link URDF preservation and passive URDF RFT forces.
+The complete suite is 29 tests. Full same-state and ground-control commands
+and open-source model demos are in `GENERAL_RFT_GUIDE.md`.
 
 ### `tests/test_video_matrix.py`
 

@@ -123,7 +123,7 @@ python scripts/validate_project.py
 
 Expected validation:
 
-- 16/16 fast tests pass;
+- 29/29 fast tests pass (including the preserved original tests);
 - eight active RFT meshes pass topology/self-intersection gates;
 - 13,916 force sites match 13,916 active triangles;
 - rigid-floor and granular-RFT smoke runs complete;
@@ -152,6 +152,8 @@ surfaces, site-free force application and independent controllers. See the
 [step-by-step evidence](docs/RFT_GENERALIZATION_WORKLOG_2026-10-27.md).
 Pinned Go1 and Panda examples can be installed and rendered through the guide;
 they are bounded RFT integration demos, not new validated walking policies.
+Their [reviewed MP4 outputs and previews](docs/media/general_rft_stage1/README.md)
+are included for inspection before optional asset installation.
 The same-state lizard comparison and ground audit preserve the old code,
 meshes, gait and safety-floor settings.
 
@@ -290,7 +292,7 @@ second standalone MuJoCo copy for this project.
   catch floor.
 - The upstream RFT function returns body-on-sand force; the integration applies
   the equal-and-opposite reaction to the robot before `mj_step`.
-- 16/16 tests, rigid smoke, RFT smoke, video generation, overview composition,
+- 29/29 tests, rigid smoke, RFT smoke, video generation, overview composition,
   and production artifact verification pass.
 
 The model is a stable numerical baseline, not an experimentally calibrated
