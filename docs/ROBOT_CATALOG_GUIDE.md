@@ -14,7 +14,8 @@ Follow [core prerequisites](../GUIDANCE.md), then use this branch explicitly
 git clone --branch agent/ground-rft-pipeline --single-branch https://github.com/wxy108/Lizard_robot.git
 cd Lizard_robot
 conda env create -f environment.yml
-conda run -n lizard_rft python -m pip install -r requirements-locomotion.txt
+conda run -n lizard_rft python -m pip install --no-deps -r requirements-locomotion.txt
+conda run -n lizard_rft python -m pip check
 conda run -n lizard_rft python scripts/robot_pipeline.py doctor
 conda run -n lizard_rft python scripts/robot_pipeline.py list
 ```
@@ -109,8 +110,10 @@ conda run -n lizard_rft python scripts/robot_pipeline.py inspect --input path/to
 conda run -n lizard_rft python scripts/robot_pipeline.py run --input path/to/model.xml --output-dir outputs/input_run
 ```
 
-Exact known source bytes select the corresponding recommended catalog recipe;
-the filename alone never does. Unknown files produce an inventory and
+Only unchanged input at its canonical installed catalog path selects its
+recipe automatically: a copied scene may reference different adjacent meshes.
+The filename or XML bytes alone never substitute canonical dependencies.
+Unknown files produce an inventory and
 `unreviewed_recipe.json` with `ready_for_simulation: false`, or an actionable
 missing-adapter reason. Edit a reviewed recipe using `configs/robots/` and
 [the lower-level guide](GROUND_RFT_GUIDE.md), then invoke
@@ -167,3 +170,16 @@ every video frame; it derives speeds and preview sheets without rewriting raw
 data. Positive force dissipation/support checks are necessary, not proof of
 calibrated granular accuracy. See the tracked compact report for tested bounds,
 failures, source commits and media. All full raw outputs stay ignored.
+
+For visual-only corrections, replay into a new folder without running physics:
+
+```sh
+conda run -n lizard_rft python scripts/replay_ground_video.py --run outputs/my_catalog/turtlebot3_burger --config configs/robots/turtlebot3_burger.yaml --scenario sand --output-dir outputs/burger_replay
+```
+
+The replay verifies source/cache manifests, preserves the trajectory hash and
+records simulation vs rendering commits. URDF bodies show original visuals
+instead of overlapping opaque collision proxies; collision-only casters stay
+visible. White caption bands keep metadata legible on black source backgrounds.
+This is presentation, not a new physics experiment. Xacro expansion is tested
+on explicit package roots/arguments; ROS/ament package discovery is not supplied.

@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 
 import mujoco
@@ -33,6 +34,40 @@ MODEL = '''<mujoco><worldbody><geom name="floor" type="plane" size="2 2 .01"/>
 
 
 class CatalogFormatTests(unittest.TestCase):
+    def test_copied_scene_does_not_silently_substitute_catalog_dependencies(self):
+        from rft.onboarding import recognize_input
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp); source = base/"source.xml"; source.write_text(MODEL)
+            copied = base/"copied.xml"; copied.write_text(MODEL)
+            recipe = base/"recipe.yaml"; recipe.write_text("model: source.xml\n")
+            with patch("rft.onboarding.catalog",return_value={"robots":{"probe":{"model_id":"probe"}}}),patch("rft.onboarding.config_path",return_value=recipe):
+                self.assertEqual(recognize_input(source),"probe")
+                self.assertIsNone(recognize_input(copied))
+
+    @unittest.skipUnless(importlib.util.find_spec("xacro"),"Optional xacro not installed")
+    def test_unknown_xacro_produces_review_draft_not_simulation(self):
+        from rft.onboarding import inspect_input
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp); source = base/"input.xacro"; source.write_text(URDF)
+            output = inspect_input(source,base/"inspection")
+            self.assertFalse(json.loads((output/"unreviewed_recipe.json").read_text())["ready_for_simulation"])
+
+    def test_unknown_native_zip_is_inspected_without_package_assumptions(self):
+        from rft.onboarding import inspect_input
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp); source = base/"input.zip"
+            with source.open("wb") as stream:
+                mujoco.MjSpec.from_string(MODEL).to_zip(stream)
+            output = inspect_input(source,base/"inspection")
+            self.assertEqual(json.loads((output/"inspection.json").read_text())["status"],"needs_review")
+
+    def test_visual_proxy_selection_keeps_collision_only_bodies_and_model_identity(self):
+        from rft.ground import render_hidden_proxy_ids
+        xml = MODEL.replace('name="shell"','name="base__collision_0"').replace('<freejoint/>','<freejoint/><geom name="base__visual_0" size=".05" contype="0" conaffinity="0"/>')
+        model = mujoco.MjModel.from_xml_string(xml); before = fingerprint(model)
+        self.assertEqual(render_hidden_proxy_ids(model),{model.geom("base__collision_0").id})
+        self.assertEqual(before,fingerprint(model))
+
     def test_urdf_detected_by_root_even_when_named_xml(self):
         with tempfile.TemporaryDirectory() as tmp:
             file = Path(tmp)/"robot.xml"; file.write_text(URDF)

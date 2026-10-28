@@ -33,6 +33,7 @@ def export_package(robot,output):
         (staging/"policy.onnx").write_bytes(original.read_bytes())
         recipe["controller"] = dict(recipe["controller"],policy="policy.onnx")
     write_json(staging/"recipe.json",recipe)
+    (staging/"source_recipe.yaml").write_bytes(config_path(robot).read_bytes())
     definitions = catalog()
     notices = staging/"notices"; notices.mkdir()
     for source_name in selection(robot):
@@ -43,6 +44,7 @@ def export_package(robot,output):
     write_json(staging/"robot_package.json",{"schema_version":1,"robot_id":robot,"source":git_state(),
                "mujoco_version":mujoco.__version__,"physical_fingerprint":fingerprint(rigid),
                "original_source_files":sources,"source_recipe_sha256":sha256(config_path(robot)),
+               "original_effective_adapter":config.get("effective_model_adapter"),
                "recipe":"recipe.json","artifacts":artifact_manifest(staging)})
     output.parent.mkdir(parents=True,exist_ok=True)
     with zipfile.ZipFile(output,"x",compression=zipfile.ZIP_DEFLATED) as archive:

@@ -72,6 +72,11 @@ def main():
             if args.robots: parser.error("Choose robot IDs or --input, not both")
             from rft.robot_package import import_package
             if args.input.suffix.lower() in (".zip",".rftpkg"):
+                from rft.formats import check_archive
+                if "robot_package.json" not in check_archive(args.input):
+                    from rft.onboarding import inspect_input
+                    inspect_input(args.input,output/"inspection")
+                    return 2
                 jobs = [("package",import_package(args.input))]
             else:
                 from rft.onboarding import recognize_input,inspect_input

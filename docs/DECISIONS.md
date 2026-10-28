@@ -1,5 +1,17 @@
 # Decision log
 
+## D-021 — bounded catalog success/failure media and visual-only replay
+
+Date: 2026-10-28. Publish at most six new MP4s: T1 matched rigid/sand,
+Berkeley/Apollo stopped sand failures, Burger matched rigid/sand. Preserve
+existing Go1/G1/lizard media. All seven robots' 21 raw videos remain available
+locally/reproducible; they are not all repository assets. Decode every frame,
+verify manifests and retain original model/controller licenses. Show stopped
+failures without padding. URI-imported visuals must not be obscured by opaque
+collision proxies on the same body: hide those proxies only in the rendering
+scene, never modify native collision/mass/force state. Re-render saved state to
+a new directory with exact trajectory hash and separate render provenance.
+
 ## D-020 — declarative catalog adapters and portable robot packages
 
 Date: 2026-10-28. Extend generic import without changing the lizard baseline.

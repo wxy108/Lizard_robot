@@ -135,3 +135,29 @@ normals are recomputed from faces. `scripts/review_robot_catalog.py` verifies
 cached bundle/raw manifests, finite aligned telemetry and decoded frames,
 supports previous Go1/G1 array comparisons, and preserves failures. Full user
 entry point: `ROBOT_CATALOG_GUIDE.md`. Clean validation/adoption follows below.
+
+### E7 — clean runtime 36659ca and final interface/presentation hardening
+
+All 65 initial tests, actual native doctor for seven models, three 30-state
+policy parity tests and real format/package probes passed on clean `36659ca`.
+The policy verifier initially ignored the requested output argument and wrote
+its default directory; results remain valid at
+`controller_parity_20261028_031618_188059/`. Add explicit argparse handling and
+repeat it. Full canonical lizard validator passed: 13,916 sites, dx 217.7 mm,
+dy -120.8 mm, peak total/site 86.629/0.600 N, zero positive active power.
+
+`clean_6s_36659ca/` completed all seven robots and 21 scenario videos. All
+14 rigid scenarios passed. Go1/G1/T1 sand passed; Berkeley stopped 3.4975 s,
+Apollo 2.325 s; Burger/Waffle completed but failed forward progress (~3 mm).
+`review_36659ca/` verified all manifests/caches and 2,417 video frames.
+Go1/G1 all seven saved arrays in all three scenarios are bitwise equal to
+`f4c0360` runs. Environment delta: only Xacro 2.1.1 added, no package changed.
+
+Final review found URDF collision boxes hid original visual meshes and black
+backgrounds hid labels. Only the render scene is corrected; immutable saved
+states replay to new directories (D-021). Also tighten input recognition:
+copied identical scene XML must not silently substitute canonical neighboring
+assets. Canonical verified paths alone auto-select catalog recipes; unknown
+Xacro/native ZIP get explicit inspection/drafts. Add four tests (69 total),
+preserve original recipe/effective-adapter provenance inside packages, and
+record all remaining checks/media below. None changes force/integration/control.

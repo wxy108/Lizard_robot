@@ -35,3 +35,4 @@ requirements-locomotion.txt text eol=lf
 docs/regressions/2026-10-28-ground-rft/*.log text eol=lf
 docs/regressions/2026-10-28-robot-catalog/*.log text eol=lf
 docs/media/robot_catalog/LICENSE-*.txt text eol=lf
+docs/media/robot_catalog/NOTICE.playground text eol=lf

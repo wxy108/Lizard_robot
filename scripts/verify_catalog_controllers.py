@@ -1,5 +1,6 @@
 """Compare catalog adapters with pinned original class math, including source quirks."""
 import ast
+import argparse
 import json
 from pathlib import Path
 import sys
@@ -18,7 +19,10 @@ from scripts.verify_walking_controllers import bounded_session
 
 
 def main():
-    output = new_run(ROOT/"outputs/robot_catalog"/("controller_parity_"+__import__("datetime").datetime.now().strftime("%Y%m%d_%H%M%S_%f")))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output-dir",type=Path)
+    args = parser.parse_args()
+    output = new_run(args.output_dir or ROOT/"outputs/robot_catalog"/("controller_parity_"+__import__("datetime").datetime.now().strftime("%Y%m%d_%H%M%S_%f")))
     results = {}
     base = ROOT/catalog()["sources"]["playground"]["destination"]
     for family,filename in (("berkeley","bh"),("t1","t1"),("apollo","apollo")):

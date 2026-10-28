@@ -214,6 +214,17 @@ def plot_run(directory):
     fig.tight_layout(); fig.savefig(directory/"diagnostics.png",dpi=130); plt.close(fig)
 
 
+def render_hidden_proxy_ids(model):
+    """Hide private URDF collision proxies only on bodies with source visuals.
+
+    Collision-only casters stay visible; native model/physics never change.
+    """
+    visual_bodies = {int(model.geom_bodyid[i]) for i in range(model.ngeom)
+        if model.geom(i).name.startswith(model.body(int(model.geom_bodyid[i])).name+"__visual_")}
+    return {i for i in range(model.ngeom) if int(model.geom_bodyid[i]) in visual_bodies
+        and model.geom(i).name.startswith(model.body(int(model.geom_bodyid[i])).name+"__collision_")}
+
+
 def render_run(model,config,surfaces,directory,*,fps=20):
     import cv2
     import imageio.v2 as imageio
@@ -232,11 +243,16 @@ def render_run(model,config,surfaces,directory,*,fps=20):
     indices = np.unique(np.rint(np.linspace(0,len(trace)-1,max(2,round(len(trace)*model.opt.timestep*fps)+1))).astype(int))
     owners = [model.body(s.body_name).id for s in surfaces]
     option = mujoco.MjvOption(); option.geomgroup[3] = 0
+    hidden_proxies = render_hidden_proxy_ids(model)
     try:
         for index in indices:
             data.qpos[:] = qpos[index]; mujoco.mj_forward(model,data)
             camera.lookat[:] = trace[index,1:4]
             renderer.update_scene(data,camera=camera,scene_option=option)
+            for i in range(renderer.scene.ngeom):
+                geom = renderer.scene.geoms[i]
+                if geom.objtype == mujoco.mjtObj.mjOBJ_GEOM and geom.objid in hidden_proxies:
+                    geom.rgba[3] = 0
             if summary["mode"] == "sand":
                 # Visual only: native rigid floor is hidden in the render copy.
                 for i in range(renderer.scene.ngeom):
@@ -259,6 +275,8 @@ def render_run(model,config,surfaces,directory,*,fps=20):
                 mujoco.mjv_initGeom(geom,mujoco.mjtGeom.mjGEOM_SPHERE,np.array([.003,0.,0.]),position,
                     np.eye(3).ravel(),np.array([.1,.8,.9,1.],dtype=np.float32)); renderer.scene.ngeom += 1
             frame = renderer.render()
+            # White caption bands remain legible on dark imported URDF scenes.
+            frame[:66] = 255; frame[508:] = 255
             text = f"{config['controller']['family']} | {summary['mode']} | t={trace[index,0]:.2f}s | dx={trace[index,1]-trace[0,1]:.2f}m"
             cv2.putText(frame,text,(15,28),cv2.FONT_HERSHEY_SIMPLEX,.6,(30,30,30),2,cv2.LINE_AA)
             cv2.putText(frame,f"{summary['status']} | {summary['termination']}",(15,53),cv2.FONT_HERSHEY_SIMPLEX,.43,(30,30,30),1,cv2.LINE_AA)

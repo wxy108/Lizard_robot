@@ -22,6 +22,7 @@ def main():
     parser.add_argument("--environment-before",type=Path)
     parser.add_argument("--compare-go1",type=Path)
     parser.add_argument("--compare-g1",type=Path)
+    parser.add_argument("--compare-package",type=Path)
     args = parser.parse_args(); output = new_run(args.output_dir)
     batch = args.batch.resolve(); verify(batch)
     entries = json.loads((batch/"batch.json").read_text())["results"]

@@ -20,7 +20,9 @@ def recognize_input(path):
         if not recipe.exists(): continue
         config = yaml.safe_load(recipe.read_text())
         source = (recipe.parent/config["model"]).resolve()
-        if source.is_file() and sha256(source) == digest:
+        # Copied scene XML can reference different adjacent meshes: matching
+        # bytes alone must not silently substitute canonical dependencies.
+        if source.is_file() and source == path and sha256(source) == digest:
             return robot
     return None
 
@@ -34,11 +36,13 @@ def inspect_input(path,output=None):
     report = {"input":str(path),"sha256":sha256(path),"status":"needs_review"}
     suffix = path.suffix.lower()
     try:
-        if suffix in (".xml",".mjcf",".urdf",".mjb",".mjz"):
+        if suffix in (".xml",".mjcf",".urdf",".xacro",".mjb",".mjz",".zip"):
             if suffix == ".mjb": model = mujoco.MjModel.from_binary_path(str(path))
-            elif suffix == ".mjz":
+            elif suffix in (".mjz",".zip"):
                 from .formats import check_archive
-                check_archive(path); model = mujoco.MjSpec.from_zip(str(path)).compile()
+                check_archive(path)
+                with path.open("rb") as stream:
+                    model = mujoco.MjSpec.from_zip(stream).compile()
             else: model = load_model(path)
             write_json(output/"inventory.json",inventory(model))
             candidates = [{"id":f"surface_{gid}","body":model.body(int(model.geom_bodyid[gid])).name,
