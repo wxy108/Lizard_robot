@@ -1,0 +1,25 @@
+go1                      quadruped                    configs/robots/playground_go1.yaml
+g1                       humanoid                     configs/robots/playground_g1_slow.yaml
+g1_fast_failure          humanoid negative control    configs/robots/playground_g1.yaml
+berkeley                 small humanoid               configs/robots/playground_berkeley.yaml
+t1                       humanoid                     configs/robots/playground_t1.yaml
+apollo                   large humanoid               configs/robots/playground_apollo.yaml
+turtlebot3_burger        differential drive           configs/robots/turtlebot3_burger.yaml
+turtlebot3_waffle_pi     differential drive           configs/robots/turtlebot3_waffle_pi.yaml
+No broken requirements found.
+Starting go1: X:\Projects\Lizard_Robot_MuJoCo\configs\robots\playground_go1.yaml
+import
+bind
+binding_pose_checks
+Pipeline prepared: X:\Projects\Lizard_Robot_MuJoCo\outputs\robot_catalog\final_validation\cache_hit\go1
+Catalog run evidence: X:\Projects\Lizard_Robot_MuJoCo\outputs\robot_catalog\final_validation\cache_hit
+Safe stop needs_review: X:\Projects\Lizard_Robot_MuJoCo\outputs\robot_catalog\final_validation\unknown_native\inspection
+ERROR conda.cli.main_run:execute(127): `conda run python scripts/robot_pipeline.py run --input outputs/robot_catalog/final_validation/native_input.zip --output-dir outputs/robot_catalog/final_validation/unknown_native` failed. (See above for error)
+Unknown native ZIP correctly returned 2: reviewed metadata/controller still required.
+Recognized exact catalog model: go1
+Starting go1: X:\Projects\Lizard_Robot_MuJoCo\configs\robots\playground_go1.yaml
+import
+bind
+binding_pose_checks
+Pipeline prepared: X:\Projects\Lizard_Robot_MuJoCo\outputs\robot_catalog\final_validation\canonical_input\go1
+Catalog run evidence: X:\Projects\Lizard_Robot_MuJoCo\outputs\robot_catalog\final_validation\canonical_input

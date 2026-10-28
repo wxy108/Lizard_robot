@@ -1,0 +1,15 @@
+Python: C:\Users\wxy22\anaconda3\envs\lizard_rft\python.exe; environment: C:\Users\wxy22\anaconda3\envs\lizard_rft
+mujoco: 3.9.0
+numpy: 1.26.4
+open3d: 0.19.0
+pymeshlab: 2025.7.post1
+onnxruntime: 1.31.1
+xacro: 2.1.1
+MuJoCo native import/compile: passed
+go1: 35 source checks passed
+g1: 80 source checks passed
+berkeley: 33 source checks passed
+t1: 44 source checks passed
+apollo: 60 source checks passed
+turtlebot3_burger: 8 source checks passed
+turtlebot3_waffle_pi: 8 source checks passed

@@ -1,0 +1,106 @@
+{
+  "source": {
+    "commit": "97b3570e3ac7044a66536dc584bec2a50bfebc24",
+    "dirty": false
+  },
+  "status": "prepared",
+  "steps": [
+    {
+      "stage": "import",
+      "elapsed_wall_s": 1.0493071999990207,
+      "source_files": [
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_flat_terrain.xml",
+          "sha256": "f89261e90ff2e92b5fcaaecd94fa6d3850c9574c2fc698cd01bfc05140056ed0"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\assets\\hfield.png",
+          "sha256": "9e2fc5b8a1979fec9fc8f9c72aa0c249aaecb5876813f739bc3a1e675450e926"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\assets\\rocky_texture.png",
+          "sha256": "7dd26e7b94d1a95d8d1e09aadaf08caeb0026b084f9cf9e6cb255e24552ebf56"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\go1_mjx.xml",
+          "sha256": "5bbda65402791a610e884ffdae46c7175502460cc5f5a0b32f93585457212514"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\go1_mjx_feetonly.xml",
+          "sha256": "c33da7ff33b33d305163b6b05fadde9430b8777ccf1db88fda2e58d9cfabf82a"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\go1_mjx_fullcollisions.xml",
+          "sha256": "d336113e3c81da50b09765387b2ac0b0b9ef1a10c03281cee1fa963aebf5e80c"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_bowl.xml",
+          "sha256": "c927bfc102c16d2c3de1cabb53609c947d0c024fda4137a6acf3d9bc0fefec8c"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_rough_terrain.xml",
+          "sha256": "0c616d95059e203aa57fc261ff874e238875f9d807f546167364dc2561a68413"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_stairs.xml",
+          "sha256": "1ea4dccdc7e64a1bbda2b14b14b9de53badb2747bc5ab05b48c77ca2adb9225d"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_flat_terrain.xml",
+          "sha256": "d3ae91615ff66d079904c626b04f0878f269a1001fda7f908c7c20ee1a6cfa28"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_fullcollisions_flat_terrain.xml",
+          "sha256": "88be0f58e6207a5c8b302a0a1740a1422a9d6a4d29ddcc2142a94efccd4a47bf"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\sensor_feet.xml",
+          "sha256": "75c4e09936f4bbc529f4c538485e493283359df7d1bf6678390a830bef9b5e13"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\sensor_fullcollision.xml",
+          "sha256": "25a980a729378a92e018d3fbf4a8f9926529e4793e2571ba19fc74ee80089695"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\calf.stl",
+          "sha256": "ad3685e132454fd64e4ca3e5089f0d812fb53958e95c14913a22e3193e9e9ed8"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\hip.stl",
+          "sha256": "b6599b9dd2751ebd87449203223f5683a6c235268b76fcc443e00e0d974a06c0"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\thigh.stl",
+          "sha256": "bbf7c0a441323088c59276dbec8a32e708a1c61f42d30a6f6775176366ea23f8"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\thigh_mirror.stl",
+          "sha256": "1a90b89de47a57cb12a2d703f6b008a6ace8a1890a381c27723296fd0d00b9d8"
+        },
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\trunk.stl",
+          "sha256": "051a57995dc6f892fc9bc53cd94e9a894f3dc209fd646e94d55d764150013970"
+        }
+      ],
+      "config_sha256": "1152f925895bb73bba11b3f6e4de9c26f975a1e8966178f6b6fb9f9768a64470"
+    },
+    {
+      "stage": "bind",
+      "elapsed_wall_s": 1.0736618999999337,
+      "bundle": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_catalog\\cache\\e3023ebfb5dd675c9e74fd3aed743083207d9a54514208fa49c3dc5e9fb6b85d",
+      "bundle_metadata_sha256": "194a7899efe0921f70e9d05b7cf9c90fef6d0e83c11123928d8f16aa0b8dfd69",
+      "surface_count": 4,
+      "cache_hit": true
+    },
+    {
+      "stage": "binding_pose_checks",
+      "elapsed_wall_s": 1.0835815999998886,
+      "poses": 3,
+      "points_checked": 36,
+      "max_position_difference_m": 0.0,
+      "max_point_velocity_difference_m_s": 1.1102230246251565e-16,
+      "status": "passed"
+    }
+  ],
+  "bundle_directory": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_catalog\\cache\\e3023ebfb5dd675c9e74fd3aed743083207d9a54514208fa49c3dc5e9fb6b85d"
+}

@@ -1,0 +1,38 @@
+{
+  "source": {
+    "commit": "97b3570e3ac7044a66536dc584bec2a50bfebc24",
+    "dirty": false
+  },
+  "results": {
+    "berkeley": {
+      "samples": 30,
+      "max_observation_difference": 0.0,
+      "max_target_difference": 0.0,
+      "upstream_observation_mutates_qvel": false,
+      "adapter_observation_mutates_qvel": false,
+      "source_sha256": "1028ff241ba1eeee213154f96aafad74d83429da5384ae9125e6aee47def426c",
+      "policy_sha256": "ab83d4a2853c581a0d761e45e61b586f529f9bc1504d190037369f47e4e69892",
+      "intentional_difference": null
+    },
+    "t1": {
+      "samples": 30,
+      "max_observation_difference": 0.0,
+      "max_target_difference": 0.0,
+      "upstream_observation_mutates_qvel": true,
+      "adapter_observation_mutates_qvel": false,
+      "source_sha256": "a0de562254e1b244fb99ab52db3867b7142b0e10dc2cd5d21b4054fd65427df5",
+      "policy_sha256": "3f25f2b9c3dd49bab915577f7d5caba4e753a6cb29df2d7488ef7da14d1966b4",
+      "intentional_difference": "T1 source zeros head qvel through a NumPy view; adapter masks a copy, not physical state"
+    },
+    "apollo": {
+      "samples": 30,
+      "max_observation_difference": 0.0,
+      "max_target_difference": 0.0,
+      "upstream_observation_mutates_qvel": false,
+      "adapter_observation_mutates_qvel": false,
+      "source_sha256": "28207343419828fc63b37a5563629e1a691fc46c364991b00d12f4b1e5965225",
+      "policy_sha256": "52747670cfe9139ff2b15e0f2c774851a2e6a03e2b20bb244764c550f0777669",
+      "intentional_difference": null
+    }
+  }
+}

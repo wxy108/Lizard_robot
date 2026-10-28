@@ -1,0 +1,112 @@
+{
+  "artifacts": {
+    "apollo_original_contact_sheet.png": {
+      "bytes": 752836,
+      "sha256": "b43d8e711e942c6cd1ff92240d43dcabb24a77eb6df417d0ed6da031b2001aff"
+    },
+    "apollo_sand_diagnostics.png": {
+      "bytes": 113007,
+      "sha256": "8c714d22778460650f75500ff2a9a27483ba5810fdafe8de7cffbd5377dec479"
+    },
+    "berkeley_original_contact_sheet.png": {
+      "bytes": 741125,
+      "sha256": "c24dbfcba7ef5b18326c1b793451ddc86f0dc4ac688e8d7e3deda6aa1e460125"
+    },
+    "berkeley_sand_diagnostics.png": {
+      "bytes": 132805,
+      "sha256": "aff28b79ab04c2b7a47a10fe9939fcefbc3a7a3c23526c83e49f664449c7e320"
+    },
+    "burger_replay_contact_sheet.png": {
+      "bytes": 241651,
+      "sha256": "751f1b3d53a714d662edc7829a8f713a84a9fef22556eca984749de59d31dea5"
+    },
+    "cache_reuse.json": {
+      "bytes": 5964,
+      "sha256": "0d8e017efe09a254a7c600a84ed79ba458b6bad0651a302b81893f135729ddde"
+    },
+    "canonical_input.json": {
+      "bytes": 5966,
+      "sha256": "0554fa90aae8c0f437709de91179cf466eda95221370dcaa1a2da31edd3098da"
+    },
+    "cli.log": {
+      "bytes": 1905,
+      "sha256": "57b861c7d722163b8c145d369b33aad424fe2fc2082b5852cb3a12bb922e230b"
+    },
+    "controller_parity.json": {
+      "bytes": 1518,
+      "sha256": "a35c4720a5b25941f6b1ffa9d9a0ba8a78251ada29416f11ccc4bf3fd08a809d"
+    },
+    "doctor.log": {
+      "bytes": 490,
+      "sha256": "7efb1469cf47b2eb0398ed49200ee5895e93d46f9d7b077ba7e801f737ef18f1"
+    },
+    "format_comparison.json": {
+      "bytes": 3569,
+      "sha256": "15307a23a40b60bfc7c164fd8712078b12831df1ebdef5de5dbe6f6559c84a8e"
+    },
+    "legacy_controller_parity.json": {
+      "bytes": 3503,
+      "sha256": "45195e76d6273942dc3a7d19edd303fab9874ab326e85c572a0cc12370ffec40"
+    },
+    "lizard_full.log": {
+      "bytes": 12702,
+      "sha256": "b20f1b37d97ce4549572df772109c94bf70041b1aabf87b42da9206e02be3c6e"
+    },
+    "package_review.json": {
+      "bytes": 26797,
+      "sha256": "331f748f1f5dcfddea7cfe051511955d3a50f7fc152a48f0a01e4427ac7ab77e"
+    },
+    "publication.json": {
+      "bytes": 39030,
+      "sha256": "367328b3836d72c78ae34d5ce49b751404680d9f49687a21a39aac1a48066646"
+    },
+    "README.md": {
+      "bytes": 2318,
+      "sha256": "addff7471bfce309d89880a732956010fb6b6fe0d9c4e4e2ad055abc7cac8e64"
+    },
+    "review.json": {
+      "bytes": 303525,
+      "sha256": "610af1b5cb0643fbc3c96a67adacb81efac1ff45bdbcccd969a553144cc621e0"
+    },
+    "source_index.json": {
+      "bytes": 4246,
+      "sha256": "ae244ee7105a8e024058f7e6745a795964ac648f148338504af9a3c446c1d8ae"
+    },
+    "t1_original_contact_sheet.png": {
+      "bytes": 747311,
+      "sha256": "c2e22c8c073eb9a98ca4048d4621bc2b7b59b8c86dd78e501805f7a0616a64b9"
+    },
+    "t1_sand_diagnostics.png": {
+      "bytes": 119519,
+      "sha256": "b3919fa917649e46c5cf1b8814e631e85bcebe27dde00b93d73f1ad2dc26ddd4"
+    },
+    "turtlebot3_burger_original_contact_sheet.png": {
+      "bytes": 356859,
+      "sha256": "1c310d4d7a733ebe29bc2d494bf2295126c19b699abc9e8fd131a97b3b40e34d"
+    },
+    "turtlebot3_burger_rigid_matched_render.json": {
+      "bytes": 946,
+      "sha256": "aab30d9d513dd6bc149a0878652f44556b902941f56d4997efd21f714dfbfea3"
+    },
+    "turtlebot3_burger_sand_diagnostics.png": {
+      "bytes": 107272,
+      "sha256": "bc43aaa4ffa81e2b1e6248d84177f3e404edfd80499cadc637396844e439fbe1"
+    },
+    "turtlebot3_burger_sand_render.json": {
+      "bytes": 937,
+      "sha256": "dfd50536ca436bef73e3e0ca2e098c603e5edcf071392127d3024100ca8d6237"
+    },
+    "unit_tests.log": {
+      "bytes": 10632,
+      "sha256": "1fcb4d901c78f060980e755afddc745810f2baf3b0c5557b6d1812a020eabaff"
+    },
+    "unknown_input_draft.json": {
+      "bytes": 791,
+      "sha256": "b3cf6a6ce5273a83f8773b7596b5510417a119e105355d1f80503be53575c5f4"
+    },
+    "unknown_input_inspection.json": {
+      "bytes": 219,
+      "sha256": "4b2f89ccbc0bb07bf5af22b24fc2e0dae0a5f73342f5f0871b594cdd1507e959"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "ready_for_simulation": false,
+  "model": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_catalog\\final_validation\\native_input.zip",
+  "candidate_surfaces": [
+    {
+      "id": "surface_15",
+      "body": "FR_calf",
+      "geom": "FR",
+      "reviewed": false
+    },
+    {
+      "id": "surface_26",
+      "body": "FL_calf",
+      "geom": "FL",
+      "reviewed": false
+    },
+    {
+      "id": "surface_38",
+      "body": "RR_calf",
+      "geom": "RR",
+      "reviewed": false
+    },
+    {
+      "id": "surface_50",
+      "body": "RL_calf",
+      "geom": "RL",
+      "reviewed": false
+    }
+  ],
+  "missing": [
+    "reviewed exterior selection",
+    "units/coverage",
+    "initialization/root mode",
+    "controller contract",
+    "ground supports",
+    "acceptance criteria"
+  ]
+}

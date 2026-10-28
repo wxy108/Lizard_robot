@@ -19,8 +19,10 @@ Catalog entries pin source/recipe/controller contracts and distinguish runtime
 evidence levels. URDF floating-root, named geoms, wheel servos and support
 additions are explicit opt-in native-spec adapters with effective readback,
 not silent importer defaults. Standalone URDF import retains its old semantics.
-Portable packages include provenance, licenses, model/controller/bundle hashes
-and version constraints; reject unsafe archives or incomplete dependencies.
+Portable packages include provenance, licenses, model/controller/recipe hashes
+and version constraints; qualified bundles are regenerated/verified at the
+destination instead of distributing a potentially stale preparation cache.
+Reject unsafe archives or incomplete dependencies.
 Prior robot failures remain controls. See `ROBOT_CATALOG_EXPANSION_2026-10-28.md`.
 
 T1 masks head observations on a copy: the pinned original accidentally mutates

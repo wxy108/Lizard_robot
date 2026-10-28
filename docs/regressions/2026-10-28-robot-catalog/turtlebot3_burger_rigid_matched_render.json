@@ -1,0 +1,22 @@
+{
+  "render_source": {
+    "commit": "97b3570e3ac7044a66536dc584bec2a50bfebc24",
+    "dirty": false
+  },
+  "simulation_source": {
+    "commit": "36659ca04dca0e4d842f94dcc2532161258740be",
+    "dirty": false
+  },
+  "source_directory": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_catalog\\clean_6s_36659ca\\turtlebot3_burger\\rigid_matched",
+  "source_manifest_sha256": "5ae011838a98b5b815848644c42f9f24d1f6ecdade62f56c1c43272e37c3f0f6",
+  "source_trajectory_sha256": "317aba9dcfedfe811311883f2fdd2e9cd002dfc4500c5c57197f8cb9e07864b9",
+  "copied_trajectory_sha256": "317aba9dcfedfe811311883f2fdd2e9cd002dfc4500c5c57197f8cb9e07864b9",
+  "physics_steps_executed": 0,
+  "changes": "Hide collision proxies only on URDF bodies with source visuals; white caption bands",
+  "video": {
+    "frames_decoded": 121,
+    "fps": 20.0,
+    "encoded_duration_s": 6.05,
+    "sha256": "65cc7f630c0d7b45a6aeb340d666f26d30a834e91f1f92de40d96163501ea194"
+  }
+}

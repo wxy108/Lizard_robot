@@ -1,0 +1,56 @@
+{
+  "artifacts": {
+    "apollo_sand.mp4": {
+      "bytes": 213740,
+      "sha256": "dc0cd87809d4ee582f915426f31f69d63f904ab6825ac76fac7528b01ed13580"
+    },
+    "berkeley_sand.mp4": {
+      "bytes": 215764,
+      "sha256": "950ecc086035a2ffb38e7a21553592d5e5e8fdf5018a965a99ec4679bfda69eb"
+    },
+    "LICENSE-apollo.txt": {
+      "bytes": 11344,
+      "sha256": "10b53325854d8aa8172b846f96eb47d5fbba6366161c480292cf4627606ef430"
+    },
+    "LICENSE-berkeley.txt": {
+      "bytes": 1492,
+      "sha256": "a5a4e7c801bc9673459872f5a86886ac29eee4ba93bb1e907f2e49d4198a1dd0"
+    },
+    "LICENSE-playground.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "LICENSE-t1.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "LICENSE-turtlebot3.txt": {
+      "bytes": 11361,
+      "sha256": "f9946796a8a5bd5981565142fa42e3b0cc36aef6f80e86beaf5905b3c0fef1b5"
+    },
+    "NOTICE.playground": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "README.md": {
+      "bytes": 1988,
+      "sha256": "c31175b6ae2d1d9537693fca47f60dacc96e8c9113fcc6306e93dfb14e397543"
+    },
+    "t1_rigid_matched.mp4": {
+      "bytes": 489644,
+      "sha256": "2e02bbd0500567debf577a76f7399264eaceb9354df01af1b24bdbc393f0fc7e"
+    },
+    "t1_sand.mp4": {
+      "bytes": 310436,
+      "sha256": "cfa170fb54a0c17d513e11320798b7921c62b8cef897fab3cd042088d0439026"
+    },
+    "turtlebot3_burger_rigid_matched.mp4": {
+      "bytes": 154110,
+      "sha256": "65cc7f630c0d7b45a6aeb340d666f26d30a834e91f1f92de40d96163501ea194"
+    },
+    "turtlebot3_burger_sand.mp4": {
+      "bytes": 141847,
+      "sha256": "23752a4e79d0fe0faeca5b47443a78a25d624cce1e58d9a575b571d1b099fea1"
+    }
+  }
+}

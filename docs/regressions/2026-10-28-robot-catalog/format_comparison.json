@@ -1,0 +1,107 @@
+{
+  "source": {
+    "commit": "97b3570e3ac7044a66536dc584bec2a50bfebc24",
+    "dirty": false
+  },
+  "results": {
+    "go1": {
+      "mjb_package": {
+        "status": "passed_same_state_probe",
+        "active_triangles": 623,
+        "max_triangle_force_difference_N": 0.0,
+        "max_generalized_component_difference": 0.0,
+        "max_command_difference": 0.0,
+        "numeric_field_differences": {},
+        "physical_fingerprint_equal": true
+      },
+      "package_sha256": "cd333e1c2bcc1e78d6c1715f2318a491fd42cb1348c9381d1d4318072029e1a3",
+      "loaded_package_sources": [
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_catalog\\final_validation\\formats\\go1\\relocated\\rigid.mjb",
+          "sha256": "fa4b3609d71188bd84b058570e09287fb293d060f0892593ee61a72dd8acba75"
+        }
+      ],
+      "native_mjz": {
+        "status": "passed_same_state_probe",
+        "active_triangles": 623,
+        "max_triangle_force_difference_N": 0.0,
+        "max_generalized_component_difference": 0.0,
+        "max_command_difference": 0.0,
+        "numeric_field_differences": {
+          "geom_quat": {
+            "shapes": [
+              [
+                51,
+                4
+              ],
+              [
+                51,
+                4
+              ]
+            ],
+            "max_absolute_difference": 1.702067492781456e-07
+          },
+          "geom_size": {
+            "shapes": [
+              [
+                51,
+                3
+              ],
+              [
+                51,
+                3
+              ]
+            ],
+            "max_absolute_difference": 4.944640259046951e-08
+          }
+        },
+        "physical_fingerprint_equal": false
+      }
+    },
+    "g1": {
+      "mjb_package": {
+        "status": "passed_same_state_probe",
+        "active_triangles": 492,
+        "max_triangle_force_difference_N": 0.0,
+        "max_generalized_component_difference": 0.0,
+        "max_command_difference": 0.0,
+        "numeric_field_differences": {},
+        "physical_fingerprint_equal": true
+      },
+      "package_sha256": "ff9788a76c6c923b54eb94a295a8a2bce176d677527c0600976439f645dccf5f",
+      "loaded_package_sources": [
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_catalog\\final_validation\\formats\\g1\\relocated\\rigid.mjb",
+          "sha256": "c382e1f6f1e4dc2ae3b330b8fcd59c173598abe5b2643e60b63fb6f5889bec7f"
+        }
+      ]
+    },
+    "turtlebot3_burger": {
+      "mjb_package": {
+        "status": "passed_same_state_probe",
+        "active_triangles": 218,
+        "max_triangle_force_difference_N": 0.0,
+        "max_generalized_component_difference": 0.0,
+        "max_command_difference": 0.0,
+        "numeric_field_differences": {},
+        "physical_fingerprint_equal": true
+      },
+      "package_sha256": "d6437fd37d9d9d5d6423907a12975281d6a76a962b387a8898f03149c9f50729",
+      "loaded_package_sources": [
+        {
+          "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\robot_catalog\\final_validation\\formats\\turtlebot3_burger\\relocated\\rigid.mjb",
+          "sha256": "6a2ce1b4f59c5c3ace0342aba74b4e4c7c78ce9f8a2884095f8574fcc20fca9e"
+        }
+      ],
+      "expanded_pure_urdf": {
+        "status": "passed_same_state_probe",
+        "active_triangles": 218,
+        "max_triangle_force_difference_N": 0.0,
+        "max_generalized_component_difference": 0.0,
+        "max_command_difference": 0.0,
+        "numeric_field_differences": {},
+        "physical_fingerprint_equal": true
+      }
+    }
+  }
+}
