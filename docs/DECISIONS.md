@@ -1,5 +1,23 @@
 # Decision log
 
+## D-018 — qualify prepared surfaces before ground-locomotion simulation
+
+Date: 2026-10-28.
+
+The next generic path is a staged, fail-closed import/selection/remesh/audit/
+bundle/binding/controller/simulation pipeline. It does not auto-infer missing
+dynamics or an exterior union from arbitrary CAD. Geometry-only files stop at
+preparation until a physical body owner/model is supplied. Persistent bundles
+must verify their artifacts and model/body mapping before runtime use. Source
+visuals, collision shapes, masses and inertias are not remeshed in place.
+
+Ground-locomotion evidence requires an independently working controller on
+rigid ground, explicit control parameters/cadence, and actual sand support
+telemetry. Rigid-trained policy transfer may fail and must remain visible.
+The old Panda demo is interface smoke, not a locomotion validation. Preserve
+it as historical evidence without presenting it as a ground robot baseline.
+See `GROUND_RFT_PIPELINE_2026-10-28.md` for stages, budgets and stopping rules.
+
 ## D-017 — publish two bounded generic integration demo videos
 
 Date: 2026-10-27. Extends the bounded-media policy in D-006.

@@ -3,6 +3,13 @@
 All notable project changes are recorded here. Git is the authoritative
 line-level record; this file explains intent and consequences.
 
+## 2026-10-28 — ground-locomotion pipeline scope
+
+- Recorded the staged input-to-simulation contract, candidate/bundle gates,
+  ground-controller acceptance and bounded experiment plan before coding.
+- Explicitly downgraded Panda to historical interface smoke; it is not
+  evidence of ground-locomotion transfer. Preserved previous results.
+
 ## 2026-10-27 — staged robot-independent RFT binding/provider
 
 - Final clean implementation `3be21df` passed 29 tests, the full unchanged

@@ -1,9 +1,14 @@
 # Project status
 
-Last updated: 2026-10-27. Historical numerical anchors below are from
+Last updated: 2026-10-28. Historical numerical anchors below are from
 2026-07-27; the unchanged six-second baseline was reproduced on 2026-10-27.
 
 ## Robot-independent RFT stage one
+
+2026-10-28 direction: extend to an audited file-to-ground-locomotion pipeline
+and real open-source walking controllers. Panda is retained as interface
+smoke only, not relevant locomotion-generalization evidence. Work/acceptance:
+`GROUND_RFT_PIPELINE_2026-10-28.md`. Original lizard remains preserved.
 
 Implemented on `agent/general-rft-stage1`, source `3be21df`: generic named-body
 surface bindings, explicit units/transforms, compiled mesh/primitive inputs,
