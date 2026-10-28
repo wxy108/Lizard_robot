@@ -11,6 +11,8 @@ failures without padding. URI-imported visuals must not be obscured by opaque
 collision proxies on the same body: hide those proxies only in the rendering
 scene, never modify native collision/mass/force state. Re-render saved state to
 a new directory with exact trajectory hash and separate render provenance.
+Retain upstream license whitespace verbatim; scoped Git whitespace attributes
+avoid treating an original license's trailing blank line as a code defect.
 
 ## D-020 — declarative catalog adapters and portable robot packages
 
