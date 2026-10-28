@@ -5,6 +5,9 @@ from pathlib import Path
 import shutil
 import sys
 
+import cv2
+import numpy as np
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from rft.records import new_run,write_json,artifact_manifest,git_state,sha256
@@ -39,22 +42,29 @@ def main():
         (args.validation/"lizard_full.log","lizard_full.log"),
         (args.validation/"doctor.log","doctor.log"),
         (args.final_validation/"unit_tests.log","unit_tests.log"),
-        (args.final_validation/"cli.log","cli.log")):
+        (args.final_validation/"cli.log","cli.log"),
+        (args.final_validation/"cache_hit/go1/pipeline.json","cache_reuse.json"),
+        (args.final_validation/"canonical_input/go1/pipeline.json","canonical_input.json"),
+        (args.final_validation/"unknown_native/inspection/inspection.json","unknown_input_inspection.json"),
+        (args.final_validation/"unknown_native/inspection/unreviewed_recipe.json","unknown_input_draft.json")):
         copy(src,evidence/name,src.suffix==".log")
     selected = (("t1","rigid_matched"),("t1","sand"),("berkeley","sand"),("apollo","sand"),
                 ("turtlebot3_burger","rigid_matched"),("turtlebot3_burger","sand"))
-    videos = {}
+    videos = {}; burger_frames = []
     for robot,scenario in selected:
         folder = args.replay_root/scenario if robot == "turtlebot3_burger" else args.batch/robot/scenario
         verify(folder)
         summary = json.loads((folder/"summary.json").read_text())
         if summary["source"]["dirty"]:
             raise ValueError("Dirty physics source cannot be curated")
-        video = folder/"locomotion.mp4"; metrics,_ = video_review(video,summary["video_frames"])
+        video = folder/"locomotion.mp4"; metrics,frames = video_review(video,summary["video_frames"])
+        if robot == "turtlebot3_burger": burger_frames.append(np.hstack(frames))
         filename = robot+"_"+scenario+".mp4"; copy(video,media/filename)
         videos[filename] = {"robot":robot,"scenario":scenario,"summary":summary,"video":metrics}
         if (folder/"render_provenance.json").is_file():
             copy(folder/"render_provenance.json",evidence/(robot+"_"+scenario+"_render.json"))
+    if not cv2.imwrite(str(evidence/"burger_replay_contact_sheet.png"),np.vstack(burger_frames)):
+        raise OSError("Preview write failed")
     for robot in ("t1","berkeley","apollo","turtlebot3_burger"):
         copy(args.review/(robot+"_contact_sheet.png"),evidence/(robot+"_original_contact_sheet.png"))
         copy(args.batch/robot/"sand/diagnostics.png",evidence/(robot+"_sand_diagnostics.png"))
@@ -88,6 +98,9 @@ def main():
     for filename,item in videos.items():
         s = item["summary"]; lines.append(f"- [{filename}]({filename}): {s['status']}, simulated {s['recorded_duration_s']:.4f} s, dx {s['com_displacement_m'][0]:.4f} m; SHA-256 `{sha256(media/filename)}`.")
     lines += ["", "T1, Berkeley and Apollo videos are byte-for-byte copies of clean 36659ca simulation outputs. Burger replays the same saved states with original visual meshes visible and readable caption bands; physics unchanged, separate provenance retained.", "", "[Metrics, tests, contact diagrams and source records](../../regressions/2026-10-28-robot-catalog/README.md). Original model/policy licenses and controller notice accompany these videos. Existing Go1/G1/lizard videos remain unchanged.", ""]
+    lines += ["![T1 rigid and sand](../../regressions/2026-10-28-robot-catalog/t1_original_contact_sheet.png)", "",
+              "![Berkeley retained sand failure](../../regressions/2026-10-28-robot-catalog/berkeley_original_contact_sheet.png)", "",
+              "![Burger original visuals, rigid vs sand](../../regressions/2026-10-28-robot-catalog/burger_replay_contact_sheet.png)", ""]
     (media/"README.md").write_text("\n".join(lines),encoding="utf-8",newline="\n")
     patterns = ("rft/*.py","controllers/*.py","configs/robots/*.yaml","configs/controllers/*.json",
                 "configs/robot_catalog.json","scripts/*catalog*.py","scripts/replay_ground_video.py",

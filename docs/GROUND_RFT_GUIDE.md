@@ -1,11 +1,15 @@
 # Audited ground locomotion pipeline
 
+For the expanded seven-robot catalog, URDF/Xacro and portable packages, start
+with [the multi-robot guide](ROBOT_CATALOG_GUIDE.md). This document remains the
+lower-level recipe/geometry/controller reference and original Go1/G1 evidence.
+
 Current ground runner scope is one floating robot and an explicitly reviewed
 horizontal support scene. Moving dynamic external actors, multiple robots,
 arbitrary terrain and whole-body burial need separate scene/contact adapters;
 the static/mocap support guard is not validation of those scenarios.
 
-This is the current generic entry point. Historical hold/sine integration
+This is the lower-level generic entry point. Historical hold/sine integration
 screens, especially Panda, are **not walking-policy evidence**. The new
 examples use official Go1 quadruped and G1 biped walking policies with CPU
 ONNX inference; no IsaacLab, ROS, JAX, PyTorch, training or hardware access.

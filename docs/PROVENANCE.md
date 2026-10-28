@@ -1,5 +1,35 @@
 # Source and data provenance
 
+## Multi-robot catalog and formats — 2026-10-28
+
+Source/runtime `36659ca`, final adapter/render/package checks `97b3570`.
+Catalog adds Berkeley Humanoid, Booster T1 and Apollo models and official
+policies, plus real TurtleBot3 Burger/Waffle Pi URDF/Xacro from ROBOTIS.
+Playground `12ad7f3842791ced39f27e5ac96d066bbe361653`, Menagerie
+`f3b6013629c7b94f8ee93fd977b161fa8350f9bc`, TurtleBot3
+`fc817ce3073af1d6032397c64504134882af5e9a` are pinned; see
+`configs/robot_catalog.json` for repository URLs, selection and recipes.
+Selected source bytes 190,664,598 include reused Go1/G1 assets. Per-file Git
+blob, byte count and SHA verification are additive and never replace earlier
+source manifests. Original model/policy licenses accompany exported packages
+and D-021's six media files. Berkeley has its original BSD-style license;
+T1/Apollo/TurtleBot3/Playground retain their original Apache notices.
+
+URDF conversions and wheel servo/floor/root additions are explicit private
+native-spec adapters, not upstream edits or calibrated motor/tire mechanics.
+Source recipe and effective-adapter provenance are included in packages.
+T1 observation masking no longer mutates actual qvel; math parity and this
+intentional side-effect difference are separately recorded. Native MJZ text
+rounding differs slightly in geom quaternion/size; binary package identity
+and active force/control equivalence are the stronger tested preservation
+route. Only Xacro 2.1.1 was added; numerical pins and IsaacLab were untouched.
+
+See `ROBOT_CATALOG_EXPANSION_2026-10-28.md` (per-step reasons/failures),
+`ROBOT_CATALOG_GUIDE.md` (fresh-system deployment/output analysis), and
+`regressions/2026-10-28-robot-catalog/` (original summaries, tests, manifests,
+source indexes, comparisons and visual-only replay provenance). No failures
+were erased or replaced with successful retuned runs.
+
 ## Ground-locomotion pipeline — 2026-10-28
 
 Implementation baseline `4de8b1d`; lizard preserved at `ccc6946`. Official

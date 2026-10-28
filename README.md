@@ -4,6 +4,12 @@ Newest: [multi-robot catalog and one-command pipeline](docs/ROBOT_CATALOG_GUIDE.
 for seven ground robots, MJCF/URDF/Xacro/native files and portable robot
 packages. Successful screens and failed sand transfers are recorded separately.
 
+[Seven-robot results and tests](docs/regressions/2026-10-28-robot-catalog/README.md)
+· [New success/failure videos](docs/media/robot_catalog/README.md).
+All seven pass rigid screening; Go1/G1/T1 also pass six-second sand screens.
+Berkeley/Apollo and TurtleBot3 sand failures remain visible, not advertised as
+ready sand gaits. Unknown files stop for missing physical/controller metadata.
+
 [Audited ground-locomotion pipeline](docs/GROUND_RFT_GUIDE.md), from
 qualified/remeshed surfaces through verified RFT binding to official Go1/G1
 walking controllers and simulation. [Step-by-step decisions and failures](docs/GROUND_RFT_PIPELINE_2026-10-28.md).

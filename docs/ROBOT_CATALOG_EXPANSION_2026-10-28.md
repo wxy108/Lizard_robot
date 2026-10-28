@@ -161,3 +161,30 @@ assets. Canonical verified paths alone auto-select catalog recipes; unknown
 Xacro/native ZIP get explicit inspection/drafts. Add four tests (69 total),
 preserve original recipe/effective-adapter provenance inside packages, and
 record all remaining checks/media below. None changes force/integration/control.
+
+### E8 — final checks and adoption boundary
+
+Clean `97b3570`: 69/69 tests, five original-controller comparisons (20 states
+each Go1/G1; 30 each Berkeley/T1/Apollo), final real-format probes, pip check,
+catalog listing, verified cache reuse and canonical-input selection passed.
+Unknown native ZIP correctly stopped with exit 2 and an unreviewed recipe.
+`--output-dir` is now honored by the new parity verifier. Final outputs:
+`outputs/robot_catalog/final_validation/`; legacy policy comparison:
+`outputs/general_rft/walking_controller_parity_20261028_033353_673962/`.
+
+Relocated self-contained G1 package completed all three six-second scenarios
+without original asset paths/network; all seven saved arrays match clean
+36659ca G1 exactly in every scenario. Separate binary rigid/sand models retain
+the reviewed floor-pair conversion. Burger saved-state replay preserved the
+exact trajectory SHA and executed zero physics steps; its source visual meshes
+and captions are now visible. Original raw videos/manifests remain untouched.
+No model/mesh/material/gain retuning was attempted after failures.
+
+Adopt three bounded sand demos: Go1, G1 slow and T1. Berkeley, Apollo and both
+wheel models are useful imported/controller/rigid-stage examples and retained
+negative sand-transfer cases, **not** ready sand gaits. Geometry gates qualify
+declared proxies, not the entire CAD exterior or true tire/material mechanics.
+Windows runtime tested; other platforms receive reproducible pinned setup,
+not a false cross-platform validation claim. D-021 curates six videos with
+licenses, diagnostics, manifests and clean source indexes. New structure and
+every file's role are documented above and in `ROBOT_CATALOG_GUIDE.md`.

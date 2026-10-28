@@ -5,17 +5,22 @@ Last updated: 2026-10-28. Historical numerical anchors below are from
 
 ## Robot-independent RFT stage one
 
-Active continuation: broader robot/format catalog and one-command deployment;
-plan and per-step ledger: `ROBOT_CATALOG_EXPANSION_2026-10-28.md`. Preserve all
-previous clean runtime evidence below; new targets are not counted passed
-until their actual pipeline stage results are recorded.
+Completed bounded catalog expansion: seven actual ground robots, 14 passing
+six-second rigid scenarios, Go1/G1/T1 passing sand screens. Berkeley/Apollo
+stopped at 3.4975/2.325 s; both TurtleBot3 variants failed sand progress (~3 mm).
+69 tests pass; all 21 raw videos decoded (2,417 frames); Go1/G1 saved arrays
+equal f4c0360 exactly. Relocated G1 package reproduces all three trajectories.
+MJCF/URDF/Xacro/MJB/MJZ/package routes plus STL/OBJ/PLY component geometry are
+covered, with explicit adapter/refusal boundaries. No IsaacLab/numerical-pin
+change. Entry: `ROBOT_CATALOG_GUIDE.md`; per-step changes and evidence:
+`ROBOT_CATALOG_EXPANSION_2026-10-28.md`, `regressions/2026-10-28-robot-catalog/`.
 
 2026-10-28 direction: extend to an audited file-to-ground-locomotion pipeline
 and real open-source walking controllers. Panda is retained as interface
 smoke only, not relevant locomotion-generalization evidence. Work/acceptance:
 `GROUND_RFT_PIPELINE_2026-10-28.md`. Original lizard remains preserved.
 
-Final generic runtime `f4c0360` has 49 passing tests, audited remesh/bundles/
+Earlier generic runtime `f4c0360` has 49 passing tests, audited remesh/bundles/
 pose checks and official Go1/G1 walking adapters. Go1 command 0.4 m/s and G1
 command 0.2 m/s completed six-second rigid/sand screens, zero rigid sand
 support. G1 0.4 m/s failed at 3.765 s and is retained. Tracking is imperfect,

@@ -8,6 +8,21 @@ line-level record; this file explains intent and consequences.
 - Recorded broader morphology/format targets, controller/source contracts,
   deployment improvements, acceptance levels and finite experiment budgets
   before implementation. Legacy physics/models/environment remain frozen.
+- Added selective pinned source catalog, one-command list/doctor/install/run/
+  batch, guarded input inspection, URDF/Xacro adapters, native archive/binary
+  handling, verified preparation cache and portable robot packages.
+- Added independent official Berkeley/T1/Apollo profiles and explicit TurtleBot3
+  wheel servos/kinematic control. Preserved controller parity while removing
+  T1's physical-qvel observation side effect. No policy/gain/material retuning.
+- Clean 36659ca: all seven models' 14 rigid scenarios pass; sand passes
+  Go1/G1/T1, retains Berkeley/Apollo posture failures and two wheel-progress
+  failures. All baseline Go1/G1 saved arrays exactly repeat f4c0360.
+- Clean 97b3570: 69 tests, five original policy comparisons, real URDF/Xacro/
+  MJB/MJZ package probes and relocated G1 six-second trajectories pass. MJZ
+  text-rounding residual remains explicit. Full legacy lizard regression passes.
+- Added zero-physics saved-state replay and corrected URDF display-only proxy
+  overlap/label contrast; six curated success/failure videos and source/test/
+  output records under D-021. Added only Xacro 2.1.1 in lizard_rft; Isaac untouched.
 
 ## 2026-10-28 — ground-locomotion pipeline scope
 
