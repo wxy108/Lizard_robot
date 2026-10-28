@@ -1,0 +1,19 @@
+schema_version: 1
+model: ../../third_party/robot_assets/playground/mujoco_playground/_src/locomotion/berkeley_humanoid/xmls/scene_mjx_feetonly_flat_terrain.xml
+asset_dirs:
+  - ../../third_party/robot_assets/playground/mujoco_playground/_src/locomotion/berkeley_humanoid/xmls
+  - ../../third_party/robot_assets/mujoco_menagerie/berkeley_humanoid/assets
+initial_keyframe: home
+root_body: torso
+support_geoms: [floor]
+sand_height: 0.0
+timestep: 0.0005
+upstream_sim_timestep: 0.002
+controller: {type: profile_onnx, family: berkeley, profile: berkeley, default_keyframe: home, control_dt: 0.02, command: [0.2, 0, 0], policy: ../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/bh_policy.onnx}
+remesh: {method: isotropic, target_edge_m: 0.012, max_deviation_m: 0.0005, iterations: 5}
+geometry_status: upstream sole-box proxies only, excluding non-ground ankle cylinders; no full-CAD certification
+surfaces:
+  - {id: left_sole, geom: l_foot1, body: ll_faa, group: left_foot}
+  - {id: right_sole, geom: r_foot1, body: lr_faa, group: right_foot}
+acceptance: {minimum_upright_cosine: 0.6, minimum_root_height_m: 0.25, max_centroid_penetration_m: 0.1, minimum_forward_displacement_m: 0.1}
+camera: {distance: 1.8, elevation: -15, azimuth: 135}

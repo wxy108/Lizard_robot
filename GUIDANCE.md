@@ -26,9 +26,10 @@ The repository also contains:
 
 The canonical environment is `lizard_rft`. IsaacLab is outside project scope.
 
-For the audited generic ground-locomotion pipeline, optional official Go1/G1
-policies and reviewed success/failure videos, continue with
-[the generic guide](docs/GROUND_RFT_GUIDE.md) after core setup. Original lizard
+For the expanded catalog, pinned ground-robot policies, URDF/Xacro adapters
+and portable packages, continue with
+[the multi-robot guide](docs/ROBOT_CATALOG_GUIDE.md) after core setup. The
+[lower-level generic guide](docs/GROUND_RFT_GUIDE.md) covers custom recipes. Original lizard
 workflows below remain the regression control.
 
 ## 1. See the output before installing anything

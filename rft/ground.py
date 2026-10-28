@@ -4,7 +4,7 @@ from pathlib import Path
 import mujoco
 import numpy as np
 
-from controllers.playground_onnx import PlaygroundController
+from controllers.catalog_controllers import make_controller
 from .provider import RFTForceProvider
 from .records import artifact_manifest, git_state, sha256, write_json
 
@@ -58,17 +58,22 @@ def run(model,config,config_path,surfaces,directory,*,mode,duration,dt):
     directory = Path(directory)
     directory.mkdir(parents=True,exist_ok=False)
     controls = config["controller"]
-    if controls["type"] != "playground_onnx":
-        raise ValueError("No reviewed controller adapter for requested type")
     control_dt = float(controls["control_dt"])
     cadence = round(control_dt/dt)
     if cadence <= 0 or not np.isclose(cadence*dt,control_dt,rtol=0,atol=1e-12):
         raise ValueError("Physics timestep must divide policy period exactly")
     model.opt.timestep = dt
     root = model.body(config["root_body"]).id
-    root_joints = range(int(model.body_jntadr[root]),int(model.body_jntadr[root]+model.body_jntnum[root]))
+    floating = model.body(config.get("floating_body",config["root_body"])).id
+    root_joints = range(int(model.body_jntadr[floating]),int(model.body_jntadr[floating]+model.body_jntnum[floating]))
     if not any(model.jnt_type[j] == mujoco.mjtJoint.mjJNT_FREE for j in root_joints):
         raise ValueError("This walking adapter requires a floating root; fixed/planar roots need an explicit adapter")
+    for bid in range(1,model.nbody):
+        ancestor = bid
+        while ancestor and ancestor != floating:
+            ancestor = int(model.body_parentid[ancestor])
+        if not ancestor and model.body_weldid[bid] != 0 and model.body_mocapid[bid] < 0:
+            raise ValueError("Undeclared dynamic actor outside robot; use an explicit scene adapter")
     supports = support_ids(model,config["support_geoms"],allow_explicit_pairs=(mode == "rigid"))
     original_masks = {gid:(int(model.geom_contype[gid]),int(model.geom_conaffinity[gid])) for gid in supports}
     if mode == "sand":
@@ -79,9 +84,7 @@ def run(model,config,config_path,surfaces,directory,*,mode,duration,dt):
     data = mujoco.MjData(model)
     mujoco.mj_resetDataKeyframe(model,data,model.key(config["initial_keyframe"]).id)
     mujoco.mj_forward(model,data)
-    policy_path = (Path(config_path).parent/controls["policy"]).resolve()
-    policy = PlaygroundController(model,data,controls["family"],policy_path,
-             control_dt=control_dt,command=controls["command"])
+    policy,policy_path = make_controller(model,data,controls,Path(config_path).parent)
     provider = RFTForceProvider(model,surfaces,convention="body_frame_v1",
                  sand_height=config["sand_height"],coefficient=3.75,alpha=0.5,application="body_wrench")
     groups = list(dict.fromkeys(s.group for s in surfaces))
@@ -146,9 +149,15 @@ def run(model,config,config_path,surfaces,directory,*,mode,duration,dt):
                         final_qvel=data.qvel.copy())
     displacement = trace[-1,1:4]-start_com
     final_active = np.asarray(active_list)
-    passed = reason == "completed" and displacement[0] >= criteria["minimum_forward_displacement_m"]
+    minimum_progress = max(criteria["minimum_forward_displacement_m"],
+        criteria.get("minimum_commanded_progress_fraction",0)*max(0,float(controls["command"][0]))*duration)
+    acceptance_failures = ([reason] if reason != "completed" else [])
+    if displacement[0] < minimum_progress:
+        acceptance_failures.append("insufficient_forward_displacement")
     if mode == "sand":
-        passed = passed and bool(final_active.any()) and bool(np.all(trace[:,14] == 0))
+        if not final_active.any(): acceptance_failures.append("no_active_rft")
+        if np.any(trace[:,14] != 0): acceptance_failures.append("unexpected_rigid_support")
+    passed = not acceptance_failures
     summary = {"source":git_state(),"status":"passed_screen" if passed else "failed_screen",
         "termination":reason,"requested_duration_s":duration,"recorded_duration_s":len(trace)*dt,
         "physics_timestep_s":dt,"control_dt_s":control_dt,"policy_updates":policy.updates,
@@ -157,7 +166,9 @@ def run(model,config,config_path,surfaces,directory,*,mode,duration,dt):
         "support_conversion":config.get("effective_support_conversion",{"removed_explicit_pairs":[]}),
         "effective_ground_masks_during_simulation":{model.geom(gid).name:([0,0] if mode == "sand" else list(masks))
                                                    for gid,masks in original_masks.items()},
-        "policy_sha256":sha256(policy_path),"model_mass_kg":float(model.body_mass.sum()),
+        "policy_sha256":sha256(policy_path) if policy_path else None,"model_mass_kg":float(model.body_mass.sum()),
+        "model_adapter":config.get("effective_model_adapter"),
+        "acceptance_failures":acceptance_failures,"minimum_required_forward_progress_m":minimum_progress,
         "geometry_status":config["geometry_status"],"triangle_count":sum(len(s.areas) for s in surfaces),
         "rft_convention":"body_frame_v1","coefficient":3.75,"alpha":0.5,
         "acceptance":criteria,"com_displacement_m":displacement.tolist(),
@@ -251,7 +262,7 @@ def render_run(model,config,surfaces,directory,*,fps=20):
             text = f"{config['controller']['family']} | {summary['mode']} | t={trace[index,0]:.2f}s | dx={trace[index,1]-trace[0,1]:.2f}m"
             cv2.putText(frame,text,(15,28),cv2.FONT_HERSHEY_SIMPLEX,.6,(30,30,30),2,cv2.LINE_AA)
             cv2.putText(frame,f"{summary['status']} | {summary['termination']}",(15,53),cv2.FONT_HERSHEY_SIMPLEX,.43,(30,30,30),1,cv2.LINE_AA)
-            cv2.putText(frame,"Official walking policy | selected foot proxies | uncalibrated RFT" ,(15,520),cv2.FONT_HERSHEY_SIMPLEX,.45,(30,30,30),1,cv2.LINE_AA)
+            cv2.putText(frame,"Independent controller | declared contact proxies | uncalibrated RFT" ,(15,520),cv2.FONT_HERSHEY_SIMPLEX,.45,(30,30,30),1,cv2.LINE_AA)
             writer.append_data(frame)
     finally:
         writer.close(); renderer.close()

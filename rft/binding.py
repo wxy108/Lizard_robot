@@ -34,10 +34,22 @@ def load_model(path, *, package_roots=None):
     floating-root conversion/actuator synthesis are not silently invented.
     """
     path = Path(path).resolve()
-    if path.suffix.lower() != ".urdf":
+    suffix = path.suffix.lower()
+    if suffix == ".mjb":
+        return mujoco.MjModel.from_binary_path(str(path))
+    if suffix in (".mjz", ".zip"):
+        from .formats import check_archive
+        check_archive(path)
+        with path.open("rb") as stream:
+            return mujoco.MjSpec.from_zip(stream).compile()
+    if suffix == ".xacro" or "<xacro:" in path.read_text(encoding="utf-8"):
+        from .formats import urdf_spec
+        spec,_,_ = urdf_spec(path,package_roots or {},{})
+        return spec.compile()
+    xml = ET.parse(path).getroot()
+    if xml.tag != "robot":
         return mujoco.MjModel.from_xml_path(str(path))
     roots = {name: Path(root).resolve() for name, root in (package_roots or {}).items()}
-    xml = ET.parse(path).getroot()
     for element in xml.iter():
         if "filename" not in element.attrib:
             continue

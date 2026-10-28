@@ -11,6 +11,15 @@ Portable packages include provenance, licenses, model/controller/bundle hashes
 and version constraints; reject unsafe archives or incomplete dependencies.
 Prior robot failures remain controls. See `ROBOT_CATALOG_EXPANSION_2026-10-28.md`.
 
+T1 masks head observations on a copy: the pinned original accidentally mutates
+the physical `qvel` view. Exact observation/action parity is required, but this
+side effect is intentionally not retained. Berkeley starts from named `home`
+(the original script asks for nonexistent key index 1 in its flat model).
+Apollo initial `stand` and policy-target `knees_bent` remain distinct. Wheel
+velocity servos/caster proxies are engineering adapters, not motor/tire
+calibration. Native MJZ text round-trip is not promised bitwise identity;
+binary MJB packages require it and are version locked.
+
 ## D-019 — bounded ground-pipeline success and failure media
 
 Date: 2026-10-28. Extend D-006 with `docs/media/ground_rft_pipeline/`:

@@ -1,8 +1,10 @@
 """One entry point for import -> qualify/remesh -> verified binding -> walking."""
 import argparse
+import copy
 import json
 from pathlib import Path
 import sys
+import time
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
@@ -16,6 +18,7 @@ def main():
     parser.add_argument("--units",choices=("m","mm"))
     parser.add_argument("--output-dir",type=Path)
     parser.add_argument("--bundle-dir",type=Path)
+    parser.add_argument("--cache",action="store_true",help="Reuse a verified content-keyed prepared bundle")
     parser.add_argument("--prepare-only",action="store_true")
     parser.add_argument("--duration",type=float,default=6)
     parser.add_argument("--video",action="store_true")
@@ -25,10 +28,11 @@ def main():
     if not 0.1 <= args.duration <= 30:
         parser.error("Duration must be 0.1..30 seconds")
     output = new_run(args.output_dir or ROOT/"outputs/ground_rft"/(__import__("datetime").datetime.now().strftime("run_%Y%m%d_%H%M%S_%f")))
+    started = time.perf_counter()
     ledger = {"source":git_state(),"status":"running","steps":[]}
     stage = "input"
     def mark(name,**payload):
-        ledger["steps"].append({"stage":name,**payload})
+        ledger["steps"].append({"stage":name,"elapsed_wall_s":time.perf_counter()-started,**payload})
         write_json(output/"pipeline.json",ledger)
         print(name,flush=True)
     try:
@@ -60,14 +64,25 @@ def main():
         mark("import",source_files=sources,config_sha256=sha256(args.config))
         stage = "prepare"
         bundle = args.bundle_dir.resolve() if args.bundle_dir else output/"bundle"
-        if not args.bundle_dir:
+        if args.cache and not args.bundle_dir:
+            import hashlib
+            from rft.pipeline import fingerprint,builder_stamp
+            import importlib.metadata
+            tools = {p:importlib.metadata.version(p) for p in ("mujoco","numpy","open3d","pymeshlab")}
+            key = hashlib.sha256((fingerprint(model)+sha256(args.config)+
+                                  json.dumps({"builder":builder_stamp(),"tools":tools},sort_keys=True)).encode()).hexdigest()
+            bundle = ROOT/"outputs/robot_catalog/cache"/key
+            bundle.parent.mkdir(parents=True,exist_ok=True)
+        cache_hit = bundle.exists()
+        if not cache_hit:
             metadata = build_bundle(model,config,args.config,bundle,sources)
             mark("prepare",surfaces=[{"id":s["id"],"triangles":s["after"]["triangles"]} for s in metadata["surfaces"]])
         stage = "bind"
         surfaces,metadata = load_bundle(model,bundle)
         if metadata["config_sha256"] != sha256(args.config):
             raise ValueError("Bundle config differs; rebuild or explicitly review a new recipe")
-        mark("bind",bundle=str(bundle),bundle_metadata_sha256=sha256(bundle/"bundle.json"),surface_count=len(surfaces))
+        ledger["bundle_directory"] = str(bundle)
+        mark("bind",bundle=str(bundle),bundle_metadata_sha256=sha256(bundle/"bundle.json"),surface_count=len(surfaces),cache_hit=cache_hit)
         if config.get("initial_keyframe"):
             checks = verify_binding_poses(model,surfaces,config["initial_keyframe"])
             write_json(output/"binding_checks.json",checks)
@@ -82,7 +97,10 @@ def main():
                 stage = name
                 # Reload original immutable model for every scenario. Rebind
                 # and verify fingerprint before changing timestep/contact mode.
-                m,c,_ = import_robot(args.config,medium=mode)
+                if mode == "sand" and (model.npair or config.get("sand_model")):
+                    m,c,_ = import_robot(args.config,medium=mode)
+                else:
+                    m,c = copy.copy(model),copy.deepcopy(config)
                 prepared,_ = load_bundle(m,bundle)
                 result = run(m,c,args.config,prepared,output/name,mode=mode,duration=args.duration,dt=dt)
                 plot_run(output/name)

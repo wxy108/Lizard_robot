@@ -1,0 +1,20 @@
+schema_version: 1
+model: ../../third_party/robot_assets/playground/mujoco_playground/_src/locomotion/apollo/xmls/scene_mjx_feetonly_flat_terrain.xml
+asset_dirs:
+  - ../../third_party/robot_assets/playground/mujoco_playground/_src/locomotion/apollo/xmls
+  - ../../third_party/robot_assets/mujoco_menagerie/apptronik_apollo/assets
+initial_keyframe: stand
+root_body: base_link
+support_geoms: [floor]
+disable_support_pairs: [left_foot_floor, right_foot_floor]
+sand_height: 0.0
+timestep: 0.0005
+upstream_sim_timestep: 0.005
+controller: {type: profile_onnx, family: apollo, profile: apollo, default_keyframe: knees_bent, control_dt: 0.02, command: [0.2, 0, 0], policy: ../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/apollo_policy.onnx}
+remesh: {method: isotropic, target_edge_m: 0.014, max_deviation_m: 0.0005, iterations: 5}
+geometry_status: upstream sole-box proxies only, no full-CAD or granular calibration
+surfaces:
+  - {id: left_sole, geom: collision_l_sole, body: l_foot_link, group: left_foot}
+  - {id: right_sole, geom: collision_r_sole, body: r_foot_link, group: right_foot}
+acceptance: {minimum_upright_cosine: 0.6, minimum_root_height_m: 0.65, max_centroid_penetration_m: 0.2, minimum_forward_displacement_m: 0.1}
+camera: {distance: 3.4, elevation: -15, azimuth: 135}

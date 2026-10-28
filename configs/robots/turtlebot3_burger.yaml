@@ -1,0 +1,28 @@
+schema_version: 1
+model: ../../third_party/robot_assets/turtlebot3/turtlebot3_description/urdf/turtlebot3_burger.urdf
+package_roots: {turtlebot3_description: ../../third_party/robot_assets/turtlebot3/turtlebot3_description}
+model_adapter:
+  floating_body: base_footprint
+  initial_pos_m: [0, 0, 0.002]
+  xacro_mappings: {namespace: ''}
+  add_floor: true
+  add_keyframe: home
+  velocity_joints:
+    - {joint: wheel_left_joint, kv: 0.2, ctrlrange: [-10, 10], forcerange: [-1, 1]}
+    - {joint: wheel_right_joint, kv: 0.2, ctrlrange: [-10, 10], forcerange: [-1, 1]}
+initial_keyframe: home
+floating_body: base_footprint
+root_body: base_link
+support_geoms: [floor]
+sand_height: 0.0
+timestep: 0.0005
+upstream_sim_timestep: 0.001
+controller: {type: differential_drive, family: turtlebot3_burger, control_dt: 0.02, command: [0.08, 0, 0], wheel_radius_m: 0.033, wheel_separation_m: 0.16, joints: [wheel_left_joint, wheel_right_joint]}
+remesh: {method: isotropic, target_edge_m: 0.008, max_deviation_m: 0.001, iterations: 5}
+geometry_status: URDF wheel-cylinder and fixed caster-box proxies; caster and servo are simulation approximations, not calibrated tire/ball-caster dynamics
+surfaces:
+  - {id: left_wheel, geom_selector: single_collision, body: wheel_left_link, group: left_wheel}
+  - {id: right_wheel, geom_selector: single_collision, body: wheel_right_link, group: right_wheel}
+  - {id: rear_caster, geom_selector: single_collision, body: caster_back_link, group: rear_caster}
+acceptance: {minimum_upright_cosine: 0.7, minimum_root_height_m: -0.05, max_centroid_penetration_m: 0.08, minimum_forward_displacement_m: 0.03, minimum_commanded_progress_fraction: 0.5}
+camera: {distance: 0.85, elevation: -20, azimuth: 135}

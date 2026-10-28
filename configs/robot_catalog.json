@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "maximum_selected_bytes": 400000000,
+  "sources": {
+    "playground": {"repository":"google-deepmind/mujoco_playground","commit":"12ad7f3842791ced39f27e5ac96d066bbe361653","destination":"third_party/robot_assets/playground"},
+    "menagerie": {"repository":"google-deepmind/mujoco_menagerie","commit":"f3b6013629c7b94f8ee93fd977b161fa8350f9bc","destination":"third_party/robot_assets/mujoco_menagerie"},
+    "turtlebot3": {"repository":"ROBOTIS-GIT/turtlebot3","commit":"fc817ce3073af1d6032397c64504134882af5e9a","destination":"third_party/robot_assets/turtlebot3"}
+  },
+  "robots": {
+    "go1": {"model_id":"go1","kind":"quadruped","config":"configs/robots/playground_go1.yaml","playground_family":"go1","policy":"go1","menagerie_model":"unitree_go1"},
+    "g1": {"model_id":"g1","kind":"humanoid","config":"configs/robots/playground_g1_slow.yaml","playground_family":"g1","policy":"g1","menagerie_model":"unitree_g1"},
+    "g1_fast_failure": {"model_id":"g1","kind":"humanoid negative control","config":"configs/robots/playground_g1.yaml","playground_family":"g1","policy":"g1","menagerie_model":"unitree_g1"},
+    "berkeley": {"model_id":"berkeley","kind":"small humanoid","config":"configs/robots/playground_berkeley.yaml","playground_family":"berkeley_humanoid","policy":"bh","menagerie_model":"berkeley_humanoid"},
+    "t1": {"model_id":"t1","kind":"humanoid","config":"configs/robots/playground_t1.yaml","playground_family":"t1","policy":"t1","menagerie_model":"booster_t1"},
+    "apollo": {"model_id":"apollo","kind":"large humanoid","config":"configs/robots/playground_apollo.yaml","playground_family":"apollo","policy":"apollo","menagerie_model":"apptronik_apollo"},
+    "turtlebot3_burger": {"model_id":"turtlebot3_burger","kind":"differential drive","config":"configs/robots/turtlebot3_burger.yaml","urdf":"turtlebot3_burger.urdf","base_mesh":"burger_base.stl"},
+    "turtlebot3_waffle_pi": {"model_id":"turtlebot3_waffle_pi","kind":"differential drive","config":"configs/robots/turtlebot3_waffle_pi.yaml","urdf":"turtlebot3_waffle_pi.urdf","base_mesh":"waffle_pi_base.stl"}
+  }
+}

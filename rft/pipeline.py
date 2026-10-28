@@ -40,6 +40,8 @@ def inventory(model):
             "joints":[{"name":model.joint(i).name,"type":int(model.jnt_type[i]),
                        "qpos_address":int(model.jnt_qposadr[i]),"dof_address":int(model.jnt_dofadr[i]),
                        "range":model.jnt_range[i].tolist(),
+                       "actuator_force_range":model.jnt_actfrcrange[i].tolist(),
+                       "actuator_force_limited":bool(model.jnt_actfrclimited[i]),
                        "damping":float(model.dof_damping[model.jnt_dofadr[i]]),
                        "armature":float(model.dof_armature[model.jnt_dofadr[i]]),
                        "frictionloss":float(model.dof_frictionloss[model.jnt_dofadr[i]])}
@@ -48,6 +50,8 @@ def inventory(model):
                            if model.actuator_trntype[i] == mujoco.mjtTrn.mjTRN_JOINT else None,
                            "gain": model.actuator_gainprm[i].tolist(), "bias": model.actuator_biasprm[i].tolist(),
                            "ctrlrange": model.actuator_ctrlrange[i].tolist(),
+                           "ctrl_limited":bool(model.actuator_ctrllimited[i]),
+                           "force_limited":bool(model.actuator_forcelimited[i]),
                            "forcerange": model.actuator_forcerange[i].tolist()}
                           for i in range(model.nu)], "compiled_fingerprint": fingerprint(model)}
 
@@ -71,6 +75,14 @@ def import_robot(config_path, *, medium=None):
     path = Path(config_path).resolve()
     config = yaml.safe_load(path.read_text(encoding="utf-8"))
     model_path = (path.parent/config["model"]).resolve()
+    if config.get("model_adapter") or model_path.suffix.lower() in (".xacro",".mjb",".mjz",".zip"):
+        from .formats import compile_adapter
+        model,report,files = compile_adapter(config,model_path,path,medium)
+        config["effective_model_adapter"] = report
+        if report.get("removed_explicit_pairs"):
+            config["effective_support_conversion"] = {"removed_explicit_pairs":report["removed_explicit_pairs"],
+                "retained_pairs":[model.pair(i).name for i in range(model.npair)]}
+        return model,config,[{"path":str(p),"sha256":sha256(p)} for p in sorted(files)]
     if model_path.suffix.lower() not in (".xml", ".mjcf", ".urdf"):
         raise ValueError("Dynamics input requires MJCF/URDF; a mesh alone needs explicit body/dynamics metadata")
     assets, files = {}, {model_path: sha256(model_path)}
@@ -120,15 +132,23 @@ def select_meshes(model, config, config_path):
         bid = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_BODY, owner)
         if bid <= 0:
             raise ValueError(f"Invalid body owner: {owner}")
-        if "geom" in spec:
-            gid = mujoco.mj_name2id(model,mujoco.mjtObj.mjOBJ_GEOM,spec["geom"])
+        if "geom" in spec or "geom_selector" in spec:
+            if "geom_selector" in spec:
+                mode = spec["geom_selector"]
+                matches = [g for g in range(model.ngeom) if model.geom_bodyid[g] == bid and
+                           (model.geom_contype[g] or model.geom_conaffinity[g])]
+                if mode != "single_collision" or len(matches) != 1:
+                    raise ValueError(f"Geom selector for {owner} is ambiguous; explicitly review candidates {matches}")
+                gid = matches[0]
+            else:
+                gid = mujoco.mj_name2id(model,mujoco.mjtObj.mjOBJ_GEOM,spec["geom"])
             if gid < 0 or int(model.geom_bodyid[gid]) != bid:
                 raise ValueError(f"Geom owner mismatch: {sid}")
             if gid in seen_geoms:
                 raise ValueError("Duplicate physical geom selection would double RFT")
             seen_geoms.add(gid)
             mesh = make_mesh(*mesh_from_geom(model,gid,segments=spec.get("segments",24)))
-            source = {"geom":spec["geom"],"compiled_body_frame": True}
+            source = {"geom":model.geom(gid).name or f"index_{gid}","compiled_body_frame": True}
         else:
             filename = (Path(config_path).parent/spec["mesh"]).resolve()
             mesh = read_mesh(filename, spec.get("units"))
@@ -175,6 +195,7 @@ def build_bundle(model, config, config_path, directory, sources=()):
             reports.append({"id":spec["id"],"body":spec["body"],"group":surface.group,
                             "arrays":f"{spec['id']}/surface.npz","source":source,**report})
         metadata = {"schema_version":1,"status":"qualified","source":git_state(),
+                    "builder_sha256":builder_stamp(),
                     "model_fingerprint":fingerprint(model),"config_sha256":sha256(config_path),
                     "sources":list(sources),"surfaces":reports,
                     "versions":{p:importlib.metadata.version(p) for p in ("mujoco","numpy","open3d","pymeshlab")}}
@@ -226,6 +247,10 @@ def load_bundle(model, directory):
             surfaces.append(surface)
     bind_surfaces(model,surfaces)
     return tuple(surfaces),metadata
+
+
+def builder_stamp():
+    return {name:sha256(Path(__file__).parent/name) for name in ("pipeline.py","geometry.py","binding.py","formats.py")}
 
 
 def verify_binding_poses(model,surfaces,initial_keyframe):
