@@ -1,5 +1,10 @@
 # General RFT stage one: use, boundaries and reproduction
 
+Current audited ground-locomotion workflow: `GROUND_RFT_GUIDE.md`. This older
+guide preserves stage-one interface screens; Panda is not locomotion evidence.
+The new path qualifies prepared bundles and uses checked official walking
+policies for Go1/G1.
+
 Start with `RFT_GENERALIZATION_PLAN.md` for architecture and
 `RFT_GENERALIZATION_WORKLOG_2026-10-27.md` for the dated implementation,
 failures, exact outputs and measured differences. The preserved baseline is

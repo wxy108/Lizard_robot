@@ -9,6 +9,15 @@ line-level record; this file explains intent and consequences.
   ground-controller acceptance and bounded experiment plan before coding.
 - Explicitly downgraded Panda to historical interface smoke; it is not
   evidence of ground-locomotion transfer. Preserved previous results.
+- Added qualified remeshing, topology/deviation/resource gates, verified
+  persistent bundles and multi-pose binding checks, with safe refusal records.
+- Added pinned official Go1/G1 walking-policy adapters, exact source parity
+  verifier and upstream rigid/matched rigid/sand pipeline with synchronized
+  telemetry, diagrams and saved-state video. Reviewed native pair conversion
+  prevents G1 foot/floor pairs from bypassing the sand masks.
+- Added 18 known-answer tests and optional CPU inference requirements;
+  numerical pins and legacy lizard remain unchanged. Development failures and
+  two-second results are recorded; clean-source validation follows.
 
 ## 2026-10-27 — staged robot-independent RFT binding/provider
 

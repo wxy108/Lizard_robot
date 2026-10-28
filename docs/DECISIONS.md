@@ -18,6 +18,11 @@ The old Panda demo is interface smoke, not a locomotion validation. Preserve
 it as historical evidence without presenting it as a ground robot baseline.
 See `GROUND_RFT_PIPELINE_2026-10-28.md` for stages, budgets and stopping rules.
 
+Reviewed explicit support pairs are removed using native MjSpec in a private
+sand-model copy, with unchanged physical identity and self-contact pairs.
+Mask-only conversion is insufficient for G1. No extreme negative margins or
+global collision disabling may hide residual support.
+
 ## D-017 — publish two bounded generic integration demo videos
 
 Date: 2026-10-27. Extends the bounded-media policy in D-006.

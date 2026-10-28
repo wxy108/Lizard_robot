@@ -1,5 +1,24 @@
 # Source and data provenance
 
+## Ground-locomotion pipeline — 2026-10-28
+
+Implementation baseline `4de8b1d`; lizard preserved at `ccc6946`. Official
+Playground `12ad7f3842791ced39f27e5ac96d066bbe361653` supplies Go1/G1 native
+sim2sim scripts, ONNX policies, MJCF and sensors (Apache-2.0). Menagerie
+`f3b6013629c7b94f8ee93fd977b161fa8350f9bc` supplies Go1/G1 meshes and licenses.
+Source lock: `configs/ground_robot_sources.json`. Download manifests retain
+original Git blobs and SHA-256; source bytes remain unmodified. Controller
+adaptations retain original copyright/Apache-2.0 in
+`controllers/NOTICE.playground`. Other pipeline code is first-party.
+
+Go1 explicitly selects the official feet-only **flat** scene instead of the
+native viewer's rough-scene selection, isolating flat-ground/sand contact;
+this is not a byte-identical rough-terrain replay. G1 uses the native flat
+scene. PyMeshLab remeshing is independently checked by Open3D topology,
+intersection and sampled distance gates. No automatic arbitrary CAD exterior
+inference or walking-controller synthesis is claimed. Exact commands,
+failures, parameters and outputs: `GROUND_RFT_GUIDE.md` and the dated ledger.
+
 ## Generic RFT stage one — 2026-10-27
 
 Preserved source/control: `ccc694677461012d488cb5ad7d7e9db945b74a80`.

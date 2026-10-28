@@ -1,0 +1,26 @@
+schema_version: 1
+model: ../../third_party/robot_assets/playground/mujoco_playground/_src/locomotion/go1/xmls/scene_mjx_feetonly_flat_terrain.xml
+asset_dirs:
+  - ../../third_party/robot_assets/playground/mujoco_playground/_src/locomotion/go1/xmls
+  - ../../third_party/robot_assets/mujoco_menagerie/unitree_go1/assets
+initial_keyframe: home
+root_body: trunk
+support_geoms: [floor]
+sand_height: 0.0
+timestep: 0.0005
+upstream_sim_timestep: 0.004
+controller:
+  type: playground_onnx
+  family: go1
+  policy: ../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/go1_policy.onnx
+  control_dt: 0.02
+  command: [0.4, 0.0, 0.0]
+remesh: {method: isotropic, target_edge_m: 0.008, max_deviation_m: 0.001, iterations: 5}
+geometry_status: upstream foot collision proxies only; not whole-robot exterior or calibrated sand
+surfaces:
+  - {id: FR_foot, geom: FR, body: FR_calf, group: front_right}
+  - {id: FL_foot, geom: FL, body: FL_calf, group: front_left}
+  - {id: RR_foot, geom: RR, body: RR_calf, group: rear_right}
+  - {id: RL_foot, geom: RL, body: RL_calf, group: rear_left}
+acceptance: {minimum_upright_cosine: 0.6, minimum_root_height_m: 0.12, max_centroid_penetration_m: 0.10, minimum_forward_displacement_m: 0.2}
+camera: {distance: 1.25, elevation: -18, azimuth: 135}

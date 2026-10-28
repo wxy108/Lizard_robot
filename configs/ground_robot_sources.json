@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "maximum_download_bytes": 180000000,
+  "sources": [
+    {
+      "repository": "google-deepmind/mujoco_playground",
+      "commit": "12ad7f3842791ced39f27e5ac96d066bbe361653",
+      "destination": "third_party/robot_assets/playground",
+      "prefixes": ["mujoco_playground/_src/locomotion/go1/", "mujoco_playground/_src/locomotion/g1/"],
+      "files": ["LICENSE", "README.md", "mujoco_playground/experimental/sim2sim/README.md", "mujoco_playground/experimental/sim2sim/play_go1_joystick.py", "mujoco_playground/experimental/sim2sim/play_g1_joystick.py", "mujoco_playground/experimental/sim2sim/onnx/go1_policy.onnx", "mujoco_playground/experimental/sim2sim/onnx/g1_policy.onnx"],
+      "license": "LICENSE"
+    },
+    {
+      "repository": "google-deepmind/mujoco_menagerie",
+      "commit": "f3b6013629c7b94f8ee93fd977b161fa8350f9bc",
+      "destination": "third_party/robot_assets/mujoco_menagerie",
+      "prefixes": ["unitree_go1/", "unitree_g1/"],
+      "files": [],
+      "license": "unitree_g1/LICENSE"
+    }
+  ]
+}

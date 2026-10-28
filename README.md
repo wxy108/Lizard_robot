@@ -1,5 +1,11 @@
 # Lizard Robot V1 — MuJoCo rigid floor + granular RFT
 
+New: [audited ground-locomotion pipeline](docs/GROUND_RFT_GUIDE.md), from
+qualified/remeshed surfaces through verified RFT binding to official Go1/G1
+walking controllers and simulation. [Step-by-step decisions and failures](docs/GROUND_RFT_PIPELINE_2026-10-28.md).
+Original lizard remains the regression control; the old Panda demo is only
+interface smoke, not ground-locomotion evidence.
+
 Reproducible lizard-robot locomotion with:
 
 - the original detailed CAD model on a rigid flat floor;

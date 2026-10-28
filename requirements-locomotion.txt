@@ -1,0 +1,4 @@
+# CPU-only optional policy inference. Install --no-deps; preserve numerical pins.
+onnxruntime==1.31.1
+flatbuffers==25.12.19
+protobuf==6.33.0

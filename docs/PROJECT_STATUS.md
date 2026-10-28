@@ -10,6 +10,11 @@ and real open-source walking controllers. Panda is retained as interface
 smoke only, not relevant locomotion-generalization evidence. Work/acceptance:
 `GROUND_RFT_PIPELINE_2026-10-28.md`. Original lizard remains preserved.
 
+Implementation now includes qualification/remesh/cache/binding and official
+Go1/G1 walking adapters. Two-second development rigid/sand screens passed for
+both morphologies. These are not the clean six-second acceptance record;
+current single-entry workflow: `GROUND_RFT_GUIDE.md`.
+
 Implemented on `agent/general-rft-stage1`, source `3be21df`: generic named-body
 surface bindings, explicit units/transforms, compiled mesh/primitive inputs,
 site-free provider, private generalized-force buffers and independent control.

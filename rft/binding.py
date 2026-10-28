@@ -188,7 +188,8 @@ def primitive_mesh(geom_type, size, segments=16):
     raise ValueError(f"Unsupported robot RFT geom type: {geom_type}")
 
 
-def surface_from_geom(model, geom_id, *, surface_id=None, group="", segments=16):
+def mesh_from_geom(model, geom_id, *, segments=16):
+    """Return compiled geometry in its owning body frame, without changing it."""
     if not 0 <= geom_id < model.ngeom:
         raise ValueError(f"Invalid geom ID: {geom_id}")
     body_id = int(model.geom_bodyid[geom_id])
@@ -205,6 +206,13 @@ def surface_from_geom(model, geom_id, *, surface_id=None, group="", segments=16)
     else:
         vertices, faces = primitive_mesh(model.geom_type[geom_id], model.geom_size[geom_id], segments)
     vertices = vertices @ rotation(model.geom_quat[geom_id]).T + model.geom_pos[geom_id]
+    return vertices, faces
+
+
+def surface_from_geom(model, geom_id, *, surface_id=None, group="", segments=16):
+    vertices, faces = mesh_from_geom(model, geom_id, segments=segments)
+    body_id = int(model.geom_bodyid[geom_id])
+    body_name = mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_BODY, body_id)
     geom_name = mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_GEOM, geom_id)
     return Surface.from_mesh(surface_id or f"{body_name}/geom_{geom_id}", body_name,
                              vertices, faces, group=group or body_name,

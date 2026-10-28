@@ -70,3 +70,89 @@ distinct from these bounded demonstrations.
 Implementation, failures, measured results and publication anchors are appended
 below as they occur. Raw runs belong to `outputs/ground_rft/`; compact evidence
 belongs to `docs/regressions/2026-10-28-ground-rft/`.
+
+### S2 / pinned sources and environment
+
+Installer verified 116 original blobs / 57,190,087 selected bytes from
+Playground `12ad7f3842791ced39f27e5ac96d066bbe361653` and Menagerie
+`f3b6013629c7b94f8ee93fd977b161fa8350f9bc`; existing Go1 assets reused.
+Manifest/before-install inventory:
+`outputs/general_rft/ground_install_20261028_000238_266964/`.
+Initial ONNX-only `--no-deps` installation exposed missing flatbuffers and
+protobuf via `pip check`. Optional requirements now explicitly pin ONNX
+Runtime 1.31.1, flatbuffers 25.12.19, protobuf 6.33.0; final `pip check` passes.
+No numerical pin or IsaacLab change. Before/after inventory retained.
+
+### S3 / mesh qualification, remesh and persistent binding
+
+`rft/geometry.py`: explicit units, exact STL welding, closed single-shell
+topology/intersection/positive-volume gates, bounded isotropic remesh and
+independent two-way sampled deviation. No arbitrary CAD Poisson reconstruction.
+`rft/pipeline.py`: explicit ownership, same-body duplicate/intersection/
+containment rejection, persistent verified bundle, recomputed quadrature,
+compiled identity, and three-pose native position/Jacobian checks.
+`rft/binding.py` only exposes its existing compiled geometry extraction;
+its old surface API retains the same transformations/mathematics.
+
+Observed failures/corrections:
+
+- Native VFS flattens names: relative/basename aliases caused duplicate
+  `hfield.png`. Keep one unambiguous basename as in upstream; a nested-include
+  unit test covers this. No source XML rewrite was used.
+- First Go1 remesh, 8 mm edge / 1 mm requested deviation, passed MeshLab's
+  local construction check but failed independent reverse distance:
+  **1.0414867 mm**, versus 0.9001426 mm in the forward direction. Refusal:
+  `outputs/ground_rft/development_go1_bundle/rejected.json`. The original
+  acceptance was NOT widened. Halved the internal construction allowance;
+  independent two-way 1 mm gate stays unchanged. Initial failure kept source
+  and metrics; persistence was then moved before final gates so future failed
+  candidates are saved too.
+- Resource guards bound triangle count before topology processing and
+  area/edge-size estimated cost before generation. These are engineering
+  guards, not proof of geometric or physical accuracy.
+
+### S4 / controllers and support conversion
+
+`controllers/playground_onnx.py` preserves official obs/action/phase but checks
+named joint/actuator/sensor mappings. CPU inference is one intra-op and one
+inter-op thread. Apache-2.0 notice retained. Standalone verifier extracts only
+the reviewed, hash-checked original OnnxController AST, replacing Gamepad with
+a fixed command and bounding threads. No upstream imports, viewer, training
+or hardware code executes. Across 20 articulated states per family, original
+and adapted observation/action arrays are **bit-identical**, including evolving
+G1 phase. Development source parity evidence:
+`outputs/general_rft/walking_controller_parity_20261028_001449_279156/`.
+
+First G1 run stopped because two explicit foot/floor contact pairs bypass
+collision masks: `outputs/ground_rft/g1_development_2s_v1/pipeline.json`.
+Corrected with an exact reviewed `disable_support_pairs` list and private
+native MjSpec deletion, sand only. Three unrelated self-contact pairs remain.
+Compiled named physical identity, geometry, mass/inertia and servos must stay
+equal. Raw name-buffer bytes are not physical identity: removing pair names
+changes that buffer. Pair conversion is logged, never disguised by global
+contact disable or extreme negative margins.
+
+### S5 / development runtime screening
+
+`rft/ground.py` and `scripts/run_ground_pipeline.py`: upstream rigid, matched
+rigid, sand; independent identical controller initialization/command. States,
+commands, forces and trace are aligned pre-step. Numerical warnings stop
+immediately; sustained upright/height/depth violations stop with partial data.
+
+| Robot / 2 s development run | Upstream rigid dx | Matched rigid dx | Sand dx | Max sand centroid depth |
+| --- | ---: | ---: | ---: | ---: |
+| Go1 `go1_development_2s_v2` | 0.671 m | 0.668 m | 0.647 m | 30.02 mm |
+| G1 `g1_development_2s_v2` | 0.850 m | 0.840 m | 0.716 m | 33.02 mm |
+
+Both used `[0.4,0,0]`, 50 Hz, zero rigid sand support. These are dirty-source
+development screens, not final acceptance. Clean-source six-second evidence
+follows. No policy retuning or material calibration was performed.
+
+### S6 / tests before final validation
+
+18 new known-answer tests plus 29 retained: area/volume, open/inward/multiple/
+crossing/duplicate shells, invalid arrays, units, resource bounds, immutable
+model identity, cache tampering/wrong model, owner/duplicate selection,
+undeclared world floor, contact-pair bypass/removal, native upward force,
+VFS nesting, obs/action/cadence. Source: `tests/test_ground_pipeline.py`.
+Clean-source validation and exact outputs are appended after execution.
