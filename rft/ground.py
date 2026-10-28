@@ -12,13 +12,16 @@ from .records import artifact_manifest, git_state, sha256, write_json
 def support_ids(model, names, *, allow_explicit_pairs=False):
     if not names:
         raise ValueError("Ground support geoms must be declared explicitly")
+    def static_or_kinematic(gid):
+        bid = int(model.geom_bodyid[gid])
+        return model.body_weldid[bid] == 0 or model.body_mocapid[bid] >= 0
     selected = set()
     for name in names:
         gid = mujoco.mj_name2id(model,mujoco.mjtObj.mjOBJ_GEOM,name)
-        if gid < 0 or model.geom_bodyid[gid] != 0:
+        if gid < 0 or not static_or_kinematic(gid):
             raise ValueError(f"Support geom must be a named world geom: {name}")
         selected.add(gid)
-    other = [i for i in range(model.ngeom) if model.geom_bodyid[i] == 0 and i not in selected
+    other = [i for i in range(model.ngeom) if static_or_kinematic(i) and i not in selected
              and (model.geom_contype[i] or model.geom_conaffinity[i])]
     if other:
         raise ValueError(f"Undeclared rigid world support/obstacles: {other}; review explicitly")
@@ -62,6 +65,10 @@ def run(model,config,config_path,surfaces,directory,*,mode,duration,dt):
     if cadence <= 0 or not np.isclose(cadence*dt,control_dt,rtol=0,atol=1e-12):
         raise ValueError("Physics timestep must divide policy period exactly")
     model.opt.timestep = dt
+    root = model.body(config["root_body"]).id
+    root_joints = range(int(model.body_jntadr[root]),int(model.body_jntadr[root]+model.body_jntnum[root]))
+    if not any(model.jnt_type[j] == mujoco.mjtJoint.mjJNT_FREE for j in root_joints):
+        raise ValueError("This walking adapter requires a floating root; fixed/planar roots need an explicit adapter")
     supports = support_ids(model,config["support_geoms"],allow_explicit_pairs=(mode == "rigid"))
     original_masks = {gid:(int(model.geom_contype[gid]),int(model.geom_conaffinity[gid])) for gid in supports}
     if mode == "sand":
@@ -77,7 +84,6 @@ def run(model,config,config_path,surfaces,directory,*,mode,duration,dt):
              control_dt=control_dt,command=controls["command"])
     provider = RFTForceProvider(model,surfaces,convention="body_frame_v1",
                  sand_height=config["sand_height"],coefficient=3.75,alpha=0.5,application="body_wrench")
-    root = model.body(config["root_body"]).id
     groups = list(dict.fromkeys(s.group for s in surfaces))
     owners = [{model.body(s.body_name).id for s in surfaces if s.group == group} for group in groups]
     criteria = config["acceptance"]

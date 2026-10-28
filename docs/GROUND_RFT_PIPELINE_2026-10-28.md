@@ -156,3 +156,37 @@ model identity, cache tampering/wrong model, owner/duplicate selection,
 undeclared world floor, contact-pair bypass/removal, native upward force,
 VFS nesting, obs/action/cadence. Source: `tests/test_ground_pipeline.py`.
 Clean-source validation and exact outputs are appended after execution.
+
+### S7 / clean six-second screen and bounded follow-up
+
+Clean source `5078fdc83d418f329bd7d54d0272fb9aaa4fb8f6`: official controller
+parity, all 47 tests, eight original mesh gates, unchanged 13,916 sites,
+original rigid smoke and full six-second lizard regression passed. Baseline
+again: dx 217.7 mm, dy -120.8 mm, peak total/site 86.629/0.600 N, no positive
+active-power steps. Complete log:
+`outputs/ground_rft/final_verification_5078fdc.log`.
+
+Go1 `outputs/ground_rft/go1_clean_6s_5078fdc`: all three six-second scenarios
+passed; dx upstream rigid 2.185 m / matched rigid 2.142 m / sand 2.104 m.
+G1 `outputs/ground_rft/g1_clean_6s_5078fdc`: both rigid scenarios completed,
+dx 2.965 / 2.936 m, but sand **failed at 3.765 s**, despite passing its 2 s
+development screen. Root dropped to 0.264 m, upright cosine 0.415, maximum
+centroid depth 43.98 mm, zero rigid support and zero positive smoothed power.
+It was stopped by the existing 100 ms locomotion-envelope guard; not a
+numerical-warning failure and not accepted as full sand locomotion. Failure
+video, states, plots and manifests are preserved. No threshold was relaxed.
+
+One controlled follow-up changes only command vx from 0.4 to 0.2 m/s:
+`configs/robots/playground_g1_slow.yaml`. It is a diagnostic, not an adopted
+replacement of the failed 0.4 m/s case. No other policy, gain, material, mesh,
+dt or acceptance change. Stop this branch after that bounded six-second test,
+regardless of whether a favorable result is found.
+
+Read-only safety review also found the generic support inventory must include
+**world-welded fixed children and mocap bodies**, not just geom_bodyid==0.
+Corrected that guard and added nested-static/mocap floor tests. Require a
+floating root for the two audited walking-policy adapters, and unique named
+support pairs for removal. These stricter guards do not change the tested
+Go1/G1 physical configuration; the six-second Go1 run is repeated after them.
+The original lizard source/physics remains byte-identical and its full
+regression above is retained, not rerun merely for stricter generic guards.

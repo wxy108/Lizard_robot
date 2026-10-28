@@ -127,7 +127,9 @@ class PipelineTests(unittest.TestCase):
         self.assertGreater(force[2],0)
 
     def test_reviewed_pair_conversion_keeps_unrelated_pairs_and_model_identity(self):
-        xml = PROBE.replace('</mujoco>','<contact><pair name="floor_pair" geom1="floor" geom2="foot"/></contact></mujoco>')
+        xml = PROBE.replace('</body>','<geom name="other" size=".01" pos=".1 0 0"/></body>').replace('</mujoco>',
+            '<contact><pair name="floor_pair" geom1="floor" geom2="foot"/>'
+            '<pair name="self_pair" geom1="foot" geom2="other"/></contact></mujoco>')
         spec = mujoco.MjSpec.from_string(xml)
         reference = fingerprint(spec.compile())
         with self.assertRaisesRegex(ValueError,"exact reviewed names"):
@@ -135,8 +137,22 @@ class PipelineTests(unittest.TestCase):
         removed = convert_support_spec(spec,{"support_geoms":["floor"],"disable_support_pairs":["floor_pair"]})
         self.assertEqual(removed,["floor_pair"])
         compiled = spec.compile()
-        self.assertEqual(compiled.npair,0)
+        self.assertEqual(compiled.npair,1)
+        self.assertEqual(compiled.pair(0).name,"self_pair")
         self.assertEqual(reference,fingerprint(compiled))
+
+    def test_nested_fixed_body_and_mocap_ground_are_not_hidden(self):
+        for extra in ('<body name="terrain"><geom name="extra" type="plane" size="1 1 .1"/></body>',
+                      '<body name="platform" mocap="true"><geom name="extra" type="box" size="1 1 .1"/></body>'):
+            model = mujoco.MjModel.from_xml_string(PROBE.replace('<body name="robot"',extra+'<body name="robot"'))
+            with self.assertRaisesRegex(ValueError,"Undeclared rigid"):
+                support_ids(model,["floor"])
+
+    def test_unnamed_support_pair_cannot_be_silently_removed(self):
+        spec = mujoco.MjSpec.from_string(PROBE.replace('</mujoco>',
+            '<contact><pair geom1="floor" geom2="foot"/></contact></mujoco>'))
+        with self.assertRaisesRegex(ValueError,"unique named pairs"):
+            convert_support_spec(spec,{"support_geoms":["floor"],"disable_support_pairs":[""]})
 
     def test_virtual_asset_aliases_are_not_duplicated(self):
         with tempfile.TemporaryDirectory() as tmp:

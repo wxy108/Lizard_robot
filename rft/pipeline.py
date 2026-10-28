@@ -57,6 +57,8 @@ def convert_support_spec(spec, config):
     supports = set(config["support_geoms"])
     declared = set(config.get("disable_support_pairs",[]))
     pairs = [p for p in spec.pairs if p.geomname1 in supports or p.geomname2 in supports]
+    if any(not p.name for p in pairs) or len({p.name for p in pairs}) != len(pairs):
+        raise ValueError("Support pair conversion requires unique named pairs for review")
     actual = {p.name for p in pairs}
     if actual != declared:
         raise ValueError(f"Support pair conversion requires exact reviewed names: actual={sorted(actual)}, declared={sorted(declared)}")

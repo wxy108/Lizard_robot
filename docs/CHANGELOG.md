@@ -18,6 +18,13 @@ line-level record; this file explains intent and consequences.
 - Added 18 known-answer tests and optional CPU inference requirements;
   numerical pins and legacy lizard remain unchanged. Development failures and
   two-second results are recorded; clean-source validation follows.
+- Clean `5078fdc` passed the full lizard regression and all 47 tests. Go1
+  completed six seconds in rigid and sand; G1 completed rigid but sand was
+  correctly stopped at 3.765 s. Failure retained; a single lower-speed command
+  diagnostic is separate, without changing acceptance or physics parameters.
+- Hardened generic support detection for fixed descendants/mocap platforms,
+  checked floating roots, retained unrelated self-contact pairs, and refused
+  unnamed pair removal. Added two tests (49 total); final native runs follow.
 
 ## 2026-10-27 — staged robot-independent RFT binding/provider
 
