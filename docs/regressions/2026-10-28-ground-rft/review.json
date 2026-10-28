@@ -1,0 +1,3411 @@
+{
+  "review_source": {
+    "commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+    "dirty": true
+  },
+  "review_script_sha256": "c2ee6df2001a53ddc8506f32c4ceb87909a8145e0776c03db5d70fe7b8978927",
+  "runs": {
+    "go1_clean_6s_f4c0360": {
+      "raw_directory": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\ground_rft\\go1_clean_6s_f4c0360",
+      "pipeline": {
+        "source": {
+          "commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+          "dirty": false
+        },
+        "status": "passed_screen",
+        "steps": [
+          {
+            "stage": "import",
+            "source_files": [
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_flat_terrain.xml",
+                "sha256": "f89261e90ff2e92b5fcaaecd94fa6d3850c9574c2fc698cd01bfc05140056ed0"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\assets\\hfield.png",
+                "sha256": "9e2fc5b8a1979fec9fc8f9c72aa0c249aaecb5876813f739bc3a1e675450e926"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\assets\\rocky_texture.png",
+                "sha256": "7dd26e7b94d1a95d8d1e09aadaf08caeb0026b084f9cf9e6cb255e24552ebf56"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\go1_mjx.xml",
+                "sha256": "5bbda65402791a610e884ffdae46c7175502460cc5f5a0b32f93585457212514"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\go1_mjx_feetonly.xml",
+                "sha256": "c33da7ff33b33d305163b6b05fadde9430b8777ccf1db88fda2e58d9cfabf82a"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\go1_mjx_fullcollisions.xml",
+                "sha256": "d336113e3c81da50b09765387b2ac0b0b9ef1a10c03281cee1fa963aebf5e80c"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_bowl.xml",
+                "sha256": "c927bfc102c16d2c3de1cabb53609c947d0c024fda4137a6acf3d9bc0fefec8c"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_rough_terrain.xml",
+                "sha256": "0c616d95059e203aa57fc261ff874e238875f9d807f546167364dc2561a68413"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_stairs.xml",
+                "sha256": "1ea4dccdc7e64a1bbda2b14b14b9de53badb2747bc5ab05b48c77ca2adb9225d"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_flat_terrain.xml",
+                "sha256": "d3ae91615ff66d079904c626b04f0878f269a1001fda7f908c7c20ee1a6cfa28"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_fullcollisions_flat_terrain.xml",
+                "sha256": "88be0f58e6207a5c8b302a0a1740a1422a9d6a4d29ddcc2142a94efccd4a47bf"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\sensor_feet.xml",
+                "sha256": "75c4e09936f4bbc529f4c538485e493283359df7d1bf6678390a830bef9b5e13"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\sensor_fullcollision.xml",
+                "sha256": "25a980a729378a92e018d3fbf4a8f9926529e4793e2571ba19fc74ee80089695"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\calf.stl",
+                "sha256": "ad3685e132454fd64e4ca3e5089f0d812fb53958e95c14913a22e3193e9e9ed8"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\hip.stl",
+                "sha256": "b6599b9dd2751ebd87449203223f5683a6c235268b76fcc443e00e0d974a06c0"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\thigh.stl",
+                "sha256": "bbf7c0a441323088c59276dbec8a32e708a1c61f42d30a6f6775176366ea23f8"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\thigh_mirror.stl",
+                "sha256": "1a90b89de47a57cb12a2d703f6b008a6ace8a1890a381c27723296fd0d00b9d8"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\trunk.stl",
+                "sha256": "051a57995dc6f892fc9bc53cd94e9a894f3dc209fd646e94d55d764150013970"
+              }
+            ],
+            "config_sha256": "1152f925895bb73bba11b3f6e4de9c26f975a1e8966178f6b6fb9f9768a64470"
+          },
+          {
+            "stage": "prepare",
+            "surfaces": [
+              {
+                "id": "FR_foot",
+                "triangles": 312
+              },
+              {
+                "id": "FL_foot",
+                "triangles": 312
+              },
+              {
+                "id": "RR_foot",
+                "triangles": 312
+              },
+              {
+                "id": "RL_foot",
+                "triangles": 312
+              }
+            ]
+          },
+          {
+            "stage": "bind",
+            "bundle": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\ground_rft\\go1_clean_6s_f4c0360\\bundle",
+            "bundle_metadata_sha256": "87acf653627539ad4a2f9347f1334de640b7218367bf559a1985cb49859f2266",
+            "surface_count": 4
+          },
+          {
+            "stage": "binding_pose_checks",
+            "poses": 3,
+            "points_checked": 36,
+            "max_position_difference_m": 0.0,
+            "max_point_velocity_difference_m_s": 1.1102230246251565e-16,
+            "status": "passed"
+          },
+          {
+            "stage": "rigid_upstream",
+            "status": "passed_screen",
+            "termination": "completed"
+          },
+          {
+            "stage": "rigid_matched",
+            "status": "passed_screen",
+            "termination": "completed"
+          },
+          {
+            "stage": "sand",
+            "status": "passed_screen",
+            "termination": "completed"
+          }
+        ]
+      },
+      "bundle": {
+        "schema_version": 1,
+        "status": "qualified",
+        "source": {
+          "commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+          "dirty": false
+        },
+        "model_fingerprint": "244c8fcf836311b853f77aac23564513cfecaac0f95aaa8fa6abeb05eda5da23",
+        "config_sha256": "1152f925895bb73bba11b3f6e4de9c26f975a1e8966178f6b6fb9f9768a64470",
+        "sources": [
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_flat_terrain.xml",
+            "sha256": "f89261e90ff2e92b5fcaaecd94fa6d3850c9574c2fc698cd01bfc05140056ed0"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\assets\\hfield.png",
+            "sha256": "9e2fc5b8a1979fec9fc8f9c72aa0c249aaecb5876813f739bc3a1e675450e926"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\assets\\rocky_texture.png",
+            "sha256": "7dd26e7b94d1a95d8d1e09aadaf08caeb0026b084f9cf9e6cb255e24552ebf56"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\go1_mjx.xml",
+            "sha256": "5bbda65402791a610e884ffdae46c7175502460cc5f5a0b32f93585457212514"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\go1_mjx_feetonly.xml",
+            "sha256": "c33da7ff33b33d305163b6b05fadde9430b8777ccf1db88fda2e58d9cfabf82a"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\go1_mjx_fullcollisions.xml",
+            "sha256": "d336113e3c81da50b09765387b2ac0b0b9ef1a10c03281cee1fa963aebf5e80c"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_bowl.xml",
+            "sha256": "c927bfc102c16d2c3de1cabb53609c947d0c024fda4137a6acf3d9bc0fefec8c"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_rough_terrain.xml",
+            "sha256": "0c616d95059e203aa57fc261ff874e238875f9d807f546167364dc2561a68413"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_stairs.xml",
+            "sha256": "1ea4dccdc7e64a1bbda2b14b14b9de53badb2747bc5ab05b48c77ca2adb9225d"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_flat_terrain.xml",
+            "sha256": "d3ae91615ff66d079904c626b04f0878f269a1001fda7f908c7c20ee1a6cfa28"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_fullcollisions_flat_terrain.xml",
+            "sha256": "88be0f58e6207a5c8b302a0a1740a1422a9d6a4d29ddcc2142a94efccd4a47bf"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\sensor_feet.xml",
+            "sha256": "75c4e09936f4bbc529f4c538485e493283359df7d1bf6678390a830bef9b5e13"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\sensor_fullcollision.xml",
+            "sha256": "25a980a729378a92e018d3fbf4a8f9926529e4793e2571ba19fc74ee80089695"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\calf.stl",
+            "sha256": "ad3685e132454fd64e4ca3e5089f0d812fb53958e95c14913a22e3193e9e9ed8"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\hip.stl",
+            "sha256": "b6599b9dd2751ebd87449203223f5683a6c235268b76fcc443e00e0d974a06c0"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\thigh.stl",
+            "sha256": "bbf7c0a441323088c59276dbec8a32e708a1c61f42d30a6f6775176366ea23f8"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\thigh_mirror.stl",
+            "sha256": "1a90b89de47a57cb12a2d703f6b008a6ace8a1890a381c27723296fd0d00b9d8"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\trunk.stl",
+            "sha256": "051a57995dc6f892fc9bc53cd94e9a894f3dc209fd646e94d55d764150013970"
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "FR_foot",
+            "body": "FR_calf",
+            "group": "front_right",
+            "arrays": "FR_foot/surface.npz",
+            "source": {
+              "geom": "FR",
+              "compiled_body_frame": true
+            },
+            "before": {
+              "vertices": 170,
+              "triangles": 336,
+              "bbox_extent_m": [
+                0.046,
+                0.046,
+                0.045999999999999985
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                4.846716307812992e-05
+              ],
+              "area_m2": 0.006482518680988534,
+              "area_p95_p05": 2.633951187450044,
+              "centroid_spacing_p95_p05": 2.3418391455807597,
+              "edge_aspect_max": 4.135482735077558
+            },
+            "after": {
+              "vertices": 158,
+              "triangles": 312,
+              "bbox_extent_m": [
+                0.04521629400464857,
+                0.046,
+                0.045999999999999985
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                4.7489187590651155e-05
+              ],
+              "area_m2": 0.006387422503236626,
+              "area_p95_p05": 4.1695516510379225,
+              "centroid_spacing_p95_p05": 1.6769199366395169,
+              "edge_aspect_max": 2.711925776288293
+            },
+            "sampled_deviation": {
+              "candidate_to_reference": {
+                "p95_m": 0.0003250129710067995,
+                "max_sampled_m": 0.00047312540118582547
+              },
+              "reference_to_candidate": {
+                "p95_m": 0.0005219693121034652,
+                "max_sampled_m": 0.000669069355353713
+              }
+            },
+            "method": "isotropic",
+            "recipe": {
+              "method": "isotropic",
+              "target_edge_m": 0.008,
+              "max_deviation_m": 0.001,
+              "iterations": 5
+            },
+            "construction_deviation_margin": 0.5,
+            "effective_limits": {
+              "area_p95_p05": 15,
+              "centroid_spacing_p95_p05": 10,
+              "edge_aspect_max": 12,
+              "max_triangles": 20000
+            }
+          },
+          {
+            "id": "FL_foot",
+            "body": "FL_calf",
+            "group": "front_left",
+            "arrays": "FL_foot/surface.npz",
+            "source": {
+              "geom": "FL",
+              "compiled_body_frame": true
+            },
+            "before": {
+              "vertices": 170,
+              "triangles": 336,
+              "bbox_extent_m": [
+                0.046,
+                0.046,
+                0.045999999999999985
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                4.846716307812992e-05
+              ],
+              "area_m2": 0.006482518680988534,
+              "area_p95_p05": 2.633951187450044,
+              "centroid_spacing_p95_p05": 2.3418391455807597,
+              "edge_aspect_max": 4.135482735077558
+            },
+            "after": {
+              "vertices": 158,
+              "triangles": 312,
+              "bbox_extent_m": [
+                0.04521629400464857,
+                0.046,
+                0.045999999999999985
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                4.7489187590651155e-05
+              ],
+              "area_m2": 0.006387422503236626,
+              "area_p95_p05": 4.1695516510379225,
+              "centroid_spacing_p95_p05": 1.6769199366395169,
+              "edge_aspect_max": 2.711925776288293
+            },
+            "sampled_deviation": {
+              "candidate_to_reference": {
+                "p95_m": 0.0003250129710067995,
+                "max_sampled_m": 0.00047312540118582547
+              },
+              "reference_to_candidate": {
+                "p95_m": 0.0005219693121034652,
+                "max_sampled_m": 0.000669069355353713
+              }
+            },
+            "method": "isotropic",
+            "recipe": {
+              "method": "isotropic",
+              "target_edge_m": 0.008,
+              "max_deviation_m": 0.001,
+              "iterations": 5
+            },
+            "construction_deviation_margin": 0.5,
+            "effective_limits": {
+              "area_p95_p05": 15,
+              "centroid_spacing_p95_p05": 10,
+              "edge_aspect_max": 12,
+              "max_triangles": 20000
+            }
+          },
+          {
+            "id": "RR_foot",
+            "body": "RR_calf",
+            "group": "rear_right",
+            "arrays": "RR_foot/surface.npz",
+            "source": {
+              "geom": "RR",
+              "compiled_body_frame": true
+            },
+            "before": {
+              "vertices": 170,
+              "triangles": 336,
+              "bbox_extent_m": [
+                0.046,
+                0.046,
+                0.045999999999999985
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                4.846716307812992e-05
+              ],
+              "area_m2": 0.006482518680988534,
+              "area_p95_p05": 2.633951187450044,
+              "centroid_spacing_p95_p05": 2.3418391455807597,
+              "edge_aspect_max": 4.135482735077558
+            },
+            "after": {
+              "vertices": 158,
+              "triangles": 312,
+              "bbox_extent_m": [
+                0.04521629400464857,
+                0.046,
+                0.045999999999999985
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                4.7489187590651155e-05
+              ],
+              "area_m2": 0.006387422503236626,
+              "area_p95_p05": 4.1695516510379225,
+              "centroid_spacing_p95_p05": 1.6769199366395169,
+              "edge_aspect_max": 2.711925776288293
+            },
+            "sampled_deviation": {
+              "candidate_to_reference": {
+                "p95_m": 0.0003250129710067995,
+                "max_sampled_m": 0.00047312540118582547
+              },
+              "reference_to_candidate": {
+                "p95_m": 0.0005219693121034652,
+                "max_sampled_m": 0.000669069355353713
+              }
+            },
+            "method": "isotropic",
+            "recipe": {
+              "method": "isotropic",
+              "target_edge_m": 0.008,
+              "max_deviation_m": 0.001,
+              "iterations": 5
+            },
+            "construction_deviation_margin": 0.5,
+            "effective_limits": {
+              "area_p95_p05": 15,
+              "centroid_spacing_p95_p05": 10,
+              "edge_aspect_max": 12,
+              "max_triangles": 20000
+            }
+          },
+          {
+            "id": "RL_foot",
+            "body": "RL_calf",
+            "group": "rear_left",
+            "arrays": "RL_foot/surface.npz",
+            "source": {
+              "geom": "RL",
+              "compiled_body_frame": true
+            },
+            "before": {
+              "vertices": 170,
+              "triangles": 336,
+              "bbox_extent_m": [
+                0.046,
+                0.046,
+                0.045999999999999985
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                4.846716307812992e-05
+              ],
+              "area_m2": 0.006482518680988534,
+              "area_p95_p05": 2.633951187450044,
+              "centroid_spacing_p95_p05": 2.3418391455807597,
+              "edge_aspect_max": 4.135482735077558
+            },
+            "after": {
+              "vertices": 158,
+              "triangles": 312,
+              "bbox_extent_m": [
+                0.04521629400464857,
+                0.046,
+                0.045999999999999985
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                4.7489187590651155e-05
+              ],
+              "area_m2": 0.006387422503236626,
+              "area_p95_p05": 4.1695516510379225,
+              "centroid_spacing_p95_p05": 1.6769199366395169,
+              "edge_aspect_max": 2.711925776288293
+            },
+            "sampled_deviation": {
+              "candidate_to_reference": {
+                "p95_m": 0.0003250129710067995,
+                "max_sampled_m": 0.00047312540118582547
+              },
+              "reference_to_candidate": {
+                "p95_m": 0.0005219693121034652,
+                "max_sampled_m": 0.000669069355353713
+              }
+            },
+            "method": "isotropic",
+            "recipe": {
+              "method": "isotropic",
+              "target_edge_m": 0.008,
+              "max_deviation_m": 0.001,
+              "iterations": 5
+            },
+            "construction_deviation_margin": 0.5,
+            "effective_limits": {
+              "area_p95_p05": 15,
+              "centroid_spacing_p95_p05": 10,
+              "edge_aspect_max": 12,
+              "max_triangles": 20000
+            }
+          }
+        ],
+        "versions": {
+          "mujoco": "3.9.0",
+          "numpy": "1.26.4",
+          "open3d": "0.19.0",
+          "pymeshlab": "2025.7.post1"
+        }
+      },
+      "binding_checks": {
+        "poses": 3,
+        "points_checked": 36,
+        "max_position_difference_m": 0.0,
+        "max_point_velocity_difference_m_s": 1.1102230246251565e-16,
+        "status": "passed"
+      },
+      "original_manifest_sha256": "0b0862ecc586cb68e1d2a5e55b22632be2c0262cb365e01030bc395cce80e75d",
+      "artifacts": {
+        "binding_checks.json": {
+          "bytes": 169,
+          "sha256": "602907af5bad298354637d6fd1689e0b541c9c8c1b25d86115becfb77fa99754"
+        },
+        "bundle/bundle.json": {
+          "bytes": 14820,
+          "sha256": "87acf653627539ad4a2f9347f1334de640b7218367bf559a1985cb49859f2266"
+        },
+        "bundle/FL_foot/prepared.ply": {
+          "bytes": 8051,
+          "sha256": "ab6dc30e55ad838cec90703a34b026b46f984648f49541b8e3ff4fa501e35d3e"
+        },
+        "bundle/FL_foot/source.ply": {
+          "bytes": 8651,
+          "sha256": "d45823f6816e24f463b7c5e54e76ec8252ddaa62028dd79ef460309ac1bce416"
+        },
+        "bundle/FL_foot/surface.npz": {
+          "bytes": 14122,
+          "sha256": "617ac8f6ba43ccb568a3294b8b63b8a3526df6453accbc8fdabccb5b893800b3"
+        },
+        "bundle/FR_foot/prepared.ply": {
+          "bytes": 8051,
+          "sha256": "ab6dc30e55ad838cec90703a34b026b46f984648f49541b8e3ff4fa501e35d3e"
+        },
+        "bundle/FR_foot/source.ply": {
+          "bytes": 8651,
+          "sha256": "d45823f6816e24f463b7c5e54e76ec8252ddaa62028dd79ef460309ac1bce416"
+        },
+        "bundle/FR_foot/surface.npz": {
+          "bytes": 14122,
+          "sha256": "617ac8f6ba43ccb568a3294b8b63b8a3526df6453accbc8fdabccb5b893800b3"
+        },
+        "bundle/RL_foot/prepared.ply": {
+          "bytes": 8051,
+          "sha256": "ab6dc30e55ad838cec90703a34b026b46f984648f49541b8e3ff4fa501e35d3e"
+        },
+        "bundle/RL_foot/source.ply": {
+          "bytes": 8651,
+          "sha256": "d45823f6816e24f463b7c5e54e76ec8252ddaa62028dd79ef460309ac1bce416"
+        },
+        "bundle/RL_foot/surface.npz": {
+          "bytes": 14122,
+          "sha256": "617ac8f6ba43ccb568a3294b8b63b8a3526df6453accbc8fdabccb5b893800b3"
+        },
+        "bundle/RR_foot/prepared.ply": {
+          "bytes": 8051,
+          "sha256": "ab6dc30e55ad838cec90703a34b026b46f984648f49541b8e3ff4fa501e35d3e"
+        },
+        "bundle/RR_foot/source.ply": {
+          "bytes": 8651,
+          "sha256": "d45823f6816e24f463b7c5e54e76ec8252ddaa62028dd79ef460309ac1bce416"
+        },
+        "bundle/RR_foot/surface.npz": {
+          "bytes": 14122,
+          "sha256": "617ac8f6ba43ccb568a3294b8b63b8a3526df6453accbc8fdabccb5b893800b3"
+        },
+        "inventory.json": {
+          "bytes": 23106,
+          "sha256": "1dd4ad7d124edee04d29fd446cad52861af03ec2bfcfc540470d3957702323d5"
+        },
+        "pipeline.json": {
+          "bytes": 6440,
+          "sha256": "e048857fb3505acd5f1c543816845baaf9190c7720a8dca4c9b98e6639381ca4"
+        },
+        "resolved_config.json": {
+          "bytes": 1805,
+          "sha256": "a853e5549e5e2db8a1fe6d55a4fd29529d2446e0002da7073e624e6cb5e77abc"
+        },
+        "results.json": {
+          "bytes": 8238,
+          "sha256": "2a5f36d9081526bcfb913e3db1a79f6bd63ab24387e2fc78e52c2b190bac734a"
+        },
+        "rigid_matched/diagnostics.png": {
+          "bytes": 82864,
+          "sha256": "b7fe2aa61b88f9558078aad692a7b2afe9849fc47d82ad5abcd3ac4ee26d5363"
+        },
+        "rigid_matched/locomotion.mp4": {
+          "bytes": 656829,
+          "sha256": "695130041a0d8b5d2c51f073cc5bae683ad7e8a1b1d96ab77c0613987ab7f5b9"
+        },
+        "rigid_matched/summary.json": {
+          "bytes": 2586,
+          "sha256": "271c90c215441ebd9bb102961e8d6b8ee4300d3fb4d43ea9d4f51e2684f8990e"
+        },
+        "rigid_matched/trajectory.npz": {
+          "bytes": 4259301,
+          "sha256": "a68354dfaafdfd5bfe186b5c14815e0ae5727a96b4315a7aa923596fb32d08a8"
+        },
+        "rigid_upstream/diagnostics.png": {
+          "bytes": 93910,
+          "sha256": "eb4875e7fa3bdc5e8f604db9850ea6b4e597dbb32fabd8b33f0523a8df4a77e7"
+        },
+        "rigid_upstream/locomotion.mp4": {
+          "bytes": 661748,
+          "sha256": "8dc5e092cc38f5be33811696bebfbb85c47a21bfada83c8eaa44196d505166aa"
+        },
+        "rigid_upstream/summary.json": {
+          "bytes": 2582,
+          "sha256": "a1c522469a0a90ed3630c5d9c1f6a93e0a85309bafc2a0910f35bb6ccb7cac46"
+        },
+        "rigid_upstream/trajectory.npz": {
+          "bytes": 559354,
+          "sha256": "53cbc3a6aedfe65d9dfc253d3973f653a401bbee21924c260429b1c14eed474f"
+        },
+        "sand/diagnostics.png": {
+          "bytes": 147522,
+          "sha256": "3c8705171d0846b339693535fa33f3a2d2e39928b756ca169c78d6ec299041c2"
+        },
+        "sand/locomotion.mp4": {
+          "bytes": 380654,
+          "sha256": "a2250ae3e4198376d2128761d977ef3071e720abe666fc46b9ed963696f18691"
+        },
+        "sand/summary.json": {
+          "bytes": 2441,
+          "sha256": "914e554a7f043b8c1422f27f1e8f7a72350ee7214e3fe9fa0e1e7202cca5318f"
+        },
+        "sand/trajectory.npz": {
+          "bytes": 5750499,
+          "sha256": "79ffd2a6366abb630897a41823134a776f615b530a9e2c5d66fc094ea0292de4"
+        }
+      },
+      "scenarios": {
+        "rigid_upstream": {
+          "summary": {
+            "source": {
+              "commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+              "dirty": false
+            },
+            "status": "passed_screen",
+            "termination": "completed",
+            "requested_duration_s": 6.0,
+            "recorded_duration_s": 6.0,
+            "physics_timestep_s": 0.004,
+            "control_dt_s": 0.02,
+            "policy_updates": 300,
+            "first_policy_update_pre_step_time_s": 0.016,
+            "mode": "rigid",
+            "integrator": 0,
+            "effective_controller": {
+              "type": "playground_onnx",
+              "family": "go1",
+              "policy": "../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/go1_policy.onnx",
+              "control_dt": 0.02,
+              "command": [
+                0.4,
+                0.0,
+                0.0
+              ]
+            },
+            "support_conversion": {
+              "removed_explicit_pairs": []
+            },
+            "effective_ground_masks_during_simulation": {
+              "floor": [
+                1,
+                0
+              ]
+            },
+            "policy_sha256": "386cde6a1eac679e2f2a313ade2b395d9f26905b151ee3b019c2c4163d49b6f2",
+            "model_mass_kg": 12.743448,
+            "geometry_status": "upstream foot collision proxies only; not whole-robot exterior or calibrated sand",
+            "triangle_count": 1248,
+            "rft_convention": "body_frame_v1",
+            "coefficient": 3.75,
+            "alpha": 0.5,
+            "acceptance": {
+              "minimum_upright_cosine": 0.6,
+              "minimum_root_height_m": 0.12,
+              "max_centroid_penetration_m": 0.1,
+              "minimum_forward_displacement_m": 0.2
+            },
+            "com_displacement_m": [
+              2.185136279717232,
+              0.10941732928076794,
+              0.024628210745280932
+            ],
+            "min_root_height_m": 0.278,
+            "min_upright_cosine": 0.9993158785733592,
+            "max_centroid_penetration_m": 0.0,
+            "max_total_rft_force_N": 0.0,
+            "max_rigid_support_force_N": 7774.657943958215,
+            "rigid_support_contact_steps": 1477,
+            "rigid_contact_pairs": [
+              [
+                "floor",
+                "FL"
+              ],
+              [
+                "floor",
+                "FR"
+              ],
+              [
+                "floor",
+                "RL"
+              ],
+              [
+                "floor",
+                "RR"
+              ]
+            ],
+            "rft_active_steps": 0,
+            "max_smoothed_rft_power_W": 0.0,
+            "positive_smoothed_power_steps": 0,
+            "trace_columns": [
+              "time_s",
+              "com_x",
+              "com_y",
+              "com_z",
+              "root_z",
+              "upright_cosine",
+              "penetration_m",
+              "rft_fx",
+              "rft_fy",
+              "rft_fz",
+              "rigid_fx",
+              "rigid_fy",
+              "rigid_fz",
+              "rft_power_W",
+              "rigid_contact_count",
+              "rigid_min_distance_m"
+            ],
+            "state_alignment": "All rows are pre-step, force/control at same qpos/qvel/time; final state stored separately",
+            "boundary": "Bounded engineering screen, not material calibration or guaranteed policy transfer",
+            "video_frames": 121
+          },
+          "derived": {
+            "mean_forward_speed_m_s": 0.364189379952872,
+            "desired_forward_speed_m_s": 0.4,
+            "mean_forward_speed_bias_m_s": -0.03581062004712804,
+            "relative_mean_forward_speed_bias": -0.0895265501178201,
+            "component_active_duty": {
+              "front_right": 0.58,
+              "front_left": 0.55,
+              "rear_right": 0.496,
+              "rear_left": 0.5793333333333334
+            }
+          },
+          "video": {
+            "frames_decoded": 121,
+            "fps": 20.0,
+            "encoded_duration_s": 6.05,
+            "sha256": "8dc5e092cc38f5be33811696bebfbb85c47a21bfada83c8eaa44196d505166aa"
+          }
+        },
+        "rigid_matched": {
+          "summary": {
+            "source": {
+              "commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+              "dirty": false
+            },
+            "status": "passed_screen",
+            "termination": "completed",
+            "requested_duration_s": 6.0,
+            "recorded_duration_s": 6.0,
+            "physics_timestep_s": 0.0005,
+            "control_dt_s": 0.02,
+            "policy_updates": 300,
+            "first_policy_update_pre_step_time_s": 0.0195,
+            "mode": "rigid",
+            "integrator": 0,
+            "effective_controller": {
+              "type": "playground_onnx",
+              "family": "go1",
+              "policy": "../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/go1_policy.onnx",
+              "control_dt": 0.02,
+              "command": [
+                0.4,
+                0.0,
+                0.0
+              ]
+            },
+            "support_conversion": {
+              "removed_explicit_pairs": []
+            },
+            "effective_ground_masks_during_simulation": {
+              "floor": [
+                1,
+                0
+              ]
+            },
+            "policy_sha256": "386cde6a1eac679e2f2a313ade2b395d9f26905b151ee3b019c2c4163d49b6f2",
+            "model_mass_kg": 12.743448,
+            "geometry_status": "upstream foot collision proxies only; not whole-robot exterior or calibrated sand",
+            "triangle_count": 1248,
+            "rft_convention": "body_frame_v1",
+            "coefficient": 3.75,
+            "alpha": 0.5,
+            "acceptance": {
+              "minimum_upright_cosine": 0.6,
+              "minimum_root_height_m": 0.12,
+              "max_centroid_penetration_m": 0.1,
+              "minimum_forward_displacement_m": 0.2
+            },
+            "com_displacement_m": [
+              2.1421363472779884,
+              0.16117207243397685,
+              0.019570116469280807
+            ],
+            "min_root_height_m": 0.278,
+            "min_upright_cosine": 0.9994245634631742,
+            "max_centroid_penetration_m": 0.0,
+            "max_total_rft_force_N": 0.0,
+            "max_rigid_support_force_N": 8521.068686641438,
+            "rigid_support_contact_steps": 11878,
+            "rigid_contact_pairs": [
+              [
+                "floor",
+                "FL"
+              ],
+              [
+                "floor",
+                "FR"
+              ],
+              [
+                "floor",
+                "RL"
+              ],
+              [
+                "floor",
+                "RR"
+              ]
+            ],
+            "rft_active_steps": 0,
+            "max_smoothed_rft_power_W": 0.0,
+            "positive_smoothed_power_steps": 0,
+            "trace_columns": [
+              "time_s",
+              "com_x",
+              "com_y",
+              "com_z",
+              "root_z",
+              "upright_cosine",
+              "penetration_m",
+              "rft_fx",
+              "rft_fy",
+              "rft_fz",
+              "rigid_fx",
+              "rigid_fy",
+              "rigid_fz",
+              "rft_power_W",
+              "rigid_contact_count",
+              "rigid_min_distance_m"
+            ],
+            "state_alignment": "All rows are pre-step, force/control at same qpos/qvel/time; final state stored separately",
+            "boundary": "Bounded engineering screen, not material calibration or guaranteed policy transfer",
+            "video_frames": 121
+          },
+          "derived": {
+            "mean_forward_speed_m_s": 0.3570227245463314,
+            "desired_forward_speed_m_s": 0.4,
+            "mean_forward_speed_bias_m_s": -0.04297727545366864,
+            "relative_mean_forward_speed_bias": -0.1074431886341716,
+            "component_active_duty": {
+              "front_right": 0.566,
+              "front_left": 0.5438333333333333,
+              "rear_right": 0.4955833333333333,
+              "rear_left": 0.5726666666666667
+            }
+          },
+          "video": {
+            "frames_decoded": 121,
+            "fps": 20.0,
+            "encoded_duration_s": 6.05,
+            "sha256": "695130041a0d8b5d2c51f073cc5bae683ad7e8a1b1d96ab77c0613987ab7f5b9"
+          }
+        },
+        "sand": {
+          "summary": {
+            "source": {
+              "commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+              "dirty": false
+            },
+            "status": "passed_screen",
+            "termination": "completed",
+            "requested_duration_s": 6.0,
+            "recorded_duration_s": 6.0,
+            "physics_timestep_s": 0.0005,
+            "control_dt_s": 0.02,
+            "policy_updates": 300,
+            "first_policy_update_pre_step_time_s": 0.0195,
+            "mode": "sand",
+            "integrator": 0,
+            "effective_controller": {
+              "type": "playground_onnx",
+              "family": "go1",
+              "policy": "../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/go1_policy.onnx",
+              "control_dt": 0.02,
+              "command": [
+                0.4,
+                0.0,
+                0.0
+              ]
+            },
+            "support_conversion": {
+              "removed_explicit_pairs": []
+            },
+            "effective_ground_masks_during_simulation": {
+              "floor": [
+                0,
+                0
+              ]
+            },
+            "policy_sha256": "386cde6a1eac679e2f2a313ade2b395d9f26905b151ee3b019c2c4163d49b6f2",
+            "model_mass_kg": 12.743448,
+            "geometry_status": "upstream foot collision proxies only; not whole-robot exterior or calibrated sand",
+            "triangle_count": 1248,
+            "rft_convention": "body_frame_v1",
+            "coefficient": 3.75,
+            "alpha": 0.5,
+            "acceptance": {
+              "minimum_upright_cosine": 0.6,
+              "minimum_root_height_m": 0.12,
+              "max_centroid_penetration_m": 0.1,
+              "minimum_forward_displacement_m": 0.2
+            },
+            "com_displacement_m": [
+              2.104189641280186,
+              0.3222390989264367,
+              -0.0051922871868175235
+            ],
+            "min_root_height_m": 0.2699806367025633,
+            "min_upright_cosine": 0.9995527729784334,
+            "max_centroid_penetration_m": 0.031001892687273325,
+            "max_total_rft_force_N": 237.46003210971503,
+            "max_rigid_support_force_N": 0.0,
+            "rigid_support_contact_steps": 0,
+            "rigid_contact_pairs": [],
+            "rft_active_steps": 11999,
+            "max_smoothed_rft_power_W": 0.0,
+            "positive_smoothed_power_steps": 0,
+            "trace_columns": [
+              "time_s",
+              "com_x",
+              "com_y",
+              "com_z",
+              "root_z",
+              "upright_cosine",
+              "penetration_m",
+              "rft_fx",
+              "rft_fy",
+              "rft_fz",
+              "rigid_fx",
+              "rigid_fy",
+              "rigid_fz",
+              "rft_power_W",
+              "rigid_contact_count",
+              "rigid_min_distance_m"
+            ],
+            "state_alignment": "All rows are pre-step, force/control at same qpos/qvel/time; final state stored separately",
+            "boundary": "Bounded engineering screen, not material calibration or guaranteed policy transfer",
+            "video_frames": 121
+          },
+          "derived": {
+            "mean_forward_speed_m_s": 0.3506982735466977,
+            "desired_forward_speed_m_s": 0.4,
+            "mean_forward_speed_bias_m_s": -0.04930172645330233,
+            "relative_mean_forward_speed_bias": -0.12325431613325583,
+            "component_active_duty": {
+              "front_right": 0.7541666666666667,
+              "front_left": 0.6880833333333334,
+              "rear_right": 0.6100833333333333,
+              "rear_left": 0.7100833333333333
+            }
+          },
+          "video": {
+            "frames_decoded": 121,
+            "fps": 20.0,
+            "encoded_duration_s": 6.05,
+            "sha256": "a2250ae3e4198376d2128761d977ef3071e720abe666fc46b9ed963696f18691"
+          }
+        }
+      }
+    },
+    "g1_clean_6s_5078fdc": {
+      "raw_directory": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\ground_rft\\g1_clean_6s_5078fdc",
+      "pipeline": {
+        "source": {
+          "commit": "5078fdc83d418f329bd7d54d0272fb9aaa4fb8f6",
+          "dirty": false
+        },
+        "status": "sand_transfer_failed",
+        "steps": [
+          {
+            "stage": "import",
+            "source_files": [
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\scene_mjx_feetonly_flat_terrain.xml",
+                "sha256": "a05233736c914984859fc0c94161036363a8972760699a59471fdd2aecb0bf2e"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\assets\\hfield.png",
+                "sha256": "9e2fc5b8a1979fec9fc8f9c72aa0c249aaecb5876813f739bc3a1e675450e926"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\assets\\rocky_texture.png",
+                "sha256": "7dd26e7b94d1a95d8d1e09aadaf08caeb0026b084f9cf9e6cb255e24552ebf56"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\g1_mjx_feetonly.xml",
+                "sha256": "fae73d06ae6957ab38e59c67cac5b3665db6de27cd741602dd93951e3f82b72c"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\g1_mjx_feetonly_restricted.xml",
+                "sha256": "da00ee0169cc4e9def58f0813fc8ac371e91f3caff78511f4c488a4ebae277e9"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\scene_mjx_feetonly.xml",
+                "sha256": "788a0dd038ac3842dd01dba9d92e824bfbdcb39e909a467de11393e661c177d5"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\scene_mjx_feetonly_rough_terrain.xml",
+                "sha256": "ba4759b49f03ff122f142624333393ba42714091c93d1fe131b253483885753c"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\sensor.xml",
+                "sha256": "9f290a8614700c4fe51323208bf91594d960bcf5622806aeda6f9722d754e56a"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\head_link.STL",
+                "sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_ankle_pitch_link.STL",
+                "sha256": "d49e3abc6f5b12e532062cd575b87b5ef40cd2a3fc18f54a1ca5bba4f773d51d"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_ankle_roll_link.STL",
+                "sha256": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_elbow_link.STL",
+                "sha256": "fa752198accd104d5c4c3a01382e45165b944fbbc5acce085059223324e5bed3"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_index_0_link.STL",
+                "sha256": "6b35f2f77211d5a366f0b9a4e47c4ee35e536731266f1a34e9efa12db579b892"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_index_1_link.STL",
+                "sha256": "9e315ebc8a7a0cb98e033985b586b20d81cf8aa761181ae61ce56fcb14077a06"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_middle_0_link.STL",
+                "sha256": "6b35f2f77211d5a366f0b9a4e47c4ee35e536731266f1a34e9efa12db579b892"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_middle_1_link.STL",
+                "sha256": "9e315ebc8a7a0cb98e033985b586b20d81cf8aa761181ae61ce56fcb14077a06"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_palm_link.STL",
+                "sha256": "23a486b75bd78a9bf03cec25d84d87f97f3dae038cf21a743b6d469b337e4004"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_thumb_0_link.STL",
+                "sha256": "a90c721661c0622685488a3c74d1e122c7da89242d3a1daef75edb83422d05e0"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_thumb_1_link.STL",
+                "sha256": "445c54a45bc13ce36001556f66bc0f49c83cb40321205ae4d676bb2874325684"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_thumb_2_link.STL",
+                "sha256": "3d8dbe5085acfc213d21aa8b0782e89cd79084e9678f3a85fc7b04a86b029db5"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hip_pitch_link.STL",
+                "sha256": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hip_roll_link.STL",
+                "sha256": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hip_yaw_link.STL",
+                "sha256": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_knee_link.STL",
+                "sha256": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_rubber_hand.STL",
+                "sha256": "cff2221a690fa69303f61fce68f2d155c1517b52efb6ca9262dd56e0bc6e70fe"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_shoulder_pitch_link.STL",
+                "sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_shoulder_roll_link.STL",
+                "sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_shoulder_yaw_link.STL",
+                "sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_wrist_pitch_link.STL",
+                "sha256": "b251d8e05047f695d0f536cd78c11973cfa4e78d08cfe82759336cc3471de3a9"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_wrist_roll_link.STL",
+                "sha256": "edc387c9a0ba8c2237e9b296d32531426fabeb6f53e58df45c76106bca74148c"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_wrist_yaw_link.STL",
+                "sha256": "83f8fb3a726bf9613d65dd14f0f447cb918c3c95b3938042a0c9c09749267d3b"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\logo_link.STL",
+                "sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\pelvis.STL",
+                "sha256": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\pelvis_contour_link.STL",
+                "sha256": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_ankle_pitch_link.STL",
+                "sha256": "15be426539ec1be70246d4d82a168806db64a41301af8b35c197a33348c787a9"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_ankle_roll_link.STL",
+                "sha256": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_elbow_link.STL",
+                "sha256": "1be925d7aa268bb8fddf5362b9173066890c7d32092c05638608126e59d1e2ab"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_index_0_link.STL",
+                "sha256": "12ab4300c95e437e834f9aef772b3b431c671bf34338930b52ad11aef73bbd0d"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_index_1_link.STL",
+                "sha256": "c9c34efce4563cacdcfd29fc838a982976d40f5442c71219811dcbbf3923a33d"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_middle_0_link.STL",
+                "sha256": "12ab4300c95e437e834f9aef772b3b431c671bf34338930b52ad11aef73bbd0d"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_middle_1_link.STL",
+                "sha256": "c9c34efce4563cacdcfd29fc838a982976d40f5442c71219811dcbbf3923a33d"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_palm_link.STL",
+                "sha256": "86c0b231cc44477d64a6493e5a427ba16617a00738112dd187c652675b086fb9"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_thumb_0_link.STL",
+                "sha256": "544298d0ea1088f5b276a10cc6a6a9e533efdd91594955fdc956c46211d07f83"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_thumb_1_link.STL",
+                "sha256": "0a9a820da8dd10f298778b714f1364216e8a5976f4fd3a05689ea26327d44bf6"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_thumb_2_link.STL",
+                "sha256": "3f1bfb37668e8f61801c8d25f171fa1949e08666be86c67acad7e0079937cc45"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hip_pitch_link.STL",
+                "sha256": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hip_roll_link.STL",
+                "sha256": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hip_yaw_link.STL",
+                "sha256": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_knee_link.STL",
+                "sha256": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_rubber_hand.STL",
+                "sha256": "99533b778bca6246144fa511bb9d4e555e075c641f2a0251e04372869cd99d67"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_shoulder_pitch_link.STL",
+                "sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_shoulder_roll_link.STL",
+                "sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_shoulder_yaw_link.STL",
+                "sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_wrist_pitch_link.STL",
+                "sha256": "d22f8f3b3127f15a63e5be1ee273cd5075786c3142f1c3d9f76cbf43d2a26477"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_wrist_roll_link.STL",
+                "sha256": "a7ee9212ff5b94d6cb7f52bb1bbf3f352194d5b598acff74f4c77d340c5b344f"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_wrist_yaw_link.STL",
+                "sha256": "bc9dece2d12509707e0057ba2e48df8f3d56db0c79410212963a25e8a50f61a6"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\torso_link_rev_1_0.STL",
+                "sha256": "11ddb46f2098efbbd8816b1d65893632d8e78be936376c7cdcd6771899ccc723"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\waist_roll_link_rev_1_0.STL",
+                "sha256": "b67c347a05abc3e8ddae600d98a082bee273bb39f8e651647708b0a7140a8a97"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\waist_yaw_link_rev_1_0.STL",
+                "sha256": "ec6db442b11f25eed898b5add07940c85d804f300de24dcbd264ccd8be7d554c"
+              }
+            ],
+            "config_sha256": "16689619a47f7b58ee088a25e898a9972bf373fdfca4809dec711bdaebdf5f2b"
+          },
+          {
+            "stage": "prepare",
+            "surfaces": [
+              {
+                "id": "left_foot",
+                "triangles": 486
+              },
+              {
+                "id": "right_foot",
+                "triangles": 486
+              }
+            ]
+          },
+          {
+            "stage": "bind",
+            "bundle": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\ground_rft\\g1_clean_6s_5078fdc\\bundle",
+            "bundle_metadata_sha256": "f1049ab5c5bf073f27cf1029baeb67338d2a2c760f65ad2a48a6c3bcc13db07f",
+            "surface_count": 2
+          },
+          {
+            "stage": "binding_pose_checks",
+            "poses": 3,
+            "points_checked": 18,
+            "max_position_difference_m": 0.0,
+            "max_point_velocity_difference_m_s": 5.551115123125783e-17,
+            "status": "passed"
+          },
+          {
+            "stage": "rigid_upstream",
+            "status": "passed_screen",
+            "termination": "completed"
+          },
+          {
+            "stage": "rigid_matched",
+            "status": "passed_screen",
+            "termination": "completed"
+          },
+          {
+            "stage": "sand",
+            "status": "failed_screen",
+            "termination": "outside_declared_locomotion_envelope_for_100ms"
+          }
+        ]
+      },
+      "bundle": {
+        "schema_version": 1,
+        "status": "qualified",
+        "source": {
+          "commit": "5078fdc83d418f329bd7d54d0272fb9aaa4fb8f6",
+          "dirty": false
+        },
+        "model_fingerprint": "7a29d465ce5013f86dbdd09167bfac7d6ac16327163ef1ff7617896f424a16ec",
+        "config_sha256": "16689619a47f7b58ee088a25e898a9972bf373fdfca4809dec711bdaebdf5f2b",
+        "sources": [
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\scene_mjx_feetonly_flat_terrain.xml",
+            "sha256": "a05233736c914984859fc0c94161036363a8972760699a59471fdd2aecb0bf2e"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\assets\\hfield.png",
+            "sha256": "9e2fc5b8a1979fec9fc8f9c72aa0c249aaecb5876813f739bc3a1e675450e926"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\assets\\rocky_texture.png",
+            "sha256": "7dd26e7b94d1a95d8d1e09aadaf08caeb0026b084f9cf9e6cb255e24552ebf56"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\g1_mjx_feetonly.xml",
+            "sha256": "fae73d06ae6957ab38e59c67cac5b3665db6de27cd741602dd93951e3f82b72c"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\g1_mjx_feetonly_restricted.xml",
+            "sha256": "da00ee0169cc4e9def58f0813fc8ac371e91f3caff78511f4c488a4ebae277e9"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\scene_mjx_feetonly.xml",
+            "sha256": "788a0dd038ac3842dd01dba9d92e824bfbdcb39e909a467de11393e661c177d5"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\scene_mjx_feetonly_rough_terrain.xml",
+            "sha256": "ba4759b49f03ff122f142624333393ba42714091c93d1fe131b253483885753c"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\sensor.xml",
+            "sha256": "9f290a8614700c4fe51323208bf91594d960bcf5622806aeda6f9722d754e56a"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\head_link.STL",
+            "sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_ankle_pitch_link.STL",
+            "sha256": "d49e3abc6f5b12e532062cd575b87b5ef40cd2a3fc18f54a1ca5bba4f773d51d"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_ankle_roll_link.STL",
+            "sha256": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_elbow_link.STL",
+            "sha256": "fa752198accd104d5c4c3a01382e45165b944fbbc5acce085059223324e5bed3"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_index_0_link.STL",
+            "sha256": "6b35f2f77211d5a366f0b9a4e47c4ee35e536731266f1a34e9efa12db579b892"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_index_1_link.STL",
+            "sha256": "9e315ebc8a7a0cb98e033985b586b20d81cf8aa761181ae61ce56fcb14077a06"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_middle_0_link.STL",
+            "sha256": "6b35f2f77211d5a366f0b9a4e47c4ee35e536731266f1a34e9efa12db579b892"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_middle_1_link.STL",
+            "sha256": "9e315ebc8a7a0cb98e033985b586b20d81cf8aa761181ae61ce56fcb14077a06"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_palm_link.STL",
+            "sha256": "23a486b75bd78a9bf03cec25d84d87f97f3dae038cf21a743b6d469b337e4004"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_thumb_0_link.STL",
+            "sha256": "a90c721661c0622685488a3c74d1e122c7da89242d3a1daef75edb83422d05e0"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_thumb_1_link.STL",
+            "sha256": "445c54a45bc13ce36001556f66bc0f49c83cb40321205ae4d676bb2874325684"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_thumb_2_link.STL",
+            "sha256": "3d8dbe5085acfc213d21aa8b0782e89cd79084e9678f3a85fc7b04a86b029db5"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hip_pitch_link.STL",
+            "sha256": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hip_roll_link.STL",
+            "sha256": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hip_yaw_link.STL",
+            "sha256": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_knee_link.STL",
+            "sha256": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_rubber_hand.STL",
+            "sha256": "cff2221a690fa69303f61fce68f2d155c1517b52efb6ca9262dd56e0bc6e70fe"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_shoulder_pitch_link.STL",
+            "sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_shoulder_roll_link.STL",
+            "sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_shoulder_yaw_link.STL",
+            "sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_wrist_pitch_link.STL",
+            "sha256": "b251d8e05047f695d0f536cd78c11973cfa4e78d08cfe82759336cc3471de3a9"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_wrist_roll_link.STL",
+            "sha256": "edc387c9a0ba8c2237e9b296d32531426fabeb6f53e58df45c76106bca74148c"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_wrist_yaw_link.STL",
+            "sha256": "83f8fb3a726bf9613d65dd14f0f447cb918c3c95b3938042a0c9c09749267d3b"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\logo_link.STL",
+            "sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\pelvis.STL",
+            "sha256": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\pelvis_contour_link.STL",
+            "sha256": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_ankle_pitch_link.STL",
+            "sha256": "15be426539ec1be70246d4d82a168806db64a41301af8b35c197a33348c787a9"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_ankle_roll_link.STL",
+            "sha256": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_elbow_link.STL",
+            "sha256": "1be925d7aa268bb8fddf5362b9173066890c7d32092c05638608126e59d1e2ab"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_index_0_link.STL",
+            "sha256": "12ab4300c95e437e834f9aef772b3b431c671bf34338930b52ad11aef73bbd0d"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_index_1_link.STL",
+            "sha256": "c9c34efce4563cacdcfd29fc838a982976d40f5442c71219811dcbbf3923a33d"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_middle_0_link.STL",
+            "sha256": "12ab4300c95e437e834f9aef772b3b431c671bf34338930b52ad11aef73bbd0d"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_middle_1_link.STL",
+            "sha256": "c9c34efce4563cacdcfd29fc838a982976d40f5442c71219811dcbbf3923a33d"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_palm_link.STL",
+            "sha256": "86c0b231cc44477d64a6493e5a427ba16617a00738112dd187c652675b086fb9"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_thumb_0_link.STL",
+            "sha256": "544298d0ea1088f5b276a10cc6a6a9e533efdd91594955fdc956c46211d07f83"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_thumb_1_link.STL",
+            "sha256": "0a9a820da8dd10f298778b714f1364216e8a5976f4fd3a05689ea26327d44bf6"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_thumb_2_link.STL",
+            "sha256": "3f1bfb37668e8f61801c8d25f171fa1949e08666be86c67acad7e0079937cc45"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hip_pitch_link.STL",
+            "sha256": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hip_roll_link.STL",
+            "sha256": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hip_yaw_link.STL",
+            "sha256": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_knee_link.STL",
+            "sha256": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_rubber_hand.STL",
+            "sha256": "99533b778bca6246144fa511bb9d4e555e075c641f2a0251e04372869cd99d67"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_shoulder_pitch_link.STL",
+            "sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_shoulder_roll_link.STL",
+            "sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_shoulder_yaw_link.STL",
+            "sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_wrist_pitch_link.STL",
+            "sha256": "d22f8f3b3127f15a63e5be1ee273cd5075786c3142f1c3d9f76cbf43d2a26477"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_wrist_roll_link.STL",
+            "sha256": "a7ee9212ff5b94d6cb7f52bb1bbf3f352194d5b598acff74f4c77d340c5b344f"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_wrist_yaw_link.STL",
+            "sha256": "bc9dece2d12509707e0057ba2e48df8f3d56db0c79410212963a25e8a50f61a6"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\torso_link_rev_1_0.STL",
+            "sha256": "11ddb46f2098efbbd8816b1d65893632d8e78be936376c7cdcd6771899ccc723"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\waist_roll_link_rev_1_0.STL",
+            "sha256": "b67c347a05abc3e8ddae600d98a082bee273bb39f8e651647708b0a7140a8a97"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\waist_yaw_link_rev_1_0.STL",
+            "sha256": "ec6db442b11f25eed898b5add07940c85d804f300de24dcbd264ccd8be7d554c"
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "left_foot",
+            "body": "left_ankle_roll_link",
+            "group": "left_foot",
+            "arrays": "left_foot/surface.npz",
+            "source": {
+              "geom": "left_foot",
+              "compiled_body_frame": true
+            },
+            "before": {
+              "vertices": 8,
+              "triangles": 12,
+              "bbox_extent_m": [
+                0.18,
+                0.06,
+                0.016000000000000004
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                0.00017280000000000008
+              ],
+              "area_m2": 0.02928,
+              "area_p95_p05": 11.249999999999996,
+              "centroid_spacing_p95_p05": 2.522124325070259,
+              "edge_aspect_max": 11.294356998076514
+            },
+            "after": {
+              "vertices": 245,
+              "triangles": 486,
+              "bbox_extent_m": [
+                0.18,
+                0.06,
+                0.016000000000000004
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                0.0001728
+              ],
+              "area_m2": 0.02928,
+              "area_p95_p05": 2.8152138502562125,
+              "centroid_spacing_p95_p05": 1.8861949366159732,
+              "edge_aspect_max": 3.5014356141015006
+            },
+            "sampled_deviation": {
+              "candidate_to_reference": {
+                "p95_m": 3.280864468990785e-08,
+                "max_sampled_m": 2.529359619529714e-07
+              },
+              "reference_to_candidate": {
+                "p95_m": 9.313225746154785e-10,
+                "max_sampled_m": 9.313225746154785e-10
+              }
+            },
+            "method": "isotropic",
+            "recipe": {
+              "method": "isotropic",
+              "target_edge_m": 0.012,
+              "max_deviation_m": 0.0005,
+              "iterations": 5
+            },
+            "construction_deviation_margin": 0.5,
+            "effective_limits": {
+              "area_p95_p05": 15,
+              "centroid_spacing_p95_p05": 10,
+              "edge_aspect_max": 12,
+              "max_triangles": 20000
+            }
+          },
+          {
+            "id": "right_foot",
+            "body": "right_ankle_roll_link",
+            "group": "right_foot",
+            "arrays": "right_foot/surface.npz",
+            "source": {
+              "geom": "right_foot",
+              "compiled_body_frame": true
+            },
+            "before": {
+              "vertices": 8,
+              "triangles": 12,
+              "bbox_extent_m": [
+                0.18,
+                0.06,
+                0.016000000000000004
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                0.00017280000000000008
+              ],
+              "area_m2": 0.02928,
+              "area_p95_p05": 11.249999999999996,
+              "centroid_spacing_p95_p05": 2.522124325070259,
+              "edge_aspect_max": 11.294356998076514
+            },
+            "after": {
+              "vertices": 245,
+              "triangles": 486,
+              "bbox_extent_m": [
+                0.18,
+                0.06,
+                0.016000000000000004
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                0.0001728
+              ],
+              "area_m2": 0.02928,
+              "area_p95_p05": 2.8152138502562125,
+              "centroid_spacing_p95_p05": 1.8861949366159732,
+              "edge_aspect_max": 3.5014356141015006
+            },
+            "sampled_deviation": {
+              "candidate_to_reference": {
+                "p95_m": 3.280864468990785e-08,
+                "max_sampled_m": 2.529359619529714e-07
+              },
+              "reference_to_candidate": {
+                "p95_m": 9.313225746154785e-10,
+                "max_sampled_m": 9.313225746154785e-10
+              }
+            },
+            "method": "isotropic",
+            "recipe": {
+              "method": "isotropic",
+              "target_edge_m": 0.012,
+              "max_deviation_m": 0.0005,
+              "iterations": 5
+            },
+            "construction_deviation_margin": 0.5,
+            "effective_limits": {
+              "area_p95_p05": 15,
+              "centroid_spacing_p95_p05": 10,
+              "edge_aspect_max": 12,
+              "max_triangles": 20000
+            }
+          }
+        ],
+        "versions": {
+          "mujoco": "3.9.0",
+          "numpy": "1.26.4",
+          "open3d": "0.19.0",
+          "pymeshlab": "2025.7.post1"
+        }
+      },
+      "binding_checks": {
+        "poses": 3,
+        "points_checked": 18,
+        "max_position_difference_m": 0.0,
+        "max_point_velocity_difference_m_s": 5.551115123125783e-17,
+        "status": "passed"
+      },
+      "original_manifest_sha256": "1f3c8d7a6e9e41bb3c0ca3d4a7dab1e03c29abaeac608cf7b73e42e0596c71c9",
+      "artifacts": {
+        "binding_checks.json": {
+          "bytes": 168,
+          "sha256": "df6eefd53a5e6deb0a71eaeb4ea6f37a39e490ec917218700afc0c7aa0924946"
+        },
+        "bundle/bundle.json": {
+          "bytes": 19749,
+          "sha256": "f1049ab5c5bf073f27cf1029baeb67338d2a2c760f65ad2a48a6c3bcc13db07f"
+        },
+        "bundle/left_foot/prepared.ply": {
+          "bytes": 12401,
+          "sha256": "3c61ae32889736db52f5f31a7fbd271a26933d4600797d91f0267fad332713ab"
+        },
+        "bundle/left_foot/source.ply": {
+          "bytes": 548,
+          "sha256": "dae1eb68549110d5c0649f48cf7b8dce61656f07778bb2d87d80191df0617f21"
+        },
+        "bundle/left_foot/surface.npz": {
+          "bytes": 18182,
+          "sha256": "8567895432713bcf6ce31340d4cd8e0562cc4fdf8e8bbbf2f36a3bae4bb5f0b6"
+        },
+        "bundle/right_foot/prepared.ply": {
+          "bytes": 12401,
+          "sha256": "3c61ae32889736db52f5f31a7fbd271a26933d4600797d91f0267fad332713ab"
+        },
+        "bundle/right_foot/source.ply": {
+          "bytes": 548,
+          "sha256": "dae1eb68549110d5c0649f48cf7b8dce61656f07778bb2d87d80191df0617f21"
+        },
+        "bundle/right_foot/surface.npz": {
+          "bytes": 18182,
+          "sha256": "8567895432713bcf6ce31340d4cd8e0562cc4fdf8e8bbbf2f36a3bae4bb5f0b6"
+        },
+        "inventory.json": {
+          "bytes": 47130,
+          "sha256": "cdb7dea75f3749292f1ffbeff3e2aac0c57bac7255a83d075e76d139ef39ed15"
+        },
+        "pipeline.json": {
+          "bytes": 16833,
+          "sha256": "c5f290f3c7fb9961724de6aec9a2b1c79d902620fe78a54548be45a2bae902f5"
+        },
+        "resolved_config.json": {
+          "bytes": 1702,
+          "sha256": "04f6030175511fa2c2374d99d5663b6c642940bb7e0dd62f4c13f08919d82a4c"
+        },
+        "results.json": {
+          "bytes": 8331,
+          "sha256": "befdaac9b93763dfa9e779a8771fc2c52eb613ac7a833854059ebd43b79bc198"
+        },
+        "rigid_matched/diagnostics.png": {
+          "bytes": 104752,
+          "sha256": "f4db6771740f9a29700c821ec8690fa0b795320bdf91c03b41b8be40fdd4c436"
+        },
+        "rigid_matched/locomotion.mp4": {
+          "bytes": 733935,
+          "sha256": "5825781a940efda78ebc04083a163851a0ce974f90e2334c1a9251e244fe3abe"
+        },
+        "rigid_matched/summary.json": {
+          "bytes": 2529,
+          "sha256": "58cdf3fca34cfaee0389f2c7ed0a52ebbaea55b60997a30aefaf660b31151e0f"
+        },
+        "rigid_matched/trajectory.npz": {
+          "bytes": 7469101,
+          "sha256": "c44444e1b8bbaf05dbee3e050883581f7b16cc1c31746b70d4143ee04c4f8460"
+        },
+        "rigid_upstream/diagnostics.png": {
+          "bytes": 97988,
+          "sha256": "cdba6afd27deeebaff548e24f00287eb8734e4b2cbe97e0855062f64fe6a89dd"
+        },
+        "rigid_upstream/locomotion.mp4": {
+          "bytes": 738959,
+          "sha256": "b33cbab8fb58f894a56ea46de70b0ed58924a67f3167e113184a4e05c824ae28"
+        },
+        "rigid_upstream/summary.json": {
+          "bytes": 2540,
+          "sha256": "f6e218cdfddf1537cdb4187b824117e856cefd17382f1220d5190ca756b155b5"
+        },
+        "rigid_upstream/trajectory.npz": {
+          "bytes": 1914084,
+          "sha256": "40f712c247d85bcce1fccf30163a880822ef9cce6b4102e1e808338bc5c2aaed"
+        },
+        "sand/diagnostics.png": {
+          "bytes": 122339,
+          "sha256": "d81f3017f45870d64ec13ab1d904dae20d737bb4771838034ab7754a19d4867b"
+        },
+        "sand/locomotion.mp4": {
+          "bytes": 302690,
+          "sha256": "a0b91bc6d87c5a64502b3d2f913c4418f245ea9ed249559a69820ebfadc98c3b"
+        },
+        "sand/summary.json": {
+          "bytes": 2649,
+          "sha256": "778eb3e4f2319d8773b2d454edfed193557e75d35b51712e4bed136ee64b6f9f"
+        },
+        "sand/trajectory.npz": {
+          "bytes": 5712835,
+          "sha256": "05b45807a8678c87ca31d37fc7fabd33468bea6e3abcc621620823e85ae5e062"
+        }
+      },
+      "scenarios": {
+        "rigid_upstream": {
+          "summary": {
+            "source": {
+              "commit": "5078fdc83d418f329bd7d54d0272fb9aaa4fb8f6",
+              "dirty": false
+            },
+            "status": "passed_screen",
+            "termination": "completed",
+            "requested_duration_s": 6.0,
+            "recorded_duration_s": 6.0,
+            "physics_timestep_s": 0.002,
+            "control_dt_s": 0.02,
+            "policy_updates": 300,
+            "first_policy_update_pre_step_time_s": 0.018000000000000002,
+            "mode": "rigid",
+            "integrator": 0,
+            "effective_controller": {
+              "type": "playground_onnx",
+              "family": "g1",
+              "policy": "../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/g1_policy.onnx",
+              "control_dt": 0.02,
+              "command": [
+                0.4,
+                0.0,
+                0.0
+              ]
+            },
+            "support_conversion": {
+              "removed_explicit_pairs": []
+            },
+            "effective_ground_masks_during_simulation": {
+              "floor": [
+                1,
+                1
+              ]
+            },
+            "policy_sha256": "db2eb258494c1297c43d2b9ffa94cdbde97654c2a44cbab0b40fd4b990752a5b",
+            "model_mass_kg": 33.341142000000005,
+            "geometry_status": "upstream foot box proxies only; not whole-robot exterior or calibrated sand",
+            "triangle_count": 972,
+            "rft_convention": "body_frame_v1",
+            "coefficient": 3.75,
+            "alpha": 0.5,
+            "acceptance": {
+              "minimum_upright_cosine": 0.6,
+              "minimum_root_height_m": 0.45,
+              "max_centroid_penetration_m": 0.15,
+              "minimum_forward_displacement_m": 0.2
+            },
+            "com_displacement_m": [
+              2.964984152527161,
+              0.0518494901853427,
+              0.004768034267029209
+            ],
+            "min_root_height_m": 0.7074372427349565,
+            "min_upright_cosine": 0.9900615102945116,
+            "max_centroid_penetration_m": 0.0,
+            "max_total_rft_force_N": 0.0,
+            "max_rigid_support_force_N": 2134.4369045555813,
+            "rigid_support_contact_steps": 2998,
+            "rigid_contact_pairs": [
+              [
+                "floor",
+                "left_foot"
+              ],
+              [
+                "floor",
+                "right_foot"
+              ]
+            ],
+            "rft_active_steps": 0,
+            "max_smoothed_rft_power_W": 0.0,
+            "positive_smoothed_power_steps": 0,
+            "trace_columns": [
+              "time_s",
+              "com_x",
+              "com_y",
+              "com_z",
+              "root_z",
+              "upright_cosine",
+              "penetration_m",
+              "rft_fx",
+              "rft_fy",
+              "rft_fz",
+              "rigid_fx",
+              "rigid_fy",
+              "rigid_fz",
+              "rft_power_W",
+              "rigid_contact_count",
+              "rigid_min_distance_m"
+            ],
+            "state_alignment": "All rows are pre-step, force/control at same qpos/qvel/time; final state stored separately",
+            "boundary": "Bounded engineering screen, not material calibration or guaranteed policy transfer",
+            "video_frames": 121
+          },
+          "derived": {
+            "mean_forward_speed_m_s": 0.4941640254211935,
+            "desired_forward_speed_m_s": 0.4,
+            "mean_forward_speed_bias_m_s": 0.09416402542119345,
+            "relative_mean_forward_speed_bias": 0.23541006355298363,
+            "component_active_duty": {
+              "left_foot": 0.535,
+              "right_foot": 0.707
+            }
+          },
+          "video": {
+            "frames_decoded": 121,
+            "fps": 20.0,
+            "encoded_duration_s": 6.05,
+            "sha256": "b33cbab8fb58f894a56ea46de70b0ed58924a67f3167e113184a4e05c824ae28"
+          }
+        },
+        "rigid_matched": {
+          "summary": {
+            "source": {
+              "commit": "5078fdc83d418f329bd7d54d0272fb9aaa4fb8f6",
+              "dirty": false
+            },
+            "status": "passed_screen",
+            "termination": "completed",
+            "requested_duration_s": 6.0,
+            "recorded_duration_s": 6.0,
+            "physics_timestep_s": 0.0005,
+            "control_dt_s": 0.02,
+            "policy_updates": 300,
+            "first_policy_update_pre_step_time_s": 0.0195,
+            "mode": "rigid",
+            "integrator": 0,
+            "effective_controller": {
+              "type": "playground_onnx",
+              "family": "g1",
+              "policy": "../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/g1_policy.onnx",
+              "control_dt": 0.02,
+              "command": [
+                0.4,
+                0.0,
+                0.0
+              ]
+            },
+            "support_conversion": {
+              "removed_explicit_pairs": []
+            },
+            "effective_ground_masks_during_simulation": {
+              "floor": [
+                1,
+                1
+              ]
+            },
+            "policy_sha256": "db2eb258494c1297c43d2b9ffa94cdbde97654c2a44cbab0b40fd4b990752a5b",
+            "model_mass_kg": 33.341142000000005,
+            "geometry_status": "upstream foot box proxies only; not whole-robot exterior or calibrated sand",
+            "triangle_count": 972,
+            "rft_convention": "body_frame_v1",
+            "coefficient": 3.75,
+            "alpha": 0.5,
+            "acceptance": {
+              "minimum_upright_cosine": 0.6,
+              "minimum_root_height_m": 0.45,
+              "max_centroid_penetration_m": 0.15,
+              "minimum_forward_displacement_m": 0.2
+            },
+            "com_displacement_m": [
+              2.936289302492645,
+              0.046617994442298694,
+              0.005936031271587705
+            ],
+            "min_root_height_m": 0.7084314929394485,
+            "min_upright_cosine": 0.9914205839328022,
+            "max_centroid_penetration_m": 0.0,
+            "max_total_rft_force_N": 0.0,
+            "max_rigid_support_force_N": 940.8862047524811,
+            "rigid_support_contact_steps": 11996,
+            "rigid_contact_pairs": [
+              [
+                "floor",
+                "left_foot"
+              ],
+              [
+                "floor",
+                "right_foot"
+              ]
+            ],
+            "rft_active_steps": 0,
+            "max_smoothed_rft_power_W": 0.0,
+            "positive_smoothed_power_steps": 0,
+            "trace_columns": [
+              "time_s",
+              "com_x",
+              "com_y",
+              "com_z",
+              "root_z",
+              "upright_cosine",
+              "penetration_m",
+              "rft_fx",
+              "rft_fy",
+              "rft_fz",
+              "rigid_fx",
+              "rigid_fy",
+              "rigid_fz",
+              "rft_power_W",
+              "rigid_contact_count",
+              "rigid_min_distance_m"
+            ],
+            "state_alignment": "All rows are pre-step, force/control at same qpos/qvel/time; final state stored separately",
+            "boundary": "Bounded engineering screen, not material calibration or guaranteed policy transfer",
+            "video_frames": 121
+          },
+          "derived": {
+            "mean_forward_speed_m_s": 0.48938155041544085,
+            "desired_forward_speed_m_s": 0.4,
+            "mean_forward_speed_bias_m_s": 0.08938155041544082,
+            "relative_mean_forward_speed_bias": 0.22345387603860206,
+            "component_active_duty": {
+              "left_foot": 0.5321666666666667,
+              "right_foot": 0.7045833333333333
+            }
+          },
+          "video": {
+            "frames_decoded": 121,
+            "fps": 20.0,
+            "encoded_duration_s": 6.05,
+            "sha256": "5825781a940efda78ebc04083a163851a0ce974f90e2334c1a9251e244fe3abe"
+          }
+        },
+        "sand": {
+          "summary": {
+            "source": {
+              "commit": "5078fdc83d418f329bd7d54d0272fb9aaa4fb8f6",
+              "dirty": false
+            },
+            "status": "failed_screen",
+            "termination": "outside_declared_locomotion_envelope_for_100ms",
+            "requested_duration_s": 6.0,
+            "recorded_duration_s": 3.765,
+            "physics_timestep_s": 0.0005,
+            "control_dt_s": 0.02,
+            "policy_updates": 188,
+            "first_policy_update_pre_step_time_s": 0.0195,
+            "mode": "sand",
+            "integrator": 0,
+            "effective_controller": {
+              "type": "playground_onnx",
+              "family": "g1",
+              "policy": "../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/g1_policy.onnx",
+              "control_dt": 0.02,
+              "command": [
+                0.4,
+                0.0,
+                0.0
+              ]
+            },
+            "support_conversion": {
+              "removed_explicit_pairs": [
+                "left_foot_floor",
+                "right_foot_floor"
+              ],
+              "retained_pairs": [
+                "left_hand_thigh",
+                "left_foot_right_foot",
+                "right_hand_thigh"
+              ]
+            },
+            "effective_ground_masks_during_simulation": {
+              "floor": [
+                0,
+                0
+              ]
+            },
+            "policy_sha256": "db2eb258494c1297c43d2b9ffa94cdbde97654c2a44cbab0b40fd4b990752a5b",
+            "model_mass_kg": 33.341142000000005,
+            "geometry_status": "upstream foot box proxies only; not whole-robot exterior or calibrated sand",
+            "triangle_count": 972,
+            "rft_convention": "body_frame_v1",
+            "coefficient": 3.75,
+            "alpha": 0.5,
+            "acceptance": {
+              "minimum_upright_cosine": 0.6,
+              "minimum_root_height_m": 0.45,
+              "max_centroid_penetration_m": 0.15,
+              "minimum_forward_displacement_m": 0.2
+            },
+            "com_displacement_m": [
+              2.2299016812358974,
+              0.3768074984067771,
+              -0.4289111059473165
+            ],
+            "min_root_height_m": 0.2642268221945679,
+            "min_upright_cosine": 0.4150478961028426,
+            "max_centroid_penetration_m": 0.04397754183253348,
+            "max_total_rft_force_N": 864.6324832575888,
+            "max_rigid_support_force_N": 0.0,
+            "rigid_support_contact_steps": 0,
+            "rigid_contact_pairs": [],
+            "rft_active_steps": 7529,
+            "max_smoothed_rft_power_W": 0.0,
+            "positive_smoothed_power_steps": 0,
+            "trace_columns": [
+              "time_s",
+              "com_x",
+              "com_y",
+              "com_z",
+              "root_z",
+              "upright_cosine",
+              "penetration_m",
+              "rft_fx",
+              "rft_fy",
+              "rft_fz",
+              "rigid_fx",
+              "rigid_fy",
+              "rigid_fz",
+              "rft_power_W",
+              "rigid_contact_count",
+              "rigid_min_distance_m"
+            ],
+            "state_alignment": "All rows are pre-step, force/control at same qpos/qvel/time; final state stored separately",
+            "boundary": "Bounded engineering screen, not material calibration or guaranteed policy transfer",
+            "video_frames": 76
+          },
+          "derived": {
+            "mean_forward_speed_m_s": 0.5922713628780604,
+            "desired_forward_speed_m_s": 0.4,
+            "mean_forward_speed_bias_m_s": 0.19227136287806035,
+            "relative_mean_forward_speed_bias": 0.48067840719515087,
+            "component_active_duty": {
+              "left_foot": 0.8734395750332006,
+              "right_foot": 0.7920318725099602
+            }
+          },
+          "video": {
+            "frames_decoded": 76,
+            "fps": 20.0,
+            "encoded_duration_s": 3.8,
+            "sha256": "a0b91bc6d87c5a64502b3d2f913c4418f245ea9ed249559a69820ebfadc98c3b"
+          }
+        }
+      }
+    },
+    "g1_slow_clean_6s_f4c0360": {
+      "raw_directory": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\ground_rft\\g1_slow_clean_6s_f4c0360",
+      "pipeline": {
+        "source": {
+          "commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+          "dirty": false
+        },
+        "status": "passed_screen",
+        "steps": [
+          {
+            "stage": "import",
+            "source_files": [
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\scene_mjx_feetonly_flat_terrain.xml",
+                "sha256": "a05233736c914984859fc0c94161036363a8972760699a59471fdd2aecb0bf2e"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\assets\\hfield.png",
+                "sha256": "9e2fc5b8a1979fec9fc8f9c72aa0c249aaecb5876813f739bc3a1e675450e926"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\assets\\rocky_texture.png",
+                "sha256": "7dd26e7b94d1a95d8d1e09aadaf08caeb0026b084f9cf9e6cb255e24552ebf56"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\g1_mjx_feetonly.xml",
+                "sha256": "fae73d06ae6957ab38e59c67cac5b3665db6de27cd741602dd93951e3f82b72c"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\g1_mjx_feetonly_restricted.xml",
+                "sha256": "da00ee0169cc4e9def58f0813fc8ac371e91f3caff78511f4c488a4ebae277e9"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\scene_mjx_feetonly.xml",
+                "sha256": "788a0dd038ac3842dd01dba9d92e824bfbdcb39e909a467de11393e661c177d5"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\scene_mjx_feetonly_rough_terrain.xml",
+                "sha256": "ba4759b49f03ff122f142624333393ba42714091c93d1fe131b253483885753c"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\sensor.xml",
+                "sha256": "9f290a8614700c4fe51323208bf91594d960bcf5622806aeda6f9722d754e56a"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\head_link.STL",
+                "sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_ankle_pitch_link.STL",
+                "sha256": "d49e3abc6f5b12e532062cd575b87b5ef40cd2a3fc18f54a1ca5bba4f773d51d"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_ankle_roll_link.STL",
+                "sha256": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_elbow_link.STL",
+                "sha256": "fa752198accd104d5c4c3a01382e45165b944fbbc5acce085059223324e5bed3"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_index_0_link.STL",
+                "sha256": "6b35f2f77211d5a366f0b9a4e47c4ee35e536731266f1a34e9efa12db579b892"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_index_1_link.STL",
+                "sha256": "9e315ebc8a7a0cb98e033985b586b20d81cf8aa761181ae61ce56fcb14077a06"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_middle_0_link.STL",
+                "sha256": "6b35f2f77211d5a366f0b9a4e47c4ee35e536731266f1a34e9efa12db579b892"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_middle_1_link.STL",
+                "sha256": "9e315ebc8a7a0cb98e033985b586b20d81cf8aa761181ae61ce56fcb14077a06"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_palm_link.STL",
+                "sha256": "23a486b75bd78a9bf03cec25d84d87f97f3dae038cf21a743b6d469b337e4004"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_thumb_0_link.STL",
+                "sha256": "a90c721661c0622685488a3c74d1e122c7da89242d3a1daef75edb83422d05e0"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_thumb_1_link.STL",
+                "sha256": "445c54a45bc13ce36001556f66bc0f49c83cb40321205ae4d676bb2874325684"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_thumb_2_link.STL",
+                "sha256": "3d8dbe5085acfc213d21aa8b0782e89cd79084e9678f3a85fc7b04a86b029db5"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hip_pitch_link.STL",
+                "sha256": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hip_roll_link.STL",
+                "sha256": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hip_yaw_link.STL",
+                "sha256": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_knee_link.STL",
+                "sha256": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_rubber_hand.STL",
+                "sha256": "cff2221a690fa69303f61fce68f2d155c1517b52efb6ca9262dd56e0bc6e70fe"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_shoulder_pitch_link.STL",
+                "sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_shoulder_roll_link.STL",
+                "sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_shoulder_yaw_link.STL",
+                "sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_wrist_pitch_link.STL",
+                "sha256": "b251d8e05047f695d0f536cd78c11973cfa4e78d08cfe82759336cc3471de3a9"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_wrist_roll_link.STL",
+                "sha256": "edc387c9a0ba8c2237e9b296d32531426fabeb6f53e58df45c76106bca74148c"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_wrist_yaw_link.STL",
+                "sha256": "83f8fb3a726bf9613d65dd14f0f447cb918c3c95b3938042a0c9c09749267d3b"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\logo_link.STL",
+                "sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\pelvis.STL",
+                "sha256": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\pelvis_contour_link.STL",
+                "sha256": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_ankle_pitch_link.STL",
+                "sha256": "15be426539ec1be70246d4d82a168806db64a41301af8b35c197a33348c787a9"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_ankle_roll_link.STL",
+                "sha256": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_elbow_link.STL",
+                "sha256": "1be925d7aa268bb8fddf5362b9173066890c7d32092c05638608126e59d1e2ab"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_index_0_link.STL",
+                "sha256": "12ab4300c95e437e834f9aef772b3b431c671bf34338930b52ad11aef73bbd0d"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_index_1_link.STL",
+                "sha256": "c9c34efce4563cacdcfd29fc838a982976d40f5442c71219811dcbbf3923a33d"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_middle_0_link.STL",
+                "sha256": "12ab4300c95e437e834f9aef772b3b431c671bf34338930b52ad11aef73bbd0d"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_middle_1_link.STL",
+                "sha256": "c9c34efce4563cacdcfd29fc838a982976d40f5442c71219811dcbbf3923a33d"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_palm_link.STL",
+                "sha256": "86c0b231cc44477d64a6493e5a427ba16617a00738112dd187c652675b086fb9"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_thumb_0_link.STL",
+                "sha256": "544298d0ea1088f5b276a10cc6a6a9e533efdd91594955fdc956c46211d07f83"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_thumb_1_link.STL",
+                "sha256": "0a9a820da8dd10f298778b714f1364216e8a5976f4fd3a05689ea26327d44bf6"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_thumb_2_link.STL",
+                "sha256": "3f1bfb37668e8f61801c8d25f171fa1949e08666be86c67acad7e0079937cc45"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hip_pitch_link.STL",
+                "sha256": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hip_roll_link.STL",
+                "sha256": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hip_yaw_link.STL",
+                "sha256": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_knee_link.STL",
+                "sha256": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_rubber_hand.STL",
+                "sha256": "99533b778bca6246144fa511bb9d4e555e075c641f2a0251e04372869cd99d67"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_shoulder_pitch_link.STL",
+                "sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_shoulder_roll_link.STL",
+                "sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_shoulder_yaw_link.STL",
+                "sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_wrist_pitch_link.STL",
+                "sha256": "d22f8f3b3127f15a63e5be1ee273cd5075786c3142f1c3d9f76cbf43d2a26477"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_wrist_roll_link.STL",
+                "sha256": "a7ee9212ff5b94d6cb7f52bb1bbf3f352194d5b598acff74f4c77d340c5b344f"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_wrist_yaw_link.STL",
+                "sha256": "bc9dece2d12509707e0057ba2e48df8f3d56db0c79410212963a25e8a50f61a6"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\torso_link_rev_1_0.STL",
+                "sha256": "11ddb46f2098efbbd8816b1d65893632d8e78be936376c7cdcd6771899ccc723"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\waist_roll_link_rev_1_0.STL",
+                "sha256": "b67c347a05abc3e8ddae600d98a082bee273bb39f8e651647708b0a7140a8a97"
+              },
+              {
+                "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\waist_yaw_link_rev_1_0.STL",
+                "sha256": "ec6db442b11f25eed898b5add07940c85d804f300de24dcbd264ccd8be7d554c"
+              }
+            ],
+            "config_sha256": "812c738685f0ab19d9f878fe0f1f752451c833ca3f17dbe6f02e801ab58ef063"
+          },
+          {
+            "stage": "prepare",
+            "surfaces": [
+              {
+                "id": "left_foot",
+                "triangles": 486
+              },
+              {
+                "id": "right_foot",
+                "triangles": 486
+              }
+            ]
+          },
+          {
+            "stage": "bind",
+            "bundle": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\ground_rft\\g1_slow_clean_6s_f4c0360\\bundle",
+            "bundle_metadata_sha256": "f0cbf85c30982db2525cb8c436e3e75ece02bbc38f3c82046089927399c50f23",
+            "surface_count": 2
+          },
+          {
+            "stage": "binding_pose_checks",
+            "poses": 3,
+            "points_checked": 18,
+            "max_position_difference_m": 0.0,
+            "max_point_velocity_difference_m_s": 5.551115123125783e-17,
+            "status": "passed"
+          },
+          {
+            "stage": "rigid_upstream",
+            "status": "passed_screen",
+            "termination": "completed"
+          },
+          {
+            "stage": "rigid_matched",
+            "status": "passed_screen",
+            "termination": "completed"
+          },
+          {
+            "stage": "sand",
+            "status": "passed_screen",
+            "termination": "completed"
+          }
+        ]
+      },
+      "bundle": {
+        "schema_version": 1,
+        "status": "qualified",
+        "source": {
+          "commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+          "dirty": false
+        },
+        "model_fingerprint": "7a29d465ce5013f86dbdd09167bfac7d6ac16327163ef1ff7617896f424a16ec",
+        "config_sha256": "812c738685f0ab19d9f878fe0f1f752451c833ca3f17dbe6f02e801ab58ef063",
+        "sources": [
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\scene_mjx_feetonly_flat_terrain.xml",
+            "sha256": "a05233736c914984859fc0c94161036363a8972760699a59471fdd2aecb0bf2e"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\assets\\hfield.png",
+            "sha256": "9e2fc5b8a1979fec9fc8f9c72aa0c249aaecb5876813f739bc3a1e675450e926"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\assets\\rocky_texture.png",
+            "sha256": "7dd26e7b94d1a95d8d1e09aadaf08caeb0026b084f9cf9e6cb255e24552ebf56"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\g1_mjx_feetonly.xml",
+            "sha256": "fae73d06ae6957ab38e59c67cac5b3665db6de27cd741602dd93951e3f82b72c"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\g1_mjx_feetonly_restricted.xml",
+            "sha256": "da00ee0169cc4e9def58f0813fc8ac371e91f3caff78511f4c488a4ebae277e9"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\scene_mjx_feetonly.xml",
+            "sha256": "788a0dd038ac3842dd01dba9d92e824bfbdcb39e909a467de11393e661c177d5"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\scene_mjx_feetonly_rough_terrain.xml",
+            "sha256": "ba4759b49f03ff122f142624333393ba42714091c93d1fe131b253483885753c"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\g1\\xmls\\sensor.xml",
+            "sha256": "9f290a8614700c4fe51323208bf91594d960bcf5622806aeda6f9722d754e56a"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\head_link.STL",
+            "sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_ankle_pitch_link.STL",
+            "sha256": "d49e3abc6f5b12e532062cd575b87b5ef40cd2a3fc18f54a1ca5bba4f773d51d"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_ankle_roll_link.STL",
+            "sha256": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_elbow_link.STL",
+            "sha256": "fa752198accd104d5c4c3a01382e45165b944fbbc5acce085059223324e5bed3"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_index_0_link.STL",
+            "sha256": "6b35f2f77211d5a366f0b9a4e47c4ee35e536731266f1a34e9efa12db579b892"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_index_1_link.STL",
+            "sha256": "9e315ebc8a7a0cb98e033985b586b20d81cf8aa761181ae61ce56fcb14077a06"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_middle_0_link.STL",
+            "sha256": "6b35f2f77211d5a366f0b9a4e47c4ee35e536731266f1a34e9efa12db579b892"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_middle_1_link.STL",
+            "sha256": "9e315ebc8a7a0cb98e033985b586b20d81cf8aa761181ae61ce56fcb14077a06"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_palm_link.STL",
+            "sha256": "23a486b75bd78a9bf03cec25d84d87f97f3dae038cf21a743b6d469b337e4004"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_thumb_0_link.STL",
+            "sha256": "a90c721661c0622685488a3c74d1e122c7da89242d3a1daef75edb83422d05e0"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_thumb_1_link.STL",
+            "sha256": "445c54a45bc13ce36001556f66bc0f49c83cb40321205ae4d676bb2874325684"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hand_thumb_2_link.STL",
+            "sha256": "3d8dbe5085acfc213d21aa8b0782e89cd79084e9678f3a85fc7b04a86b029db5"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hip_pitch_link.STL",
+            "sha256": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hip_roll_link.STL",
+            "sha256": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_hip_yaw_link.STL",
+            "sha256": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_knee_link.STL",
+            "sha256": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_rubber_hand.STL",
+            "sha256": "cff2221a690fa69303f61fce68f2d155c1517b52efb6ca9262dd56e0bc6e70fe"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_shoulder_pitch_link.STL",
+            "sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_shoulder_roll_link.STL",
+            "sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_shoulder_yaw_link.STL",
+            "sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_wrist_pitch_link.STL",
+            "sha256": "b251d8e05047f695d0f536cd78c11973cfa4e78d08cfe82759336cc3471de3a9"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_wrist_roll_link.STL",
+            "sha256": "edc387c9a0ba8c2237e9b296d32531426fabeb6f53e58df45c76106bca74148c"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\left_wrist_yaw_link.STL",
+            "sha256": "83f8fb3a726bf9613d65dd14f0f447cb918c3c95b3938042a0c9c09749267d3b"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\logo_link.STL",
+            "sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\pelvis.STL",
+            "sha256": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\pelvis_contour_link.STL",
+            "sha256": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_ankle_pitch_link.STL",
+            "sha256": "15be426539ec1be70246d4d82a168806db64a41301af8b35c197a33348c787a9"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_ankle_roll_link.STL",
+            "sha256": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_elbow_link.STL",
+            "sha256": "1be925d7aa268bb8fddf5362b9173066890c7d32092c05638608126e59d1e2ab"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_index_0_link.STL",
+            "sha256": "12ab4300c95e437e834f9aef772b3b431c671bf34338930b52ad11aef73bbd0d"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_index_1_link.STL",
+            "sha256": "c9c34efce4563cacdcfd29fc838a982976d40f5442c71219811dcbbf3923a33d"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_middle_0_link.STL",
+            "sha256": "12ab4300c95e437e834f9aef772b3b431c671bf34338930b52ad11aef73bbd0d"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_middle_1_link.STL",
+            "sha256": "c9c34efce4563cacdcfd29fc838a982976d40f5442c71219811dcbbf3923a33d"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_palm_link.STL",
+            "sha256": "86c0b231cc44477d64a6493e5a427ba16617a00738112dd187c652675b086fb9"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_thumb_0_link.STL",
+            "sha256": "544298d0ea1088f5b276a10cc6a6a9e533efdd91594955fdc956c46211d07f83"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_thumb_1_link.STL",
+            "sha256": "0a9a820da8dd10f298778b714f1364216e8a5976f4fd3a05689ea26327d44bf6"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hand_thumb_2_link.STL",
+            "sha256": "3f1bfb37668e8f61801c8d25f171fa1949e08666be86c67acad7e0079937cc45"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hip_pitch_link.STL",
+            "sha256": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hip_roll_link.STL",
+            "sha256": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_hip_yaw_link.STL",
+            "sha256": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_knee_link.STL",
+            "sha256": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_rubber_hand.STL",
+            "sha256": "99533b778bca6246144fa511bb9d4e555e075c641f2a0251e04372869cd99d67"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_shoulder_pitch_link.STL",
+            "sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_shoulder_roll_link.STL",
+            "sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_shoulder_yaw_link.STL",
+            "sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_wrist_pitch_link.STL",
+            "sha256": "d22f8f3b3127f15a63e5be1ee273cd5075786c3142f1c3d9f76cbf43d2a26477"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_wrist_roll_link.STL",
+            "sha256": "a7ee9212ff5b94d6cb7f52bb1bbf3f352194d5b598acff74f4c77d340c5b344f"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\right_wrist_yaw_link.STL",
+            "sha256": "bc9dece2d12509707e0057ba2e48df8f3d56db0c79410212963a25e8a50f61a6"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\torso_link_rev_1_0.STL",
+            "sha256": "11ddb46f2098efbbd8816b1d65893632d8e78be936376c7cdcd6771899ccc723"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\waist_roll_link_rev_1_0.STL",
+            "sha256": "b67c347a05abc3e8ddae600d98a082bee273bb39f8e651647708b0a7140a8a97"
+          },
+          {
+            "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_g1\\assets\\waist_yaw_link_rev_1_0.STL",
+            "sha256": "ec6db442b11f25eed898b5add07940c85d804f300de24dcbd264ccd8be7d554c"
+          }
+        ],
+        "surfaces": [
+          {
+            "id": "left_foot",
+            "body": "left_ankle_roll_link",
+            "group": "left_foot",
+            "arrays": "left_foot/surface.npz",
+            "source": {
+              "geom": "left_foot",
+              "compiled_body_frame": true
+            },
+            "before": {
+              "vertices": 8,
+              "triangles": 12,
+              "bbox_extent_m": [
+                0.18,
+                0.06,
+                0.016000000000000004
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                0.00017280000000000008
+              ],
+              "area_m2": 0.02928,
+              "area_p95_p05": 11.249999999999996,
+              "centroid_spacing_p95_p05": 2.522124325070259,
+              "edge_aspect_max": 11.294356998076514
+            },
+            "after": {
+              "vertices": 245,
+              "triangles": 486,
+              "bbox_extent_m": [
+                0.18,
+                0.06,
+                0.016000000000000004
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                0.0001728
+              ],
+              "area_m2": 0.02928,
+              "area_p95_p05": 2.8152138502562125,
+              "centroid_spacing_p95_p05": 1.8861949366159732,
+              "edge_aspect_max": 3.5014356141015006
+            },
+            "sampled_deviation": {
+              "candidate_to_reference": {
+                "p95_m": 3.280864468990785e-08,
+                "max_sampled_m": 2.529359619529714e-07
+              },
+              "reference_to_candidate": {
+                "p95_m": 9.313225746154785e-10,
+                "max_sampled_m": 9.313225746154785e-10
+              }
+            },
+            "method": "isotropic",
+            "recipe": {
+              "method": "isotropic",
+              "target_edge_m": 0.012,
+              "max_deviation_m": 0.0005,
+              "iterations": 5
+            },
+            "construction_deviation_margin": 0.5,
+            "effective_limits": {
+              "area_p95_p05": 15,
+              "centroid_spacing_p95_p05": 10,
+              "edge_aspect_max": 12,
+              "max_triangles": 20000
+            }
+          },
+          {
+            "id": "right_foot",
+            "body": "right_ankle_roll_link",
+            "group": "right_foot",
+            "arrays": "right_foot/surface.npz",
+            "source": {
+              "geom": "right_foot",
+              "compiled_body_frame": true
+            },
+            "before": {
+              "vertices": 8,
+              "triangles": 12,
+              "bbox_extent_m": [
+                0.18,
+                0.06,
+                0.016000000000000004
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                0.00017280000000000008
+              ],
+              "area_m2": 0.02928,
+              "area_p95_p05": 11.249999999999996,
+              "centroid_spacing_p95_p05": 2.522124325070259,
+              "edge_aspect_max": 11.294356998076514
+            },
+            "after": {
+              "vertices": 245,
+              "triangles": 486,
+              "bbox_extent_m": [
+                0.18,
+                0.06,
+                0.016000000000000004
+              ],
+              "boundary_edges": 0,
+              "nonmanifold_edges": 0,
+              "inconsistent_winding_edges": 0,
+              "duplicate_faces": 0,
+              "degenerate_faces": 0,
+              "vertex_manifold": true,
+              "self_intersection_pairs": 0,
+              "components": 1,
+              "component_signed_volumes_m3": [
+                0.0001728
+              ],
+              "area_m2": 0.02928,
+              "area_p95_p05": 2.8152138502562125,
+              "centroid_spacing_p95_p05": 1.8861949366159732,
+              "edge_aspect_max": 3.5014356141015006
+            },
+            "sampled_deviation": {
+              "candidate_to_reference": {
+                "p95_m": 3.280864468990785e-08,
+                "max_sampled_m": 2.529359619529714e-07
+              },
+              "reference_to_candidate": {
+                "p95_m": 9.313225746154785e-10,
+                "max_sampled_m": 9.313225746154785e-10
+              }
+            },
+            "method": "isotropic",
+            "recipe": {
+              "method": "isotropic",
+              "target_edge_m": 0.012,
+              "max_deviation_m": 0.0005,
+              "iterations": 5
+            },
+            "construction_deviation_margin": 0.5,
+            "effective_limits": {
+              "area_p95_p05": 15,
+              "centroid_spacing_p95_p05": 10,
+              "edge_aspect_max": 12,
+              "max_triangles": 20000
+            }
+          }
+        ],
+        "versions": {
+          "mujoco": "3.9.0",
+          "numpy": "1.26.4",
+          "open3d": "0.19.0",
+          "pymeshlab": "2025.7.post1"
+        }
+      },
+      "binding_checks": {
+        "poses": 3,
+        "points_checked": 18,
+        "max_position_difference_m": 0.0,
+        "max_point_velocity_difference_m_s": 5.551115123125783e-17,
+        "status": "passed"
+      },
+      "original_manifest_sha256": "301925db30dc48c9399879829ae0ca9523518cf8ff4ee9f96ce21994dbec844a",
+      "artifacts": {
+        "binding_checks.json": {
+          "bytes": 168,
+          "sha256": "df6eefd53a5e6deb0a71eaeb4ea6f37a39e490ec917218700afc0c7aa0924946"
+        },
+        "bundle/bundle.json": {
+          "bytes": 19749,
+          "sha256": "f0cbf85c30982db2525cb8c436e3e75ece02bbc38f3c82046089927399c50f23"
+        },
+        "bundle/left_foot/prepared.ply": {
+          "bytes": 12401,
+          "sha256": "3c61ae32889736db52f5f31a7fbd271a26933d4600797d91f0267fad332713ab"
+        },
+        "bundle/left_foot/source.ply": {
+          "bytes": 548,
+          "sha256": "dae1eb68549110d5c0649f48cf7b8dce61656f07778bb2d87d80191df0617f21"
+        },
+        "bundle/left_foot/surface.npz": {
+          "bytes": 18182,
+          "sha256": "8567895432713bcf6ce31340d4cd8e0562cc4fdf8e8bbbf2f36a3bae4bb5f0b6"
+        },
+        "bundle/right_foot/prepared.ply": {
+          "bytes": 12401,
+          "sha256": "3c61ae32889736db52f5f31a7fbd271a26933d4600797d91f0267fad332713ab"
+        },
+        "bundle/right_foot/source.ply": {
+          "bytes": 548,
+          "sha256": "dae1eb68549110d5c0649f48cf7b8dce61656f07778bb2d87d80191df0617f21"
+        },
+        "bundle/right_foot/surface.npz": {
+          "bytes": 18182,
+          "sha256": "8567895432713bcf6ce31340d4cd8e0562cc4fdf8e8bbbf2f36a3bae4bb5f0b6"
+        },
+        "inventory.json": {
+          "bytes": 47130,
+          "sha256": "cdb7dea75f3749292f1ffbeff3e2aac0c57bac7255a83d075e76d139ef39ed15"
+        },
+        "pipeline.json": {
+          "bytes": 16794,
+          "sha256": "49b99a0fd71ebe331a471e530c945b5c19b32be5da19d2f448493de5e27ab86a"
+        },
+        "resolved_config.json": {
+          "bytes": 1702,
+          "sha256": "e8e1031d9f24d443bb7d72756ad4294c76a13209cd3bf4815e91f0d5c506ccbf"
+        },
+        "results.json": {
+          "bytes": 8293,
+          "sha256": "59ccc8c352d8e87d33378fdd755135025c1a71ee641a1349d6af97527f71517c"
+        },
+        "rigid_matched/diagnostics.png": {
+          "bytes": 103855,
+          "sha256": "648f3aa380031517cf08c7b7690887c1ed4d677c061903a3f59cc9c5dc0f4afa"
+        },
+        "rigid_matched/locomotion.mp4": {
+          "bytes": 627150,
+          "sha256": "ff82a7e9c6d394acd5f373170021b8e0ea90c8af974501e431e46e0f96a31f75"
+        },
+        "rigid_matched/summary.json": {
+          "bytes": 2527,
+          "sha256": "062200254dde8a9874fd1fc1ec05232b5f36b55fbc3571fa85146e81ada2bd2e"
+        },
+        "rigid_matched/trajectory.npz": {
+          "bytes": 7450806,
+          "sha256": "5c2f0fda44e6ec66a8c4efe99b13f23c0708145554b3522b1130824340a4da28"
+        },
+        "rigid_upstream/diagnostics.png": {
+          "bytes": 96798,
+          "sha256": "6774ed9ead3675b5da43780c3e6317e4da728e99bf19c6609387b6660da6a7da"
+        },
+        "rigid_upstream/locomotion.mp4": {
+          "bytes": 628603,
+          "sha256": "b44b886105ea9d4e128bc9e3d20f36dc78dba1013136a286f54d7b173ba83a42"
+        },
+        "rigid_upstream/summary.json": {
+          "bytes": 2539,
+          "sha256": "5db3d7d6cf0998947fba7cd144b402c94f97996563b31bf94266354973376fde"
+        },
+        "rigid_upstream/trajectory.npz": {
+          "bytes": 1910408,
+          "sha256": "d471fb9443a6c1ea0e05c902c2809739c3d3483191c820bb270e4565398960cb"
+        },
+        "sand/diagnostics.png": {
+          "bytes": 128169,
+          "sha256": "268d4c67027134eeb4080eb1d8fde09257ba500761dc4a3d780cc2856701e861"
+        },
+        "sand/locomotion.mp4": {
+          "bytes": 420248,
+          "sha256": "1bb785110d40b2affb82a89bcd59de448d11b0c75fd6906f1c83892d6cf2455b"
+        },
+        "sand/summary.json": {
+          "bytes": 2614,
+          "sha256": "18a6a82640d0c71e3cba0ec3944d684594fa6ce78a0934bdf2637207b96763cb"
+        },
+        "sand/trajectory.npz": {
+          "bytes": 9001337,
+          "sha256": "5af2f03f6943c2aadd9dadb37b06a6bb41d69294126169ea4e9d98e5f4215c4e"
+        }
+      },
+      "scenarios": {
+        "rigid_upstream": {
+          "summary": {
+            "source": {
+              "commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+              "dirty": false
+            },
+            "status": "passed_screen",
+            "termination": "completed",
+            "requested_duration_s": 6.0,
+            "recorded_duration_s": 6.0,
+            "physics_timestep_s": 0.002,
+            "control_dt_s": 0.02,
+            "policy_updates": 300,
+            "first_policy_update_pre_step_time_s": 0.018000000000000002,
+            "mode": "rigid",
+            "integrator": 0,
+            "effective_controller": {
+              "type": "playground_onnx",
+              "family": "g1",
+              "policy": "../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/g1_policy.onnx",
+              "control_dt": 0.02,
+              "command": [
+                0.2,
+                0.0,
+                0.0
+              ]
+            },
+            "support_conversion": {
+              "removed_explicit_pairs": []
+            },
+            "effective_ground_masks_during_simulation": {
+              "floor": [
+                1,
+                1
+              ]
+            },
+            "policy_sha256": "db2eb258494c1297c43d2b9ffa94cdbde97654c2a44cbab0b40fd4b990752a5b",
+            "model_mass_kg": 33.341142000000005,
+            "geometry_status": "upstream foot box proxies only; not whole-robot exterior or calibrated sand",
+            "triangle_count": 972,
+            "rft_convention": "body_frame_v1",
+            "coefficient": 3.75,
+            "alpha": 0.5,
+            "acceptance": {
+              "minimum_upright_cosine": 0.6,
+              "minimum_root_height_m": 0.45,
+              "max_centroid_penetration_m": 0.15,
+              "minimum_forward_displacement_m": 0.2
+            },
+            "com_displacement_m": [
+              1.7956130021822858,
+              0.2603972177452975,
+              0.003199279498172558
+            ],
+            "min_root_height_m": 0.7118155497042218,
+            "min_upright_cosine": 0.996864715819131,
+            "max_centroid_penetration_m": 0.0,
+            "max_total_rft_force_N": 0.0,
+            "max_rigid_support_force_N": 2787.306844989621,
+            "rigid_support_contact_steps": 3000,
+            "rigid_contact_pairs": [
+              [
+                "floor",
+                "left_foot"
+              ],
+              [
+                "floor",
+                "right_foot"
+              ]
+            ],
+            "rft_active_steps": 0,
+            "max_smoothed_rft_power_W": 0.0,
+            "positive_smoothed_power_steps": 0,
+            "trace_columns": [
+              "time_s",
+              "com_x",
+              "com_y",
+              "com_z",
+              "root_z",
+              "upright_cosine",
+              "penetration_m",
+              "rft_fx",
+              "rft_fy",
+              "rft_fz",
+              "rigid_fx",
+              "rigid_fy",
+              "rigid_fz",
+              "rft_power_W",
+              "rigid_contact_count",
+              "rigid_min_distance_m"
+            ],
+            "state_alignment": "All rows are pre-step, force/control at same qpos/qvel/time; final state stored separately",
+            "boundary": "Bounded engineering screen, not material calibration or guaranteed policy transfer",
+            "video_frames": 121
+          },
+          "derived": {
+            "mean_forward_speed_m_s": 0.29926883369704765,
+            "desired_forward_speed_m_s": 0.2,
+            "mean_forward_speed_bias_m_s": 0.09926883369704764,
+            "relative_mean_forward_speed_bias": 0.4963441684852382,
+            "component_active_duty": {
+              "left_foot": 0.5136666666666667,
+              "right_foot": 0.7103333333333334
+            }
+          },
+          "video": {
+            "frames_decoded": 121,
+            "fps": 20.0,
+            "encoded_duration_s": 6.05,
+            "sha256": "b44b886105ea9d4e128bc9e3d20f36dc78dba1013136a286f54d7b173ba83a42"
+          }
+        },
+        "rigid_matched": {
+          "summary": {
+            "source": {
+              "commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+              "dirty": false
+            },
+            "status": "passed_screen",
+            "termination": "completed",
+            "requested_duration_s": 6.0,
+            "recorded_duration_s": 6.0,
+            "physics_timestep_s": 0.0005,
+            "control_dt_s": 0.02,
+            "policy_updates": 300,
+            "first_policy_update_pre_step_time_s": 0.0195,
+            "mode": "rigid",
+            "integrator": 0,
+            "effective_controller": {
+              "type": "playground_onnx",
+              "family": "g1",
+              "policy": "../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/g1_policy.onnx",
+              "control_dt": 0.02,
+              "command": [
+                0.2,
+                0.0,
+                0.0
+              ]
+            },
+            "support_conversion": {
+              "removed_explicit_pairs": []
+            },
+            "effective_ground_masks_during_simulation": {
+              "floor": [
+                1,
+                1
+              ]
+            },
+            "policy_sha256": "db2eb258494c1297c43d2b9ffa94cdbde97654c2a44cbab0b40fd4b990752a5b",
+            "model_mass_kg": 33.341142000000005,
+            "geometry_status": "upstream foot box proxies only; not whole-robot exterior or calibrated sand",
+            "triangle_count": 972,
+            "rft_convention": "body_frame_v1",
+            "coefficient": 3.75,
+            "alpha": 0.5,
+            "acceptance": {
+              "minimum_upright_cosine": 0.6,
+              "minimum_root_height_m": 0.45,
+              "max_centroid_penetration_m": 0.15,
+              "minimum_forward_displacement_m": 0.2
+            },
+            "com_displacement_m": [
+              1.786208404305989,
+              0.25256042389917494,
+              0.002431648966779165
+            ],
+            "min_root_height_m": 0.7113788564206365,
+            "min_upright_cosine": 0.9969413733437317,
+            "max_centroid_penetration_m": 0.0,
+            "max_total_rft_force_N": 0.0,
+            "max_rigid_support_force_N": 891.602398604608,
+            "rigid_support_contact_steps": 12000,
+            "rigid_contact_pairs": [
+              [
+                "floor",
+                "left_foot"
+              ],
+              [
+                "floor",
+                "right_foot"
+              ]
+            ],
+            "rft_active_steps": 0,
+            "max_smoothed_rft_power_W": 0.0,
+            "positive_smoothed_power_steps": 0,
+            "trace_columns": [
+              "time_s",
+              "com_x",
+              "com_y",
+              "com_z",
+              "root_z",
+              "upright_cosine",
+              "penetration_m",
+              "rft_fx",
+              "rft_fy",
+              "rft_fz",
+              "rigid_fx",
+              "rigid_fy",
+              "rigid_fz",
+              "rft_power_W",
+              "rigid_contact_count",
+              "rigid_min_distance_m"
+            ],
+            "state_alignment": "All rows are pre-step, force/control at same qpos/qvel/time; final state stored separately",
+            "boundary": "Bounded engineering screen, not material calibration or guaranteed policy transfer",
+            "video_frames": 121
+          },
+          "derived": {
+            "mean_forward_speed_m_s": 0.2977014007176648,
+            "desired_forward_speed_m_s": 0.2,
+            "mean_forward_speed_bias_m_s": 0.09770140071766481,
+            "relative_mean_forward_speed_bias": 0.48850700358832405,
+            "component_active_duty": {
+              "left_foot": 0.512,
+              "right_foot": 0.7038333333333333
+            }
+          },
+          "video": {
+            "frames_decoded": 121,
+            "fps": 20.0,
+            "encoded_duration_s": 6.05,
+            "sha256": "ff82a7e9c6d394acd5f373170021b8e0ea90c8af974501e431e46e0f96a31f75"
+          }
+        },
+        "sand": {
+          "summary": {
+            "source": {
+              "commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+              "dirty": false
+            },
+            "status": "passed_screen",
+            "termination": "completed",
+            "requested_duration_s": 6.0,
+            "recorded_duration_s": 6.0,
+            "physics_timestep_s": 0.0005,
+            "control_dt_s": 0.02,
+            "policy_updates": 300,
+            "first_policy_update_pre_step_time_s": 0.0195,
+            "mode": "sand",
+            "integrator": 0,
+            "effective_controller": {
+              "type": "playground_onnx",
+              "family": "g1",
+              "policy": "../../third_party/robot_assets/playground/mujoco_playground/experimental/sim2sim/onnx/g1_policy.onnx",
+              "control_dt": 0.02,
+              "command": [
+                0.2,
+                0.0,
+                0.0
+              ]
+            },
+            "support_conversion": {
+              "removed_explicit_pairs": [
+                "left_foot_floor",
+                "right_foot_floor"
+              ],
+              "retained_pairs": [
+                "left_hand_thigh",
+                "left_foot_right_foot",
+                "right_hand_thigh"
+              ]
+            },
+            "effective_ground_masks_during_simulation": {
+              "floor": [
+                0,
+                0
+              ]
+            },
+            "policy_sha256": "db2eb258494c1297c43d2b9ffa94cdbde97654c2a44cbab0b40fd4b990752a5b",
+            "model_mass_kg": 33.341142000000005,
+            "geometry_status": "upstream foot box proxies only; not whole-robot exterior or calibrated sand",
+            "triangle_count": 972,
+            "rft_convention": "body_frame_v1",
+            "coefficient": 3.75,
+            "alpha": 0.5,
+            "acceptance": {
+              "minimum_upright_cosine": 0.6,
+              "minimum_root_height_m": 0.45,
+              "max_centroid_penetration_m": 0.15,
+              "minimum_forward_displacement_m": 0.2
+            },
+            "com_displacement_m": [
+              1.8606603612921353,
+              0.00277853709770878,
+              -0.015316605962772623
+            ],
+            "min_root_height_m": 0.6951887665188528,
+            "min_upright_cosine": 0.992422136025834,
+            "max_centroid_penetration_m": 0.030311215931395456,
+            "max_total_rft_force_N": 873.333534631198,
+            "max_rigid_support_force_N": 0.0,
+            "rigid_support_contact_steps": 0,
+            "rigid_contact_pairs": [],
+            "rft_active_steps": 11999,
+            "max_smoothed_rft_power_W": 0.0,
+            "positive_smoothed_power_steps": 0,
+            "trace_columns": [
+              "time_s",
+              "com_x",
+              "com_y",
+              "com_z",
+              "root_z",
+              "upright_cosine",
+              "penetration_m",
+              "rft_fx",
+              "rft_fy",
+              "rft_fz",
+              "rigid_fx",
+              "rigid_fy",
+              "rigid_fz",
+              "rft_power_W",
+              "rigid_contact_count",
+              "rigid_min_distance_m"
+            ],
+            "state_alignment": "All rows are pre-step, force/control at same qpos/qvel/time; final state stored separately",
+            "boundary": "Bounded engineering screen, not material calibration or guaranteed policy transfer",
+            "video_frames": 121
+          },
+          "derived": {
+            "mean_forward_speed_m_s": 0.31011006021535586,
+            "desired_forward_speed_m_s": 0.2,
+            "mean_forward_speed_bias_m_s": 0.11011006021535585,
+            "relative_mean_forward_speed_bias": 0.5505503010767793,
+            "component_active_duty": {
+              "left_foot": 0.6765,
+              "right_foot": 0.8014166666666667
+            }
+          },
+          "video": {
+            "frames_decoded": 121,
+            "fps": 20.0,
+            "encoded_duration_s": 6.05,
+            "sha256": "1bb785110d40b2affb82a89bcd59de448d11b0c75fd6906f1c83892d6cf2455b"
+          }
+        }
+      }
+    }
+  },
+  "guard_change_repeatability": {
+    "directories": [
+      "outputs\\ground_rft\\go1_clean_6s_5078fdc",
+      "outputs\\ground_rft\\go1_clean_6s_f4c0360"
+    ],
+    "scenarios": {
+      "rigid_upstream": {
+        "qpos": true,
+        "qvel": true,
+        "ctrl": true,
+        "qfrc_rft": true,
+        "trace": true,
+        "active": true,
+        "rigid_active": true
+      },
+      "rigid_matched": {
+        "qpos": true,
+        "qvel": true,
+        "ctrl": true,
+        "qfrc_rft": true,
+        "trace": true,
+        "active": true,
+        "rigid_active": true
+      },
+      "sand": {
+        "qpos": true,
+        "qvel": true,
+        "ctrl": true,
+        "qfrc_rft": true,
+        "trace": true,
+        "active": true,
+        "rigid_active": true
+      }
+    }
+  },
+  "environment_delta": {
+    "changed_existing": {},
+    "added": {
+      "flatbuffers": "25.12.19",
+      "onnxruntime": "1.31.1",
+      "protobuf": "6.33.0"
+    }
+  }
+}

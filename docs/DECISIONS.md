@@ -1,5 +1,19 @@
 # Decision log
 
+## D-019 — bounded ground-pipeline success and failure media
+
+Date: 2026-10-28. Extend D-006 with `docs/media/ground_rft_pipeline/`:
+five MP4s (matched rigid/sand Go1 and G1 slow, plus G1 fast sand failure),
+three preview sheets and original model/policy notices. Runtime `f4c0360`
+is clean; retained fast failure is clean `5078fdc`. Verify raw manifests,
+decode all frames, copy videos without transcoding and record hashes.
+Caption-band previews do not change physics/raw media.
+
+Reason: show actual walking integration, including failure missed by short
+screening. Do not erase failure, relax thresholds, pad stopped trajectories,
+or call commanded speed actual speed. Preserve all prior lizard/interface
+media. Raw arrays remain ignored; compact provenance and analysis are tracked.
+
 ## D-018 — qualify prepared surfaces before ground-locomotion simulation
 
 Date: 2026-10-28.
@@ -243,6 +257,9 @@ under `docs/media/`:
 - `general_rft_stage1/`: two explicitly labelled, hash-verified cross-robot
   integration demos with previews and upstream notices (D-017); not a physics
   calibration or new gait-performance baseline.
+- `ground_rft_pipeline/`: five ground-controller/RFT success/failure videos,
+  three previews and notices (D-019); not calibrated physics or precise
+  velocity-tracking certification.
 
 Adding or replacing a set requires a clean source commit, verified generator
 manifest, tests, documentation, and an explicit decision. Rejected meshes are

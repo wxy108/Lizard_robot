@@ -19,6 +19,12 @@ intersection and sampled distance gates. No automatic arbitrary CAD exterior
 inference or walking-controller synthesis is claimed. Exact commands,
 failures, parameters and outputs: `GROUND_RFT_GUIDE.md` and the dated ledger.
 
+Clean runtime/config `f4c0360` and earlier clean `5078fdc` produced the
+reviewed success/failure runs. Raw hashes, source index, tested commands and
+copied video notices are under `docs/regressions/2026-10-28-ground-rft/` and
+`docs/media/ground_rft_pipeline/`. Postprocessing was authored afterward and
+records its own SHA-256 separately, without relabelling simulation source.
+
 ## Generic RFT stage one — 2026-10-27
 
 Preserved source/control: `ccc694677461012d488cb5ad7d7e9db945b74a80`.

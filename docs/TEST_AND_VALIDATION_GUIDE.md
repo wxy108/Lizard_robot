@@ -41,8 +41,18 @@ relative sand-plane translation, intrusion reaction, untouched external force
 and control, smoothing release/reset, triangle/wrench equivalence, primitive
 closed winding, original-source versus compiled mesh transform/scale,
 proxy units/pose, fixed-link URDF preservation and passive URDF RFT forces.
-The complete suite is 29 tests. Full same-state and ground-control commands
+The preserved binding/provider stage brought the suite to 29 tests. Same-state commands
 and open-source model demos are in `GENERAL_RFT_GUIDE.md`.
+
+### `tests/test_ground_pipeline.py`
+
+Twenty tests add known area/volume, topology/winding/multiple/intersection/
+duplicate rejection, units, remesh budgets, verified bundle/model identity,
+ownership, fixed-child/mocap support, explicit contact pairs and retained
+self-pairs, native force sign, virtual assets and controller contracts.
+Current full suite: **49 tests**. Standalone official-policy parity and native
+three-scenario six-second screens are in `GROUND_RFT_GUIDE.md`; they require
+optional pinned assets/inference packages and are not unit-test downloads.
 
 ### `tests/test_video_matrix.py`
 

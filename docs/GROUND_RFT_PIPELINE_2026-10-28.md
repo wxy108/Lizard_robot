@@ -11,6 +11,11 @@ IsaacLab is neither a dependency nor an installation target.
 
 Baseline before this work: `4de8b1d`. Work stays on a separate Git branch.
 
+Publication branch: `agent/ground-rft-pipeline`. `main` remains the original
+lizard control, not a pointer to the new pipeline. Fresh-deployment commands
+explicitly select the feature branch; do not mix default-branch source with
+feature-branch instructions.
+
 ## Pipeline and stage products
 
 | Stage | Purpose | Output / stop rule |
@@ -190,3 +195,85 @@ support pairs for removal. These stricter guards do not change the tested
 Go1/G1 physical configuration; the six-second Go1 run is repeated after them.
 The original lizard source/physics remains byte-identical and its full
 regression above is retained, not rerun merely for stricter generic guards.
+
+### S8 / final clean source, results and independent review
+
+Final runtime/config source: `f4c0360fdcddb30e8a4e833ec8a03a34119d93ee`.
+All **49 tests** passed; fresh official-controller parity again had exactly
+zero observation/action differences. Log:
+`outputs/ground_rft/final_verification_f4c0360.log`. Original lizard numerical
+source/assets/gait/environment remain identical to `ccc6946`; its full
+regression at `5078fdc` above remains valid for that unchanged target.
+
+| Clean run | Command vx | Upstream rigid dx | Matched rigid dx | Sand result / dx | Max sand centroid depth |
+| --- | ---: | ---: | ---: | --- | ---: |
+| `go1_clean_6s_f4c0360` | 0.4 m/s | 2.185136 m | 2.142136 m | PASS 6 s / 2.104190 m | 31.002 mm |
+| `g1_slow_clean_6s_f4c0360` | 0.2 m/s | 1.795613 m | 1.786208 m | PASS 6 s / 1.860660 m | 30.311 mm |
+| retained `g1_clean_6s_5078fdc` | 0.4 m/s | 2.964984 m | 2.936289 m | FAIL 3.765 s / 2.229902 m | 43.978 mm |
+
+All sand runs had exactly zero supporting rigid contacts/force and zero
+positive smoothed RFT-power steps. G1's two floor pairs were removed, three
+self-contact pairs retained. Slower command is now a **screened demo recipe**,
+not erasure of the failed command. This was the single planned command
+diagnostic; no further search, policy retraining or acceptance changes.
+
+Tracking is imperfect: Go1 mean sand vx 0.35070 m/s (-12.3% relative to
+command), dy +0.32224 m over six seconds; G1 slow 0.31011 m/s (+55.1%), dy
++0.00278 m. G1 overshoot is also present on matched rigid ground (0.29770 m/s,
++48.9%). These whole-window means are not steady-state tracking RMSE.
+Completion is not a control-quality or physical-accuracy claim.
+
+Binding checks: Go1 36 points / three poses, max position error 0, max
+velocity error 1.11e-16 m/s; G1 18 points / three poses, 0 and 5.55e-17 m/s.
+Prepared Go1 4x312 triangles; G1 2x486. Maximum sampled two-way deviation to
+source tessellation: Go1 0.6691 mm (1 mm gate); G1 0.000253 mm (0.5 mm gate).
+All shells pass topology, winding, intersections and distribution gates.
+
+Independent `scripts/review_ground_pipeline.py` verified raw manifests,
+aligned finite telemetry, and **1,044 decoded frames in nine videos**, including
+the stopped failure video. A caption band corrected first-preview footer
+overlap; physics/raw videos were unchanged. Final review:
+`outputs/ground_rft/review_clean_release_20261028_v2/`. The reviewer was authored
+after runtime validation, so its own Git dirty flag is expected; every
+simulation source is clean, and reviewer file SHA-256 is independently saved.
+
+Go1 before/after stricter guards has exact equality for all saved qpos/qvel/
+ctrl/generalized-force/trace/contact/activity arrays in all three scenarios
+(12,000 sand states). This is no observed behavior change for that control,
+not universal reproducibility or physical ground truth.
+
+Environment delta: **zero pre-existing package version changes**, exactly
+three additions (onnxruntime, flatbuffers, protobuf); IsaacLab untouched.
+Five byte-identical curated videos, three previews and original notices:
+`docs/media/ground_rft_pipeline/` (D-019). Compact evidence, hashes and logs:
+`docs/regressions/2026-10-28-ground-rft/`. Raw arrays stay ignored; no new
+experimental trajectory replaces lizard's numerical or production baseline.
+
+### Remaining boundary and next engineering work
+
+Examples use foot collision proxies, not automatic full-robot CAD exteriors.
+Import/binding is not dynamics/actuator synthesis, missing-format conversion,
+whole-body exterior inference, universal controller transfer or material
+calibration. Known-answer URDF tests are real, but these downloaded walking
+robots are MJCF. Expand actual URDF/controller and morphology coverage next;
+review exposed surfaces and mesh/step sensitivity before adopting quantitative
+granular-force or locomotion-performance claims. Keep observed G1 force
+variation and tracking bias visible instead of adjusting contact coefficients
+to disguise policy-transfer limitations.
+
+### S9 / CLI stopping and prepared-cache reuse checks
+
+After simulations, exercised the unchanged CLI with a closed STL lacking
+robot metadata: `--input asset/Mid.STL --units m` correctly returned
+`needs_metadata`, exit 2, without simulation. Supplying the source-lock JSON
+as `--input` correctly returned `unsupported_input`, exit 2. Conda labels any
+nonzero exit as ERROR; here exit 2 is intentional and the pipeline JSON is
+authoritative. Raw runs: `outputs/ground_rft/geometry_only_safe_stop_20261028/`
+and `outputs/ground_rft/unsupported_safe_stop_20261028/`.
+
+`--prepare-only --bundle-dir outputs/ground_rft/go1_clean_6s_f4c0360/bundle`
+successfully verified and reused the cache without remeshing, then repeated
+the three-pose checks. Output:
+`outputs/ground_rft/verified_bundle_reuse_20261028/`. These are post-validation
+CLI diagnostics, not additional clean-source physics runs. Their stage files
+and hashes are included in the compact evidence record.

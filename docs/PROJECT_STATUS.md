@@ -10,10 +10,14 @@ and real open-source walking controllers. Panda is retained as interface
 smoke only, not relevant locomotion-generalization evidence. Work/acceptance:
 `GROUND_RFT_PIPELINE_2026-10-28.md`. Original lizard remains preserved.
 
-Implementation now includes qualification/remesh/cache/binding and official
-Go1/G1 walking adapters. Two-second development rigid/sand screens passed for
-both morphologies. These are not the clean six-second acceptance record;
-current single-entry workflow: `GROUND_RFT_GUIDE.md`.
+Final generic runtime `f4c0360` has 49 passing tests, audited remesh/bundles/
+pose checks and official Go1/G1 walking adapters. Go1 command 0.4 m/s and G1
+command 0.2 m/s completed six-second rigid/sand screens, zero rigid sand
+support. G1 0.4 m/s failed at 3.765 s and is retained. Tracking is imperfect,
+especially G1 overshoot; no universal CAD/policy-transfer or calibration claim.
+Current entry point: `GROUND_RFT_GUIDE.md`; exact evidence:
+`regressions/2026-10-28-ground-rft/`. Original lizard remains unchanged; its
+full six-second regression passed again during this work at `5078fdc`.
 
 Implemented on `agent/general-rft-stage1`, source `3be21df`: generic named-body
 surface bindings, explicit units/transforms, compiled mesh/primitive inputs,
@@ -151,7 +155,7 @@ tracked evidence under
 `docs/regressions/2026-07-27-video-matrix-smoke/`. Its 0.25 s duration covers
 only initial settling and must not be used for locomotion-performance claims.
 
-Fast automated tests: 29/29 passing (16 original + 13 generic binding/provider).
+Fast automated tests: 49/49 passing (16 original + 13 binding/provider + 20 ground-pipeline).
 
 The clean production run at commit `ff1dda2` generated nine 6 s individual
 videos plus the 3×3-with-three-panels master overview. Its manifest, derived

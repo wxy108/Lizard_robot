@@ -1,6 +1,30 @@
 # Validation record
 
-Latest engineering validation: 2026-10-27. The original 6 s numerical baseline
+## Ground pipeline — 2026-10-28
+
+Clean runtime `f4c0360`: 49/49 tests; official Go1/G1 observation/action parity
+exactly zero across 20 states each. Full canonical lizard validation at clean
+`5078fdc` passed with unchanged six-second anchors; its source/model/STL/gait/
+environment bytes remain unchanged. Subsequent generic support guards do not
+modify legacy execution.
+
+Go1 0.4 m/s and G1 0.2 m/s commanded recipes completed six seconds in native
+rigid, matched rigid and sand. Sand dx 2.10419 / 1.86066 m, depth 31.002 /
+30.311 mm, zero supporting rigid contacts/force and positive-power steps.
+G1 0.4 m/s failed at 3.765 s; the preserved failure is not a completed run.
+Two-second screening missed it. Tracking is imperfect: mean sand vx Go1
+0.35070 vs 0.4 m/s command; G1 0.31011 vs 0.2. Foot proxies/material remain
+uncalibrated. Binding errors versus native reference are at machine precision;
+all prepared shells pass topology/distribution/sampled-deviation gates.
+Go1 repeated arrays before/after stricter guards are exactly equal.
+
+Independent review verified manifests and decoded all 1,044 frames in nine
+videos. Compact evidence/logs: `regressions/2026-10-28-ground-rft/`; exact
+steps/failures: `GROUND_RFT_PIPELINE_2026-10-28.md`; deployment/extraction:
+`GROUND_RFT_GUIDE.md`. This is bounded pipeline/controller-transfer evidence,
+not long-horizon stability, whole-robot CAD validation or material calibration.
+
+Latest engineering validation: 2026-10-28. The original 6 s numerical baseline
 below was reproduced without changing legacy source/model/gait. Historical
 raw-data anchors remain the 2026-07-27 records.
 

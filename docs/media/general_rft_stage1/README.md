@@ -1,5 +1,9 @@
 # General RFT stage-one integration demos
 
+Historical interface screens: **Panda is not ground-locomotion validation**.
+Current [audited pipeline and actual walking result set](../ground_rft_pipeline/README.md).
+Original bytes and earlier scope below remain preserved for traceability.
+
 These two short, reviewed videos demonstrate model import, selected surface
 binding, active RFT, independent control and rendering. They are not optimized
 walking policies, experimentally calibrated sand models or replacements for

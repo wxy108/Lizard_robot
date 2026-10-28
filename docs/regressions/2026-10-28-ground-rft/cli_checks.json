@@ -1,0 +1,199 @@
+{
+  "geometry_only_safe_stop_20261028": {
+    "pipeline": {
+      "source": {
+        "commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+        "dirty": true
+      },
+      "status": "needs_metadata",
+      "steps": [
+        {
+          "stage": "geometry_inventory",
+          "source": "X:\\Projects\\Lizard_Robot_MuJoCo\\asset\\Mid.STL",
+          "sha256": "f4efab92b38d199ba58cc3973cb8eb11d7c00508223257a0aa7e037cf8be8cb2",
+          "metrics": {
+            "vertices": 894,
+            "triangles": 1816,
+            "bbox_extent_m": [
+              0.1308002695441246,
+              0.030881156213581562,
+              0.04415578953921795
+            ],
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_winding_edges": 0,
+            "duplicate_faces": 0,
+            "degenerate_faces": 0,
+            "vertex_manifold": true,
+            "self_intersection_pairs": 0,
+            "components": 1,
+            "component_signed_volumes_m3": [
+              0.00011229925905447217
+            ],
+            "area_m2": 0.019195360377562948,
+            "area_p95_p05": 9.53161308412438,
+            "centroid_spacing_p95_p05": 3.7072337801542363,
+            "edge_aspect_max": 4.503356552228064
+          }
+        }
+      ],
+      "required": [
+        "robot dynamics/joints",
+        "explicit units and body owner/exterior recipe",
+        "controller contract"
+      ]
+    },
+    "manifest": {
+      "artifacts": {
+        "pipeline.json": {
+          "bytes": 1257,
+          "sha256": "5643d7d651b0958dac2b678cd15a136caf5bd0329d8703306fa6d046d87a679f"
+        }
+      }
+    }
+  },
+  "unsupported_safe_stop_20261028": {
+    "pipeline": {
+      "source": {
+        "commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+        "dirty": true
+      },
+      "status": "unsupported_input",
+      "steps": [],
+      "required": [
+        "explicit conversion to MJCF/URDF or supported STL/OBJ/PLY geometry"
+      ]
+    },
+    "manifest": {
+      "artifacts": {
+        "pipeline.json": {
+          "bytes": 251,
+          "sha256": "9f44a0222508472011b0f6d0eed24ef7ae6cd42552bf74ee0fa4da74fb382819"
+        }
+      }
+    }
+  },
+  "verified_bundle_reuse_20261028": {
+    "pipeline": {
+      "source": {
+        "commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+        "dirty": true
+      },
+      "status": "prepared",
+      "steps": [
+        {
+          "stage": "import",
+          "source_files": [
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_flat_terrain.xml",
+              "sha256": "f89261e90ff2e92b5fcaaecd94fa6d3850c9574c2fc698cd01bfc05140056ed0"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\assets\\hfield.png",
+              "sha256": "9e2fc5b8a1979fec9fc8f9c72aa0c249aaecb5876813f739bc3a1e675450e926"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\assets\\rocky_texture.png",
+              "sha256": "7dd26e7b94d1a95d8d1e09aadaf08caeb0026b084f9cf9e6cb255e24552ebf56"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\go1_mjx.xml",
+              "sha256": "5bbda65402791a610e884ffdae46c7175502460cc5f5a0b32f93585457212514"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\go1_mjx_feetonly.xml",
+              "sha256": "c33da7ff33b33d305163b6b05fadde9430b8777ccf1db88fda2e58d9cfabf82a"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\go1_mjx_fullcollisions.xml",
+              "sha256": "d336113e3c81da50b09765387b2ac0b0b9ef1a10c03281cee1fa963aebf5e80c"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_bowl.xml",
+              "sha256": "c927bfc102c16d2c3de1cabb53609c947d0c024fda4137a6acf3d9bc0fefec8c"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_rough_terrain.xml",
+              "sha256": "0c616d95059e203aa57fc261ff874e238875f9d807f546167364dc2561a68413"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_feetonly_stairs.xml",
+              "sha256": "1ea4dccdc7e64a1bbda2b14b14b9de53badb2747bc5ab05b48c77ca2adb9225d"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_flat_terrain.xml",
+              "sha256": "d3ae91615ff66d079904c626b04f0878f269a1001fda7f908c7c20ee1a6cfa28"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\scene_mjx_fullcollisions_flat_terrain.xml",
+              "sha256": "88be0f58e6207a5c8b302a0a1740a1422a9d6a4d29ddcc2142a94efccd4a47bf"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\sensor_feet.xml",
+              "sha256": "75c4e09936f4bbc529f4c538485e493283359df7d1bf6678390a830bef9b5e13"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\playground\\mujoco_playground\\_src\\locomotion\\go1\\xmls\\sensor_fullcollision.xml",
+              "sha256": "25a980a729378a92e018d3fbf4a8f9926529e4793e2571ba19fc74ee80089695"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\calf.stl",
+              "sha256": "ad3685e132454fd64e4ca3e5089f0d812fb53958e95c14913a22e3193e9e9ed8"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\hip.stl",
+              "sha256": "b6599b9dd2751ebd87449203223f5683a6c235268b76fcc443e00e0d974a06c0"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\thigh.stl",
+              "sha256": "bbf7c0a441323088c59276dbec8a32e708a1c61f42d30a6f6775176366ea23f8"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\thigh_mirror.stl",
+              "sha256": "1a90b89de47a57cb12a2d703f6b008a6ace8a1890a381c27723296fd0d00b9d8"
+            },
+            {
+              "path": "X:\\Projects\\Lizard_Robot_MuJoCo\\third_party\\robot_assets\\mujoco_menagerie\\unitree_go1\\assets\\trunk.stl",
+              "sha256": "051a57995dc6f892fc9bc53cd94e9a894f3dc209fd646e94d55d764150013970"
+            }
+          ],
+          "config_sha256": "1152f925895bb73bba11b3f6e4de9c26f975a1e8966178f6b6fb9f9768a64470"
+        },
+        {
+          "stage": "bind",
+          "bundle": "X:\\Projects\\Lizard_Robot_MuJoCo\\outputs\\ground_rft\\go1_clean_6s_f4c0360\\bundle",
+          "bundle_metadata_sha256": "87acf653627539ad4a2f9347f1334de640b7218367bf559a1985cb49859f2266",
+          "surface_count": 4
+        },
+        {
+          "stage": "binding_pose_checks",
+          "poses": 3,
+          "points_checked": 36,
+          "max_position_difference_m": 0.0,
+          "max_point_velocity_difference_m_s": 1.1102230246251565e-16,
+          "status": "passed"
+        }
+      ]
+    },
+    "manifest": {
+      "artifacts": {
+        "binding_checks.json": {
+          "bytes": 169,
+          "sha256": "602907af5bad298354637d6fd1689e0b541c9c8c1b25d86115becfb77fa99754"
+        },
+        "inventory.json": {
+          "bytes": 23106,
+          "sha256": "1dd4ad7d124edee04d29fd446cad52861af03ec2bfcfc540470d3957702323d5"
+        },
+        "pipeline.json": {
+          "bytes": 5707,
+          "sha256": "e580035fde48b01825887794f1adf64af435cf65882025acfbcdbe721c1fd6a7"
+        },
+        "resolved_config.json": {
+          "bytes": 1805,
+          "sha256": "a853e5549e5e2db8a1fe6d55a4fd29529d2446e0002da7073e624e6cb5e77abc"
+        }
+      }
+    }
+  }
+}

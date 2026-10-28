@@ -26,6 +26,11 @@ The repository also contains:
 
 The canonical environment is `lizard_rft`. IsaacLab is outside project scope.
 
+For the audited generic ground-locomotion pipeline, optional official Go1/G1
+policies and reviewed success/failure videos, continue with
+[the generic guide](docs/GROUND_RFT_GUIDE.md) after core setup. Original lizard
+workflows below remain the regression control.
+
 ## 1. See the output before installing anything
 
 Open these files directly on GitHub:
@@ -89,8 +94,11 @@ If `conda` is not found:
 
 Preferred:
 
+For this generic-pipeline release, explicitly select the feature branch.
+`main` remains the preserved lizard control and does not contain this release.
+
 ```bash
-git clone https://github.com/wxy108/Lizard_robot.git
+git clone --branch agent/ground-rft-pipeline https://github.com/wxy108/Lizard_robot.git
 cd Lizard_robot
 ```
 
@@ -100,7 +108,8 @@ inside GitHub. On the original workstation, the single canonical Git root is
 See `docs/LOCAL_WORKSPACE_LAYOUT.md`. Do not run from an archived copy.
 
 Alternatively use GitHub **Code → Download ZIP**, extract it and enter the
-extracted project folder. Setup and validation work without local Git metadata.
+extracted project folder. Select **agent/ground-rft-pipeline** before
+downloading this release. Setup/validation work without local Git metadata.
 
 Bundled upstream reference:
 
@@ -224,7 +233,7 @@ python scripts/validate_project.py
 Acceptance:
 
 - all 159 bundled upstream files match their recorded sizes and SHA-256;
-- 29/29 unit tests (16 original + 13 generic binding/provider checks);
+- 49/49 unit tests (16 original + 13 binding/provider + 20 ground-pipeline);
 - eight active STLs are one-component, watertight, manifold, consistently
   oriented, positive-volume, and free of detected self-intersections;
 - 13,916 force sites exactly match 13,916 active triangles;
@@ -626,7 +635,7 @@ hash-mismatched builds.
 On a computer that has never run this project:
 
 ```bash
-git clone https://github.com/wxy108/Lizard_robot.git
+git clone --branch agent/ground-rft-pipeline https://github.com/wxy108/Lizard_robot.git
 cd Lizard_robot
 conda env create --file environment.yml
 conda activate lizard_rft

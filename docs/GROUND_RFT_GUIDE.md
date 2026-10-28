@@ -1,11 +1,27 @@
 # Audited ground locomotion pipeline
 
+Current ground runner scope is one floating robot and an explicitly reviewed
+horizontal support scene. Moving dynamic external actors, multiple robots,
+arbitrary terrain and whole-body burial need separate scene/contact adapters;
+the static/mocap support guard is not validation of those scenarios.
+
 This is the current generic entry point. Historical hold/sine integration
 screens, especially Panda, are **not walking-policy evidence**. The new
 examples use official Go1 quadruped and G1 biped walking policies with CPU
 ONNX inference; no IsaacLab, ROS, JAX, PyTorch, training or hardware access.
 
 ## Install and run from a fresh clone
+
+This feature is on **`agent/ground-rft-pipeline`**, not the preserved `main`.
+Clone the correct branch first; do not assume a default-branch ZIP has it:
+
+```bash
+git clone --branch agent/ground-rft-pipeline https://github.com/wxy108/Lizard_robot.git
+cd Lizard_robot
+```
+
+For an existing clone, preserve uncommitted work, fetch origin and switch to
+this branch before running commands. Do not reset/overwrite local work.
 
 Use the normal project `environment.yml` and `scripts/setup.ps1` or
 `scripts/setup.sh` first (see `../GUIDANCE.md`). Then from the repository root:
@@ -16,7 +32,7 @@ conda run --no-capture-output -n lizard_rft python -m pip install --no-deps -r r
 conda run --no-capture-output -n lizard_rft python -m pip check
 conda run --no-capture-output -n lizard_rft python scripts/verify_walking_controllers.py
 conda run --no-capture-output -n lizard_rft python scripts/run_ground_pipeline.py --config configs/robots/playground_go1.yaml --duration 6 --video
-conda run --no-capture-output -n lizard_rft python scripts/run_ground_pipeline.py --config configs/robots/playground_g1.yaml --duration 6 --video
+conda run --no-capture-output -n lizard_rft python scripts/run_ground_pipeline.py --config configs/robots/playground_g1_slow.yaml --duration 6 --video
 ```
 
 These commands are also valid in POSIX shells. Linux headless rendering may
@@ -28,6 +44,16 @@ original files, 57,190,087 selected bytes, with reused Go1 assets not fetched
 again. Source lock: `../configs/ground_robot_sources.json`. Original notices
 are retained; modified controller conventions retain Apache-2.0 notice in
 `../controllers/NOTICE.playground`.
+
+Use the screened **0.2 m/s G1 recipe** above for the bounded demo. Original
+`playground_g1.yaml` requests 0.4 m/s and failed in sand at 3.765 s, despite
+passing its two-second screen; it remains a reproducible negative case.
+No policy, mesh, material or acceptance threshold was retuned. Go1 at 0.4
+and G1 at 0.2 completed six seconds with zero rigid sand support. Completion
+is not accurate tracking: mean sand vx 0.351 vs 0.4 m/s (Go1), 0.310 vs 0.2
+(G1). G1 already overshot on matched rigid ground (0.298 m/s).
+See [reviewed videos](media/ground_rft_pipeline/README.md) and
+[measured evidence](regressions/2026-10-28-ground-rft/README.md).
 
 ## What one pipeline command actually does
 
@@ -59,7 +85,8 @@ are retained; modified controller conventions retain Apache-2.0 notice in
    command match; observations and actions evolve independently with physics.
 9. In sand mode remove exactly the reviewed explicit support contact pairs
    via a private native `MjSpec`, disable declared world support masks, and
-   reject undeclared world collision support. Preserve self-contact pairs,
+   reject undeclared world collision support, including fixed child bodies
+   and mocap platforms. Preserve self-contact pairs,
    geometry, dynamics, servo definitions and original on-disk XML.
 10. Record synchronized pre-step state/command/force/contact, COM, depth,
     root height/uprightness, numerical warnings and termination reason.
@@ -115,7 +142,8 @@ joint velocity, previous action, command]` (48 floats).
 G1 uses `[local linear velocity, gyro, gravity, command, joint offset,
 joint velocity, previous action, cos(phase), sin(phase)]` (103 floats).
 G1 phase starts `[0, pi]` and advances at 1.5 Hz. Commands in the tested
-recipes are `[vx=0.4 m/s, vy=0, yaw_rate=0]`.
+recipes are `[vx=0.4 m/s, vy=0, yaw_rate=0]` for Go1 and 0.2 m/s for the
+screened G1 demo; its original 0.4 m/s recipe is a retained failure.
 
 Joint names, actuator transmission order, gear, sensor dimensions, position
 servo gains, ONNX input/output signatures and exact timestep divisibility are
@@ -169,6 +197,16 @@ not accepted merely because state arrays stayed finite. Height/uprightness/
 depth violations sustained for 100 ms terminate with partial evidence; a
 MuJoCo numerical warning terminates immediately, before its automatic state
 reset can masquerade as a successful run.
+
+Independent review decodes all frames, verifies immutable raw artifacts,
+and derives tracking bias/contact duty without changing the source run:
+
+```powershell
+conda run --no-capture-output -n lizard_rft python scripts/review_ground_pipeline.py --runs outputs/ground_rft/run_... --output-dir outputs/ground_rft/review_...
+```
+
+Optional `--compare-runs OLD NEW` checks exact saved-array repeatability;
+`--environment-before INVENTORY.json` reports package changes/additions.
 
 ## Scientific and coverage boundary
 

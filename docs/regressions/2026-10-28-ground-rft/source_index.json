@@ -1,0 +1,29 @@
+{
+  "runtime_commit": "f4c0360fdcddb30e8a4e833ec8a03a34119d93ee",
+  "original_full_regression_and_fast_failure_commit": "5078fdc83d418f329bd7d54d0272fb9aaa4fb8f6",
+  "preserved_lizard_commit": "ccc694677461012d488cb5ad7d7e9db945b74a80",
+  "runtime_files": {
+    "rft/binding.py": "d2f33091eba8e808c3dca726a15521b00294158678922b190a2d60009a5ff238",
+    "rft/geometry.py": "9c0564e26fc18395f31dac1334c8beaf19ab2aca82619871ec237be520d03258",
+    "rft/pipeline.py": "4d7553e611460d108db4546db83dd55db3fce5bbdc084c22f34c1e9660818bcd",
+    "rft/ground.py": "97e5fdb053faec2724b2ba76a6740a1f348c721c54dd2ed519cee57a9ecdbd94",
+    "rft/provider.py": "018e50ef040277b3b05e0509d3f2f9400e57f04e67de3b23f691e201214af02d",
+    "rft/kernel.py": "deb65e41f652a70dd95d960fd40f274e9c86a88bd2a070e2cfb2816a4ad3ffde",
+    "rft/records.py": "8b468038652debb0d30040a11617ed95f15936406e98c2a99dea3344d09eeda6",
+    "controllers/playground_onnx.py": "c8f6aaf617ffd35b5ccb1d1547cfacb6d78d94aa9671803953edf28172fbbae3",
+    "controllers/NOTICE.playground": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "scripts/run_ground_pipeline.py": "95a0c87cab908421ce854b7d8804ca7d142324555e96ec636c908af0568ff38c",
+    "scripts/install_ground_robots.py": "a63c3940e163b31cfcfe27cea729bf10ab725e3bac4b5209e9a5d2fcff67ff94",
+    "scripts/verify_walking_controllers.py": "a4443b38c973b2b7565d7a505a118b85af1b346956d8a64cff6179b3db67ea16",
+    "tests/test_ground_pipeline.py": "ce6f6c172f662195ee26810956e6664ac7cb847edd3c5461bf972248c6e4e559",
+    "configs/ground_robot_sources.json": "c8a95c3982eefb37db530e4f0710a2b112814efbfb52e67aa44c66127d0bcd65",
+    "configs/robots/playground_go1.yaml": "1152f925895bb73bba11b3f6e4de9c26f975a1e8966178f6b6fb9f9768a64470",
+    "configs/robots/playground_g1.yaml": "16689619a47f7b58ee088a25e898a9972bf373fdfca4809dec711bdaebdf5f2b",
+    "configs/robots/playground_g1_slow.yaml": "812c738685f0ab19d9f878fe0f1f752451c833ca3f17dbe6f02e801ab58ef063",
+    "requirements-locomotion.txt": "bfbc4117cf6678a4da854ad8696f6c377ea6e05dabd9a47a27232cadc49589ec"
+  },
+  "postprocessing_reviewer": {
+    "path": "scripts/review_ground_pipeline.py",
+    "sha256": "c2ee6df2001a53ddc8506f32c4ceb87909a8145e0776c03db5d70fe7b8978927"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "go1": {
+    "samples": 20,
+    "source_sha256": "f422e041e9382d96a6b4d60f7a9065f2bc849599dadbd57939fd03677292abb9",
+    "policy_sha256": "386cde6a1eac679e2f2a313ade2b395d9f26905b151ee3b019c2c4163d49b6f2",
+    "max_observation_difference": 0.0,
+    "max_actuator_target_difference": 0.0,
+    "phase_compared": false,
+    "status": "passed"
+  },
+  "g1": {
+    "samples": 20,
+    "source_sha256": "fa126d024db3330d3fbd8927ee62e6a144a1e56b64338317e5cc032445cd62d6",
+    "policy_sha256": "db2eb258494c1297c43d2b9ffa94cdbde97654c2a44cbab0b40fd4b990752a5b",
+    "max_observation_difference": 0.0,
+    "max_actuator_target_difference": 0.0,
+    "phase_compared": true,
+    "status": "passed"
+  }
+}
+X:\Projects\Lizard_Robot_MuJoCo\outputs\general_rft\walking_controller_parity_20261028_003037_042310
+test_case_inputs_are_portable_repository_paths (test_failed_mesh_videos.FailedMeshVideoTests.test_case_inputs_are_portable_repository_paths) ... ok
+test_projection_returns_finite_pixels_and_depth (test_failed_mesh_videos.FailedMeshVideoTests.test_projection_returns_finite_pixels_and_depth) ... ok
+test_body_wrench_and_triangle_application_agree (test_generic_rft.GenericRftTests.test_body_wrench_and_triangle_application_agree) ... ok
+test_compiled_geom_pose_and_closed_primitive_winding (test_generic_rft.GenericRftTests.test_compiled_geom_pose_and_closed_primitive_winding) ... ok
+test_compiled_mesh_matches_source_transform_without_double_scale (test_generic_rft.GenericRftTests.test_compiled_mesh_matches_source_transform_without_double_scale) ... ok
+test_existing_force_control_and_state_are_untouched (test_generic_rft.GenericRftTests.test_existing_force_control_and_state_are_untouched) ... ok
+test_imported_urdf_can_receive_rft_without_actuators_or_sites (test_generic_rft.GenericRftTests.test_imported_urdf_can_receive_rft_without_actuators_or_sites) ... ok
+test_intrusion_reaction_is_upward_and_dissipative (test_generic_rft.GenericRftTests.test_intrusion_reaction_is_upward_and_dissipative) ... ok
+test_named_owner_and_multiple_surfaces_do_not_need_sites (test_generic_rft.GenericRftTests.test_named_owner_and_multiple_surfaces_do_not_need_sites) ... ok
+test_plane_translation_preserves_force_and_generalized_force (test_generic_rft.GenericRftTests.test_plane_translation_preserves_force_and_generalized_force) ... ok
+test_point_velocity_matches_jacobian_with_offset_inertia (test_generic_rft.GenericRftTests.test_point_velocity_matches_jacobian_with_offset_inertia) ... ok
+test_proxy_units_and_transform_are_explicit (test_generic_rft.GenericRftTests.test_proxy_units_and_transform_are_explicit) ... ok
+test_smoothing_release_and_reset_do_not_retain_force (test_generic_rft.GenericRftTests.test_smoothing_release_and_reset_do_not_retain_force) ... ok
+test_surface_validation_rejects_invalid_geometry (test_generic_rft.GenericRftTests.test_surface_validation_rejects_invalid_geometry) ... ok
+test_urdf_fixed_link_mapping_and_missing_package (test_generic_rft.GenericRftTests.test_urdf_fixed_link_mapping_and_missing_package) ... ok
+test_controller_obs_order_and_action_scale (test_ground_pipeline.ControllerContractTests.test_controller_obs_order_and_action_scale) ... ok
+test_controller_rejects_wrong_actuator_mapping_or_frequency (test_ground_pipeline.ControllerContractTests.test_controller_rejects_wrong_actuator_mapping_or_frequency) ... ok
+test_array_input_checks_before_native_geometry (test_ground_pipeline.PipelineTests.test_array_input_checks_before_native_geometry) ... ok
+test_closed_outward_box_known_area_volume (test_ground_pipeline.PipelineTests.test_closed_outward_box_known_area_volume) ... ok
+test_explicit_contact_pairs_cannot_bypass_ground_masks (test_ground_pipeline.PipelineTests.test_explicit_contact_pairs_cannot_bypass_ground_masks) ... ok
+test_isotropic_remesh_checked_against_original_bound (test_ground_pipeline.PipelineTests.test_isotropic_remesh_checked_against_original_bound) ... ok
+test_mesh_units_are_explicit_and_scaled (test_ground_pipeline.PipelineTests.test_mesh_units_are_explicit_and_scaled) ... ok
+test_native_rigid_contact_force_has_upward_sign (test_ground_pipeline.PipelineTests.test_native_rigid_contact_force_has_upward_sign) ... ok
+test_nested_fixed_body_and_mocap_ground_are_not_hidden (test_ground_pipeline.PipelineTests.test_nested_fixed_body_and_mocap_ground_are_not_hidden) ... ok
+test_reject_crossing_and_duplicate_faces (test_ground_pipeline.PipelineTests.test_reject_crossing_and_duplicate_faces) ... ok
+test_reject_multicomponent_assembly_no_largest_component_shortcut (test_ground_pipeline.PipelineTests.test_reject_multicomponent_assembly_no_largest_component_shortcut) ... ok
+test_reject_open_and_inward_before_remeshing (test_ground_pipeline.PipelineTests.test_reject_open_and_inward_before_remeshing) ... ok
+test_reviewed_pair_conversion_keeps_unrelated_pairs_and_model_identity (test_ground_pipeline.PipelineTests.test_reviewed_pair_conversion_keeps_unrelated_pairs_and_model_identity) ... ok
+test_unbounded_remesh_request_is_rejected_before_generation (test_ground_pipeline.PipelineTests.test_unbounded_remesh_request_is_rejected_before_generation) ... ok
+test_unnamed_support_pair_cannot_be_silently_removed (test_ground_pipeline.PipelineTests.test_unnamed_support_pair_cannot_be_silently_removed) ... ok
+test_verified_bundle_roundtrip_and_tamper_rejection (test_ground_pipeline.PipelineTests.test_verified_bundle_roundtrip_and_tamper_rejection) ... ok
+test_virtual_asset_aliases_are_not_duplicated (test_ground_pipeline.PipelineTests.test_virtual_asset_aliases_are_not_duplicated) ... ok
+test_world_floor_policy_rejects_unlisted_support (test_ground_pipeline.PipelineTests.test_world_floor_policy_rejects_unlisted_support) ... ok
+test_wrong_model_rejects_prepared_bundle (test_ground_pipeline.PipelineTests.test_wrong_model_rejects_prepared_bundle) ... ok
+test_wrong_owner_and_duplicate_physical_geom_rejected (test_ground_pipeline.PipelineTests.test_wrong_owner_and_duplicate_physical_geom_rejected) ... ok
+test_annex_b_split_accepts_three_and_four_byte_start_codes (test_legacy_rft_video_recovery.LegacyRftVideoRecoveryTests.test_annex_b_split_accepts_three_and_four_byte_start_codes) ... ok
+test_tracked_source_recovers_expected_structure (test_legacy_rft_video_recovery.LegacyRftVideoRecoveryTests.test_tracked_source_recovers_expected_structure) ... ok
+test_truncated_mdat_keeps_complete_nals_only (test_legacy_rft_video_recovery.LegacyRftVideoRecoveryTests.test_truncated_mdat_keeps_complete_nals_only) ... ok
+test_plate_above_sand_has_no_force (test_rft_core.RftCoreTests.test_plate_above_sand_has_no_force) ... ok
+test_rotation_matrix_matches_legacy_yaw_pitch_roll (test_rft_core.RftCoreTests.test_rotation_matrix_matches_legacy_yaw_pitch_roll) ... ok
+test_sand_reaction_opposes_downward_intrusion (test_rft_core.RftCoreTests.test_sand_reaction_opposes_downward_intrusion) ... ok
+test_analysis_metrics_include_contact_and_penetration (test_video_matrix.VideoMatrixTests.test_analysis_metrics_include_contact_and_penetration) ... ok
+test_binary_intervals_closes_contact_at_end_of_run (test_video_matrix.VideoMatrixTests.test_binary_intervals_closes_contact_at_end_of_run) ... ok
+test_binary_intervals_records_start_and_end (test_video_matrix.VideoMatrixTests.test_binary_intervals_records_start_and_end) ... ok
+test_dashboard_has_expected_shape_and_content (test_video_matrix.VideoMatrixTests.test_dashboard_has_expected_shape_and_content) ... ok
+test_frame_steps_include_final_state (test_video_matrix.VideoMatrixTests.test_frame_steps_include_final_state) ... ok
+test_master_frame_is_three_views_plus_one_panel_per_row (test_video_matrix.VideoMatrixTests.test_master_frame_is_three_views_plus_one_panel_per_row) ... ok
+test_nearest_named_component_wins (test_video_matrix.VideoMatrixTests.test_nearest_named_component_wins) ... ok
+test_trajectory_metrics_use_center_of_mass (test_video_matrix.VideoMatrixTests.test_trajectory_metrics_use_center_of_mass) ... ok
+
+----------------------------------------------------------------------
+Ran 49 tests in 0.725s
+
+OK
+import
+prepare
+bind
+binding_pose_checks
+rigid_upstream: passed_screen (completed), dx=2.185 m, depth=0.00 mm
+rigid_upstream
+rigid_matched: passed_screen (completed), dx=2.142 m, depth=0.00 mm
+rigid_matched
+sand: passed_screen (completed), dx=2.104 m, depth=31.00 mm
+sand
+Pipeline passed_screen: X:\Projects\Lizard_Robot_MuJoCo\outputs\ground_rft\go1_clean_6s_f4c0360
+import
+prepare
+bind
+binding_pose_checks
+rigid_upstream: passed_screen (completed), dx=1.796 m, depth=0.00 mm
+rigid_upstream
+rigid_matched: passed_screen (completed), dx=1.786 m, depth=0.00 mm
+rigid_matched
+sand: passed_screen (completed), dx=1.861 m, depth=30.31 mm
+sand
+Pipeline passed_screen: X:\Projects\Lizard_Robot_MuJoCo\outputs\ground_rft\g1_slow_clean_6s_f4c0360

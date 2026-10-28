@@ -85,7 +85,7 @@ Conda for the current shell if `conda` is not found.
 ### Windows PowerShell
 
 ```powershell
-git clone https://github.com/wxy108/Lizard_robot.git
+git clone --branch agent/ground-rft-pipeline https://github.com/wxy108/Lizard_robot.git
 cd Lizard_robot
 powershell -ExecutionPolicy Bypass -File scripts\setup.ps1
 conda activate lizard_rft
@@ -94,7 +94,7 @@ conda activate lizard_rft
 ### Linux, macOS, or WSL
 
 ```bash
-git clone https://github.com/wxy108/Lizard_robot.git
+git clone --branch agent/ground-rft-pipeline https://github.com/wxy108/Lizard_robot.git
 cd Lizard_robot
 bash scripts/setup.sh
 conda activate lizard_rft
@@ -129,7 +129,7 @@ python scripts/validate_project.py
 
 Expected validation:
 
-- 29/29 fast tests pass (including the preserved original tests);
+- 49/49 fast tests pass (including the preserved original tests);
 - eight active RFT meshes pass topology/self-intersection gates;
 - 13,916 force sites match 13,916 active triangles;
 - rigid-floor and granular-RFT smoke runs complete;
@@ -147,6 +147,25 @@ upstream commit. No access to `Crab-Lab-CWRU/RFT-SiM` is needed. See the
 [upstream provenance](third_party/README.md).
 
 ## Run the simulations
+
+### Audited ground-locomotion pipeline (2026-10-28)
+
+Prepare/remesh/audit -> verified body/RFT bundle -> official walking controller
+-> native rigid, matched rigid and sand simulation. New robots do not require
+triangle force sites. Unsafe/underspecified inputs stop with a stage report.
+
+Follow [installation and one-command guide](docs/GROUND_RFT_GUIDE.md), then:
+
+```bash
+python scripts/run_ground_pipeline.py --config configs/robots/playground_go1.yaml --duration 6 --video
+python scripts/run_ground_pipeline.py --config configs/robots/playground_g1_slow.yaml --duration 6 --video
+```
+
+[Watch reviewed videos and the failure example](docs/media/ground_rft_pipeline/README.md).
+Go1 0.4 and G1 0.2 m/s commands completed six-second screens; G1 0.4 m/s failed
+at 3.765 s and is retained. These are foot proxies and uncalibrated RFT, with
+measurable tracking bias, not universal robot/CAD or policy-transfer guarantees.
+[Results and artifact index](docs/regressions/2026-10-28-ground-rft/README.md).
 
 ### Generic RFT stage-one adapters (2026-10-27)
 
@@ -298,7 +317,7 @@ second standalone MuJoCo copy for this project.
   catch floor.
 - The upstream RFT function returns body-on-sand force; the integration applies
   the equal-and-opposite reaction to the robot before `mj_step`.
-- 29/29 tests, rigid smoke, RFT smoke, video generation, overview composition,
+- 49/49 tests, rigid smoke, RFT smoke, video generation, overview composition,
   and production artifact verification pass.
 
 The model is a stable numerical baseline, not an experimentally calibrated

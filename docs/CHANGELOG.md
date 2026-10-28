@@ -25,6 +25,13 @@ line-level record; this file explains intent and consequences.
 - Hardened generic support detection for fixed descendants/mocap platforms,
   checked floating roots, retained unrelated self-contact pairs, and refused
   unnamed pair removal. Added two tests (49 total); final native runs follow.
+- Final clean `f4c0360` passed 49 tests, exact official-controller parity,
+  repeated Go1 six-second screens and the single G1 0.2 m/s diagnostic. Both
+  selected commands completed sand with zero rigid support; the G1 0.4 m/s
+  failure is preserved. Tracking bias is explicitly measured, not hidden.
+- Added independent artifact/full-video reviewer, five bounded reviewed MP4s
+  with notices/previews (D-019), full ledger, hashes and extraction commands.
+  All pre-existing environment package versions are unchanged.
 
 ## 2026-10-27 — staged robot-independent RFT binding/provider
 
