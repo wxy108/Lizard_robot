@@ -3,6 +3,24 @@
 All notable project changes are recorded here. Git is the authoritative
 line-level record; this file explains intent and consequences.
 
+## 2026-10-27 — staged robot-independent RFT binding/provider
+
+- Saved the approved architecture, acceptance criteria and per-step worklog
+  before implementation; froze lizard commit `ccc6946` and file hashes.
+- Added explicit surface/body bindings, immutable local triangle arrays,
+  proxy units/transforms, compiled mesh geoms and primitive tessellations.
+- Added a NumPy-only copy of the legacy force law and independent provider
+  with versioned legacy/body-frame conventions and private force buffers.
+- Added independent hold/sine controller adapters and reproducible selected
+  open-source robot configs/downloads, retaining upstream licensing.
+- Added same-state legacy force/generalized-force comparison and ground
+  contact/floor-disabled audit tooling. Initial 0.2 s comparison passed;
+  full representative results are recorded in the implementation worklog.
+- Initial 11 known-answer generic tests passed. Final test counts and artifact
+  hashes are recorded in `docs/regressions/2026-10-27-general-rft/`.
+- The original lizard code, model, geometry, gait and numerical environment
+  pins are unchanged. No legacy convention is silently corrected or adopted.
+
 ## 2026-10-08 — restore self-contained GitHub downloads and setup
 
 - Diagnosed the public-download failure: `third_party/RFT-SiM` was a gitlink

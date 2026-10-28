@@ -142,6 +142,19 @@ upstream commit. No access to `Crab-Lab-CWRU/RFT-SiM` is needed. See the
 
 ## Run the simulations
 
+### Generic RFT stage-one adapters (2026-10-27)
+
+The preserved lizard remains the original entry point below. A separate
+`rft/` binding/provider API now supports named bodies, explicit mesh/geom
+surfaces, site-free force application and independent controllers. See the
+[architecture](docs/RFT_GENERALIZATION_PLAN.md),
+[use/reproduction guide](docs/GENERAL_RFT_GUIDE.md) and
+[step-by-step evidence](docs/RFT_GENERALIZATION_WORKLOG_2026-10-27.md).
+Pinned Go1 and Panda examples can be installed and rendered through the guide;
+they are bounded RFT integration demos, not new validated walking policies.
+The same-state lizard comparison and ground audit preserve the old code,
+meshes, gait and safety-floor settings.
+
 Activate the environment and enter the cloned repository before every command:
 
 ```bash

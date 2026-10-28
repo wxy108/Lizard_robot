@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "repository": "google-deepmind/mujoco_menagerie",
+  "commit": "f3b6013629c7b94f8ee93fd977b161fa8350f9bc",
+  "models": ["unitree_go1", "franka_emika_panda"],
+  "maximum_download_bytes": 65000000,
+  "destination": "third_party/robot_assets/mujoco_menagerie",
+  "registry_requirements": "requirements-robots.txt",
+  "selection_reason": "Floating quadruped with primitive collision proxies plus fixed-base arm with compiled mesh geoms and hand/finger bodies. These screen different bindings; no trained walking controller is implied."
+}

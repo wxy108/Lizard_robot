@@ -1,0 +1,15 @@
+schema_version: 1
+model: ../../third_party/robot_assets/mujoco_menagerie/franka_emika_panda/panda.xml
+initial_keyframe: home
+convention: body_frame_v1
+coefficient: 3.75
+alpha: 0.5
+application: body_wrench
+timestep: 0.0005
+# Deliberately position the diagnostic sand plane 15 mm above the selected
+# surface's lowest initial centroid; this is not an experimental scene.
+sand_surface_above_initial_min_m: 0.015
+controller: {type: sine, actuators: [actuator2], amplitude: 0.05, frequency: 0.5}
+camera: {lookat: [0.2, 0, 0.45], distance: 1.5, azimuth: 135, elevation: -20}
+geometry_status: selected link7 compiled mesh only; no overlapping convex-decomposition union claim
+select_collision_geoms: {bodies: [link7], geom_group: 3}

@@ -1,5 +1,37 @@
 # Decision log
 
+## D-016 — versioned generic bindings coexist with the frozen lizard
+
+Date: 2026-10-27.
+
+Add the independent `rft/` package and explicit robot surface recipes without
+editing the legacy lizard runner, force library, models, accepted geometry or
+gait. New bindings may use body-local proxy triangles or selected compiled
+geom triangles/primitives; force sites are optional in this new path. The
+legacy site count/group invariants and D-007 envelope gates remain unchanged
+for the existing lizard. The new path permits declared multiple surfaces per
+body, and never silently discards smaller physical components.
+
+`legacy_lizard_v1` deliberately preserves the original velocity reference,
+absolute-z depth factor, non-finite sanitization and alpha smoothing for
+compatibility. `body_frame_v1` uses regular body-frame origin velocity,
+relative plane depth and explicit invalid-force errors. A passing legacy
+comparison does not adopt the corrected convention for the lizard. Record
+corrected-convention differences separately.
+
+Providers return private generalized-force buffers; they do not step, control
+the robot, or clear other external forces. Per-body wrench aggregation must
+match per-triangle generalized forces and is not combined with that path.
+
+Selected open-source model demos may use clearly labelled collision proxies
+and independent hold/sine controllers to screen import, binding, RFT and
+rendering. Such screening is not an externally calibrated granular-contact
+model or a newly validated walking gait. Preserve upstream model licenses and
+pin all downloaded blobs; keep optional assets ignored and reproducible.
+
+See `RFT_GENERALIZATION_PLAN.md` and the dated implementation worklog for
+scope, exact conventions, tests, outputs and staged adoption criteria.
+
 ## D-015 — bundle the immutable RFT-SiM reference for public deployment
 
 Date: 2026-10-08. Supersedes the submodule distribution choice in D-005.

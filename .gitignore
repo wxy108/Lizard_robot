@@ -17,3 +17,6 @@ Thumbs.db
 
 # Runtime logs and local download markers
 MUJOCO_LOG.TXT
+
+# Pinned optional upstream model downloads; installers and lock records are tracked.
+third_party/robot_assets/

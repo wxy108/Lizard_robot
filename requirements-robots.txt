@@ -1,0 +1,6 @@
+# Optional model registry only; numerical runtime remains environment.yml.
+# Install with --no-deps so the validated numerical packages cannot be upgraded.
+robot_descriptions==3.3.0
+GitPython==3.2.1
+gitdb==4.0.12
+smmap==5.0.3

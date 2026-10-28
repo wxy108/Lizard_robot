@@ -1,0 +1,17 @@
+schema_version: 1
+model: ../../third_party/robot_assets/mujoco_menagerie/unitree_go1/go1.xml
+initial_keyframe: home
+convention: body_frame_v1
+coefficient: 3.75
+alpha: 0.5
+application: body_wrench
+timestep: 0.0005
+sand_height: 0.0
+controller: {type: hold_keyframe}
+camera: {lookat: [0, 0, 0.13], distance: 1.15, azimuth: 135, elevation: -20}
+geometry_status: upstream foot spheres only; collision proxies, not audited full robot envelope
+surfaces:
+  - {id: FR_foot, geom: FR, body: FR_calf, group: front_right}
+  - {id: FL_foot, geom: FL, body: FL_calf, group: front_left}
+  - {id: RR_foot, geom: RR, body: RR_calf, group: rear_right}
+  - {id: RL_foot, geom: RL, body: RL_calf, group: rear_left}

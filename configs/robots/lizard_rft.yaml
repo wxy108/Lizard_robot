@@ -1,0 +1,16 @@
+schema_version: 1
+model: ../../Lizard_Sand.xml
+initial_keyframe: stand
+convention: legacy_lizard_v1
+coefficient: 3.75
+alpha: 0.5
+sand_height: 0.0
+surfaces:
+  - {id: Mid, body: Mid, mesh: ../../asset/Mid.STL, units: m}
+  - {id: Front, body: Front, mesh: ../../asset/Front.STL, units: m}
+  - {id: FR, body: FR, mesh: ../../asset/FR.STL, units: m}
+  - {id: FL, body: FL, mesh: ../../asset/FL.STL, units: m}
+  - {id: Back, body: Back, mesh: ../../asset/Back.STL, units: m}
+  - {id: HR, body: HR, mesh: ../../asset/HR.STL, units: m}
+  - {id: HL, body: HL, mesh: ../../asset/HL.STL, units: m}
+  - {id: Tail, body: Tail, mesh: ../../asset/Tail.STL, units: m}

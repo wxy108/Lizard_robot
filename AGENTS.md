@@ -87,6 +87,9 @@ an explicit metric, raw result path, configuration, and comparison set.
 - Force application occurs before `mj_step`.
 - Inactive triangle smoothing buffers are zeroed.
 - Force sites are sequential per body, equal triangle count, visual group 5.
+- That site invariant applies to the preserved legacy lizard. The explicit
+  D-016 generic provider binds triangle arrays directly and need not create
+  XML sites. Keep compatibility and body-frame conventions versioned.
 - `foot_depth` is signed; `sinkage = max(foot_depth, 0)`.
 - Site-hidden and site-visible sand videos must replay the same recorded
   trajectory; visualization state must not alter simulation state.

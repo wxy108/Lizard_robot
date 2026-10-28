@@ -44,6 +44,138 @@ NumPy 1.26.4 imported successfully. An ordinary `conda run` import is being
 checked independently. No system security policy or binary trust metadata was
 changed. Runtime tests must not be reported as passed until executed.
 
+Follow-up: the ordinary `conda run -n lizard_rft python ...` import succeeded
+with MuJoCo 3.9.0. Runtime checks use that environment launch path. The direct
+launch failure is retained as an observation; its precise Windows DLL/trust
+resolution cause has not been established. No security settings changed.
+
+## S2 — generic binding/provider and known-answer checks (implemented)
+
+Purpose: extract the reusable boundary while preserving the existing control.
+Outputs: `rft/{binding,kernel,provider,records}.py`,
+`configs/robots/lizard_rft.yaml`, `tests/test_generic_rft.py`.
+
+The force law is copied without mathematical edits from the frozen module
+into a NumPy-only module. Simulator-frame/depth differences are explicit
+provider modes, not hidden changes to that law. Bindings are owned by named
+bodies and can use multiple surfaces and unequal triangle counts without
+sites. Results contain raw/smoothed force arrays, masks, positions, velocities
+and a private generalized-force vector.
+
+Command: `conda run --no-capture-output -n lizard_rft python -m unittest
+discover -s tests -p test_generic_rft.py -v`.
+
+Initial result: 11/11 passed. Covered offset-inertia point velocity against
+the MuJoCo Jacobian, plane translation, unchanged external force/control/state,
+release clearing, triangle/wrench generalized-force equivalence, primitive
+closed winding, proxy units/translation and fixed-link URDF import.
+
+## S3 — initial matched-state/floor smoke (completed)
+
+Command: `conda run --no-capture-output -n lizard_rft python
+scripts/validate_general_rft.py --duration 0.2 --output-dir
+outputs/general_rft/stage1_smoke_20261027`.
+
+Output: summary, matched raw/smoothed force arrays and generalized forces,
+legacy state trajectory, floor-disabled trajectory, rigid-ground telemetry,
+ground comparison plot and hashed manifest. Compatibility passed at declared
+float64 tolerances. There were zero sand-run supporting rigid-ground steps;
+floor-on/off qpos arrays were identical. This is only an initial-settling
+smoke; the 6 s audit is a separate required record.
+
+The physical checkout resolves to `X:/Projects/Lizard_Robot_MuJoCo` through
+the documented `C:/Users/wxy22/Documents/Lizard_Robot_MuJoCo` junction. These
+are two paths to the same canonical Git checkout, not independent copies.
+
+## S4 — external assets and optional library installation (installed)
+
+Selected Menagerie commit `f3b6013629c7b94f8ee93fd977b161fa8350f9bc`, models
+`unitree_go1` and `franka_emika_panda`: 91 files, 48,615,728 bytes. The bounded
+installer verified every original Git blob and preserved BSD-3-Clause / Apache
+model licenses. Downloaded files stay ignored under `third_party/robot_assets`.
+Lock and installer are tracked; effective per-file SHA-256 is in the generated
+download manifest. Installation record:
+`outputs/general_rft/robot_install_20261027_182907_772686/`.
+
+Installed only optional pure-Python registry dependencies with `pip install
+--no-deps -r requirements-robots.txt`: robot_descriptions 3.3.0, GitPython
+3.2.1, gitdb 4.0.12 and smmap 5.0.3. Registry import and `pip check` passed.
+The registry's automatic unbounded model-cloning path is not used; pinned
+local asset configs are the tested integration route. Model runtime and video
+screening are separate steps, not implied by package installation.
+
+## Test correction T-001 — compiled-mesh fixture (resolved)
+
+The additional source-versus-compiled mesh transform test initially failed:
+224 triangle centroids were returned where the fixture expected four. The
+fixture specified a mesh asset on a geom but omitted `type="mesh"`, so the
+MuJoCo compiler fitted its default sphere primitive to the asset. The adapter
+correctly followed the compiled geom type. Fixed the fixture to request a mesh;
+the unchanged binding implementation then passed. No tolerance was widened.
+The 12-test rerun passed. A further passive URDF force test was then added.
+
+## S5 — full lizard same-state and floor control (completed)
+
+Command: `conda run --no-capture-output -n lizard_rft python
+scripts/validate_general_rft.py --duration 6 --output-dir
+outputs/general_rft/stage1_full_6s_20261027`.
+
+Outputs: 12,000-step baseline qpos/qvel/ctrl trajectory; the matched 12,000-step
+floor-disabled control; original rigid-ground telemetry; 17 representative
+forward-synchronized same-state fixtures with 13,916 triangles; raw force and
+generalized-force arrays; summary, graph and hashed manifest.
+
+Compatibility results: all 17 fixtures passed, zero mask disagreements,
+maximum raw triangle-force error 5.551115123125783e-17 N, smoothed-force error
+2.7755575615628914e-17 N, generalized-force error 8.881784197001252e-16.
+Generalized-force components have DOF-dependent units (N / N m). The original
+files' SHA-256 remained unchanged.
+
+The explicitly corrected body-frame convention is DIFFERENT: maximum sampled
+triangle-force change 0.18259551746171374 N and generalized component change
+4.357166440537851, with matching states/history. At sand z=0 this primarily
+exposes the legacy COM-velocity/body-origin lever-arm mixture; the independent
+offset-inertia Jacobian test establishes the new point-velocity convention.
+This change was not silently adopted in the original lizard runner and is not
+proof of experimental force accuracy.
+
+Ground answer for this tested gait/duration: `sand_visual` is a non-colliding
+plane at z=0; the only colliding world plane is `floor` at z=-0.25 m. The sand
+run recorded zero world-ground contact/support steps and 0 N ground support.
+Minimum RFT triangle-centroid z was -0.00931106929157266 m, far above that
+safety floor. Disabling the floor produced byte-identical qpos arrays across
+all 12,000 steps (maximum difference 0). The original rigid scenario has its
+intentional floor at z=0, 10,531 contact steps and a minimum soft-contact
+distance -0.0005747163213678276 m (about 0.575 mm). No extra supporting layer
+was found in the tested sand run; the safety floor is present but inactive.
+
+The translucent sand geom, thin visual `sand_height` site and force-point
+sphere radii can affect perceived depth. The contact telemetry and matched
+floor-disabled control, not appearance, establish the conclusion. Historical
+invalid-RFT recovered video remains visual evidence only; it cannot establish
+ground or force behavior of the current model.
+
+## S6 — first real external-model screening (completed)
+
+Commands: `scripts/run_generic_robot.py --config
+configs/robots/menagerie_go1.yaml --duration 2 --video --show-points` and the
+equivalent `menagerie_panda.yaml` config, each under `conda run -n lizard_rft`.
+Explicit output directories: `outputs/general_rft/go1_2s_20261027/` and
+`outputs/general_rft/panda_2s_20261027/`.
+
+Go1: four selected foot-sphere surfaces, 896 triangles, 3,999 RFT-active steps
+of 4,000; all states finite. Panda: one selected compiled link7 mesh, 200
+triangles, 2,778 active steps of 4,000; all states finite. No triangle force
+sites were added to either model. Both produced 41-frame, 20 FPS videos
+(2.05 encoded seconds, covering the two-second simulation and final frame).
+First/middle/last frames decoded at 960x540, and manifest verification passed.
+
+The Go1 example holds upstream home actuator commands. Panda adds a 0.05 rad,
+0.5 Hz sine to one upstream actuator; its horizontal test sand surface is
+explicitly 15 mm above the selected initial minimum centroid. These are
+bounded integration screens with upstream collision proxies, not new walking
+policies, whole-robot contact-envelope approvals or material calibration.
+
 ## Pending steps
 
 1. Implement reusable surface bindings, provider, explicit conventions and
